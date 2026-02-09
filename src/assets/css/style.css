@@ -17,14 +17,15 @@ html, body {
 
 body {
     background-color: white;
-    color: black;
+    color: black;/*var(--light-primary-text-color)*/
+    font-family: "Jersey 25", "Inter", sans-serif;
+
     padding: 0;
     margin: 0;
 }
 
 .content {
     flex: 1;
-    height: 1000px;
 
 }
 
@@ -112,6 +113,7 @@ p{ margin: 0;}
 /*#region FooterContent*/
 
 
+
 .continuite {
     width: 100%;
     height: 200px;
@@ -188,12 +190,12 @@ p{ margin: 0;}
     flex-direction: column;
 }
 
-.logo{
+.footer-logo{
     width: 100px;
     height: 100px;
 }
 
-.logo img{
+.footer-logo img{
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -232,8 +234,7 @@ p{ margin: 0;}
 
 
 /*#endregion Footer*/
-    font-family: "Jersey 25","Inter" , sans-serif;
-}
+
 
 header{
     background-color: var(--dark-blue);
@@ -309,4 +310,3 @@ header nav ul{
         cursor: pointer;
     }
 }
-
