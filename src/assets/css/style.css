@@ -1,0 +1,17 @@
+:root {
+    /* Palette thème océan - clair */
+    --sand-color: #e9d59b;
+    --dark-blue: #1a203a;
+    --primary-blue: #00bfae;
+    --light-blue: #b6e7f7;
+
+    --dark-silver: #d9d9d9;
+    --light-silver: #f1f1f1;
+}
+
+body {
+    background-color: white;
+    color: black;/*var(--light-primary-text-color)*/
+    padding: 0;
+    margin: 0;
+}
