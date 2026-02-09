@@ -9,9 +9,226 @@
     --light-silver: #f1f1f1;
 }
 
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
-    background-color: white;
+    background-image: "../image/background.jpg";
     color: black;/*var(--light-primary-text-color)*/
     padding: 0;
     margin: 0;
 }
+
+.content {
+    flex: 1;
+    height: 1000px;
+
+}
+
+p{ margin: 0;}
+
+
+/*#region Footer*/
+
+.footer {
+    margin-top: auto;
+}
+
+/*#region WavesAnimation*/
+
+.ocean{
+
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin: 0;
+}
+
+.waves{
+    position: relative;
+    height: 110px;
+}
+.wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: url(wave.png);
+    width: 100%;
+    height: 110px;
+    background-size: 1500px 110px;
+}
+.footer-content{
+    width: 100%;
+    height: 150px;
+    background-color: var(--dark-blue);
+}
+#wave_1{
+    bottom: 0;
+    opacity: 1;
+    z-index: 5;
+    animation: animate_wave 5.5s linear infinite;
+}
+#wave_2{
+    bottom: 10px;
+    opacity: 0.5;
+    z-index: 4;
+    animation: animate_wave 4s linear infinite;
+}
+#wave_3{
+    bottom: 15px;
+    opacity: 0.7;
+    z-index: 3;
+    animation: animate_wave 3.5s linear infinite;
+}
+#wave_4{
+    bottom: 20px;
+    opacity: 0.4;
+    z-index: 2;
+    animation: animate_wave 3s linear infinite;
+}
+#wave_5{
+    bottom: 25px;
+    opacity: 0.5;
+    z-index: 1;
+    animation: animate_wave 2.5s linear infinite;
+}
+
+@keyframes animate_wave{
+
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: 1500px;
+    }
+
+}
+
+/*#endregion WavesAnimation*/
+
+/*#region FooterContent*/
+
+
+.continuite {
+    width: 100%;
+    height: 200px;
+    background-color: var(--dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content {
+    width: 90%;
+    max-width: 1200px;
+    color: white;
+}
+
+.footer-top-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.copyright-txt {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.log-div span {
+    margin-left: 15px;
+}
+
+.footer a {
+    color: var(--light-silver);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+
+.log-div a:hover {
+    text-decoration: underline;
+}
+
+.footer-top-div hr {
+    width: 100%;
+    border: 1px;
+    border-top: 2px solid var(--light-blue);
+    margin-top: 15px;
+}
+
+.footer-bottom-div {
+    display: flex;
+    height: 100px;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+
+.footer-bottom-div a{
+    text-decoration: underline;
+}
+
+.footer-bottom-div a:hover {
+    color: var(--light-blue);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+
+.legal-link{
+
+    width: 300px;
+    height: 100px;
+        display: flex;
+    flex-direction: column;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.speed-link{
+    width: 300px;
+    height: 100px;
+}
+
+
+.quick-links {
+    display: flex;
+    align-items: flex-start;
+}
+
+.quick-links ul {
+
+    list-style: none;
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+
+.quick-links li {
+    margin-right: 12px;
+    font-size: 12px;
+
+}
+
+.quick-links li::before {
+    content: "•";
+    margin-right: 6px;
+}
+
+/*#endregion FooterContent*/
+
+
+/*#endregion Footer*/
