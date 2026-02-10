@@ -28,12 +28,6 @@ body {
 
 p{ margin: 0;}
 
-/*#region Header*/
-
-
-    font-family:"Inter", sans-serif;
-}
-
 /*#region header*/
 header{
     background-color: var(--dark-blue);
@@ -180,7 +174,6 @@ header nav{
 /*#endregion header*/
 /*#endregion Header Responsive*/
 
-/*#endregion Header*/
 
 /*#region Main*/
 
