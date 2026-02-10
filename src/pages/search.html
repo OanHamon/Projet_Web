@@ -42,77 +42,37 @@
 
     <main class="content-search-page">
 
-        <form action="" class="stage-search-box">
-            <div class="job-search-box">
-                <label for="métiers">Métiers</label>
-                <input type="text" id="metiers" name="metiers" placeholder="Rechercher un métier..." class="search-bar">
-            </div>
-            <div class="localisation-search-box">
+        <div action="" class="stage-search-box">
 
-                <div class="carte"></div>
-            </div>
-        </form>
+            <label for="métiers">Métiers</label>
+            <form action="job" method="get" class="search-bar">
+                <input type="text" name="metier" placeholder="Recherchez votre métier...">
+                <button type="submit">
+                    <img src="../assets/image/icon-loupe.svg" alt="icone de loupe">
+                </button>
+            </form>
 
-        <div class="search-stage-result-box"></div>
+            <label for="location">Localisation</label>
+            <form action="location" method="get" class="search-bar">
+                <input type="text" name="location" placeholder="Ville, département, pays, code postal...">
+                <button type="submit">
+                    <img src="../assets/image/icon-loupe.svg" alt="icone de loupe">
+                </button>
+            </form>
+
+            <div class="carte">
+                
+            </div>
+        </div>
+
+        <div class="search-stage-result-box">
+            <p>test 1</p><br><p>test 2</p>
+        </div>
 
     </main>
 
-    <footer class="footer">
-        <div class="ocean">
-            <div class="waves">
-                <div class="wave" id="wave_1"></div>
-                <div class="wave" id="wave_2"></div>
-                <div class="wave" id="wave_3"></div>
-                <div class="wave" id="wave_4"></div>
-                <div class="wave" id="wave_5"></div>
-            </div>
+    <div style="height: 100px;"></div>
 
-            <div class="continuite">
-                <div class="footer-content">
-                    <div class="footer-top-div">
-                        <span class="copyright-txt">© 2026 Cmp</span>
-
-                        <div class="log-div">
-                            <span><a href="#">Log in</a></span>
-                            <span><a href="#">Sign up</a></span>
-                        </div>
-
-                        <hr>
-                    </div>
-                    <div class="footer-bottom-div">
-                        <span class="legal-link">
-                            <a href="#mentionLegales">Mentions Legales</a>
-                            <a href="#ploitiqueDeConfidentialité">Politique de confidentialté</a>
-                        </span>
-                        <span class="footer-logo">
-                            <img src="../assets/css/logo.png" alt="Logo">
-                        </span>
-                        <div class="speed-link">
-                            <div class="quick-links">
-                                <span class="title">Liens rapides :</span>
-                                <ul>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
 </body>
 
 </html>

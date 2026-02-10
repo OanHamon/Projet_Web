@@ -41,6 +41,10 @@ header a{
     text-decoration: none;
 }
 
+header a:hover{
+    text-decoration: underline;
+}
+
 header nav{
     padding: 20px;
     height: 40px;
@@ -557,12 +561,69 @@ body {
 
 /*#region search.html*/
 
+
+/*#region search-bar*/
+
+.search-bar{
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-bar input{
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 300;
+    margin-left: 20px;
+    width: 100%;
+    border: none;
+    background: none;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.search-bar button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-bar button img{
+    width: 50%;
+}
+
+/*#endregion search-bar*/
+
 .content-search-page{
     display: flex;
+    padding: 0 2%;
+    justify-content: space-evenly;
+    font-family: "Inter";
+    font-weight: bold;
 }
 
 .stage-search-box{
-    border: 1px black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+}
+.stage-search-box label{
+    margin-top: 30px;
+    margin-bottom: 5px;
 }
 
 /*#endregion serach.html*/
