@@ -31,6 +31,10 @@ body {
 
 p{ margin: 0;}
 
+.spacer{
+    height: 150px;
+}
+
 /*#region Header*/
 
 
@@ -115,56 +119,6 @@ header nav ul{
 
 /*#endregion Header*/
 
-/*#region Main*/
-
-
-section{
-height: 900px;
-background-color: #e9d59b;
-
-}
-
-
-/*#region Primary Section*/
-
-
-.section-primary{
-    background-color: aqua;
-    background: url(main_bg.png);
-    background-repeat: space;
-    background-size: cover;
-
-}
-
-.section-primary h1{
-    font-size: 40px;
-    font-family: "Inter", sans-serif;
-    color: var(--light-blue);
-    margin: 0;
-    padding: 0;
-}
-
-.sec1-title-display{
-
-    margin: 0px 0px 0px 50px;
-}
-
-/*#endregion Primary Section*/
-
-.section-stage{
-    background-color: transparent;
-}
-.section-entreprise{
-    background-color: transparent;
-}
-
-
-
-
-
-
-
-/*#endregion Main*/
 
 /*#region Footer*/
 
@@ -367,7 +321,7 @@ background-color: #e9d59b;
 /*#endregion FooterContent*/
 
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 
     .continuite {
         height: 800px;
@@ -435,3 +389,105 @@ background-color: #e9d59b;
 }
 
 /*#endregion Footer*/
+
+
+/*#region Main*/
+
+
+section{
+height: 900px;
+background-color: #e9d59b;
+
+}
+
+
+/*#region Primary Section*/
+
+
+.section-primary{
+    background-color: aqua;
+    background: url(main_bg.png);
+    background-repeat: space;
+    background-size: cover;
+    color: var(--light-blue);
+    font-family: "Inter", sans-serif;
+
+}
+
+.section-primary h1{
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.sec1-title-container{
+    background-color:transparent;
+}
+
+.sec1-title-display{
+
+    margin-left: 75px;
+}
+
+.sec1-searchbar{
+    margin-left: 75px;
+}
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 14px 50px 14px 22px;
+    border-radius: 999px;
+    border: none;
+    outline: none;
+
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+
+    background-color: white;
+    color: #333;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.search-container input::placeholder {
+    color: #8c8c8c;
+    font-style: italic;
+}
+
+.search-container button {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container input:focus {
+    box-shadow: 0 0 0 3px rgba(92, 142, 235, 0.35);
+}
+
+
+/*#endregion Primary Section*/
+
+.section-stage{
+    background-color: var(--dark-blue);
+}
+.section-entreprise{
+    background-color: transparent;
+}
+
+
+
+
+
+
+
+/*#endregion Main*/
