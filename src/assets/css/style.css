@@ -557,7 +557,13 @@ body {
 
 /*#region search.html*/
 
+.content-search-page{
+    display: flex;
+}
 
+.stage-search-box{
+    border: 1px black;
+}
 
 /*#endregion serach.html*/
 
