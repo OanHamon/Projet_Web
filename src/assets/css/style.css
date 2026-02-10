@@ -124,6 +124,10 @@ background-color: #e9d59b;
 
 }
 
+
+/*#region Primary Section*/
+
+
 .section-primary{
     background-color: aqua;
     background: url(main_bg.png);
@@ -132,11 +136,18 @@ background-color: #e9d59b;
 
 }
 
+.sec1-title-display{
+
+    margin: 0px 0px 0px 50px;
+}
+
+/*#endregion Primary Section*/
+
 .section-stage{
-    background-color: rgb(98, 205, 72);
+    background-color: transparent;
 }
 .section-entreprise{
-    background-color: rgb(110, 43, 117);
+    background-color: transparent;
 }
 
 
