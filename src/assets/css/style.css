@@ -1,7 +1,7 @@
 :root {
     /* Palette thème océan - clair */
     --sand-color: #e9d59b;
-    --dark-blue: #1a203a;
+    --dark-blue: #151E3D;
     --primary-blue: #5c8eeb;
     --light-blue: #b6e7f7;
 
@@ -31,6 +31,121 @@ body {
 
 p{ margin: 0;}
 
+/*#region Header*/
+
+
+
+header{
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+header a{
+    color: white;
+    text-decoration: none;
+}
+
+header nav{
+    padding: 20px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo{
+    width: 40px;
+}
+
+header nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    height: min-content;
+    width: 100%;
+}
+
+.account-div{
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+}
+
+.signup{
+    background-color: var(--primary-blue);
+    width: min-content;
+    padding: 15px;
+    height: 45px;
+    border-radius: 15px;
+    margin: 7px;
+    height: min-content;
+    white-space: nowrap;
+}
+
+.login{
+    margin: 7px;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+
+.burger-header{
+    display: none;
+}
+
+/*#region Header Responsive*/
+@media (max-width: 600px) {
+    header nav ul{
+        display: none;
+    }
+    .burger-header{
+        display: block;
+        background: none;
+        border: none;
+        box-shadow: none;
+        outline: none;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+    }
+}
+
+/*#endregion Header Responsive*/
+
+/*#endregion Header*/
+
+/*#region Main*/
+
+
+section{
+height: 900px;
+background-color: #e9d59b;
+
+}
+
+.section-primary{
+    background-color: aqua;
+    background: url(main_bg.png);
+    background-repeat: space;
+    background-size: cover;
+
+}
+
+.section-stage{
+    background-color: rgb(98, 205, 72);
+}
+.section-entreprise{
+    background-color: rgb(110, 43, 117);
+}
+
+
+
+
+
+
+
+/*#endregion Main*/
 
 /*#region Footer*/
 
@@ -232,81 +347,11 @@ p{ margin: 0;}
 
 /*#endregion FooterContent*/
 
+@media (max-width:600px)
+{
+
+
+    
+}
 
 /*#endregion Footer*/
-
-
-header{
-    background-color: var(--dark-blue);
-    color: white;
-}
-
-header a{
-    color: white;
-    text-decoration: none;
-}
-
-header nav{
-    padding: 20px;
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo{
-    width: 40px;
-}
-
-header nav ul{
-    display: flex;
-    list-style: none;
-    justify-content: space-evenly;
-    height: min-content;
-    width: 100%;
-}
-
-.account-div{
-    padding: 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    text-align: center;
-}
-
-.signup{
-    background-color: var(--primary-blue);
-    width: min-content;
-    padding: 15px;
-    height: 45px;
-    border-radius: 15px;
-    margin: 7px;
-    height: min-content;
-    white-space: nowrap;
-}
-
-.login{
-    margin: 7px;
-    text-decoration: underline;
-    white-space: nowrap;
-}
-
-.burger-header{
-    display: none;
-}
-
-@media (max-width: 600px) {
-    header nav ul{
-        display: none;
-    }
-    .burger-header{
-        display: block;
-        background: none;
-        border: none;
-        box-shadow: none;
-        outline: none;
-        padding: 0;
-        margin: 0;
-        cursor: pointer;
-    }
-}
