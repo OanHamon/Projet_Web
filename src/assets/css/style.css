@@ -29,6 +29,7 @@ body {
 p{ margin: 0;}
 
 /*#region header*/
+
 header{
     background-color: var(--dark-blue);
     color: white;
@@ -104,19 +105,6 @@ header nav{
         display: none;
     }
 
-    .header-burger-input{
-        z-index: 100;
-        background: none;
-        border: none;
-        box-shadow: none;
-        outline: none;
-        padding: 0;
-        margin: 0;
-        cursor: pointer;
-        transform: translateX(-220px);
-    }
-
-
     header nav ul li{
         margin: 7px 0;
     }
@@ -167,14 +155,14 @@ header nav{
         height: 400px;
         max-width: 200px;
         padding: 7px;
-        align-items: center;
+        padding-left: 50px;
+        align-items: left;
     }
     .burger{z-index: 100;}
 }
 
 /*#endregion header*/
 /*#endregion Header Responsive*/
-
 
 /*#region Main*/
 
