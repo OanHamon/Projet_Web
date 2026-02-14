@@ -707,6 +707,8 @@ background-color: #e9d59b;
 
 /*#endregion Stage Section*/
 
+/*#region Entreprise Section*/
+
 .section-entreprise{
     background-color: var(--sand-color);
     overflow-x: hidden; 
@@ -808,6 +810,8 @@ h3{
     
 }
 
+/*#endregion Entreprise Section*/
+
 /*#endregion Main*/
 
 
@@ -894,4 +898,5 @@ body {
 
 
 /*#endregion serach.html*/
+
 

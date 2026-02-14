@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connexion / Inscription</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/css/style_login_page.css">
+</head>
+<body>
+
+  <div class="logo-wrapper">
+    <div class="logo-badge">
+      <img src="../assets/image/logo_projet_web.png" alt="Logo" class="header-logo">
+    </div>
+  </div>
+
+  <div class="container" id="container">
+
+    <div class="form-container sign-up-container">
+      <form action="#">
+        <h1>S'inscrire</h1>
+        <div class="field-group">
+          <label for="signup-nom">Nom</label>
+          <input type="text" id="signup-nom" />
+        </div>
+        <div class="field-group">
+          <label for="signup-prenom">Prénom</label>
+          <input type="text" id="signup-prenom" />
+        </div>
+        <div class="field-group">
+          <label for="signup-type">Type de Compte</label>
+          <div class="select-wrapper">
+            <select id="signup-type">
+              <option value="" disabled selected>-- Sélectionner --</option>
+              <option value="etudiant">Étudiant</option>
+              <option value="pilote">Pilote</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-group">
+          <label for="signup-mdp">Mots de passe</label>
+          <input type="password" id="signup-mdp" />
+        </div>
+        <div class="field-group">
+          <label for="signup-confirm">Confirmation</label>
+          <input type="password" id="signup-confirm" />
+        </div>
+        <div class="field-group">
+          <label for="signup-email">Email</label>
+          <input type="email" id="signup-email" />
+        </div>
+        <button type="submit" class="btn-main">S'inscrire</button>
+      </form>
+    </div>
+
+    <div class="form-container sign-in-container">
+      <form action="#">
+        <h1>Se connecter</h1>
+        <div class="field-group">
+          <label for="signin-nom">Nom</label>
+          <input type="text" id="signin-nom" />
+        </div>
+        <div class="field-group">
+          <label for="signin-prenom">Prénom</label>
+          <input type="text" id="signin-prenom" />
+        </div>
+        <div class="field-group">
+          <label for="signin-mdp">Mots de passe</label>
+          <input type="password" id="signin-mdp" />
+        </div>
+        <button type="submit" class="btn-main">Se connecter</button>
+      </form>
+    </div>
+
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h2>Déjà un compte ?</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetura dipiscing elit.</p>
+          <button class="btn-ghost" id="signIn">Se connecter</button>
+          <a href="#" class="link-entreprise">Vous êtes une entreprise ?</a>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h2>Votre première fois ici ?</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetura dipiscing elit.</p>
+          <button class="btn-ghost" id="signUp">Créer un compte</button>
+          <a href="#" class="link-entreprise">Vous êtes une entreprise ?</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
