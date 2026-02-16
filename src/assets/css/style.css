@@ -36,6 +36,7 @@ p{ margin: 0;}
 /*#region header*/
 
 header{
+    position: sticky;
     background-color: var(--dark-blue);
     color: white;
     font-family: "Jersey 25", sans-serif;
@@ -48,7 +49,7 @@ header a{
 
 header nav{
     padding: 20px;
-    height: 40px;
+    /* height: 40px;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -439,9 +440,8 @@ header nav{
 /*#region Main*/
 
 
-section{
+.main-section{
 height: 900px;
-background-color: #e9d59b;
 
 }
 
@@ -582,6 +582,12 @@ background-color: #e9d59b;
 }
 
 
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 
 .card{
     width: 250px;
@@ -594,6 +600,7 @@ background-color: #e9d59b;
     scroll-snap-align: center;
     scroll-snap-stop: always;
 }
+
 
 .card:hover {
     transform: translateY(-10px) scale(1.02);
