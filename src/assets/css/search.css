@@ -1,0 +1,160 @@
+:root {
+    /* Palette thème océan - clair */
+    --sand-color: #e9d59b;
+    --dark-blue: #151E3D;
+    --primary-blue: #5c8eeb;
+    --light-blue: #b6e7f7;
+
+    --dark-silver: #d9d9d9;
+    --light-silver: #f1f1f1;
+}
+
+/*#region search.html*/
+.content-search-page{
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    font-family: "Inter";
+    font-weight: bold;
+    gap: 16px;
+}
+
+.stage-search-box{
+    width: 70%;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.stage-search-box *{
+    margin: 10px;
+}
+
+.search-box-label-bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carte{
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+}
+
+
+#map{
+    flex: 1 1 auto;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    z-index: 0;
+    margin: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.carte button{
+    background-color: var(--primary-blue);
+    color: white;
+    cursor: pointer;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 16px;
+
+    font-family: "Inter";
+    font-weight: bold;
+    font-size: large;
+    border: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 160px;
+
+    z-index: 10;
+}
+
+
+.search-stage-result-box{
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    overflow-y: scroll;
+    gap: 16px;
+}
+
+.card-stage{
+    text-align: left;
+    text-decoration: none;
+    color: black;
+    background-color: var(--light-silver);
+    height: 400px;
+    max-height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.card-stage-header{
+    background-color: var(--sand-color);
+    padding: 20px;
+    border-radius: 20px 20px 0 0;
+    font-size: 30px;
+}
+.card-stage-content{
+    padding: 20px;
+    font-weight: 400;
+}
+.card-stage-entreprise{
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+.card-stage-description{
+    text-align: justify;
+    height: 100%;
+}
+
+
+@media (max-width: 1000px) {
+    .content-search-page{
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        padding-left: 0;
+        padding: 20px;
+    }
+
+    .stage-search-box{
+        width: 100%;
+        max-width: none;
+    }
+
+    .carte{
+        height: 40vh;
+    }
+
+    #map{
+        height: 100%;
+    }
+    .search-stage-result-box{
+        align-items: center;
+        padding: 0;
+    }
+
+
+    .card-stage{
+    }
+    .card-stage-header{
+    }
+    .card-stage-content{
+
+    }
+    .card-stage-entreprise{
+    }
+}

@@ -13,6 +13,7 @@
 html, body {
     height: 100%;
     margin: 0;
+    font-family: "Inter", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
@@ -559,9 +560,6 @@ body {
 }
 /*#endregion mentions.html*/
 
-/*#region search.html*/
-
-
 /*#region search-bar*/
 
 .search-bar{
@@ -606,25 +604,4 @@ body {
 
 /*#endregion search-bar*/
 
-.content-search-page{
-    display: flex;
-    padding: 0 2%;
-    justify-content: space-evenly;
-    font-family: "Inter";
-    font-weight: bold;
-}
-
-.stage-search-box{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-evenly;
-}
-.stage-search-box label{
-    margin-top: 30px;
-    margin-bottom: 5px;
-}
-
-/*#endregion serach.html*/
 
