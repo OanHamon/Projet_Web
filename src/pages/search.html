@@ -49,31 +49,29 @@
                 </div>
             </nav>
         </header>
-
         <main class="content-search-page">
 
             <div class="stage-search-box">
 
                 <div class="search-box-label-bar">
                     <label for="métiers">Métiers</label>
-                    <form action="job" method="post" class="search-bar">
-                        <input type="text" name="metier" placeholder="Recherchez votre métier...">
-                        <button type="submit">
-                            <img src="../assets/image/icon-loupe.svg" alt="icone de loupe">
+                    <form class="search-container" role="search">
+                        <input type="search" placeholder="Recherchez dans l'océan des stages" aria-label="Rechercher un stage">
+                        <button type="submit" aria-label="Lancer la recherche">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABsElEQVR4AbTUjVXDMAwEYJdFgEmASYBJgEmASYBJYBPQZyK/uEl/0rzmRbEsS3c6t/ZFOfOzlOA1+mEPMd6GHXz3EQB5HiFcDb44ko+Yf4ftJdpFABjIZQDk+xPOY9gm7DqMH0NBJJ8/sTkCBU+R+RKWIOF2L7K3iNyFyZNPTUz7d5sAOMkKd3Y1gkAkjyJbSPVouZQxAWCmo88u6/AEkTq/D4xWMSbADlhHLWGBY8vUw2llSYCVxPe2stxJFXDgVYQkEBTQgfFUQ9LVJsHNEJ0kDPFjh6yfVbC2+2wCSTs/qeArVnObwl31djhJoHsLTdqJFDCUatjYzgFZNbDykw1quEKlAgSs+w/XjGWf+0iHw8LtT7J7h8RTD5o6CuBUcJ9UwCfLcdeFRLFjTb4LL09zqxsTCEow2iod8Q+ZPJekbem6V7hNIMlN6srQkSt4coFFoa0UByyPcjcqJQgj5f/dJhBFIkmBOTWAkBl/I8gXR6Qh+REu5ghz3v6mZeZBhISR7jeSplvzTUysZTymxRZbR0LNXoIyPIgUAs1uzYflyaB7JHVhbovqwsoPkqrsDwAA///F7rH+AAAABklEQVQDAK4XUzHC974AAAAAAElFTkSuQmCC" alt="icon" />
                         </button>
                     </form>
                 </div>
 
                 <div class="search-box-label-bar">
                     <label for="location">Localisation</label>
-                    <form action="location" method="post" class="search-bar">
-                        <input type="text" name="location" placeholder="Ville, département, pays, code postal...">
-                        <button type="submit">
-                            <img src="../assets/image/icon-loupe.svg" alt="icone de loupe">
+                    <form class="search-container" role="search">
+                        <input type="search" placeholder="Recherchez dans l'océan des stages" aria-label="Rechercher un stage">
+                        <button type="submit" aria-label="Lancer la recherche">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABsElEQVR4AbTUjVXDMAwEYJdFgEmASYBJgEmASYBJYBPQZyK/uEl/0rzmRbEsS3c6t/ZFOfOzlOA1+mEPMd6GHXz3EQB5HiFcDb44ko+Yf4ftJdpFABjIZQDk+xPOY9gm7DqMH0NBJJ8/sTkCBU+R+RKWIOF2L7K3iNyFyZNPTUz7d5sAOMkKd3Y1gkAkjyJbSPVouZQxAWCmo88u6/AEkTq/D4xWMSbADlhHLWGBY8vUw2llSYCVxPe2stxJFXDgVYQkEBTQgfFUQ9LVJsHNEJ0kDPFjh6yfVbC2+2wCSTs/qeArVnObwl31djhJoHsLTdqJFDCUatjYzgFZNbDykw1quEKlAgSs+w/XjGWf+0iHw8LtT7J7h8RTD5o6CuBUcJ9UwCfLcdeFRLFjTb4LL09zqxsTCEow2iod8Q+ZPJekbem6V7hNIMlN6srQkSt4coFFoa0UByyPcjcqJQgj5f/dJhBFIkmBOTWAkBl/I8gXR6Qh+REu5ghz3v6mZeZBhISR7jeSplvzTUysZTymxRZbR0LNXoIyPIgUAs1uzYflyaB7JHVhbovqwsoPkqrsDwAA///F7rH+AAAABklEQVQDAK4XUzHC974AAAAAAElFTkSuQmCC" alt="icon" />
                         </button>
                     </form>
                 </div>
-
 
                 <form action="map" method="post" class="carte">
                     <div id="map"></div>
@@ -99,7 +97,11 @@
                     <div class="card-stage-content">
                         <div class="card-stage-entreprise">Entreprise</div>
                         <div class="card-stage-description">
+                            <input type="checkbox" id="toggle-0" class="toggle-checkbox-card-stage">
+                            <p class="texte-description-card-stage">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste accusamus vel molestias non ea quam, perferendis est nesciunt. Distinctio laudantium accusamus laborum delectus dolores? Natus quae tempore corporis deleniti officiis, incidunt odit! Distinctio perspiciatis, perferendis labore suscipit consectetur delectus facilis fuga minus nobis magnam quasi dolore quam exercitationem iure eveniet, libero voluptas commodi ad reprehenderit in tempora. Voluptatum ullam alias, voluptate vel voluptates aut consequuntur similique eum natus est sunt ex. Eos cum quam iste quod omnis, distinctio quibusdam nesciunt consequuntur, corporis iure non quis labore? Error, dolores est ipsa molestiae dicta unde ratione, numquam laboriosam magni provident asperiores deserunt atque quisquam odio consequatur repellendus, consectetur quidem ipsam dolor! Nulla repellat earum ratione non atque, consequatur, placeat necessitatibus reprehenderit quas iure voluptate! Facilis dignissimos adipisci facere perferendis dolorem aut accusamus ea consequatur rem dolorum ad quas provident quo amet eligendi veniam error, omnis perspiciatis. Iusto aliquam eum quia sint soluta. Nesciunt soluta minima officia numquam magni illum officiis nobis nisi repudiandae error totam laborum perspiciatis similique, quis autem, quidem voluptate nihil. Aperiam aut deleniti eum aliquid dolor perspiciatis nemo at illum a reprehenderit fuga voluptates, cumque quae excepturi iure nesciunt fugiat voluptatem doloribus possimus ipsam laborum officia velit quasi. Reiciendis.
+                            </p>
+                            <label for="toggle-0" class="toggle-btn-card-stage"></label>
                         </div>
                     </div>
                 </a>
@@ -109,30 +111,15 @@
                     <div class="card-stage-content">
                         <div class="card-stage-entreprise">Entreprise</div>
                         <div class="card-stage-description">
+                            <input type="checkbox" id="toggle-1" class="toggle-checkbox-card-stage">
+                            <p class="texte-description-card-stage">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste accusamus vel molestias non ea quam, perferendis est nesciunt. Distinctio laudantium accusamus laborum delectus dolores? Natus quae tempore corporis deleniti officiis, incidunt odit! Distinctio perspiciatis, perferendis labore suscipit consectetur delectus facilis fuga minus nobis magnam quasi dolore quam exercitationem iure eveniet, libero voluptas commodi ad reprehenderit in tempora. Voluptatum ullam alias, voluptate vel voluptates aut consequuntur similique eum natus est sunt ex. Eos cum quam iste quod omnis, distinctio quibusdam nesciunt consequuntur, corporis iure non quis labore? Error, dolores est ipsa molestiae dicta unde ratione, numquam laboriosam magni provident asperiores deserunt atque quisquam odio consequatur repellendus, consectetur quidem ipsam dolor! Nulla repellat earum ratione non atque, consequatur, placeat necessitatibus reprehenderit quas iure voluptate! Facilis dignissimos adipisci facere perferendis dolorem aut accusamus ea consequatur rem dolorum ad quas provident quo amet eligendi veniam error, omnis perspiciatis. Iusto aliquam eum quia sint soluta. Nesciunt soluta minima officia numquam magni illum officiis nobis nisi repudiandae error totam laborum perspiciatis similique, quis autem, quidem voluptate nihil. Aperiam aut deleniti eum aliquid dolor perspiciatis nemo at illum a reprehenderit fuga voluptates, cumque quae excepturi iure nesciunt fugiat voluptatem doloribus possimus ipsam laborum officia velit quasi. Reiciendis.
+                            </p>
+                            <label for="toggle-1" class="toggle-btn-card-stage"></label>
                         </div>
                     </div>
                 </a>
 
-                <a href="" class="card-stage">
-                    <div class="card-stage-header">Titre de l'annonce</div>
-                    <div class="card-stage-content">
-                        <div class="card-stage-entreprise">Entreprise</div>
-                        <div class="card-stage-description">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste accusamus vel molestias non ea quam, perferendis est nesciunt. Distinctio laudantium accusamus laborum delectus dolores? Natus quae tempore corporis deleniti officiis, incidunt odit! Distinctio perspiciatis, perferendis labore suscipit consectetur delectus facilis fuga minus nobis magnam quasi dolore quam exercitationem iure eveniet, libero voluptas commodi ad reprehenderit in tempora. Voluptatum ullam alias, voluptate vel voluptates aut consequuntur similique eum natus est sunt ex. Eos cum quam iste quod omnis, distinctio quibusdam nesciunt consequuntur, corporis iure non quis labore? Error, dolores est ipsa molestiae dicta unde ratione, numquam laboriosam magni provident asperiores deserunt atque quisquam odio consequatur repellendus, consectetur quidem ipsam dolor! Nulla repellat earum ratione non atque, consequatur, placeat necessitatibus reprehenderit quas iure voluptate! Facilis dignissimos adipisci facere perferendis dolorem aut accusamus ea consequatur rem dolorum ad quas provident quo amet eligendi veniam error, omnis perspiciatis. Iusto aliquam eum quia sint soluta. Nesciunt soluta minima officia numquam magni illum officiis nobis nisi repudiandae error totam laborum perspiciatis similique, quis autem, quidem voluptate nihil. Aperiam aut deleniti eum aliquid dolor perspiciatis nemo at illum a reprehenderit fuga voluptates, cumque quae excepturi iure nesciunt fugiat voluptatem doloribus possimus ipsam laborum officia velit quasi. Reiciendis.
-                        </div>
-                    </div>
-                </a>
-
-                <a href="" class="card-stage">
-                    <div class="card-stage-header">Titre de l'annonce</div>
-                    <div class="card-stage-content">
-                        <div class="card-stage-entreprise">Entreprise</div>
-                        <div class="card-stage-description">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste accusamus vel molestias non ea quam, perferendis est nesciunt. Distinctio laudantium accusamus laborum delectus dolores? Natus quae tempore corporis deleniti officiis, incidunt odit! Distinctio perspiciatis, perferendis labore suscipit consectetur delectus facilis fuga minus nobis magnam quasi dolore quam exercitationem iure eveniet, libero voluptas commodi ad reprehenderit in tempora. Voluptatum ullam alias, voluptate vel voluptates aut consequuntur similique eum natus est sunt ex. Eos cum quam iste quod omnis, distinctio quibusdam nesciunt consequuntur, corporis iure non quis labore? Error, dolores est ipsa molestiae dicta unde ratione, numquam laboriosam magni provident asperiores deserunt atque quisquam odio consequatur repellendus, consectetur quidem ipsam dolor! Nulla repellat earum ratione non atque, consequatur, placeat necessitatibus reprehenderit quas iure voluptate! Facilis dignissimos adipisci facere perferendis dolorem aut accusamus ea consequatur rem dolorum ad quas provident quo amet eligendi veniam error, omnis perspiciatis. Iusto aliquam eum quia sint soluta. Nesciunt soluta minima officia numquam magni illum officiis nobis nisi repudiandae error totam laborum perspiciatis similique, quis autem, quidem voluptate nihil. Aperiam aut deleniti eum aliquid dolor perspiciatis nemo at illum a reprehenderit fuga voluptates, cumque quae excepturi iure nesciunt fugiat voluptatem doloribus possimus ipsam laborum officia velit quasi. Reiciendis.
-                        </div>
-                    </div>
-                </a>
             </div>
         </main>
     </body>
