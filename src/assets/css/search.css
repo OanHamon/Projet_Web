@@ -87,7 +87,7 @@
     flex-direction: column;
     align-items: stretch;
     width: 100%;
-    overflow-y: scroll;
+    overflow: scroll;
     gap: 16px;
 }
 
@@ -96,10 +96,8 @@
     text-decoration: none;
     color: black;
     background-color: var(--light-silver);
-    height: 400px;
-    max-height: 300px;
+    max-height: 400px;
     border-radius: 20px;
-    overflow: hidden;
 }
 .card-stage-header{
     background-color: var(--sand-color);
@@ -108,11 +106,14 @@
     font-size: 30px;
 }
 .card-stage-content{
-    padding: 20px;
+    margin: 20px;
     font-weight: 400;
+    overflow: hidden;
+    max-height: 160px;
 }
 .card-stage-entreprise{
-    font-size: 24px;
+    font-weight: bold;
+    font-size: 20px;
     margin-bottom: 16px;
 }
 .card-stage-description{
@@ -157,4 +158,29 @@
     }
     .card-stage-entreprise{
     }
+}
+
+.tag-box{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+.tag{
+    margin: 4px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    background-color: var(--light-silver);
+    border-radius: 8px;
+}
+.tag p{
+    font-weight: 300;
+    font-size: 11px;
+    margin: 0;
+}
+.tag button{
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
 }

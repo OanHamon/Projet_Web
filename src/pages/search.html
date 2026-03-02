@@ -56,7 +56,7 @@
 
                 <div class="search-box-label-bar">
                     <label for="métiers">Métiers</label>
-                    <form action="job" method="get" class="search-bar">
+                    <form action="job" method="post" class="search-bar">
                         <input type="text" name="metier" placeholder="Recherchez votre métier...">
                         <button type="submit">
                             <img src="../assets/image/icon-loupe.svg" alt="icone de loupe">
@@ -66,7 +66,7 @@
 
                 <div class="search-box-label-bar">
                     <label for="location">Localisation</label>
-                    <form action="location" method="get" class="search-bar">
+                    <form action="location" method="post" class="search-bar">
                         <input type="text" name="location" placeholder="Ville, département, pays, code postal...">
                         <button type="submit">
                             <img src="../assets/image/icon-loupe.svg" alt="icone de loupe">
@@ -75,12 +75,20 @@
                 </div>
 
 
-                <form class="carte">
+                <form action="map" method="post" class="carte">
                     <div id="map"></div>
                     <button type="submit">OK</button>
                 </form>
 
                 <!--<input type="text" id="location">-->
+
+                <div class="tag-box">
+                    <div class="tag"><p>Saint Nazaire</p><button>X</button></div>
+                    <div class="tag"><p>A 50km de (5,256984°N | -2,522456°E)</p><button>X</button></div>
+                    <div class="tag"><p>Technicien fibre</p><button>X</button></div>
+                    <div class="tag"><p>Mangeur de pizza</p><button>X</button></div>
+                    <div class="tag"><p>Ronfleur pro</p><button>X</button></div>
+                </div>
 
             </div>
 
