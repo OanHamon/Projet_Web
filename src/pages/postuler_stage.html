@@ -10,7 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
+
+        <link rel="stylesheet" href="../assets/css/style_stage_page.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+
 </head>
 <body>
     <header>
@@ -24,9 +27,9 @@
             </a>
 
             <ul class="header-links">
-                <li><a href="#Accueil">Accueil</a></li>
-                <li><a href="#Stages">Nos Stages</a></li>
-                <li><a href="#Entreprises">Nos Entreprises</a></li>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#Stages">Nos Stages</a></li>
+                <li><a href="index.html#Entreprises">Nos Entreprises</a></li>
             </ul>
 
             <div class="account-div">
@@ -39,6 +42,108 @@
             </div>
         </nav>
     </header>
+
+
+    <main>
+      <div class="page-wrapper">
+
+        <div class="col-left">
+          <div class="stage-card card-main">
+
+            <h1>Postuler au stage</h1>
+
+            <p>Vous êtes sur le point de postuler à un stage. Veuillez remplir les informations ci-dessous pour finaliser votre candidature.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda id est consectetur minus doloribus ad porro. Cum repellat odio sapiente repellendus, ipsa earum, sit nostrum quae amet labore non magni.</p>
+
+
+            <h2>Formulaire de candidature</h2>
+
+            <div class="form-container">
+                <h3>Formulaire :</h3>
+
+                <form class="application-form" id="application-form"  method="post" >
+
+                    <h4>Informations personnelles</h4>
+
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="surname">Prénom</label>
+                    <input type="text" id="surname" name="surname" required>
+
+                    <label for="email">Adresse e-mail</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phone">Numéro de téléphone</label>
+                    <input type="tel" id="phone" name="phone">
+
+                    <h4>Entrez votre CV</h4>
+                    <input type="file" id="cv" name="cv" required>
+
+                    <h4>Lettre de Motivation</h4>
+                    <input type="file" id="lm" name="lm" required>
+
+                    <h4>Autre informations :</h4>
+                    <textarea id="message" name="message" rows="6"
+                        placeholder="Entrez votre textes..."></textarea>
+
+                </form>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-right">
+
+          <div class="stage-card card-entreprise">
+            <h2>Resumé</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+            <a href="vitrine_stage.html"><button class="btn-detail">Voir les détails</button></a>
+          </div>
+
+          <div class="stage-card card-competences">
+            <h2>Compétences</h2>
+            <p class="comp-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.</p>
+
+            <div class="comp-section">
+              <p class="comp-label">Techniques :</p>
+              <ul class="comp-grid">
+                <li><span class="dot blue"></span>Stagiaires</li>
+                <li><span class="dot blue"></span>Stagiaires</li>
+                <li><span class="dot blue"></span>Stagiaires</li>
+                <li><span class="dot blue"></span>Stagiaires</li>
+                <li><span class="dot blue"></span>Stagiaires</li>
+                <li><span class="dot blue"></span>Stagiaires</li>
+              </ul>
+            </div>
+
+            <div class="comp-section">
+              <p class="comp-label">Social :</p>
+              <ul class="comp-grid">
+                <li><span class="dot blue"></span>Stagiaires</li>
+                <li><span class="dot blue"></span>Stagiaires</li>
+                <li><span class="dot blue"></span>Stagiaires</li>
+                <li><span class="dot blue"></span>Stagiaires</li>
+                <li><span class="dot blue"></span>Stagiaires</li>
+                <li><span class="dot blue"></span>Stagiaires</li>
+              </ul>
+            </div>
+          </div>
+
+          <button id="finaliser-candidature-button" class="btn-postuler" type="submit" form="application-form">Finaliser la candidature</button>
+
+        </div>
+
+      </div>
+    </main>
+
+
+
+
+
+
+
     <footer class="footer">
         <div class="ocean">
             <div class="waves">
