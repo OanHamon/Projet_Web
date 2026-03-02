@@ -586,6 +586,14 @@ height: 900px;
     scroll-padding: 0 calc(50% - 125px);
 }
 
+.carousel-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary-blue);
+    border-radius: 10px;
+}
 
 .card-link {
     text-decoration: none;
@@ -727,6 +735,8 @@ height: 900px;
     height: 800px;
 }
 
+
+
 .sec3-container {
     margin: 25px;
     height: 600px;
@@ -744,7 +754,14 @@ height: 900px;
 
 .sec3-container::-webkit-scrollbar {
     background-color: var(--sand-color);
+    height: 6px;
 }
+
+.sec3-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary-blue);
+    border-radius: 10px;
+}
+
 
 
 
