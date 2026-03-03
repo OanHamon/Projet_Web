@@ -265,9 +265,7 @@ article li {
     transition: transform 0.2s ease;
 }
 
-article li:hover .dot {
-    transform: scale(1.4);
-}
+
 
 
 @media (max-width: 900px) {
