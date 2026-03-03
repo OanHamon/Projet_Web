@@ -344,13 +344,12 @@ textarea {
     height: 150px;
 }
 
-/* Style input file */
+
 input[type="file"] {
     margin-bottom: 20px;
     margin-left: 20px;
 }
 
-/* Bouton file custom */
 input[type="file"]::file-selector-button {
     background-color: #c4c4c4;
     border: none;
