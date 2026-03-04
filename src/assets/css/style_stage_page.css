@@ -8,7 +8,6 @@ body {
   background-color: #1a6fe8;
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
-  padding: 100px 32px;
   color: #1a1a2e;
 }
 
@@ -23,7 +22,7 @@ body {
   align-items: start;
 }
 
-.stage-card {
+.block-content-stage {
   background: #fff;
   border-radius: 20px;
   padding: 32px 28px;
