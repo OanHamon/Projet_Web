@@ -25,12 +25,15 @@ if (isset($_GET['neer'])) {
 $job = isset($_GET['job']) && is_array($_GET['job']) ? $_GET['job'] : [];
 
 
-
 $offres = [
     [
         "titre" => "Développeur Web",
         "entreprise" => "TechCorp",
-        "description" => "Développement de nouvelles fonctionnalités web sur des projets innovants."
+        "description" => "Développement de nouvelles fonctionnalités web sur des projets innovants.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quo labore similique pariatur rerum saepe velit cupiditate libero atque reprehenderit! Officiis quae eligendi impedit numquam! Velit iure impedit corporis veniam?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quo labore similique pariatur rerum saepe velit cupiditate libero atque reprehenderit! Officiis quae eligendi impedit numquam! Velit iure impedit corporis veniam?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quo labore similique pariatur rerum saepe velit cupiditate libero atque reprehenderit! Officiis quae eligendi impedit numquam! Velit iure impedit corporis veniam?
+        "
     ],
     [
         "titre" => "Designer UI/UX",
@@ -93,7 +96,7 @@ $offres = [
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="../assets/css/style.css">
-        <link rel="stylesheet" href="../assets/css/style_search_page.css">
+        <link rel="stylesheet" href="../assets/css/style_search_pag.css">
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
             integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -155,6 +158,22 @@ $offres = [
                     </form>
                 </div>
 
+                <div class="distance-slider-container">
+                    <label for="slider-distance">Distance (km)</label>
+                    <form class="distance-slider-form" role="search" method="get">
+                        <input 
+                            type="range" 
+                            id="slider-distance" 
+                            name="distance"
+                            min="1"
+                            max="100"
+                            value="<?php echo isset($neer[0][0]) ? intval($neer[0][0]) : 10; ?>" 
+                            oninput="document.getElementById('distance-value').innerText = this.value + 'km'"
+                        >
+                        <span id="distance-value"><?php echo isset($neer[0][0]) ? intval($neer[0][0]) . 'km' : '10km'; ?></span>
+                    </form>
+                </div>
+
                 <form action="map" method="post" class="carte">
                     <div id="map"></div>
                     <button type="submit">OK</button>
@@ -206,30 +225,46 @@ $offres = [
             </div>
 
             <div class="search-stage-result-box">
+                <?php if (isset($offres) && is_array($offres)) : ?>
+                    <?php foreach ($offres as $i => $offre) : ?>
 
-            <?php if (isset($offres) && is_array($offres)) : ?>
-                <?php foreach ($offres as $i => $offre) : ?>
-                    <a href="" class="card-stage">
-                        <div class="card-stage-header">
-                            <?php echo htmlspecialchars($offre['titre'] ?? "Titre de l'annonce"); ?>
-                        </div>
-                        <div class="card-stage-content">
-                            <div class="card-stage-entreprise">
-                                <?php echo htmlspecialchars($offre['entreprise'] ?? "Entreprise"); ?>
+                        <?php
+                            $description = htmlspecialchars($offre['description'] ?? "Aucune description disponible.");
+                            $long = strlen($description) > 180; // seuil de longueur
+                        ?>
+
+                        <a href="#" class="card-stage">
+                            <div class="card-stage-header">
+                                <?= htmlspecialchars($offre['titre'] ?? "Titre de l'annonce") ?>
                             </div>
-                            <div class="card-stage-description">
-                                <input type="checkbox" id="toggle-<?php echo $i; ?>" class="toggle-checkbox-card-stage">
-                                <p class="texte-description-card-stage">
-                                    <?php echo htmlspecialchars($offre['description'] ?? "Aucune description disponible."); ?>
-                                </p>
-                                <label for="toggle-<?php echo $i; ?>" class="toggle-btn-card-stage"></label>
+
+                            <div class="card-stage-content">
+                                <div class="card-stage-entreprise">
+                                    <?= htmlspecialchars($offre['entreprise'] ?? "Entreprise") ?>
+                                </div>
+
+                                <div class="card-stage-description">
+
+                                    <?php if ($long): ?>
+                                        <input type="checkbox" id="toggle-<?= $i ?>" class="toggle-checkbox-card-stage">
+                                    <?php endif; ?>
+
+                                    <p class="texte-description-card-stage <?= $long ? '' : 'no-limit' ?>">
+                                        <?= $description ?>
+                                    </p>
+
+                                    <?php if ($long): ?>
+                                        <label for="toggle-<?= $i ?>" class="toggle-btn-card-stage"></label>
+                                    <?php endif; ?>
+
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                <?php endforeach; ?>
-            <?php endif; ?>
+                        </a>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </main>
     </body>
-    <script src="../assets/script/map.js"></script>
+    <script src="../assets/scripts/map.js"></script>
+    <script src="../assets/scripts/seemore.js"></script>
 </html>
