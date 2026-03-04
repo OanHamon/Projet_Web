@@ -178,7 +178,11 @@ input:focus {
 }
 
 
-
+.candidature-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
 
 @media (max-width: 900px) {
 
