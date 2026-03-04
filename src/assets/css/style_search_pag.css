@@ -1,14 +1,4 @@
-:root {
-    /* Palette thème océan - clair */
-    --sand-color: #e9d59b;
-    --dark-blue: #151E3D;
-    --primary-blue: #5c8eeb;
-    --light-blue: #b6e7f7;
-
-    --dark-silver: #d9d9d9;
-    --light-silver: #f1f1f1;
-}
-
+/* design tokens and variables live in token.css */
 /*#region search.html*/
 .content-search-page{
     height: calc(100vh - 100px);
