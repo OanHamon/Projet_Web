@@ -902,6 +902,20 @@ body {
     background-color: var(--dark-blue);
 
     z-index: -1;
+/* blocked h33 */
+
+.bloc-content h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 18px;
+    margin-bottom: 6px;
+}
+
+.mention-fictif {
+    margin-top: 20px;
+    font-style: italic;
+    opacity: 0.8;
+}
 }
 /*#endregion mentions.html*/
 

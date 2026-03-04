@@ -1,39 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet Web</title>
+    <title>Projet Web - Mentions légales</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style_mentions_page.css">
 </head>
 <body>
-    <header class="primary-banner"> 
-        <h1>MENTIONS LÉGALES</h1> 
-    </header>
-    <main class ="container">
+    <header>
+        <nav>
+            <h1 class="header-title">Mentions légales</h1>
 
+            <input class="header-burger-input" type="checkbox" id="votre_id" tabindex="0">
+            <label for="votre_id" class="burger"><span></span><span></span><span></span></label>
+
+            <a href="index.html" class="logo-link" style="display:inline-block;">
+                <img src="../assets/image/logo_projet_web.png" alt="Logo" class="header-logo">
+            </a>
+
+            <ul class="header-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#Stages">Nos Stages</a></li>
+                <li><a href="index.html#Entreprises">Nos Entreprises</a></li>
+            </ul>
+
+            <div class="account-div">
+                <a href="login.html" class="signup">S'inscrire</a>
+                <a href="login.html" class="login">Se connecter</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <!-- ÉDITEUR -->
         <section class="bloc">
             <h2><span class="barre"></span>Éditeur</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Sed non risus. Suspendisse lectus tortor, dignissim sit amet,
-                adipiscing nec, ultricies sed, dolor</p>   
-        
+            <p>
+                Ce site est un projet fictif réalisé dans le cadre d’un exercice pédagogique.
+                <br><br>
+                Nom : Votre Nom<br>
+                Statut : Étudiant<br>
+                Email : contact@projet-web.fr
+            </p>   
         </section>
 
+        <!-- HÉBERGEUR -->
         <section class="bloc">
             <h2><span class="barre"></span>Hébergeur</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Sed non risus. Suspendisse lectus tortor, dignissim sit amet,
-                adipiscing nec, ultricies sed, dolor</p>
-           
-    </main>
-    <div class="barre-droite"></div>
-</body>
+            <p>
+                Hébergeur : OVHcloud<br>
+                Adresse : 2 rue Kellermann, 59100 Roubaix, France<br>
+                Téléphone : 1007
+            </p>
+        </section>
 
+        <!-- POLITIQUE DE CONFIDENTIALITÉ -->
+        <!-- POLITIQUE DE CONFIDENTIALITÉ -->
+<section class="bloc-content h3">
+    <h2><span class="barre"></span>Politique de confidentialité</h2>
+
+    <h3>Données collectées</h3>
+    <p>
+        Ce site peut collecter les données suivantes via ses formulaires :
+        nom, prénom, adresse email et message.
+    </p>
+
+    <h3>Finalité de la collecte</h3>
+    <p>
+        Les données sont collectées uniquement dans le but de répondre aux demandes envoyées par les utilisateurs.
+        Aucune donnée n’est vendue ni transmise à des tiers.
+    </p>
+
+    <h3>Durée de conservation</h3>
+    <p>
+        Les données sont conservées pour une durée maximale de 12 mois.
+    </p>
+
+    <h3>Droits des utilisateurs</h3>
+    <p>
+        Conformément au Règlement Général sur la Protection des Données (RGPD),
+        vous disposez d’un droit d’accès, de rectification et de suppression de vos données.
+        Pour exercer ce droit, vous pouvez envoyer un email à : contact@projet-web.fr
+    </p>
+
+    <h3>Cookies</h3>
+    <p>
+        Ce site peut utiliser des cookies à des fins statistiques ou techniques.
+        Vous pouvez configurer votre navigateur pour refuser les cookies.
+    </p>
+
+    <p class="mention-fictif">
+        ⚠️ Ce site est un projet fictif réalisé à des fins pédagogiques.
+        Aucun service commercial réel n’est proposé.
+    </p>
+</section>
+
+    </main>
+
+    <div class="barre-droite"></div>
+
+</body>
 </html>
