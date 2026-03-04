@@ -1,239 +1,20 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet Web - Mentions légales</title>
+    <title>Projet Web</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../assets/css/style.css">
-
-    <style>
-        /* ── Variables ── */
-        :root {
-            --accent: #2563eb;
-            --accent-light: #eff6ff;
-            --accent-muted: #93c5fd;
-            --surface: #ffffff;
-            --surface-2: #f8fafc;
-            --border: #e2e8f0;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --text-muted: #94a3b8;
-            --radius: 12px;
-            --radius-sm: 8px;
-        }
-
-        /* ── Layout ── */
-        .container {
-            max-width: 860px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem 5rem;
-        }
-
-        /* ── Page header ── */
-        .page-intro {
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .page-intro .breadcrumb {
-            font-size: 0.72rem;
-            color: var(--text-muted);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 0.75rem;
-        }
-
-        .page-intro h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            color: var(--text-primary);
-            line-height: 1.15;
-            margin: 0 0 0.75rem;
-        }
-
-        .page-intro .subtitle {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            max-width: 520px;
-        }
-
-        /* ── Blocs ── */
-        .bloc,
-        .bloc-content {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 2rem 2.25rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            overflow: hidden;
-            transition: box-shadow 0.2s ease;
-        }
-
-        .bloc:hover,
-        .bloc-content:hover {
-            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-        }
-
-        /* Accent strip on left */
-        .bloc::before,
-        .bloc-content::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; bottom: 0;
-            width: 3px;
-            background: var(--accent);
-            border-radius: 3px 0 0 3px;
-        }
-
-        /* ── Section headings ── */
-        .bloc h2,
-        .bloc-content h2 {
-            font-size: 1.35rem;
-            color: var(--text-primary);
-            margin: 0 0 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-
-        /* Icon badge */
-        .bloc h2 .icon,
-        .bloc-content h2 .icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 32px; height: 32px;
-            background: var(--accent-light);
-            border-radius: 8px;
-            flex-shrink: 0;
-        }
-
-        .bloc h2 .icon svg,
-        .bloc-content h2 .icon svg {
-            width: 16px; height: 16px;
-            stroke: var(--accent);
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        /* ── Info grid (éditeur / hébergeur) ── */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1rem;
-            margin-top: 0.25rem;
-        }
-
-        .info-item {
-            background: var(--surface-2);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 0.9rem 1rem;
-        }
-
-        .info-item .label {
-            font-size: 0.68rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-muted);
-            margin-bottom: 0.3rem;
-        }
-
-        .info-item .value {
-            font-size: 0.9rem;
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-
-        .info-item .value a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .info-item .value a:hover { text-decoration: underline; }
-
-        /* ── Politique sections ── */
-        .policy-section {
-            margin-bottom: 1.5rem;
-        }
-
-        .policy-section:last-of-type {
-            margin-bottom: 0;
-        }
-
-        .bloc-content h3 {
-            font-size: 0.82rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin: 0 0 0.6rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .bloc-content h3::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--border);
-        }
-
-        .bloc-content p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        /* ── Divider between policy sections ── */
-        .policy-divider {
-            height: 1px;
-            background: var(--border);
-            margin: 1.25rem 0;
-        }
-
-        /* ── Mention fictif ── */
-        .mention-fictif {
-            margin-top: 1.5rem !important;
-            background: #fffbeb;
-            border: 1px solid #fde68a;
-            border-radius: var(--radius-sm);
-            padding: 0.75rem 1rem;
-            font-size: 0.82rem !important;
-            color: #92400e !important;
-            line-height: 1.5 !important;
-        }
-
-        /* ── Barre (legacy, kept for compatibility) ── */
-        .barre { display: none; }
-
-        /* ── Responsive ── */
-        @media (max-width: 600px) {
-            .bloc, .bloc-content {
-                padding: 1.5rem 1.25rem;
-            }
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
         <nav>
-            <h1 class="header-title">Mentions légales</h1>
 
             <input class="header-burger-input" type="checkbox" id="votre_id" tabindex="0">
             <label for="votre_id" class="burger"><span></span><span></span><span></span></label>
@@ -243,27 +24,21 @@
             </a>
 
             <ul class="header-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="index.html#Stages">Nos Stages</a></li>
-                <li><a href="index.html#Entreprises">Nos Entreprises</a></li>
+                <li><a href="#Accueil">Accueil</a></li>
+                <li><a href="#Stages">Nos Stages</a></li>
+                <li><a href="#Entreprises">Nos Entreprises</a></li>
             </ul>
 
             <div class="account-div">
-                <a href="login.html" class="signup">S'inscrire</a>
-                <a href="login.html" class="login">Se connecter</a>
+                <a href="login.html" class="signup">
+                    S'inscrire
+                </a>
+                <a href="login.html" class="login">
+                    Se connecter
+                </a>
             </div>
         </nav>
     </header>
-<<<<<<< HEAD
-
-    <main class="container">
-
-        <!-- Page intro -->
-        <div class="page-intro">
-            <p class="breadcrumb">Projet Web &rsaquo; Mentions légales</p>
-            <h1>Mentions légales</h1>
-            <p class="subtitle">Informations relatives à l'éditeur, à l'hébergement et à la politique de confidentialité de ce site.</p>
-=======
     <main>
         <section class="main-section section-primary" id="Accueil">
 
@@ -480,7 +255,7 @@
         </section>
 
 
-        <section class=" main-section section-entreprise">
+        <section class=" main-section section-entreprise" id="Entreprises">
             <h2>VENEZ PÊCHER VOTRE ENTREPRISE</h2>
 
         <div class="sec3-container">
@@ -519,109 +294,150 @@
             <a href="vitrine_entreprise.html" class="card-link"><article class="profile-card card"></article></a>
             <a href="vitrine_entreprise.html" class="card-link"><article class="profile-card card"></article></a>
 
->>>>>>> e640cc9c229b2d542d09c91ee1d47bfc82b504e1
         </div>
-
-        <!-- ÉDITEUR -->
-        <section class="bloc">
-            <h2>
-                <span class="icon">
-                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                </span>
-                Éditeur
-            </h2>
-            <div class="info-grid">
-                <div class="info-item">
-                    <div class="label">Nom</div>
-                    <div class="value">Votre Nom</div>
-                </div>
-                <div class="info-item">
-                    <div class="label">Statut</div>
-                    <div class="value">Étudiant</div>
-                </div>
-                <div class="info-item">
-                    <div class="label">Email</div>
-                    <div class="value"><a href="mailto:contact@projet-web.fr">contact@projet-web.fr</a></div>
-                </div>
-            </div>
-            <p style="margin-top:1.1rem; font-size:0.85rem; color:var(--text-muted); line-height:1.6;">
-                Ce site est un projet fictif réalisé dans le cadre d'un exercice pédagogique.
-            </p>
         </section>
 
-        <!-- HÉBERGEUR -->
-        <section class="bloc">
-            <h2>
-                <span class="icon">
-                    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-                </span>
-                Hébergeur
-            </h2>
-            <div class="info-grid">
-                <div class="info-item">
-                    <div class="label">Société</div>
-                    <div class="value">OVHcloud</div>
-                </div>
-                <div class="info-item">
-                    <div class="label">Adresse</div>
-                    <div class="value">2 rue Kellermann, 59100 Roubaix, France</div>
-                </div>
-                <div class="info-item">
-                    <div class="label">Téléphone</div>
-                    <div class="value">1007</div>
-                </div>
-            </div>
+        <div class="spacer"></div>
+        <section class="stats-header">
+            <h2>Statistiques</h2>
+            <p>Découvrez les indicateurs clés de la plateforme.</p>
         </section>
 
-        <!-- POLITIQUE DE CONFIDENTIALITÉ -->
-        <section class="bloc-content">
-            <h2>
-                <span class="icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </span>
-                Politique de confidentialité
-            </h2>
+        <section class="stats-carousel-section">
 
-            <div class="policy-section">
-                <h3>Données collectées</h3>
-                <p>Ce site peut collecter les données suivantes via ses formulaires : nom, prénom, adresse email et message.</p>
+            <div class="stats-carousel">
+
+                <article class="stats-card">
+                    <h3>Répartition des offres</h3>
+                    <p class="stats-subtitle">Par durée de stage</p>
+
+                    <ul class="stats-list">
+                        <li><span>2 mois</span><strong>25%</strong></li>
+                        <li><span>4 mois</span><strong>40%</strong></li>
+                        <li><span>6 mois</span><strong>35%</strong></li>
+                    </ul>
+                </article>
+
+                <article class="stats-card">
+                    <h3>Top Wish-List</h3>
+                    <p class="stats-subtitle">Offres les plus ajoutées</p>
+
+                    <ol class="stats-ranking">
+                        <li>Stage Développeur Web</li>
+                        <li>Stage UX Designer</li>
+                        <li>Stage Data Analyst</li>
+                    </ol>
+                </article>
+
+                <article class="stats-card highlight">
+                    <h3>Offres disponibles</h3>
+                    <p class="big-number">128</p>
+                    <span class="stats-label">offres actives en base</span>
+                </article>
+
+                <article class="stats-card highlight">
+                    <h3>Moyenne candidatures</h3>
+                    <p class="big-number">14</p>
+                    <span class="stats-label">candidatures par offre</span>
+                </article>
+
+                <article class="stats-card highlight">
+                    <h2>Ajouts en Wish-List</h2>
+                    <p class="big-number">37</p>
+                    <span class="stats-label">étudiants intéressés</span>
+                </article>
+
+                <!-- Slide 2 -->
+                <article class="stats-card highlight">
+                    <h2>Candidatures reçues</h2>
+                    <p class="big-number">22</p>
+                    <span class="stats-label">depuis la publication</span>
+                </article>
+
+                <!-- Slide 3 -->
+                <article class="stats-card">
+                    <h2>Candidatures sur 7 jours</h2>
+
+                    <div class="mini-graph">
+                        <div style="height:40%"></div>
+                        <div style="height:70%"></div>
+                        <div style="height:30%"></div>
+                        <div style="height:90%"></div>
+                        <div style="height:60%"></div>
+                        <div style="height:50%"></div>
+                        <div style="height:80%"></div>
+                    </div>
+
+                    <span class="stats-label">activité hebdomadaire</span>
+                </article>
+
+
             </div>
 
-            <div class="policy-divider"></div>
-
-            <div class="policy-section">
-                <h3>Finalité de la collecte</h3>
-                <p>Les données sont collectées uniquement dans le but de répondre aux demandes envoyées par les utilisateurs. Aucune donnée n'est vendue ni transmise à des tiers.</p>
-            </div>
-
-            <div class="policy-divider"></div>
-
-            <div class="policy-section">
-                <h3>Durée de conservation</h3>
-                <p>Les données sont conservées pour une durée maximale de <strong>12 mois</strong>.</p>
-            </div>
-
-            <div class="policy-divider"></div>
-
-            <div class="policy-section">
-                <h3>Droits des utilisateurs</h3>
-                <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à : <a href="mailto:contact@projet-web.fr" style="color:var(--accent);">contact@projet-web.fr</a></p>
-            </div>
-
-            <div class="policy-divider"></div>
-
-            <div class="policy-section">
-                <h3>Cookies</h3>
-                <p>Ce site peut utiliser des cookies à des fins statistiques ou techniques. Vous pouvez configurer votre navigateur pour les refuser à tout moment.</p>
-            </div>
-
-            <p class="mention-fictif">
-                ⚠️ Ce site est un projet fictif réalisé à des fins pédagogiques. Aucun service commercial réel n'est proposé.
-            </p>
         </section>
 
+        <div class="spacer"></div>
+             
     </main>
 
-    <div class="barre-droite"></div>
+    <footer class="footer">
+        <div class="ocean">
+            <div class="waves">
+                <div class="wave" id="wave_1"></div>
+                <div class="wave" id="wave_2"></div>
+                <div class="wave" id="wave_3"></div>
+                <div class="wave" id="wave_4"></div>
+                <div class="wave" id="wave_5"></div>
+            </div>
+
+            <div class="continuite">
+                <div class="footer-content">
+                    <div class="footer-top-div">
+                        <span class="copyright-txt">© 2026 Cmp</span>
+
+                        <div class="log-div">
+                            <span><a href="#">Log in</a></span>
+                            <span><a href="#">Sign up</a></span>
+                        </div>
+
+                        <hr>
+                    </div>
+                    <div class="footer-bottom-div">
+                        <span class="legal-link">
+                            <a href="#mentionLegales">Mentions Legales</a>
+                            <a href="#ploitiqueDeConfidentialité">Politique de confidentialté</a>
+                        </span>
+                        <span class="footer-logo">
+                            <img src="../assets/css/logo.png" alt="Logo">
+                        </span>
+                        <div class="speed-link">
+                            <div class="quick-links">
+                                <span class="title">Liens rapides :</span>
+                                <ul>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/scripts/script.js"></script>
 </body>
+
 </html>
