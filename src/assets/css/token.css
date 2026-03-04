@@ -1,5 +1,4 @@
 :root {
-    /* Palette thème océan - clair */
     --sand-color: #e9d59b;
     --dark-blue: #151E3D;
     --primary-blue: #5c8eeb;
@@ -8,13 +7,11 @@
     --dark-silver: #d9d9d9;
     --light-silver: #f1f1f1;
 
-    /* Typographie */
     --font-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font-display: 'Jersey 25', sans-serif;
     --font-code: 'Courier New', monospace;
     --font-alt: 'Poppins', sans-serif;
 
-    /* Rayons et espacements */
     --radius-sm: 4px;
     --radius-md: 10px;
     --radius-lg: 20px;
@@ -24,11 +21,9 @@
     --space-lg: 24px;
     --space-xl: 32px;
 
-    /* Ombres */
     --shadow-light: 0 5px 15px rgba(0,0,0,0.1);
     --shadow-medium: 0 10px 30px rgba(0,0,0,0.2);
 
-    /* text and brand colors */
     --text-primary: #1a1a2e;
     --text-secondary: #333333;
     --text-muted: #444444;
@@ -39,7 +34,6 @@
     --text-placeholder: #8c8c8c;
 }
 
-/* global reset */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -53,7 +47,6 @@ html, body {
     color: var(--dark-blue);
 }
 
-/* spacing helpers */
 .spacer {
     height: 150px;
 }
