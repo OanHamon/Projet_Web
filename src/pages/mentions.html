@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/style_mentions_page.css">
 </head>
 <body>
@@ -39,68 +40,111 @@
 
     <main class="container">
 
+        <!-- En-tête de page -->
+        <div class="ml-page-intro">
+            <p class="ml-breadcrumb">Projet Web &rsaquo; Mentions légales</p>
+            <h1>Mentions légales</h1>
+            <p class="ml-subtitle">Informations relatives à l'éditeur, à l'hébergement et à la politique de confidentialité de ce site.</p>
+        </div>
+
         <!-- ÉDITEUR -->
         <section class="bloc">
-            <h2><span class="barre"></span>Éditeur</h2>
-            <p>
-                Ce site est un projet fictif réalisé dans le cadre d’un exercice pédagogique.
-                <br><br>
-                Nom : Votre Nom<br>
-                Statut : Étudiant<br>
-                Email : contact@projet-web.fr
-            </p>   
+            <h2>
+                <span class="ml-icon">
+                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </span>
+                Éditeur
+                <span class="barre"></span>
+            </h2>
+            <div class="ml-info-grid">
+                <div class="ml-info-item">
+                    <div class="ml-label">Nom</div>
+                    <div class="ml-value">Votre Nom</div>
+                </div>
+                <div class="ml-info-item">
+                    <div class="ml-label">Statut</div>
+                    <div class="ml-value">Étudiant</div>
+                </div>
+                <div class="ml-info-item">
+                    <div class="ml-label">Email</div>
+                    <div class="ml-value"><a href="mailto:contact@projet-web.fr">contact@projet-web.fr</a></div>
+                </div>
+            </div>
+            <p class="ml-note">Ce site est un projet fictif réalisé dans le cadre d'un exercice pédagogique.</p>
         </section>
 
         <!-- HÉBERGEUR -->
         <section class="bloc">
-            <h2><span class="barre"></span>Hébergeur</h2>
-            <p>
-                Hébergeur : OVHcloud<br>
-                Adresse : 2 rue Kellermann, 59100 Roubaix, France<br>
-                Téléphone : 1007
-            </p>
+            <h2>
+                <span class="ml-icon">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                </span>
+                Hébergeur
+                <span class="barre"></span>
+            </h2>
+            <div class="ml-info-grid">
+                <div class="ml-info-item">
+                    <div class="ml-label">Société</div>
+                    <div class="ml-value">OVHcloud</div>
+                </div>
+                <div class="ml-info-item">
+                    <div class="ml-label">Adresse</div>
+                    <div class="ml-value">2 rue Kellermann, 59100 Roubaix, France</div>
+                </div>
+                <div class="ml-info-item">
+                    <div class="ml-label">Téléphone</div>
+                    <div class="ml-value">1007</div>
+                </div>
+            </div>
         </section>
 
         <!-- POLITIQUE DE CONFIDENTIALITÉ -->
-        <!-- POLITIQUE DE CONFIDENTIALITÉ -->
-<section class="bloc-content h3">
-    <h2><span class="barre"></span>Politique de confidentialité</h2>
+        <section class="bloc-content">
+            <h2>
+                <span class="ml-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </span>
+                Politique de confidentialité
+                <span class="barre"></span>
+            </h2>
 
-    <h3>Données collectées</h3>
-    <p>
-        Ce site peut collecter les données suivantes via ses formulaires :
-        nom, prénom, adresse email et message.
-    </p>
+            <div class="ml-policy-section">
+                <h3>Données collectées</h3>
+                <p>Ce site peut collecter les données suivantes via ses formulaires : nom, prénom, adresse email et message.</p>
+            </div>
 
-    <h3>Finalité de la collecte</h3>
-    <p>
-        Les données sont collectées uniquement dans le but de répondre aux demandes envoyées par les utilisateurs.
-        Aucune donnée n’est vendue ni transmise à des tiers.
-    </p>
+            <div class="ml-divider"></div>
 
-    <h3>Durée de conservation</h3>
-    <p>
-        Les données sont conservées pour une durée maximale de 12 mois.
-    </p>
+            <div class="ml-policy-section">
+                <h3>Finalité de la collecte</h3>
+                <p>Les données sont collectées uniquement dans le but de répondre aux demandes envoyées par les utilisateurs. Aucune donnée n'est vendue ni transmise à des tiers.</p>
+            </div>
 
-    <h3>Droits des utilisateurs</h3>
-    <p>
-        Conformément au Règlement Général sur la Protection des Données (RGPD),
-        vous disposez d’un droit d’accès, de rectification et de suppression de vos données.
-        Pour exercer ce droit, vous pouvez envoyer un email à : contact@projet-web.fr
-    </p>
+            <div class="ml-divider"></div>
 
-    <h3>Cookies</h3>
-    <p>
-        Ce site peut utiliser des cookies à des fins statistiques ou techniques.
-        Vous pouvez configurer votre navigateur pour refuser les cookies.
-    </p>
+            <div class="ml-policy-section">
+                <h3>Durée de conservation</h3>
+                <p>Les données sont conservées pour une durée maximale de <strong>12 mois</strong>.</p>
+            </div>
 
-    <p class="mention-fictif">
-        ⚠️ Ce site est un projet fictif réalisé à des fins pédagogiques.
-        Aucun service commercial réel n’est proposé.
-    </p>
-</section>
+            <div class="ml-divider"></div>
+
+            <div class="ml-policy-section">
+                <h3>Droits des utilisateurs</h3>
+                <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à : <a href="mailto:contact@projet-web.fr" style="color:var(--ml-accent);">contact@projet-web.fr</a></p>
+            </div>
+
+            <div class="ml-divider"></div>
+
+            <div class="ml-policy-section">
+                <h3>Cookies</h3>
+                <p>Ce site peut utiliser des cookies à des fins statistiques ou techniques. Vous pouvez configurer votre navigateur pour les refuser à tout moment.</p>
+            </div>
+
+            <p class="mention-fictif">
+                ⚠️ Ce site est un projet fictif réalisé à des fins pédagogiques. Aucun service commercial réel n'est proposé.
+            </p>
+        </section>
 
     </main>
 
