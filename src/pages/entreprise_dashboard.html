@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Web</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style_modif_entreprise.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+
+            <input class="header-burger-input" type="checkbox" id="votre_id" tabindex="0">
+            <label for="votre_id" class="burger"><span></span><span></span><span></span></label>
+
+            <a href="index.html" class="logo-link" style="display:inline-block;">
+                <img src="../assets/image/logo_projet_web.png" alt="Logo" class="header-logo">
+            </a>
+
+            <ul class="header-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="vitrine_entreprise.html">Vitrine</a></li>
+                <li><a href="modif_entreprise.html">DashBoard</a></li>
+            </ul>
+
+            <div class="account-div">
+                <a href="login.html" class="signup">
+                    S'inscrire
+                </a>
+                <a href="login.html" class="login">
+                    Se connecter
+                </a>
+            </div>
+        </nav>
+    </header>
+
+<main class="dashboard-entreprise">
+
+    <section>
+        <div class="image-banner-entreprise">
+            <div class="overlay">
+                <h1>ENTREPRISE SUPER</h1>
+                <p>Découvrez les entreprises qui collaborent avec nous pour offrir des stages de qualité à nos étudiants.</p>
+            </div>  
+     </section>
+
+
+    <section class="entreprise-info">
+
+        <div class="entreprise-block-content entreprise-card">
+            <h2>Votre Entreprise</h2>
+            <p class="subtitle">
+                Ici décrivez votre entreprise pour sa vitrine visible par les étudiants
+            </p>
+
+            <form class="entreprise-form">
+
+                <div class="form-group">
+                    <label>Description 1</label>
+                    <textarea placeholder="Écrivez votre texte..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Description 2</label>
+                    <textarea placeholder="Écrivez votre texte..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Description 3</label>
+                    <textarea placeholder="Écrivez votre texte..."></textarea>
+                </div>
+
+                <div class="upload-row">
+
+                    <div class="upload-group">
+                        <label>Entrez votre Bannière</label>
+                        <input type="file">
+                    </div>
+
+                    <div class="upload-group">
+                        <label>Entrez votre Logo</label>
+                        <input type="file">
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+
+    </section>
+
+    <section class="offres-section">
+
+        <div class="offres-container">
+
+            <!-- COLONNE GAUCHE : LISTE OFFRES -->
+            <aside class="offres-list">
+
+                <div class="offres-header">
+                    <h3>Vos Offres</h3>
+                    <button class="add-offre">+</button>
+                </div>
+
+                <ul class="offre-items">
+
+                    <li class="offre-item active">
+                        <div class="offre-content">
+                            <h4>Offre 1</h4>
+                            <p>Petite description du stage pour vous souvenir</p>
+                        </div>
+                        <div class="offre-actions">
+                            <button>
+                                <svg id="Pencil-Box--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16" width="16">
+                                <desc>
+                                        Pencil Box Streamline Icon: https://streamlinehq.com
+                                    </desc>
+                                    <defs></defs>
+                                    <path d="m12.86875 7.5 0 6.5625 -11.93125 0 0 -11.93125 7.1625000000000005 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                    <path d="m7.5 9.8875 -2.9812499999999997 0.59375 0.59375 -2.9812499999999997 6.0687500000000005 -6.0687500000000005a1.68125 1.68125 0 0 1 1.1937499999999999 -0.49375 1.6875 1.6875 0 0 1 1.6875 1.6875 1.68125 1.68125 0 0 1 -0.49375 1.1937499999999999Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                </svg>
+                            </button>
+                            <button>
+                                <svg id="Trash--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16" width="16">
+                                    <desc>
+                                        Trash Streamline Icon: https://streamlinehq.com
+                                    </desc>
+                                    <defs></defs>
+                                    <path d="M10.549999999999999 14.0625H4.45a1.1875 1.1875 0 0 1 -1.1875 -1.125L2.725 3.325h9.549999999999999l-0.5375 9.6125a1.1875 1.1875 0 0 1 -1.1875 1.125Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                    <path d="m1.53125 3.325 11.9375 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                    <path d="M6.30625 0.9375h2.3874999999999997a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 1.1937499999999999v1.1937499999999999H5.1125V2.13125a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 -1.1937499999999999Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                    <path d="m7.5 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                    <path d="m9.8875 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                    <path d="m5.1125 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="offre-item">
+                        <div class="offre-content">
+                            <h4>Offre 2</h4>
+                            <p>Petite description du stage pour vous souvenir</p>
+                        </div>
+                        <div class="offre-actions">
+                            <button>
+                             <svg id="Pencil-Box--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16" width="16">
+                                <desc>
+                                        Pencil Box Streamline Icon: https://streamlinehq.com
+                                    </desc>
+                                    <defs></defs>
+                                    <path d="m12.86875 7.5 0 6.5625 -11.93125 0 0 -11.93125 7.1625000000000005 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                    <path d="m7.5 9.8875 -2.9812499999999997 0.59375 0.59375 -2.9812499999999997 6.0687500000000005 -6.0687500000000005a1.68125 1.68125 0 0 1 1.1937499999999999 -0.49375 1.6875 1.6875 0 0 1 1.6875 1.6875 1.68125 1.68125 0 0 1 -0.49375 1.1937499999999999Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                </svg>
+                            </button>
+                            <button>
+                                <svg id="Trash--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16" width="16">
+                                    <desc>
+                                        Trash Streamline Icon: https://streamlinehq.com
+                                    </desc>
+                                    <defs></defs>
+                                    <path d="M10.549999999999999 14.0625H4.45a1.1875 1.1875 0 0 1 -1.1875 -1.125L2.725 3.325h9.549999999999999l-0.5375 9.6125a1.1875 1.1875 0 0 1 -1.1875 1.125Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                    <path d="m1.53125 3.325 11.9375 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                    <path d="M6.30625 0.9375h2.3874999999999997a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 1.1937499999999999v1.1937499999999999H5.1125V2.13125a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 -1.1937499999999999Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                    <path d="m7.5 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                    <path d="m9.8875 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                    <path d="m5.1125 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </aside>
+
+            <div class="offre-editor ntreprise-block-conten">
+
+                <h3>Modifier l’offre :</h3>
+
+                <form class="offre-form">
+
+                    <div class="form-group">
+                        <label>Titre</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description 1</label>
+                        <textarea></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Compétences :</label>
+
+                        <div class="competences-grid">
+                            <label><input type="checkbox"> Compétence 1</label>
+                            <label><input type="checkbox"> Compétence 2</label>
+                            <label><input type="checkbox"> Compétence 3</label>
+                            <label><input type="checkbox"> Compétence 4</label>
+                            <label><input type="checkbox"> Compétence 5</label>
+                            <label><input type="checkbox"> Compétence 6</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Rémunération</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="dates-row">
+                        <div class="form-group">
+                            <label>Date début</label>
+                            <input type="date">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Date fin</label>
+                            <input type="date">
+                        </div>
+                    </div>
+
+                    <button class="save-btn">Enregistrer</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SUPPRESSION COMPTE -->
+    <section class="danger-zone">
+
+        <h2>Supprimer le compte</h2>
+        <button class="delete-account-btn">Supprimer l’entreprise</button>
+
+    </section>
+
+</main>
+
+    <footer class="footer">
+        <div class="ocean">
+            <div class="waves">
+                <div class="wave" id="wave_1"></div>
+                <div class="wave" id="wave_2"></div>
+                <div class="wave" id="wave_3"></div>
+                <div class="wave" id="wave_4"></div>
+                <div class="wave" id="wave_5"></div>
+            </div>
+
+            <div class="continuite">
+                <div class="footer-content">
+                    <div class="footer-top-div">
+                        <span class="copyright-txt">© 2026 Cmp</span>
+
+                        <div class="log-div">
+                            <span><a href="#">Log in</a></span>
+                            <span><a href="#">Sign up</a></span>
+                        </div>
+
+                        <hr>
+                    </div>
+                    <div class="footer-bottom-div">
+                        <span class="legal-link">
+                            <a href="#mentionLegales">Mentions Legales</a>
+                            <a href="#ploitiqueDeConfidentialité">Politique de confidentialté</a>
+                        </span>
+                        <span class="footer-logo">
+                            <img src="../assets/css/logo.png" alt="Logo">
+                        </span>
+                        <div class="speed-link">
+                            <div class="quick-links">
+                                <span class="title">Liens rapides :</span>
+                                <ul>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/scripts/script.js"></script>
+</body>
+
+</html>
