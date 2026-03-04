@@ -1,39 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet Web</title>
+    <title>Projet Web - Mentions légales</title>
 
+    <!-- Polices globales du projet -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- Polices spécifiques mentions légales -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
+    <!-- CSS global du projet -->
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style_mentions_page.css">
+
+   
 </head>
 <body>
-    <header class="primary-banner"> 
-        <h1>MENTIONS LÉGALES</h1> 
-    </header>
-    <main class ="container">
 
+    <!-- ── HEADER (inchangé) ──────────────────────────────────────── -->
+    <header>
+        <nav>
+            
+
+            <input class="header-burger-input" type="checkbox" id="votre_id" tabindex="0">
+            <label for="votre_id" class="burger"><span></span><span></span><span></span></label>
+
+            <a href="index.html" class="logo-link" style="display:inline-block;">
+                <img src="../assets/image/logo_projet_web.png" alt="Logo" class="header-logo">
+            </a>
+
+            <ul class="header-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#Stages">Nos Stages</a></li>
+                <li><a href="index.html#Entreprises">Nos Entreprises</a></li>
+            </ul>
+
+            <div class="account-div">
+                <a href="login.html" class="signup">S'inscrire</a>
+                <a href="login.html" class="login">Se connecter</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ── MAIN ──────────────────────────────────────────────────── -->
+    <main class="container">
+
+        <!-- En-tête de page -->
+        <div class="ml-intro">
+            <p class="ml-breadcrumb">Projet Web &rsaquo; Mentions légales</p>
+            <h1>Mentions légales</h1>
+            <p class="ml-subtitle">Informations relatives à l'éditeur, à l'hébergement et à la politique de confidentialité de ce site.</p>
+        </div>
+
+        <!-- ÉDITEUR ──────────────────────────────────────────────── -->
         <section class="bloc">
-            <h2><span class="barre"></span>Éditeur</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Sed non risus. Suspendisse lectus tortor, dignissim sit amet,
-                adipiscing nec, ultricies sed, dolor</p>   
-        
+            <h2>
+                <span class="ml-icon">
+                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </span>
+                Éditeur
+                <span class="barre"></span>
+            </h2>
+
+            <div class="ml-grid">
+                <div class="ml-card">
+                    <div class="ml-lbl">Nom</div>
+                    <div class="ml-val">Votre Nom</div>
+                </div>
+                <div class="ml-card">
+                    <div class="ml-lbl">Statut</div>
+                    <div class="ml-val">Étudiant</div>
+                </div>
+                <div class="ml-card">
+                    <div class="ml-lbl">Email</div>
+                    <div class="ml-val">
+                        <a href="mailto:contact@projet-web.fr">contact@projet-web.fr</a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="ml-note">Ce site est un projet fictif réalisé dans le cadre d'un exercice pédagogique.</p>
         </section>
 
+        <!-- HÉBERGEUR ────────────────────────────────────────────── -->
         <section class="bloc">
-            <h2><span class="barre"></span>Hébergeur</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Sed non risus. Suspendisse lectus tortor, dignissim sit amet,
-                adipiscing nec, ultricies sed, dolor</p>
-           
-    </main>
-    <div class="barre-droite"></div>
-</body>
+            <h2>
+                <span class="ml-icon">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                </span>
+                Hébergeur
+                <span class="barre"></span>
+            </h2>
 
+            <div class="ml-grid">
+                <div class="ml-card">
+                    <div class="ml-lbl">Société</div>
+                    <div class="ml-val">OVHcloud</div>
+                </div>
+                <div class="ml-card">
+                    <div class="ml-lbl">Adresse</div>
+                    <div class="ml-val">2 rue Kellermann, 59100 Roubaix, France</div>
+                </div>
+                <div class="ml-card">
+                    <div class="ml-lbl">Téléphone</div>
+                    <div class="ml-val">1007</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- POLITIQUE DE CONFIDENTIALITÉ ─────────────────────────── -->
+        <section class="bloc-content">
+            <h2>
+                <span class="ml-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </span>
+                Politique de confidentialité
+                <span class="barre"></span>
+            </h2>
+
+            <div>
+                <h3>Données collectées</h3>
+                <p>Ce site peut collecter les données suivantes via ses formulaires : nom, prénom, adresse email et message.</p>
+            </div>
+
+            <div class="ml-sep"></div>
+
+            <div>
+                <h3>Finalité de la collecte</h3>
+                <p>Les données sont collectées uniquement dans le but de répondre aux demandes envoyées par les utilisateurs. Aucune donnée n'est vendue ni transmise à des tiers.</p>
+            </div>
+
+            <div class="ml-sep"></div>
+
+            <div>
+                <h3>Durée de conservation</h3>
+                <p>Les données sont conservées pour une durée maximale de <strong>12 mois</strong>.</p>
+            </div>
+
+            <div class="ml-sep"></div>
+
+            <div>
+                <h3>Droits des utilisateurs</h3>
+                <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à : <a href="mailto:contact@projet-web.fr" style="color:var(--ml-accent);">contact@projet-web.fr</a></p>
+            </div>
+
+            <div class="ml-sep"></div>
+
+            <div>
+                <h3>Cookies</h3>
+                <p>Ce site peut utiliser des cookies à des fins statistiques ou techniques. Vous pouvez configurer votre navigateur pour les refuser à tout moment.</p>
+            </div>
+
+            <p class="mention-fictif">
+                ⚠️ Ce site est un projet fictif réalisé à des fins pédagogiques. Aucun service commercial réel n'est proposé.
+            </p>
+        </section>
+
+    </main>
+
+    <div class="barre-droite"></div>
+
+</body>
 </html>

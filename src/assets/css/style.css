@@ -599,6 +599,14 @@ height: 900px;
     border-radius: 10px;
 }
 
+.stats-carousel::-webkit-scrollbar {
+    height: 6px;
+}
+
+.stats-carousel::-webkit-scrollbar-thumb {
+    background-color: var(--primary-blue);
+    border-radius: 10px;
+}
 .card-link {
     text-decoration: none;
     color: inherit;
@@ -875,26 +883,22 @@ body {
 }
 
 
-/* Contenu */
 .container {
     width: 70%;
     margin: 50px auto;
 }
 
-/* Blocs texte */
 .bloc {
     margin-right: 100px;
     margin-bottom:60px; 
 }
 
-/* Titres avec petit rectangle bleu */
 .bloc h2 {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-/* Petit rectangle bleu */
 .barre {
     width: 30px;
     height: 8px;
@@ -903,7 +907,6 @@ body {
     
 }
 
-/* Texte  */
 .bloc p {
     line-height: 1.6;
     font-weight: bold;
@@ -972,3 +975,164 @@ body {
 
 
 
+/* #region Stats*/
+
+.stats-page {
+    padding: 80px 40px 120px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.stats-header {
+    margin-bottom: 50px;
+    padding-left: 65px;
+}
+
+.stats-header h2 {
+  color: var(--dark-blue);
+  margin-top: 10px;
+    font-size: 2rem;
+
+}
+
+.stats-header p {
+    
+    margin-top: 10px;
+    color: #6f7c91;
+}
+
+
+
+
+.stats-carousel-section {
+    padding: 40px;
+    overflow: hidden;
+}
+
+.stats-carousel {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+}
+
+.stats-card {
+    min-width: 320px;
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 15px 40px rgba(20, 40, 90, 0.08);
+    scroll-snap-align: start;
+    transition: 0.3s ease;
+    flex-shrink: 0;
+}
+
+.stats-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(20, 40, 90, 0.15);
+}
+
+.stats-card h3 {
+    margin-bottom: 10px;
+}
+
+.stats-subtitle {
+    font-size: 14px;
+    color: #2f6fe4;
+    margin-bottom: 20px;
+}
+
+
+.stats-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stats-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background: #f3f6fb;
+    padding: 10px 14px;
+    border-radius: 12px;
+}
+
+.stats-ranking {
+    padding-left: 18px;
+    color: #37445c;
+}
+
+.stats-ranking li {
+    margin-bottom: 8px;
+}
+
+
+.highlight {
+    text-align: center;
+}
+
+.big-number {
+    font-size: 56px;
+    font-weight: 700;
+    color: #2f6fe4;
+    margin: 20px 0 10px;
+    transition: 0.3s ease;
+}
+
+.stats-card:hover .big-number {
+    transform: scale(1.08);
+}
+
+.stats-label {
+    font-size: 14px;
+    color: #6f7c91;
+}
+
+
+.ranking {
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+
+.mini-graph {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    height: 120px;
+    margin: 30px 0;
+}
+
+.mini-graph div {
+    width: 20px;
+    background: #2f6fe4;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.mini-graph div:hover {
+    transform: scaleY(1.1);
+}
+
+
+.highlight {
+    text-align: center;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .stats-page {
+        padding: 60px 20px 100px;
+    }
+
+    .stats-card {
+        min-width: 280px;
+    }
+
+}
+
+/* #endregion Stats*/
