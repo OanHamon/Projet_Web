@@ -212,7 +212,6 @@
 
 
 .distance-slider-container{
-    padding: 0 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -226,4 +225,8 @@
 
 .distance-slider-form input{
     width: 100%;
+}
+
+.distance-slider-form span{
+    white-space: nowrap;
 }

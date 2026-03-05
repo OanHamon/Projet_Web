@@ -1,11 +1,28 @@
 let locValue = document.getElementById('location').value;
 
+console.log(locValue);
+
+const default_dist = 10;
+
 var map = L.map('map').setView([44, 2], 4);
 
-let [dist, lat, lng] = locValue.split(',');
-dist = (dist === undefined || dist === '') ? -1 : Number(dist);
-lat = Number(lat);
-lng = Number(lng);
+// Parse location to get dist, lat, lng
+let dist, lat, lng;
+try {
+    // Example format: [52,[0.005493,0.000022]]'
+    if (locValue && /^\[\s*-?\d+\s*,\s*\[\s*[\d\.\-]+,\s*[\d\.\-]+\s*\]\s*\]$/.test(locValue)) {
+        let arr = JSON.parse(locValue);
+        dist = Number(arr[0]);
+        lat = Number(arr[1][0]);
+        lng = Number(arr[1][1]);
+    }
+} catch (e) {
+    // fallback defaults: dist=0 (no filter), Toulouse center
+    dist = default_dist; lat = 44; lng = 2;
+}
+
+console.log(dist, lat, lng);
+
 
 let marker; // Declare marker before any usage
 let circle;
@@ -27,34 +44,38 @@ if (dist >= 0) {
     }
 }
 
-console.log(dist, lat, lng);
-
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
 map.on('click', function (e) {
-    const newlat = e.latlng.lat.toFixed(6);
-    const newlng = e.latlng.lng.toFixed(6);
+    if (!dist || dist <= 0) {
+        dist = default_dist;
+        circlestyle.radius = dist * 1000; // Update the radius in meters
+        if (circle) {
+            circle.setRadius(circlestyle.radius);
+        }
+    }
+    lat = e.latlng.lat.toFixed(6);
+    lng = e.latlng.lng.toFixed(6);
 
     // Supprime l’ancien pin
     if (marker) { map.removeLayer(marker); }
     if (circle) { map.removeLayer(circle); }
 
     // Ajoute le pin
-    marker = L.marker([newlat, newlng]).addTo(map);
-    circle = L.circle([newlat, newlng], circlestyle).addTo(map);
+    marker = L.marker([lat, lng]).addTo(map);
+    circle = L.circle([lat, lng], circlestyle).addTo(map);
 
     // Met à jour l'input
-    document.getElementById('location').value = newlat + ',' + newlng;
+    document.getElementById('location').value = "[" + dist + ",[" + lat + ',' + lng + "]]";
 });
 
 document.getElementById('slider-distance').addEventListener('input', function(e) {
     dist = Number(e.target.value);
     circlestyle.radius = dist * 1000; // Update the radius in meters
-    console.log("edit");
     if (circle) {
         circle.setRadius(circlestyle.radius);
     }
-    
+    document.getElementById('location').value = "[" + dist + ",[" + lat + ',' + lng + "]]";
 });
