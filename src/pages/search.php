@@ -33,8 +33,6 @@ if (isset($_GET['neer'])) {
         $neer = [-1,[0,0]];
     }
 }
-
-$neer[0] = max($neer[0],1);
 $neer[0] = min($neer[0],100);
 
 // Job : tableau vide ou rempli (ex: ?job[]=dev&job[]=data)
@@ -51,57 +49,13 @@ $offres = [
     [
         "titre" => "Développeur Web",
         "entreprise" => "TechCorp",
-        "description" => "Développement de nouvelles fonctionnalités web sur des projets innovants.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quo labore similique pariatur rerum saepe velit cupiditate libero atque reprehenderit! Officiis quae eligendi impedit numquam! Velit iure impedit corporis veniam?
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quo labore similique pariatur rerum saepe velit cupiditate libero atque reprehenderit! Officiis quae eligendi impedit numquam! Velit iure impedit corporis veniam?
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quo labore similique pariatur rerum saepe velit cupiditate libero atque reprehenderit! Officiis quae eligendi impedit numquam! Velit iure impedit corporis veniam?
-        "
+        "description" => "Développement de nouvelles fonctionnalités web sur des projets innovants."
     ],
     [
         "titre" => "Designer UI/UX",
         "entreprise" => "Graphix Studio",
         "description" => "Création d'interfaces utilisateurs intuitives et design pour différents clients."
     ],
-    [
-        "titre" => "Chef de projet digital",
-        "entreprise" => "DigitalPro",
-        "description" => "Pilotage de projets digitaux pour des clients dans le secteur de l'e-commerce."
-    ],
-    [
-        "titre" => "Analyste Données",
-        "entreprise" => "DataLogics",
-        "description" => "Analyse des données métiers et création de rapports décisionnels."
-    ],
-    [
-        "titre" => "Développeur Mobile",
-        "entreprise" => "AppSphere",
-        "description" => "Développement d'applications mobiles Android et iOS pour des clients variés."
-    ],
-    [
-        "titre" => "Marketing Digital",
-        "entreprise" => "Marketools",
-        "description" => "Gestion et optimisation des campagnes publicitaires en ligne."
-    ],
-    [
-        "titre" => "Administrateur Systèmes",
-        "entreprise" => "SecureNet",
-        "description" => "Gestion des serveurs et de l'infrastructure réseau de l'entreprise."
-    ],
-    [
-        "titre" => "Rédacteur Technique",
-        "entreprise" => "WriteIT",
-        "description" => "Rédaction de documentations techniques pour les logiciels développés en interne."
-    ],
-    [
-        "titre" => "Chargé de communication",
-        "entreprise" => "ComMedia",
-        "description" => "Création de contenus et diffusion sur les réseaux sociaux."
-    ],
-    [
-        "titre" => "Ingénieur DevOps",
-        "entreprise" => "CloudOps",
-        "description" => "Mise en place de pipelines CI/CD et automatisation des déploiements."
-    ]
 ];
 
 ?>

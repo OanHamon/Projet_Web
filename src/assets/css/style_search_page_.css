@@ -8,6 +8,7 @@
     font-family: "Inter";
     font-weight: bold;
     gap: 16px;
+    background-color: white;
 }
 
 .stage-search-box{
@@ -151,11 +152,14 @@
 }
 .tag{
     margin: 4px;
-    padding: 8px;
+    padding: 4px 8px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 8px;
     background-color: var(--light-silver);
     border-radius: 8px;
+
 }
 .tag p{
     font-weight: 300;
@@ -188,28 +192,6 @@
     -webkit-box-orient: vertical;
     transition: 0.3s ease;
 }
-
-.toggle-checkbox-card-stage:checked ~ .texte-description-card-stage {
-    line-clamp: unset;
-    -webkit-line-clamp: unset;
-}
-
-.toggle-btn-card-stage {
-    cursor: pointer;
-    color: var(--primary-blue);
-    font-weight: bold;
-    margin-top: 6px;
-    display: none;
-}
-
-.toggle-btn-card-stage::after {
-    content: "Afficher plus";
-}
-
-.toggle-checkbox-card-stage:checked + .texte-description-card-stage + .toggle-btn-card-stage::after {
-    content: "Afficher moins";
-}
-
 
 .distance-slider-container{
     display: flex;
