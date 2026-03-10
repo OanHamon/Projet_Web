@@ -72,8 +72,8 @@ $offres = [
         <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="../assets/css/token.css">
-        <link rel="stylesheet" href="../assets/css/style_search_page_.css">
+        <link rel="stylesheet" href="../public/css/token.css">
+        <link rel="stylesheet" href="../public/css/style_search_page_.css">
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
             integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -322,5 +322,5 @@ $offres = [
             </div>
         </main>
     </body>
-    <script src="../assets/scripts/map.js"></script>
+    <script src="../public/scripts/map.js"></script>
 </html>
