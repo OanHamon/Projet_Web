@@ -6,9 +6,13 @@ use PDOException;
 class Database {
 
     private $host = "localhost";
-    private $db_name = "welcome_to_the_ocean_bdd";
-    private $username = "oanha";
-    private $password = "ohMY2244.";
+    private $db_name = "wtto"; //welcome_to_the_ocean_bdd
+    private $username = "bastien"; //oanha
+    private $password = "3f0iM$7#eD!i*u";
+    /**
+            ohMY2244.
+            3f0iM$7#eD!i*u
+    */
 
     public $conn;
 

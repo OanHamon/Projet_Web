@@ -1,0 +1,38 @@
+# --- Fichiers et dossiers générés automatiquement ---
+/vendor/
+/composer.lock
+
+# --- Cache de Twig ---
+/cache/
+/var/cache/
+/templates_c/
+
+# --- Fichiers temporaires ---
+*.log
+*.tmp
+*.cache
+
+# --- Configurations locales ---
+.env
+.env.local
+/.idea/
+/.vscode/
+/*.swp
+
+# --- OS spécifiques ---
+# macOS
+.DS_Store
+# Windows
+Thumbs.db
+
+# --- Cache PHP ---
+/var/log/
+/var/sessions/
+
+# --- Fichiers de déploiement ---
+/node_modules/
+/package-lock.json
+
+# --- Autres ---
+/public/uploads/*
+!/public/uploads/.gitkeep
