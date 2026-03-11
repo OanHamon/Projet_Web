@@ -36,4 +36,3 @@ Thumbs.db
 # --- Autres ---
 /public/uploads/*
 !/public/uploads/.gitkeep
-.htaccess
