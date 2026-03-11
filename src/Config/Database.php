@@ -5,13 +5,13 @@ use PDOException;
 
 class Database {
 
-    private $host = "localhost";
+    private $host = "4.233.102.81";
     private $db_name = "wtto"; //welcome_to_the_ocean_bdd
-    private $username = "bastien"; //oanha
-    private $password = "3f0iM$7#eD!i*u";
+    private $username = "remote_wtto_admin"; //oanha
+    private $password = "w6#J%agnnwwyZZ5@L862";
     /**
-            ohMY2244.
-            3f0iM$7#eD!i*u
+            ohMY2244. //local oan
+            3f0iM$7#eD!i*u //local bastien
     */
 
     public $conn;

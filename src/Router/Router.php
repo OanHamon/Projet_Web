@@ -1,13 +1,13 @@
 <?php
 namespace App\Router;
+use App\Controller;
 
 class Router
 {
-    private array $routes = []; // stocker les routes
+    private array $routes = [];
 
     public function add(string $method, string $path, array $action): void
     {
-        // ajouter une route dans le tableau
         $this->routes[] = [
             'method' => $method,
             'path'   => $path,
@@ -17,7 +17,7 @@ class Router
 
     public function dispatch(string $method, string $url): void
     {
-        // parcourir les routes et trouver la bonne
+
         foreach ($this->routes as $route) {
             if ($route['method'] === $method && $route['path'] === $url) {
                 [$controllerClass, $action] = $route['action'];
