@@ -5,27 +5,14 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require_once __DIR__ . '/../vendor/autoload.php';
 
-echo "<br><h1>Test des namespaces</h1>";
 
-use App\Model\OffreModel;
-use App\Config\TwigConfig;
+use App\Router\Router;
 
+$routeur = new Router();
 
-echo "Namespace importer avec succès";
+$routeur->add('GET','/test',[Controller::class, 'printTest']);
 
-echo "<br><h1>Test accès bdd</h1>";
+$url    = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); // "/offres"
+$method = $_SERVER['REQUEST_METHOD'];     
 
-$baseModel = new OffreModel();
-
-print_r($baseModel->find([
-    "remuneration" => "1000",
-    "localisation" => "Paris",
-]));
-
-echo "BDD connecté et accessible";
-
-$twig = TwigConfig::init();
-
-echo "<br><h1>Test de Twig</h1>";
-echo $twig->render('test.twig.html', ['message' => 'Twig fonctionne !']);
-
+$routeur->dispatch($method,$url);

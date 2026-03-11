@@ -15,10 +15,6 @@ abstract class Controller
     }
 }
 
-class GeneralController extends Controller
-{
-
-}
 
 
 
