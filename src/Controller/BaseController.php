@@ -13,6 +13,12 @@ class BaseController extends Controller
     {
         $tasks = $this->model->getAllTasks();   
         $this->twig->render('home.twig.html', ['tasks' => $tasks]);
+
+    }
+
+    public function about()
+    {
+        $this->twig->render('about.twig.html');
     }
 
 }
