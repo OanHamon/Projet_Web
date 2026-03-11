@@ -23,4 +23,9 @@ class BaseController extends Controller
         $this->twig->render('about.twig.html');
     }
 
+    public function contact()
+    {
+        $this->twig->render('contact.twig.html');
+    }
+
 }
