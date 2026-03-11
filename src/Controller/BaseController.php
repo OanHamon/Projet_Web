@@ -1,5 +1,7 @@
 <?php
 
+use App\Controller\Controller;
+use App\Model\OffreModel;
 
 class BaseController extends Controller
 {
