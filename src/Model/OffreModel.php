@@ -1,5 +1,8 @@
 <?php
 namespace App\Model;
+use PDO;
+use PDOException;
+
 
 class OffreModel extends BaseModel
 {
@@ -18,6 +21,20 @@ class OffreModel extends BaseModel
         $stmt = $this->executeQuery($query, ['id' => $idOffre]);
 
         return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function getAllWithEntreprise()
+    {
+        $query = "
+        SELECT o.titre,o.description_carte,o.id_offre,e.nom
+        FROM Offre o
+        JOIN Proposer p ON p.id_offre = o.id_offre
+        JOIN Entreprise e ON e.id_entreprise = p.id_entreprise
+        ";
+
+        $stmt = $this->executeQuery($query, []);
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getCompetences($idOffre)

@@ -11,7 +11,13 @@ $controller = new BaseController();
 $controller->welcomepage();
 
 
+use App\Router\Router;
+use App\Controller\HomeController;
 
 
 
+$routeur->add('GET','/',[HomeController::class, 'renderHomePage']);
+
+$url    = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$method = $_SERVER['REQUEST_METHOD'];     
 
