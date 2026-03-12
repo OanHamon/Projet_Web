@@ -15,8 +15,6 @@ class HomeController extends Controller{
         $this->entrepriseModel = new EntrepriseModel();
     }
 
-
-
     function renderHomePage(){
         $offres = $this->offreModel->getAllWithEntreprise();
         $entreprises = $this->entrepriseModel->getAll();

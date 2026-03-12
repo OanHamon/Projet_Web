@@ -17,18 +17,21 @@ class Router
 
     public function dispatch(string $method, string $url): void
     {
-
         foreach ($this->routes as $route) {
-            if ($route['method'] === $method && $route['path'] === $url) {
+            $pattern = preg_replace('/{id}/', '(\d+)', $route['path']);
+            $pattern = '#^' . $pattern . '$#';
+
+            if ($route['method'] === $method && preg_match($pattern, $url, $matches)) {
                 [$controllerClass, $action] = $route['action'];
                 $controller = new $controllerClass();
-                $controller->$action();
+                
+                array_shift($matches);
+                $controller->$action(...$matches);
                 return;
             }
-
         }
-        
+
+        http_response_code(404);
         echo "404 NOT FOUND";
-        return;
     }
 }

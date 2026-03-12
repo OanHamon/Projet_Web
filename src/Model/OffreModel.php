@@ -26,7 +26,7 @@ class OffreModel extends BaseModel
     public function getAllWithEntreprise()
     {
         $query = "
-        SELECT o.titre,o.description_carte,o.id_offre,e.nom
+        SELECT o.titre,o.description_carte,o.id_offre,e.nom,e.description_cartes
         FROM Offre o
         JOIN Proposer p ON p.id_offre = o.id_offre
         JOIN Entreprise e ON e.id_entreprise = p.id_entreprise

@@ -1,155 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet Web</title>
+{% extends 'base.twig.html' %}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+{% block styles %}
+        <link rel="stylesheet" href="/css/style_entreprise_page.css">
+{% endblock %}
 
-        <link rel="stylesheet" href="../assets/css/token.css">
-    <link rel="stylesheet" href="../assets/css/style_entreprise_page.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
-</head>
-<body>
-    <header>
-        <nav>
 
-            <input class="header-burger-input" type="checkbox" id="votre_id" tabindex="0">
-            <label for="votre_id" class="burger"><span></span><span></span><span></span></label>
 
-            <a href="index.html" class="logo-link" style="display:inline-block;">
-                <img src="../assets/image/logo_projet_web.png" alt="Logo" class="header-logo">
-            </a>
-
-            <ul class="header-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="index.html#Stages">Nos Stages</a></li>
-                <li><a href="index.html#Entreprises">Nos Entreprises</a></li>
-            </ul>
-
-            <div class="account-div">
-                <a href="login.html" class="signup">
-                    S'inscrire
-                </a>
-                <a href="login.html" class="login">
-                    Se connecter
-                </a>
-            </div>
-        </nav>
-    </header>
-
+{% block content %}
     <main class="content">
         <section>
             <div class="image-banner-entreprise">
                 <div class="overlay">
-                    <h1>ENTREPRISE SUPER</h1>
-                    <p>Découvrez les entreprises qui collaborent avec nous pour offrir des stages de qualité à nos étudiants.</p>
+                    <h1>{{entreprise.nom}}</h1>
+                    <p>{{entreprise.phrase_intro}}</p>
                 </div>  
         </section>
         <section>
             <div class="description-container-entreprise">
-                <h2>Pourquoi nous choisir ?</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quod nihil maxime quaerat magnam, minus officiis ipsa nulla illum perferendis consectetur velit laborum delectus, consequatur perspiciatis tempore iusto quas sed aliquid cupiditate expedita! Quam tempora facilis, dolores laborum minima quisquam illo doloribus quidem porro veniam, et dolorem quibusdam! Perferendis, culpa. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati sed, porro officiis neque magnam incidunt minus eaque alias aliquam repudiandae odit quis recusandae, hic reprehenderit ipsum a molestiae eius quaerat?
-                </p>
-                <p>En choisissant de postuler auprès de nos entreprises partenaires, vous bénéficiez d'un accès privilégié à des stages de qualité, vous permettant d'acquérir une expérience précieuse dans votre domaine d'intérêt et de construire un réseau professionnel solide.</p>
-        </section>
+                <h2>Decouvrez nous !</h2>
+                    <div id="content"></div>
+
+                    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+                    <script>
+                    const markdownText = `{{entreprise.description_entreprise}}
+
+        `;
+                    document.getElementById("content").innerHTML = marked.parse(markdownText);
+                    </script>
         <section>
             <div class="section-title">
                 <h2>Nos Entreprises Partenaires</h2>
             </div>
             <div class="carousel-container-entreprise">
-                          <a href="vitrine_stage.html" class="card-link">
-                        <article class="stage-card card" >
-                                <div class="stage-card-header">
-                                    <span class="icon">+</span>
-                                </div>
-                                <div class="stage-card-body">
-                                    <h3>Stage 1</h3>
-                                    <p class="company">Entreprise 1</p>
-                                    <p class="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </p>
-                                </div>
-                            </article>
-                        </a>
-
-                          <a href="vitrine_stage.html" class="card-link">
-                        <article class="stage-card card" >
-                                <div class="stage-card-header">
-                                    <span class="icon">+</span>
-                                </div>
-                                <div class="stage-card-body">
-                                    <h3>Stage 1</h3>
-                                    <p class="company">Entreprise 1</p>
-                                    <p class="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </p>
-                                </div>
-                            </article>
-                        </a>
-
-                           <a href="vitrine_stage.html" class="card-link">
-                        <article class="stage-card card" >
-                                <div class="stage-card-header">
-                                    <span class="icon">+</span>
-                                </div>
-                                <div class="stage-card-body">
-                                    <h3>Stage 1</h3>
-                                    <p class="company">Entreprise 1</p>
-                                    <p class="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </p>
-                                </div>
-                            </article>
-                        </a>
-                          <a href="vitrine_stage.html" class="card-link">
-                        <article class="stage-card card" >
-                                <div class="stage-card-header">
-                                    <span class="icon">+</span>
-                                </div>
-                                <div class="stage-card-body">
-                                    <h3>Stage 1</h3>
-                                    <p class="company">Entreprise 1</p>
-                                    <p class="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </p>
-                                </div>
-                            </article>
-                        </a>
-
-                          <a href="vitrine_stage.html" class="card-link">
-                        <article class="stage-card card" >
-                                <div class="stage-card-header">
-                                    <span class="icon">+</span>
-                                </div>
-                                <div class="stage-card-body">
-                                    <h3>Stage 1</h3>
-                                    <p class="company">Entreprise 1</p>
-                                    <p class="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </p>
-                                </div>
-                            </article>
-                        </a>
-
-                           <a href="vitrine_stage.html" class="card-link">
-                        <article class="stage-card card" >
-                                <div class="stage-card-header">
-                                    <span class="icon">+</span>
-                                </div>
-                                <div class="stage-card-body">
-                                    <h3>Stage 1</h3>
-                                    <p class="company">Entreprise 1</p>
-                                    <p class="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </p>
-                                </div>
-                            </article>
-                        </a>
+                {% for offre in offres %}
+                <a href="/offre/{{offre.id_offre}}" class="card-link">
+                <article class="stage-card card" >
+                        <div class="stage-card-header">
+                            <span class="icon">+</span>
+                        </div>
+                        <div class="stage-card-body">
+                            <h3>{{offre.titre}}</h3>
+                            <p class="company">{{offre.nom}}</p>
+                            <p class="description">
+                                {{offre.description_carte}}
+                            </p>
+                        </div>
+                    </article>
+                </a>
+                {% else %}
+                    <p>NO DATA FOUND</p>
+                {% endfor %}
 
 
                 
@@ -162,23 +62,28 @@
             <div class="list-container-entreprise">
 
                 <article class="list-entreprise">
-                    <h3>Compétences requises</h3>
+                    <h3>Compétences Techniques</h3>
                     <ul>
-                        <li><span class="dot"></span>Compétence 1</li>
-                        <li><span class="dot"></span>Compétence 2</li>
-                        <li><span class="dot"></span>Compétence 3</li>
-                        <li><span class="dot"></span>Compétence 4</li>
-                        <li><span class="dot"></span>Compétence 5</li>
+                        {% for competence in competences%}
+                            {% if competence.categorie == 'Technique' %}
+                            <li><span class="dot"></span>{{competence.nom}}</li>
+                            {% endif %}
+                        {% else %}
+                        <p>NO DATA FOUND</p>
+                        {% endfor %}
                     </ul>
                     
                 </article>
                 <article class="list-entreprise">
-                    <h3>Postes recherchées</h3>
+                    <h3>Compétences Social</h3>
                     <ul>
-                        <li><span class="dot"></span>Avantage 2</li>
-                        <li><span class="dot"></span>Avantage 3</li>
-                        <li><span class="dot"></span>Avantage 4</li>
-                        <li><span class="dot"></span>Avantage 5</li>
+                        {% for competence in competences%}
+                            {% if competence.categorie == 'Social' %}
+                            <li><span class="dot"></span>{{competence.nom}}</li>
+                            {% endif %}
+                        {% else %}
+                        <p>NO DATA FOUND</p>
+                        {% endfor %}
                     </ul>
                 </article>
             </div>
@@ -193,65 +98,4 @@
 
         </section>
     </main>
-
-    <footer class="footer">
-        <div class="ocean">
-            <div class="waves">
-                <div class="wave" id="wave_1"></div>
-                <div class="wave" id="wave_2"></div>
-                <div class="wave" id="wave_3"></div>
-                <div class="wave" id="wave_4"></div>
-                <div class="wave" id="wave_5"></div>
-            </div>
-
-            <div class="continuite">
-                <div class="footer-content">
-                    <div class="footer-top-div">
-                        <span class="copyright-txt">© 2026 Cmp</span>
-
-                        <div class="log-div">
-                            <span><a href="#">Log in</a></span>
-                            <span><a href="#">Sign up</a></span>
-                        </div>
-
-                        <hr>
-                    </div>
-                    <div class="footer-bottom-div">
-                        <span class="legal-link">
-                            <a href="#mentionLegales">Mentions Legales</a>
-                            <a href="#ploitiqueDeConfidentialité">Politique de confidentialté</a>
-                        </span>
-                        <span class="footer-logo">
-                            <img src="../assets/css/logo.png" alt="Logo">
-                        </span>
-                        <div class="speed-link">
-                            <div class="quick-links">
-                                <span class="title">Liens rapides :</span>
-                                <ul>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../assets/scripts/script.js"></script>
-</body>
-
-</html>
+    {% endblock %}
