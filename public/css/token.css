@@ -75,6 +75,7 @@ header{
     background-color: var(--dark-blue);
     color: white;
     font-family: "Jersey 25", sans-serif;
+    z-index: 99;
 }
 
 header a{
