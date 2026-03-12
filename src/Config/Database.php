@@ -5,10 +5,10 @@ use PDOException;
 
 class Database {
 
-    private $host = "4.233.102.81";
+    private $host = "localhost";
     private $db_name = "wtto"; //welcome_to_the_ocean_bdd
-    private $username = "remote_wtto_admin"; //oanha
-    private $password = "w6#J%agnnwwyZZ5@L862";
+    private $username = "admin"; //oanha
+    private $password = "0^AeiqA*8LU%uEmMyg7E";
     /**
             ohMY2244. //local oan
             3f0iM$7#eD!i*u //local bastien
