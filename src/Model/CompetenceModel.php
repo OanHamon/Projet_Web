@@ -1,6 +1,8 @@
 <?php
 namespace App\Model;
 
+use PDO;
+
 class CompetenceModel extends BaseModel
 {
     protected $table = "Competence";
@@ -11,7 +13,7 @@ class CompetenceModel extends BaseModel
         $query = "
         SELECT o.*
         FROM Offre o
-        JOIN Requerir r ON r.id_offre = o.id_offre
+        JOIN Competence_demander r ON r.id_offre = o.id_offre
         WHERE r.id_competence = :id
         ";
 
