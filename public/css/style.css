@@ -434,8 +434,6 @@ body {
 .stats-carousel {
     display: flex;
     gap: 30px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
     padding-bottom: 10px;
 }
 
