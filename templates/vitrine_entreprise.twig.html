@@ -1,0 +1,101 @@
+{% extends 'base.twig.html' %}
+
+{% block styles %}
+        <link rel="stylesheet" href="/css/style_entreprise_page.css">
+{% endblock %}
+
+
+
+{% block content %}
+    <main class="content">
+        <section>
+            <div class="image-banner-entreprise">
+                <div class="overlay">
+                    <h1>{{entreprise.nom}}</h1>
+                    <p>{{entreprise.phrase_intro}}</p>
+                </div>  
+        </section>
+        <section>
+            <div class="description-container-entreprise">
+                <h2>Decouvrez nous !</h2>
+                    <div id="content"></div>
+
+                    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+                    <script>
+                    const markdownText = `{{entreprise.description_entreprise}}
+
+        `;
+                    document.getElementById("content").innerHTML = marked.parse(markdownText);
+                    </script>
+        <section>
+            <div class="section-title">
+                <h2>Nos Entreprises Partenaires</h2>
+            </div>
+            <div class="carousel-container-entreprise">
+                {% for offre in offres %}
+                <a href="/offre/{{offre.id_offre}}" class="card-link">
+                <article class="stage-card card" >
+                        <div class="stage-card-header">
+                            <span class="icon">+</span>
+                        </div>
+                        <div class="stage-card-body">
+                            <h3>{{offre.titre}}</h3>
+                            <p class="company">{{offre.nom}}</p>
+                            <p class="description">
+                                {{offre.description_carte}}
+                            </p>
+                        </div>
+                    </article>
+                </a>
+                {% else %}
+                    <p>NO DATA FOUND</p>
+                {% endfor %}
+
+
+                
+
+            </div>
+        </section>
+
+        <section class="section-list">
+            <h2>Ce qu'on recherche</h2>
+            <div class="list-container-entreprise">
+
+                <article class="list-entreprise">
+                    <h3>Compétences Techniques</h3>
+                    <ul>
+                        {% for competence in competences%}
+                            {% if competence.categorie == 'Technique' %}
+                            <li><span class="dot"></span>{{competence.nom}}</li>
+                            {% endif %}
+                        {% else %}
+                        <p>NO DATA FOUND</p>
+                        {% endfor %}
+                    </ul>
+                    
+                </article>
+                <article class="list-entreprise">
+                    <h3>Compétences Social</h3>
+                    <ul>
+                        {% for competence in competences%}
+                            {% if competence.categorie == 'Social' %}
+                            <li><span class="dot"></span>{{competence.nom}}</li>
+                            {% endif %}
+                        {% else %}
+                        <p>NO DATA FOUND</p>
+                        {% endfor %}
+                    </ul>
+                </article>
+            </div>
+        </section>  
+
+        <section class="section-opinion">
+            <h2>Donner votre avis</h2>
+            <div class="star-container">
+                
+
+            </div>
+
+        </section>
+    </main>
+    {% endblock %}

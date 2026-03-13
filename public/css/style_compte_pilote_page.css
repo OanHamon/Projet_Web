@@ -1,0 +1,170 @@
+ html { scroll-behavior: smooth; }
+
+:root {
+    --blue-main: #2185eb;
+    --beige-card: #f1d592;
+    --navy: #16213e;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 5%;
+    background: var(--navy);
+    color: white;
+    align-items: center;
+}
+
+.nav-links { list-style: none; display: flex; gap: 20px; }
+.nav-links a { color: white; text-decoration: none; }
+.btn-signup { background: var(--blue-main); color: white; border: none; padding: 8px 15px; border-radius: 20px; }
+
+.hero {
+    background: var(--blue-main);
+    color: white;
+    padding: 60px 10%;
+    border-radius: 0 0 100px 100px;
+}
+
+.search-container {
+    background: white;
+    padding: 10px;
+    border-radius: 30px;
+    width: fit-content;
+    margin: 20px 0;
+}
+.search-container input { border: none; outline: none; padding-left: 10px; width: 250px; }
+
+.list-section { padding: 40px 10%; }
+
+.list-card {
+    background: var(--beige-card);
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 400px;
+}
+
+.list-item {
+    background: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+    padding: 0;
+}
+.icons button:hover { transform: scale(1.2); }
+
+/* Overlay (fond sombre) */
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+.overlay.active { display: flex; }
+
+/* Modal */
+.modal-card {
+    background: var(--beige-card);
+    padding: 30px;
+    border-radius: 20px;
+    min-width: 320px;
+    max-width: 420px;
+    width: 90%;
+    position: relative;
+    animation: popIn 0.25s ease;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to   { transform: scale(1);    opacity: 1; }
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px; right: 16px;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--navy);
+}
+
+h3 { margin-top: 0; }
+
+label { display: block; margin-bottom: 4px; font-size: 0.9rem; }
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 0 0 15px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn-save, .btn-dark {
+    background: var(--navy);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-group { display: flex; gap: 10px; margin-top: 10px; }
+.btn-dark { flex: 1; }
+
+.class-selector { display: flex; gap: 8px; margin-bottom: 12px; }
+.class-selector button {
+    background: var(--navy);
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.class-selector button.selected { background: var(--blue-main); }
+
+.success-message {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: var(--navy);
+}
+.success-icon { font-size: 3rem; display: block; margin-bottom: 10px; }
+
+footer {
+    background: var(--navy);
+    color: white;
+    padding: 40px 5%;
+    margin-top: 50px;
+    border-top: 50px solid white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}

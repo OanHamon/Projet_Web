@@ -1,0 +1,253 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilote</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/token.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style_compte_pilote_page.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <input class="header-burger-input" type="checkbox" id="votre_id" tabindex="0">
+            <label for="votre_id" class="burger"><span></span><span></span><span></span></label>
+
+            <a href="index.html" class="logo-link" style="display:inline-block;">
+                <img src="../assets/image/logo_projet_web.png" alt="Logo" class="header-logo">
+            </a>
+
+            <ul class="header-links">
+                <li><a href="#Accueil">Accueil</a></li>
+                <li><a href="#Stages">Nos Stages</a></li>
+                <li><a href="#Entreprises">Nos Entreprises</a></li>
+            </ul>
+
+            <div class="account-div">
+                <a href="login.html" class="signup">S'inscrire</a>
+                <a href="login.html" class="login">Se connecter</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Compte Pilote</h1>
+            <div class="search-container">
+                <input type="text" placeholder="Recherchez un de vos étudiant">
+                <span class="search-icon">🔍</span>
+            </div>
+            <p class="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+            </p>
+        </section>
+
+        <section class="list-section">
+            <div class="list-card">
+                <div class="list-item">
+                    <span>Compte 1</span>
+                    <div class="icons">
+                        <button onclick="openModal('edit-profile')" title="Modifier">✏️</button>
+                        <button onclick="openModal('delete-profile')" title="Supprimer">🗑️</button>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <span>Classe</span>
+                    <div class="icons">
+                        <button onclick="openModal('add-class')" title="Ajouter">➕</button>
+                        <button onclick="openModal('delete-class')" title="Supprimer">🗑️</button>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <span>Etudiant</span>
+                    <div class="icons">
+                        <button onclick="openModal('add-student')" title="Ajouter">➕</button>
+                        <button onclick="openModal('delete-student')" title="Supprimer">🗑️</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="overlay" id="modal-edit-profile">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('edit-profile')">&times;</button>
+            <h3>Modifier le profil</h3>
+            <label>Nom</label><input type="text">
+            <label>Prénom</label><input type="text">
+            <label>Mot de Passe</label><input type="password">
+            <button class="btn-save">Enregistrer</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="modal-delete-profile">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('delete-profile')">&times;</button>
+            <div id="content-delete-profile">
+                <h3>Supprimer le compte</h3>
+                <p>Confirmer la suppression de votre compte</p>
+                <div class="btn-group">
+                    <button class="btn-dark" onclick="confirmDelete('delete-profile', 'Votre compte a été supprimé.')">Oui</button>
+                    <button class="btn-dark" onclick="closeModal('delete-profile')">Non</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="modal-add-class">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('add-class')">&times;</button>
+            <h3>Ajouter une Classe</h3>
+            <label>Nom</label><input type="text">
+            <label>Effectif</label><input type="text">
+            <button class="btn-save">Enregistrer</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="modal-delete-class">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('delete-class')">&times;</button>
+            <div id="content-delete-class">
+                <h3>Supprimer la classe</h3>
+                <p>Confirmer la suppression</p>
+                <div class="btn-group">
+                    <button class="btn-dark" onclick="confirmDelete('delete-class', 'La classe a été supprimée.')">Oui</button>
+                    <button class="btn-dark" onclick="closeModal('delete-class')">Non</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="modal-add-student">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('add-student')">&times;</button>
+            <h3>Ajouter un Élève</h3>
+            <label>Nom</label><input type="text">
+            <label>Prénom</label><input type="text">
+            <div class="class-selector">
+                <button onclick="selectClass(this)">Classe 1</button>
+                <button onclick="selectClass(this)">Classe 2</button>
+            </div>
+            <button class="btn-save" style="margin-top:15px;">Enregistrer</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="modal-delete-student">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('delete-student')">&times;</button>
+            <div id="content-delete-student">
+                <h3>Supprimer l'élève</h3>
+                <p>Confirmer la suppression</p>
+                <div class="btn-group">
+                    <button class="btn-dark" onclick="confirmDelete('delete-student', 'L\'élève a été supprimé.')">Oui</button>
+                    <button class="btn-dark" onclick="closeModal('delete-student')">Non</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="ocean">
+            <div class="waves">
+                <div class="wave" id="wave_1"></div>
+                <div class="wave" id="wave_2"></div>
+                <div class="wave" id="wave_3"></div>
+                <div class="wave" id="wave_4"></div>
+                <div class="wave" id="wave_5"></div>
+            </div>
+
+            <div class="continuite">
+                <div class="footer-content">
+                    <div class="footer-top-div">
+                        <span class="copyright-txt">© 2026 Cmp</span>
+                        <div class="log-div">
+                            <span><a href="#">Log in</a></span>
+                            <span><a href="#">Sign up</a></span>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="footer-bottom-div">
+                        <span class="legal-link">
+                            <a href="#mentionLegales">Mentions Legales</a>
+                            <a href="#ploitiqueDeConfidentialité">Politique de confidentialité</a>
+                        </span>
+                        <span class="footer-logo">
+                            <img src="../assets/image/logo_projet_web.png" alt="Logo">
+                        </span>
+                        <div class="speed-link">
+                            <div class="quick-links">
+                                <span class="title">Liens rapides :</span>
+                                <ul>
+                                    <li><a href="#">Accueil</a></li>
+                                    <li><a href="#">Stages</a></li>
+                                    <li><a href="#">Entreprises</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    function openModal(id) {
+        document.getElementById('modal-' + id).classList.add('active');
+    }
+
+    function closeModal(id) {
+        const overlay = document.getElementById('modal-' + id);
+        overlay.classList.remove('active');
+
+        const content = document.getElementById('content-' + id);
+        if (content && content.dataset.confirmed === 'true') {
+            // Petit délai pour laisser l'animation de fermeture se faire avant de reset le contenu
+            setTimeout(() => {
+                content.dataset.confirmed = 'false';
+                content.innerHTML = content.dataset.original;
+            }, 300);
+        }
+    }
+
+    function confirmDelete(id, message) {
+        const content = document.getElementById('content-' + id);
+        if (!content.dataset.original) {
+            content.dataset.original = content.innerHTML;
+        }
+        content.dataset.confirmed = 'true';
+        content.innerHTML = `
+            <div class="success-message" style="text-align:center; padding:20px;">
+                <span class="success-icon" style="font-size:2rem; display:block; margin-bottom:10px;">✅</span>
+                <strong>${message}</strong>
+            </div>
+            <div class="btn-group" style="margin-top:20px;">
+                <button class="btn-dark" style="width:100%" onclick="closeModal('${id}')">Fermer</button>
+            </div>
+        `;
+    }
+
+    function selectClass(btn) {
+        btn.closest('.class-selector').querySelectorAll('button').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+    }
+
+    // Fermeture au clic sur l'overlay
+    document.querySelectorAll('.overlay').forEach(overlay => {
+        overlay.addEventListener('click', function(e) {
+            if (e.target === this) {
+                const id = this.id.replace('modal-', '');
+                closeModal(id);
+            }
+        });
+    });
+    </script>
+</body>
+</html>
