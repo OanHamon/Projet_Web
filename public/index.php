@@ -9,14 +9,16 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 
 use App\Router\Router;
-use App\Controller\{HomeController,OffreController,EntrepriseController};
+use App\Controller\{HomeController,OffreController,EntrepriseController,UserController};
 
 
 $routeur = new Router();
 $routeur->add('GET','/',[HomeController::class, 'renderHomePage']);
 $routeur->add('GET','/offre/{id}',[OffreController::class, 'renderOffrePage']);
 $routeur->add('GET','/entreprise/{id}',[EntrepriseController::class, 'renderEntreprisePage']);
-$routeur->add('GET','/dashboard',[EntrepriseController::class, 'renderEntreprisePage']);
+$routeur->add('GET','/dashboard',[UserController::class, 'renderStudentDashboardPage']);
+$routeur->add('POST','/dashboard/updateinfo',[UserController::class, 'updateUserInfo']);
+$routeur->add('POST','/dashboard/deleteaccount',[UserController::class, 'deleteAccount']);
 
 $url    = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $method = $_SERVER['REQUEST_METHOD'];     
