@@ -1,0 +1,250 @@
+
+        /* ── Variables ───────────────────────────────────────────── */
+        :root {
+            --ml-accent:         #2563eb;
+            --ml-accent-light:   #eff6ff;
+            --ml-accent-muted:   #bfdbfe;
+            --ml-surface:        #ffffff;
+            --ml-surface-alt:    #f8fafc;
+            --ml-border:         #e2e8f0;
+            --ml-text-primary:   #0f172a;
+            --ml-text-secondary: #475569;
+            --ml-text-muted:     #94a3b8;
+            --ml-warn-bg:        #fffbeb;
+            --ml-warn-border:    #fde68a;
+            --ml-warn-text:      #92400e;
+            --ml-radius:         12px;
+            --ml-radius-sm:      8px;
+            --ml-strip:          3px;
+        }
+
+        /* ── Animation d'entrée ──────────────────────────────────── */
+        @keyframes ml-rise {
+            from { opacity: 0; transform: translateY(16px); }
+            to   { opacity: 1; transform: translateY(0);    }
+        }
+
+        /* ── Layout principal ────────────────────────────────────── */
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 5rem;
+        }
+
+        /* ── En-tête de page ─────────────────────────────────────── */
+        .ml-intro {
+            margin-bottom: 2.75rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--ml-border);
+            animation: ml-rise 0.45s ease both;
+        }
+
+        .ml-intro .ml-breadcrumb {
+            
+            font-size: 0.68rem;
+            color: var(--ml-text-muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin: 0 0 0.6rem;
+        }
+
+        .ml-intro h1 {
+            
+            font-size: clamp(1.8rem, 5vw, 2.75rem);
+            color: var(--ml-text-primary);
+            line-height: 1.15;
+            margin: 0 0 0.6rem;
+        }
+
+        .ml-intro .ml-subtitle {
+            font-size: 0.92rem;
+            color: var(--ml-text-secondary);
+            line-height: 1.65;
+            max-width: 520px;
+            margin: 0;
+        }
+
+        /* ── Blocs ───────────────────────────────────────────────── */
+        .bloc,
+        .bloc-content {
+            background: var(--ml-surface);
+            border: 1px solid var(--ml-border);
+            border-radius: var(--ml-radius);
+            padding: 2rem 2.25rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: box-shadow 0.22s ease, border-color 0.22s ease;
+            animation: ml-rise 0.45s ease both;
+        }
+
+        /* Délais d'animation en cascade */
+        .ml-intro          { animation-delay: 0.00s; }
+        .bloc:nth-of-type(1){ animation-delay: 0.08s; }
+        .bloc:nth-of-type(2){ animation-delay: 0.15s; }
+        .bloc-content      { animation-delay: 0.22s; }
+
+        .bloc:hover,
+        .bloc-content:hover {
+            box-shadow: 0 6px 28px rgba(37, 99, 235, 0.07);
+            border-color: var(--ml-accent-muted);
+        }
+
+        /* Bande bleue latérale */
+        .bloc::before,
+        .bloc-content::before {
+            content: '';
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: var(--ml-strip);
+            background: var(--ml-accent);
+            border-radius: var(--ml-strip) 0 0 var(--ml-strip);
+        }
+
+        /* ── H2 des blocs ────────────────────────────────────────── */
+        .bloc h2,
+        .bloc-content h2 {
+            
+            font-size: 1.28rem;
+            color: var(--ml-text-primary);
+            margin: 0 0 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        /* Cache la barre originale */
+        .bloc h2 .barre,
+        .bloc-content h2 .barre { display: none; }
+
+        /* Badge icône */
+        .ml-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            background: var(--ml-accent-light);
+            border-radius: 9px;
+            flex-shrink: 0;
+        }
+
+        .ml-icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--ml-accent);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* ── Grille d'infos ──────────────────────────────────────── */
+        .ml-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+            gap: 0.85rem;
+        }
+
+        .ml-card {
+            background: var(--ml-surface-alt);
+            border: 1px solid var(--ml-border);
+            border-radius: var(--ml-radius-sm);
+            padding: 0.85rem 1rem;
+            transition: border-color 0.18s ease;
+        }
+
+        .ml-card:hover { border-color: var(--ml-accent-muted); }
+
+        .ml-card .ml-lbl {
+            
+            font-size: 0.63rem;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            color: var(--ml-text-muted);
+            margin-bottom: 0.28rem;
+        }
+
+        .ml-card .ml-val {
+            font-size: 0.87rem;
+            color: var(--ml-text-primary);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .ml-card .ml-val a {
+            color: var(--ml-accent);
+            text-decoration: none;
+        }
+        .ml-card .ml-val a:hover { text-decoration: underline; }
+
+        /* Note légère sous éditeur */
+        .ml-note {
+            margin-top: 1rem;
+            font-size: 0.82rem;
+            color: var(--ml-text-muted);
+            line-height: 1.55;
+        }
+
+        /* ── Politique de confidentialité ────────────────────────── */
+        /* H3 style monospace + trait */
+        .bloc-content h3 {
+           
+            font-size: 0.73rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ml-accent);
+            margin: 0 0 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .bloc-content h3::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--ml-border);
+        }
+
+        .bloc-content p {
+            font-size: 0.9rem;
+            color: var(--ml-text-secondary);
+            line-height: 1.72;
+            margin: 0;
+        }
+
+        /* Séparateur entre sections */
+        .ml-sep {
+            height: 1px;
+            background: var(--ml-border);
+            margin: 1.2rem 0;
+        }
+
+        /* ── Avertissement fictif ────────────────────────────────── */
+        .mention-fictif {
+            margin-top: 1.5rem !important;
+            background: var(--ml-warn-bg) !important;
+            border: 1px solid var(--ml-warn-border) !important;
+            border-radius: var(--ml-radius-sm) !important;
+            padding: 0.8rem 1.1rem !important;
+            font-size: 0.82rem !important;
+            color: var(--ml-warn-text) !important;
+            line-height: 1.55 !important;
+        }
+
+        /* ── Responsive ──────────────────────────────────────────── */
+        @media (max-width: 640px) {
+            .container { padding: 2rem 1rem 4rem; }
+
+            .bloc,
+            .bloc-content { padding: 1.4rem 1.2rem; }
+
+            .ml-grid { grid-template-columns: 1fr; }
+
+            .ml-intro {
+                margin-bottom: 2rem;
+                padding-bottom: 1.5rem;
+            }
+        }

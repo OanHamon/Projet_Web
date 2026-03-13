@@ -1,0 +1,214 @@
+/* --- Variables et Configuration --- */
+:root {
+    --blue-main: #2185eb;
+    --beige-card: #f1d592;
+    --navy: #16213e;
+    --white: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+}
+
+/* --- Header & Nav --- */
+header {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    height: 70px;
+}
+
+.header-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.header-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.account-div {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.signup {
+    background:#ffffff;;
+    color:#333;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.login {
+    color: white;
+    text-decoration: underline;
+}
+
+/* --- Section Hero (Bleue) --- */
+.hero {
+    background: var(--blue-main);
+    color: white;
+    padding: 60px 10% 100px; /* Padding bas important pour le chevauchement */
+    border-radius: 0 0 80px 80px;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* --- Barre de Recherche --- */
+.search-container {
+    position: relative;
+    max-width: 500px;
+    margin: 25px 0;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.search-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+}
+
+/* --- Section Liste (L'élément que tu voulais) --- */
+.list-section {
+    display: flex;
+    justify-content: center;
+    margin-top: -60px; /* Fait remonter la carte sur le bleu */
+    padding: 0 5%;
+}
+
+.list-card {
+    background-color: var(--beige-card);
+    padding: 30px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 650px;
+    box-shadow: 0 10px 25px var(--shadow);
+}
+
+.list-item {
+    background-color: var(--white);
+    margin-bottom: 15px;
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px var(--shadow); /* L'ombre sous les barres blanches */
+}
+
+.list-item:last-child {
+    margin-bottom: 0;
+}
+
+.list-item span {
+    font-weight: 700;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: transform 0.2s;
+}
+
+.icons button:hover {
+    transform: scale(1.2);
+}
+
+/* --- Footer --- */
+.footer {
+    background: var(--navy);
+    color: white;
+    padding: 50px 5% 20px;
+    margin-top: 80px;
+}
+
+.footer-bottom-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #2c3e50;
+    padding-top: 30px;
+}
+
+.footer-logo img {
+    height: 50px;
+}
+
+.quick-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+}
+
+/* --- Modals (Overlay) --- */
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay.active {
+    display: flex;
+}
+
+.modal-card {
+    background: var(--beige-card);
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+}
