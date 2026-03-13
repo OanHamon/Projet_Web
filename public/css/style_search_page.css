@@ -8,7 +8,6 @@
     font-family: "Inter";
     font-weight: bold;
     gap: 16px;
-    background-color: white;
 }
 
 .stage-search-box{
@@ -92,7 +91,7 @@
     text-align: left;
     text-decoration: none;
     color: black;
-    background-color: var(--light-silver);
+    background-color: white;
     border-radius: 20px;
 }
 .card-stage-header{
