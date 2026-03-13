@@ -38,3 +38,4 @@ Thumbs.db
 !/public/uploads/.gitkeep
 .htaccess
 public/.htaccess
+src/Config/config.php

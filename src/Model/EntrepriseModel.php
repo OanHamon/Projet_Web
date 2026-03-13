@@ -14,8 +14,7 @@ class EntrepriseModel extends BaseModel
         $query = "
         SELECT o.*
         FROM Offre o
-        JOIN Proposer p ON p.id_offre = o.id_offre
-        WHERE p.id_entreprise = :id
+        WHERE o.id_entreprise = :id
         ";
 
         $stmt = $this->executeQuery($query, ['id' => $entrepriseId]);
@@ -27,7 +26,7 @@ class EntrepriseModel extends BaseModel
     {
         $query = "
         SELECT AVG(note) as moyenne
-        FROM Evaluation
+        FROM Evaluation_entreprise
         WHERE id_entreprise = :id
         ";
 
@@ -41,11 +40,10 @@ class EntrepriseModel extends BaseModel
         $query = "
         SELECT DISTINCT c.*
         FROM Competence c
-        JOIN Requerir r ON r.id_competence = c.id_competence
+        JOIN Competence_demander r ON r.id_competence = c.id_competence
         JOIN Offre o ON o.id_offre = r.id_offre
-        JOIN Proposer p ON p.id_offre = o.id_offre
-        WHERE p.id_entreprise = :id
-        ";
+        WHERE o.id_entreprise = :id
+        ;";
 
         $stmt = $this->executeQuery($query, ['id' => $entrepriseId]);
 
