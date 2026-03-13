@@ -1,7 +1,5 @@
 let locValue = document.getElementById('location').value;
 
-console.log(locValue);
-
 const default_dist = 10;
 
 var map = L.map('map').setView([44, 2], 4);
@@ -20,9 +18,6 @@ try {
     // fallback defaults: dist=0 (no filter), Toulouse center
     dist = default_dist; lat = 44; lng = 2;
 }
-
-console.log(dist, lat, lng);
-
 
 let marker; // Declare marker before any usage
 let circle;

@@ -93,6 +93,7 @@
     color: black;
     background-color: white;
     border-radius: 20px;
+    width: 100%;
 }
 .card-stage-header{
     background-color: var(--sand-color);
@@ -156,9 +157,9 @@
     align-items: center;
     justify-content: space-between;
     gap: 8px;
-    background-color: var(--light-silver);
+    background-color: white;
     border-radius: 8px;
-
+    box-shadow: 0 2px 6px rgba(0,0,0,0.13);
 }
 .tag p{
     font-weight: 300;
