@@ -16,6 +16,7 @@ $routeur = new Router();
 $routeur->add('GET','/',[HomeController::class, 'renderHomePage']);
 $routeur->add('GET','/offre/{id}',[OffreController::class, 'renderOffrePage']);
 $routeur->add('GET','/entreprise/{id}',[EntrepriseController::class, 'renderEntreprisePage']);
+$routeur->add('GET','/dashboard',[EntrepriseController::class, 'renderEntreprisePage']);
 
 $url    = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $method = $_SERVER['REQUEST_METHOD'];     
