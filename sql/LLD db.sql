@@ -17,14 +17,14 @@ CREATE TABLE Entreprise(
 CREATE TABLE Competence(
    id_competence INT AUTO_INCREMENT,
    nom VARCHAR(50),
-   catégorie VARCHAR(50),
+   categorie VARCHAR(50),
    PRIMARY KEY(id_competence)
 );
 
 CREATE TABLE Utilisateur(
    id_utilisateur INT AUTO_INCREMENT,
    nom VARCHAR(50) NOT NULL,
-   prénom VARCHAR(50) NOT NULL,
+   prenom VARCHAR(50) NOT NULL,
    email VARCHAR(50) NOT NULL,
    mdp VARCHAR(256) NOT NULL,
    PRIMARY KEY(id_utilisateur),
