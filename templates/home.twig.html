@@ -40,20 +40,27 @@
                     <p>NO DATA FOUND</p>
                 {% else %}
                     {% for offre in offres %}
-                    <a href="/offre/{{offre.id_offre}}" class="card-link">
-                    <article class="stage-card card" >
-                            <div class="stage-card-header">
-                                <span class="icon">+</span>
-                            </div>
-                            <div class="stage-card-body">
-                                <h3>{{offre.titre}}</h3>
-                                <p class="company">{{offre.nom}}</p>
-                                <p class="description">
-                                    {{offre.description_carte}}
-                                </p>
-                            </div>
+                    
+
+                    <div class="card-wrapper" style="position: relative">
+                        <article class="stage-card card" >
+                            <form method="POST" action="/wishlist/add">
+                                <input type="hidden" name="id_offre" value="{{offre.id_offre}}">
+                                <button class="icon" style="position: absolute; top: 15px; right: 15px;">+</button>
+                            </form>
+                            <a href="/offre/{{offre.id_offre}}" class="card-link">
+                                <div class="stage-card-header">
+                                </div>
+                                <div class="stage-card-body">
+                                    <h3>{{offre.titre}}</h3>
+                                    <p class="company">{{offre.nom}}</p>
+                                    <p class="description">
+                                        {{offre.description_carte}}
+                                    </p>
+                                </div>
+                            </a>
                         </article>
-                    </a>
+                    </div>
                     {% endfor %}
                 {% endif %}
             </div>

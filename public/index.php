@@ -19,6 +19,8 @@ $routeur->add('GET','/dashboard',[UserController::class, 'renderStudentDashboard
 $routeur->add('GET','/search',[SearchController::class, 'renderSearchPage']);
 $routeur->add('POST','/dashboard/updateinfo',[UserController::class, 'updateUserInfo']);
 $routeur->add('POST','/dashboard/deleteaccount',[UserController::class, 'deleteAccount']);
+$routeur->add('POST','/wishlist/add',[UserController::class, 'addInWishlist']);
+$routeur->add('POST','/wishlist/delete',[UserController::class, 'deleteInWishlist']);
 
 $url    = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $method = $_SERVER['REQUEST_METHOD'];     
