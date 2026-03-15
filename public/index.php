@@ -22,6 +22,7 @@ $routeur->add('GET','/offre/{id}',[OffreController::class, 'renderOffrePage']);
 
 // === Entreprise ===
 $routeur->add('GET','/entreprise/{id}',[EntrepriseController::class, 'renderEntreprisePage']);
+$routeur->add('POST','/entreprise/{id}/rate',[EntrepriseController::class, 'manageNotation']);
 
 // === User ===
 $routeur->add('GET','/dashboard',[UserController::class, 'renderStudentDashboardPage']);

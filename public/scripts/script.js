@@ -18,4 +18,10 @@ signInButton.addEventListener('click', () => {
 
 
 
-// Index
+// Entreprise
+
+document.querySelectorAll('.star-rating input').forEach(input => {
+    input.addEventListener('change', () => {
+        print("de");
+    });
+});
