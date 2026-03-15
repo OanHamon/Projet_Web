@@ -12,15 +12,31 @@ use App\Controller\{HomeController,OffreController,EntrepriseController,UserCont
 
 
 $routeur = new Router();
+
+// === HOME ===
 $routeur->add('GET','/',[HomeController::class, 'renderHomePage']);
+
+// === Offre ===
+$routeur->add('GET','/formulaire/{id}',[OffreController::class, 'renderFormulaire']);
 $routeur->add('GET','/offre/{id}',[OffreController::class, 'renderOffrePage']);
+
+// === Entreprise ===
 $routeur->add('GET','/entreprise/{id}',[EntrepriseController::class, 'renderEntreprisePage']);
+
+// === User ===
 $routeur->add('GET','/dashboard',[UserController::class, 'renderStudentDashboardPage']);
-$routeur->add('GET','/search',[SearchController::class, 'renderSearchPage']);
 $routeur->add('POST','/dashboard/updateinfo',[UserController::class, 'updateUserInfo']);
 $routeur->add('POST','/dashboard/deleteaccount',[UserController::class, 'deleteAccount']);
 $routeur->add('POST','/wishlist/add',[UserController::class, 'addInWishlist']);
 $routeur->add('POST','/wishlist/delete',[UserController::class, 'deleteInWishlist']);
+$routeur->add('POST','/candidater/{id}',[UserController::class, 'candidaterOffre']);
+
+// === Search ===
+
+$routeur->add('GET','/search',[SearchController::class, 'renderSearchPage']);
+
+
+
 
 $url    = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $method = $_SERVER['REQUEST_METHOD'];     

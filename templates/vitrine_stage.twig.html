@@ -13,19 +13,21 @@
         <div class="col-left">  
           <div class="block-content-stage card-main">
             <h1>{{offre.titre}}</h1>
-            <p class="intro">{{offre.lat}} , {{offre.lng}}</p>
+            <p class="intro">{{offre.localisation}}</p>
 
             <div id="content"></div>
 
             <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
             <script>
-              const markdownText = `{{offre.description_offre_de_stage}}`;
+              const markdownText = `{{offre.description_offre_de_stage}}
+
+`;
               document.getElementById("content").innerHTML = marked.parse(markdownText);
             </script>
 
             <section class="stage-block">
               <h2>Rémuneration</h2>
-              <p>{{offre.remuneration_par_mois}} € / Mois</p>
+              <p>{{offre.remuneration_par_mois}} €</p>
             </section>
           </div>
         </div>
@@ -71,12 +73,14 @@
           </div>
 
           <div class="actions-row">
-            <button class="btn-action btn-stats" onclick="window.location.href='statistiques.html'">Voir les Stats</button>
-            <button class="btn-action btn-wishlist" onclick="window.location.href='student_dashboard.html'">Wish-Liste</button>
+            <button class="btn-action btn-stats" onclick="window.location.href='/statistiques'">Voir les Stats</button>
+            <form method="POST" action="/wishlist/add">
+              <input type="hidden" name="id_offre" value="{{offre.id_offre}}">
+              <button class="btn-action btn-wishlist" >Wish-Liste</button>
+            </form>
+
           </div>
-
-          <a href="postuler_stage.html"><button class="btn-postuler">POSTULEZ - ICI</button></a>
-
+          <button class="btn-postuler" onclick="window.location.href='/formulaire/{{offre.id_offre}}'">POSTULEZ - ICI</button>
         </div>
 
       </div>
