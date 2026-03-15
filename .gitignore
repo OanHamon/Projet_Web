@@ -34,7 +34,8 @@ Thumbs.db
 /package-lock.json
 
 # --- Autres ---
-/public/uploads/*
+/public/uploads/cv/*
+/public/uploads/lm/*
 !/public/uploads/.gitkeep
 .htaccess
 public/.htaccess
