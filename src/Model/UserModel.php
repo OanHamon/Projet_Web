@@ -36,4 +36,88 @@ class UserModel extends BaseModel
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function user_exist_email($email)
+    {
+        $query = "
+            SELECT id_utilisateur
+            FROM Utilisateur
+            WHERE email = :email
+            LIMIT 1
+        ;";
+
+        $stmt = $this->executeQuery($query, [
+            'email' => $email
+        ]);
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $result ? true : false;
+    }
+
+    public function create_user($email, $password_hash, $nom, $prenom) 
+    {
+        $query = "
+        INSERT INTO Utilisateur (nom, prenom, email, mdp) VALUES
+        (':nom',':prenom',':email',':mdp')
+        ;";// mdp hashé
+
+        $this->executeQuery($query, [
+            'nom' => $nom,
+            'prenom' => $prenom,
+            'email' => $email,
+            'mdp' => $password_hash
+        ]);
+
+        $query = "
+            SELECT id_utilisateur
+            FROM Utilisateur
+            WHERE email = :email
+            LIMIT 1
+        ;";
+
+        $stmt = $this->executeQuery($query, [
+            'email' => $email
+        ]);
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $result ? $result['id_utilisateur'] : null;
+    }
+
+    public function hashed_password_user_email($email) 
+    {
+        $query = "
+            SELECT mdp
+            FROM Utilisateur
+            WHERE email = :email
+            LIMIT 1
+        ;";
+
+        $stmt = $this->executeQuery($query, [
+            'email' => $email
+        ]);
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $result ? $result['mdp'] : null;
+    }
+
+    public function get_user_id($email)
+    {
+        $query = "
+            SELECT id_utilisateur
+            FROM Utilisateur
+            WHERE email = :email
+            LIMIT 1
+        ;";
+
+        $stmt = $this->executeQuery($query, [
+            'email' => $email
+        ]);
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $result ? $result['id_utilisateur'] : null;
+    }
 }

@@ -57,19 +57,21 @@
                     <div class="distance-slider-container">
                         <label for="slider-distance">Distance (km)</label>
                         <div class="distance-slider-form" role="search">
-                            <input 
-                                type="range" 
-                                id="slider-distance"
+                            <input type="range" id="slider-distance"
                                 min="1"
                                 max="100"
-                                value="<?php echo (isset($neer[0]) && intval($neer[0]) >= 1 && intval($neer[0]) <= 100) ? intval($neer[0]) : 10; ?>"
+                                value=""
                                 oninput="document.getElementById('distance-value').innerText = this.value + ' km';"
                             >
-                            <span id="distance-value"></span>
+                            <span id="distance-value">50 km</span>
                         </div>
                     </div>
                     <div id="map"></div>
                     <input type="hidden" id="location" name="neer" value="">
+
+                    <input type="hidden" id="lat" value="">
+                    <input type="hidden" id="lng" value="">
+
                     <button type="submit">OK</button>
                 </form>
 
@@ -84,6 +86,7 @@
             </div>
 
             <div class="search-stage-result-box">
+
                 <a href="#" class="card-stage">
                     <div class="card-stage-header">
                         titre
@@ -93,7 +96,6 @@
                         <div class="card-stage-entreprise">
                             entreprise
                         </div>
-
                         <div class="card-stage-description">
                             <p class="texte-description-card-stage">
                                 description_carte
@@ -101,6 +103,7 @@
                         </div>
                     </div>
                 </a>
+
             </div>
         </main>
         <script src="/scripts/map.js"></script>

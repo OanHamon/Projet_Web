@@ -36,14 +36,20 @@ $routeur->add('POST','/student_dashboard/deleteaccount',[UserController::class, 
 $routeur->add('POST','/wishlist/add',[UserController::class, 'addInWishlist']);
 $routeur->add('POST','/wishlist/delete',[UserController::class, 'deleteInWishlist']);
 $routeur->add('POST','/candidater/{id}',[UserController::class, 'candidaterOffre']);
+$routeur->add('GET','/pilote_dashboard',[UserController::class, 'renderPiloteDashboardPage']);
 
 // === Search ===
 
 $routeur->add('GET','/search',[SearchController::class, 'renderSearchPage']);
 
-// === Pilote ===
+$routeur->add('GET','/mentionslegales',[HomeController::class, 'renderMentionsLegalesPage']);
 
-$routeur->add('GET','/pilote_dashboard',[UserController::class, 'renderPiloteDashboardPage']);
+// === Auth ===
+
+$routeur->add('GET','/sign',[AuthController::class, 'renderAuthPage']);
+$routeur->add('POST','/inscription',[AuthController::class, 'create_account']);
+$routeur->add('POST','/signin',[AuthController::class, 'login']);
+
 
 
 $url    = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
