@@ -7,9 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
-    
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="../assets/css/token.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/style_compte_pilote_page.css">
@@ -37,67 +35,139 @@
             </div>
         </nav>
     </header>
+
     <main>
-                <section class="hero">
+        <section class="hero">
             <h1>Pilote</h1>
-             <div class="search-container">
-    <input type="text" placeholder="Recherchez dans l'océan des stages">
-    <button class="search-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-    </button>
-</div>
+            <div class="search-container">
+                <input type="text" placeholder="Recherchez dans l'océan des stages">
+                <button class="search-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
             <p class="description">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
             </p>
         </section>
 
         <div class="columns-container">
-        <div id="section-classes" class="column">
-            <div class="column-header">Classes</div>
-            <ul class="list-items">
-                <li onclick="showSection('section-eleves')">Classe 1</li>
-                <li onclick="showSection('section-eleves')">Classe 2</li>
-                <li onclick="showSection('section-eleves')">Classe 3</li>
-            </ul>
-        </div>
 
-        <div id="section-eleves" class="column hidden">
-            <div class="column-header">Elèves</div>
-            <ul class="list-items">
-                <li onclick="showSection('section-stages')">Elève 1</li>
-                <li onclick="showSection('section-stages')">Elève 2</li>
-                <li onclick="showSection('section-stages')">Elève 3</li>
-            </ul>
-            <button class="btn-back" onclick="showSection('section-classes')">← Retour aux classes</button>
-        </div>
+            <div id="section-classes" class="column">
+                <div class="column-header">Classes</div>
+                <ul class="list-items">
+                    <li onclick="showSection('section-eleves')">Classe 1</li>
+                    <li onclick="showSection('section-eleves')">Classe 2</li>
+                    <li onclick="showSection('section-eleves')">Classe 3</li>
+                </ul>
+            </div>
 
-        <div id="section-stages" class="column hidden">
-            <div class="column-header">Stages</div>
-            <ul class="list-items">
-                <li>Stage Développement Web</li>
-                <li>Stage Design UI/UX</li>
-                <li>Stage Marketing</li>
-            </ul>
-            <button class="btn-back" onclick="showSection('section-eleves')">← Retour aux élèves</button>
+            <div id="section-eleves" class="column hidden">
+                <div class="column-header">Élèves</div>
+                <ul class="list-items">
+                    <li onclick="showSection('section-stages')">Élève 1</li>
+                    <li onclick="showSection('section-stages')">Élève 2</li>
+                    <li onclick="showSection('section-stages')">Élève 3</li>
+                </ul>
+                <button class="btn-back" onclick="hideSection('section-eleves')">← Retour aux classes</button>
+            </div>
+
+            <div id="section-stages" class="column hidden">
+                <div class="column-header">Stages</div>
+                <ul class="list-items">
+                    <li>Stage Développement Web</li>
+                    <li>Stage Design UI/UX</li>
+                    <li>Stage Marketing</li>
+                </ul>
+                <button class="btn-back" onclick="hideSection('section-stages')">← Retour aux élèves</button>
+            </div>
+
         </div>
-    </div>
     </main>
-    
+
+    <footer class="footer">
+        <div class="ocean">
+            <div class="waves">
+                <div class="wave" id="wave_1"></div>
+                <div class="wave" id="wave_2"></div>
+                <div class="wave" id="wave_3"></div>
+                <div class="wave" id="wave_4"></div>
+                <div class="wave" id="wave_5"></div>
+            </div>
+
+            <div class="continuite">
+                <div class="footer-content">
+                    <div class="footer-top-div">
+                        <span class="copyright-txt">© 2026 Cmp</span>
+                        <div class="log-div">
+                            <span><a href="#">Log in</a></span>
+                            <span><a href="#">Sign up</a></span>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="footer-bottom-div">
+                        <span class="legal-link">
+                            <a href="#mentionLegales">Mentions Legales</a>
+                            <a href="#ploitiqueDeConfidentialité">Politique de confidentialté</a>
+                        </span>
+                        <span class="footer-logo">
+                            <img src="../assets/css/logo.png" alt="Logo">
+                        </span>
+                        <div class="speed-link">
+                            <div class="quick-links">
+                                <span class="title">Liens rapides :</span>
+                                <ul>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sectionToShow = document.getElementById(sectionId);
+            if (!sectionToShow) return;
+
+            sectionToShow.classList.remove('hidden');
+            sectionToShow.classList.remove('slide-in');
+
+            void sectionToShow.offsetWidth;
+            sectionToShow.classList.add('slide-in');
+        }
+
+        function hideSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+
+            section.classList.remove('slide-in');
+            section.classList.add('slide-out');
+
+            section.addEventListener('animationend', function handler() {
+                section.classList.add('hidden');
+                section.classList.remove('slide-out');
+                section.removeEventListener('animationend', handler);
+            });
+        }
+    </script>
 
 </body>
-
-<script>
-    function showSection(sectionId) {
-        // 1. On cache toutes les colonnes
-        document.querySelectorAll('.column').forEach(col => {
-            col.classList.add('hidden');
-        });
-
-        // 2. On affiche uniquement celle dont on a besoin
-        const sectionToShow = document.getElementById(sectionId);
-        if (sectionToShow) {
-            sectionToShow.classList.remove('hidden');
-        }
-    }
-</script>
 </html>
