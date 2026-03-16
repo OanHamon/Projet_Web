@@ -21,5 +21,8 @@ class HomeController extends Controller{
 
         echo $this->twig->render('home.twig.html', ['offres'=>$offres, 'entreprises'=>$entreprises]);
     }
+    function renderMentionsLegalesPage(){
+        echo $this->twig->render('mentions.twig.html');
+    }
 
 }
