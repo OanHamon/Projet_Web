@@ -29,7 +29,15 @@
             <li><a href="/">Accueil</a></li>
             <li><a href="/#Stages">Nos Stages</a></li>
             <li><a href="/#Entreprises">Nos Entreprises</a></li>
-             <li><a href="/dashboard">DashBoard</a></li>
+            <!--% if role == admin %-->
+            <li><a href="/student_dashboard">Sudent DashBoard</a></li>
+            <li><a href="/pilote_dashboard">Pilote DashBoard</a></li>
+            <li><a href="/entreprise_dashboard">Entreprise DashBoard</a></li>
+            <!--% else if role == etudiant %
+            <li><a href="/studentdashboard">Sudent DashBoard</a></li>
+            esle if role = entreprise
+             <li><a href="/studentdashboard">Entreprise DashBoard</a></li>
+            -->
         </ul>
 
         <div class="account-div">

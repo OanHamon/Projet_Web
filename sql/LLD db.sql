@@ -13,6 +13,7 @@ CREATE TABLE Entreprise(
    mdp VARCHAR(50) NOT NULL,
    PRIMARY KEY(id_entreprise)
 );
+ALTER TABLE Entreprise CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE Competence(
    id_competence INT AUTO_INCREMENT,
@@ -45,6 +46,7 @@ CREATE TABLE Offre(
    PRIMARY KEY(id_offre),
    FOREIGN KEY(id_entreprise) REFERENCES Entreprise(id_entreprise)
 );
+ALTER TABLE Offre CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE Pilote(
    id_pilote INT,

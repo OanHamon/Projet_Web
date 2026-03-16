@@ -24,6 +24,14 @@ class UserController extends Controller{
         echo $this->twig->render('student_dashboard.twig.html',['user'=>$user,'wishliste'=>$wishliste,'candidatures'=>$candidature]);
     }
 
+    function renderPiloteDashboardPage(){
+
+        echo $this->twig->render('pilote_dashboard.twig.html');
+    }
+
+
+
+
     function updateUserInfo(){
 
         if(isset($_POST['prenom']) && isset($_POST['nom'])&& isset($_POST['email'])){
@@ -43,11 +51,11 @@ class UserController extends Controller{
             }
             
             $this->userModel->update($this->id,$data);
-            header('Location: /dashboard');
+            header('Location: /student_dashboard');
             exit();
         }
         else{
-            header('Location: /error'); //on fera un route qui gère les erreurs plus tards
+            header('Location: /error=?error=no_data_available'); //on fera un route qui gère les erreurs plus tards
             exit(); 
         }
         
@@ -96,7 +104,7 @@ class UserController extends Controller{
 
         }
         else{
-            header('Location: /error'); //on fera un route qui gère les erreurs plus tards
+            header('Location: /error?error=no_data_available'); //on fera un route qui gère les erreurs plus tards
             exit(); 
         }
 

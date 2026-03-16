@@ -1,0 +1,50 @@
+ <h3>Crée une offre :</h3>
+
+<form class="offre-form" method="POST" action="/entreprise_dashboard/create_offre">
+    <div class="form-group">
+        <label>Titre</label>
+        <input type="text" name="titre" placeholder="Entrez un titre ici" required>
+    </div>
+
+    <div class="form-group">
+        <label>Description des cartes</label>
+        <textarea name="description_carte" placeholder="Entrez un petite description de l'offre" required></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Description du stage</label>
+        <textarea name="description_offre_de_stage" placeholder="Ecrivez votre description ici ..." required></textarea>
+    </div>
+    <div class="form-group">
+        <label>Cochez les compétences de l'offre :</label>
+
+        <div class="competences-grid">
+
+        {% for competence in all_competences%}
+            <label><input type="checkbox" name="competences[]" value="{{competence.id_competence}}">{{competence.nom}}</label>
+        {% else %}
+        <p>NO DATA FOUND</p>
+        {% endfor %}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Rémunération</label>
+        <input type="text" name="remuneration_par_mois" placeholder="Entrez la rémuneration par mois ici" required>
+    </div>
+
+    <div class="dates-row">
+        <div class="form-group">
+            <label>Date début</label>
+            <input type="date" name="date_debut" required>
+        </div>
+
+        <div class="form-group">
+            <label>Date fin</label>
+            <input type="date" name="date_fin" required>
+        </div>
+    </div>
+
+    <button class="save-btn">Enregistrer</button>
+
+</form>

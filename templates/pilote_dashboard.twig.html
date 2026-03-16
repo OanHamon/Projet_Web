@@ -1,19 +1,18 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pilote</title>
+    <title>Compte Pilote</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
-    
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../assets/css/token.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/style_compte_pilote_page.css">
+    <link rel="stylesheet" href="/css/token.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style_compte_pilote_page.css">
 </head>
 <body>
     <header>
@@ -26,9 +25,9 @@
             </a>
 
             <ul class="header-links">
-                <li><a href="#Accueil">Accueil</a></li>
-                <li><a href="#Stages">Nos Stages</a></li>
-                <li><a href="#Entreprises">Nos Entreprises</a></li>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="vitrine_stage.html">Nos Stages</a></li>
+                <li><a href="vitrine_entreprise.html">Nos Entreprises</a></li>
             </ul>
 
             <div class="account-div">
@@ -39,11 +38,17 @@
     </header>
 
     <main>
+        <!-- SECTION COMPTE PILOTE -->
         <section class="hero">
             <h1>Compte Pilote</h1>
             <div class="search-container">
-                <input type="text" placeholder="Recherchez un de vos étudiant">
-                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Recherchez dans l'océan des stages">
+                <button class="search-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
             </div>
             <p class="description">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
@@ -75,8 +80,47 @@
                 </div>
             </div>
         </section>
+
+        <!-- SECTION PILOTE -->
+        <section class="pilote-section">
+            <h2 class="pilote-title">Pilote</h2>
+
+            <div class="columns-container">
+
+                <div id="section-classes" class="column">
+                    <div class="column-header">Classes</div>
+                    <ul class="list-items">
+                        <li onclick="showSection('section-eleves')">Classe 1</li>
+                        <li onclick="showSection('section-eleves')">Classe 2</li>
+                        <li onclick="showSection('section-eleves')">Classe 3</li>
+                    </ul>
+                </div>
+
+                <div id="section-eleves" class="column hidden">
+                    <div class="column-header">Élèves</div>
+                    <ul class="list-items">
+                        <li onclick="showSection('section-stages')">Élève 1</li>
+                        <li onclick="showSection('section-stages')">Élève 2</li>
+                        <li onclick="showSection('section-stages')">Élève 3</li>
+                    </ul>
+                    <button class="btn-back" onclick="hideSection('section-eleves')">← Retour aux classes</button>
+                </div>
+
+                <div id="section-stages" class="column hidden">
+                    <div class="column-header">Stages</div>
+                    <ul class="list-items">
+                        <li>Stage Développement Web</li>
+                        <li>Stage Design UI/UX</li>
+                        <li>Stage Marketing</li>
+                    </ul>
+                    <button class="btn-back" onclick="hideSection('section-stages')">← Retour aux élèves</button>
+                </div>
+
+            </div>
+        </section>
     </main>
 
+    <!-- MODALS -->
     <div class="overlay" id="modal-edit-profile">
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal('edit-profile')">&times;</button>
@@ -163,7 +207,6 @@
                 <div class="wave" id="wave_4"></div>
                 <div class="wave" id="wave_5"></div>
             </div>
-
             <div class="continuite">
                 <div class="footer-content">
                     <div class="footer-top-div">
@@ -177,18 +220,29 @@
                     <div class="footer-bottom-div">
                         <span class="legal-link">
                             <a href="#mentionLegales">Mentions Legales</a>
-                            <a href="#ploitiqueDeConfidentialité">Politique de confidentialité</a>
+                            <a href="#ploitiqueDeConfidentialité">Politique de confidentialté</a>
                         </span>
                         <span class="footer-logo">
-                            <img src="../assets/image/logo_projet_web.png" alt="Logo">
+                            <img src="../assets/css/logo.png" alt="Logo">
                         </span>
                         <div class="speed-link">
                             <div class="quick-links">
                                 <span class="title">Liens rapides :</span>
                                 <ul>
-                                    <li><a href="#">Accueil</a></li>
-                                    <li><a href="#">Stages</a></li>
-                                    <li><a href="#">Entreprises</a></li>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
+                                    <li><a href="#">Bullet point 1</a></li>
+                                    <li><a href="#">Bullet point 2</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -199,55 +253,80 @@
     </footer>
 
     <script>
-    function openModal(id) {
-        document.getElementById('modal-' + id).classList.add('active');
-    }
-
-    function closeModal(id) {
-        const overlay = document.getElementById('modal-' + id);
-        overlay.classList.remove('active');
-
-        const content = document.getElementById('content-' + id);
-        if (content && content.dataset.confirmed === 'true') {
-            // Petit délai pour laisser l'animation de fermeture se faire avant de reset le contenu
-            setTimeout(() => {
-                content.dataset.confirmed = 'false';
-                content.innerHTML = content.dataset.original;
-            }, 300);
+        // --- Modals ---
+        function openModal(id) {
+            document.getElementById('modal-' + id).classList.add('active');
         }
-    }
 
-    function confirmDelete(id, message) {
-        const content = document.getElementById('content-' + id);
-        if (!content.dataset.original) {
-            content.dataset.original = content.innerHTML;
-        }
-        content.dataset.confirmed = 'true';
-        content.innerHTML = `
-            <div class="success-message" style="text-align:center; padding:20px;">
-                <span class="success-icon" style="font-size:2rem; display:block; margin-bottom:10px;">✅</span>
-                <strong>${message}</strong>
-            </div>
-            <div class="btn-group" style="margin-top:20px;">
-                <button class="btn-dark" style="width:100%" onclick="closeModal('${id}')">Fermer</button>
-            </div>
-        `;
-    }
+        function closeModal(id) {
+            const overlay = document.getElementById('modal-' + id);
+            overlay.classList.remove('active');
 
-    function selectClass(btn) {
-        btn.closest('.class-selector').querySelectorAll('button').forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-    }
-
-    // Fermeture au clic sur l'overlay
-    document.querySelectorAll('.overlay').forEach(overlay => {
-        overlay.addEventListener('click', function(e) {
-            if (e.target === this) {
-                const id = this.id.replace('modal-', '');
-                closeModal(id);
+            const content = document.getElementById('content-' + id);
+            if (content && content.dataset.confirmed === 'true') {
+                setTimeout(() => {
+                    content.dataset.confirmed = 'false';
+                    content.innerHTML = content.dataset.original;
+                }, 300);
             }
+        }
+
+        function confirmDelete(id, message) {
+            const content = document.getElementById('content-' + id);
+            if (!content.dataset.original) {
+                content.dataset.original = content.innerHTML;
+            }
+            content.dataset.confirmed = 'true';
+            content.innerHTML = `
+                <div class="success-message" style="text-align:center; padding:20px;">
+                    <span style="font-size:2rem; display:block; margin-bottom:10px;">✅</span>
+                    <strong>${message}</strong>
+                </div>
+                <div class="btn-group" style="margin-top:20px;">
+                    <button class="btn-dark" style="width:100%" onclick="closeModal('${id}')">Fermer</button>
+                </div>
+            `;
+        }
+
+        function selectClass(btn) {
+            btn.closest('.class-selector').querySelectorAll('button').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+        }
+
+        document.querySelectorAll('.overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    const id = this.id.replace('modal-', '');
+                    closeModal(id);
+                }
+            });
         });
-    });
+
+        // --- Colonnes Pilote ---
+        function showSection(sectionId) {
+            const sectionToShow = document.getElementById(sectionId);
+            if (!sectionToShow) return;
+
+            sectionToShow.classList.remove('hidden');
+            sectionToShow.classList.remove('slide-in');
+            void sectionToShow.offsetWidth;
+            sectionToShow.classList.add('slide-in');
+        }
+
+        function hideSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+
+            section.classList.remove('slide-in');
+            section.classList.add('slide-out');
+
+            section.addEventListener('animationend', function handler() {
+                section.classList.add('hidden');
+                section.classList.remove('slide-out');
+                section.removeEventListener('animationend', handler);
+            });
+        }
     </script>
+
 </body>
 </html>

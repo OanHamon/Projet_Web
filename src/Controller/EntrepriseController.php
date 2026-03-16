@@ -2,18 +2,24 @@
 
 namespace App\Controller;
 
-use App\Model\{EntrepriseModel,EvaluationModel};
+use App\Model\{EntrepriseModel,EvaluationModel,OffreModel,CompetenceModel};
 
 class EntrepriseController extends Controller{
 
     private $entrepriseModel;
     private $evalModel;
+    private $offreModel;
+    private $entreprise_id; //id fix temporaire
+    private $compModel;
 
     function __construct(){
         parent::__construct();
         $this->entrepriseModel = new EntrepriseModel();
         $this->evalModel = new EvaluationModel();
-    }
+        $this->offreModel = new OffreModel( );
+        $this->compModel = new CompetenceModel();
+        $this->entreprise_id = 1;// id fix temporaire
+    } 
 
     function renderEntreprisePage($id){
         $entreprise = $this->entrepriseModel->getById($id);
@@ -21,7 +27,30 @@ class EntrepriseController extends Controller{
         $competences = $this->entrepriseModel->getCompetences($id);
         $note = ceil($this->entrepriseModel->getEvaluation($id)['moyenne']); // On affiche la note de l'entreprise et pas celle de l'utilisateur sur cette entreprise pour l'instant mais on le fera + tard
 
+
         echo $this->twig->render('vitrine_entreprise.twig.html',['entreprise'=>$entreprise, 'offres'=>$offres, 'competences'=>$competences, 'note'=>$note]);
+    }
+
+    function renderEntrepriseDashboardPage(){
+        $entreprise = $this->entrepriseModel->getById($this->entreprise_id);
+        $offres = $this->entrepriseModel->getOffres($this->entreprise_id);
+        $all_competences = $this->compModel->getAll();
+        
+        $offre_to_display = NULL;
+        $offre_competences = [];
+
+        if(isset($_GET['offre_id'])){
+            $id_to_display = $_GET['offre_id'];
+            $offre_to_display = $this->offreModel->getById($id_to_display);
+            $offre_competences = $this->offreModel->getCompetences($id_to_display);
+        }
+
+        $createNew = false;
+        if(isset($_GET['create']) && $_GET['create'] ==true ){
+            $createNew =true;
+            
+        }
+        echo $this->twig->render('entreprise_dashboard.twig.html',['entreprise'=>$entreprise,  'offres'=>$offres, 'offre_to_display'=>$offre_to_display, 'all_competences'=>$all_competences , 'offre_competences'=>$offre_competences, 'createNew'=>$createNew]);
     }
 
     function manageNotation($id){
@@ -46,5 +75,86 @@ class EntrepriseController extends Controller{
             header('Location: /error?error=no_rating_available');
         }
 
+    }
+
+
+    function updateEntrepriseInfo(){
+
+        if(isset($_POST['titre']) && isset($_POST['phrase_intro']) && isset($_POST['description_entreprise']) && isset($_POST['description_cartes'])){
+            $ttl = $_POST['titre'];
+            $pi = $_POST['phrase_intro'];
+            $de = $_POST['description_entreprise'];
+            $dc = $_POST['description_cartes'];
+            $data= [];
+            if(!empty($ttl)){$data['Nom']=$ttl;}
+            if(!empty($pi)){$data['phrase_intro']=$pi;}
+            if(!empty($de)){$data['description_entreprise']=$de;}
+            if(!empty($dc)){$data['description_cartes']=$dc;}
+            if(!empty($data)){$this->entrepriseModel->update($this->entreprise_id,$data);}
+
+
+            header('Location: /entreprise_dashboard');
+            exit();
+        }
+        else{
+            header('Location: /error?error=no_data_available');
+            exit();
+        }
+    }
+
+    function updateOffreInfo(){
+        if(isset($_POST['id_offre'])){
+            $id_offre = $_POST['id_offre'];
+            $data = [];
+            $fields = ['titre', 'description_carte', 'description_offre_de_stage','remuneration_par_mois', 'date_debut', 'date_fin'];
+            foreach($fields as $field){
+                if(!empty($_POST[$field])){
+                    $data[$field] = $_POST[$field];
+                }
+            }
+            $this->compModel->deleteOffreCompetences($id_offre);
+            if(isset($_POST['competences'])){
+                foreach($_POST['competences'] as $id_competence){
+                    $this->compModel->insertOffreCompetence($id_offre,$id_competence);
+                }
+            }
+
+            $this->offreModel->update($id_offre, $data);
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+            exit();
+        }
+        else{header('location: /error?error=no_data_available'); exit();}
+    }
+
+    function deleteOffre(){
+        if(isset($_POST['id_offre'])){
+            $this->offreModel->deleteById($_POST['id_offre']);
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+            exit();
+        }
+        else{ header('location: /error?error=no_data_available'); exit();}
+    }
+
+    function createOffre(){
+
+        $fields = ['titre', 'description_carte', 'description_offre_de_stage','remuneration_par_mois', 'date_debut', 'date_fin'];
+        $data = [];
+        foreach($fields as $field){
+            if(isset($_POST[$field]) && !empty($_POST[$field])){
+                $data[$field] = $_POST[$field];
+
+            }
+            else{ header('location: /error?error=no_data_available'); exit();}
+        }
+        $data['id_entreprise']=$this->entreprise_id;
+        $id_new_offre =$this->offreModel->insert($data);
+        if(isset($_POST['competences'])){
+            foreach($_POST['competences'] as $id_competence){
+                $this->compModel->insertOffreCompetence($id_new_offre, $id_competence);
+            }
+        }
+
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit();
     }
 }

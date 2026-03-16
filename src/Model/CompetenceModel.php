@@ -21,4 +21,22 @@ class CompetenceModel extends BaseModel
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+
+    public function deleteOffreCompetences($id_offre){
+        $query = "DELETE FROM Competence_Offre  WHERE id_offre = :id_offre";
+        
+        $stmt = $this->executeQuery($query, ['id_offre' => $id_offre]);
+        return $stmt->rowCount();   
+    }
+
+    public function insertOffreCompetence($id_offre, $id_competence){
+
+        $query = "INSERT INTO Competence_Offre (id_offre, id_competence) VALUES (:id_offre, :id_competence)";
+
+        $this->executeQuery($query, ['id_offre'=>$id_offre, 'id_competence'=>$id_competence]);
+
+        return $this->conn->lastInsertId();
+
+    }
 }
