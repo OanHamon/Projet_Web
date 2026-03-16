@@ -37,23 +37,30 @@
   
             <div class="carousel-container">
                 {% if offres|length == 0 %}
-                    <p>0 offres</p>
+                    <p>NO DATA FOUND</p>
                 {% else %}
                     {% for offre in offres %}
-                    <a href="/offre/{{offre.id_offre}}" class="card-link">
-                    <article class="stage-card card" >
-                            <div class="stage-card-header">
-                                <span class="icon">+</span>
-                            </div>
-                            <div class="stage-card-body">
-                                <h3>{{offre.titre}}</h3>
-                                <p class="company">{{offre.nom}}</p>
-                                <p class="description">
-                                    {{offre.description_carte}}
-                                </p>
-                            </div>
+                    
+
+                    <div class="card-wrapper" style="position: relative">
+                        <article class="stage-card card" >
+                            <form method="POST" action="/wishlist/add">
+                                <input type="hidden" name="id_offre" value="{{offre.id_offre}}">
+                                <button class="icon" style="position: absolute; top: 15px; right: 15px;">+</button>
+                            </form>
+                            <a href="/offre/{{offre.id_offre}}" class="card-link">
+                                <div class="stage-card-header">
+                                </div>
+                                <div class="stage-card-body">
+                                    <h3>{{offre.titre}}</h3>
+                                    <p class="company">{{offre.nom}}</p>
+                                    <p class="description">
+                                        {{offre.description_carte}}
+                                    </p>
+                                </div>
+                            </a>
                         </article>
-                    </a>
+                    </div>
                     {% endfor %}
                 {% endif %}
             </div>
@@ -67,27 +74,27 @@
 
         <div class="sec3-container">
             {% if entreprises|length == 0 %}
-                <p>0 entreprise</p>
+                <p>NO DATA FOUND</p>
             {% else %}
                 {% for entreprise in entreprises %}
                 <a href="/entreprise/{{entreprise.id_entreprise}}" class="card-link">
                     <article class="profile-card card">
                         <div class="profile-card-header">
                             <span class="title-container">
-                                <h3 class="profile-card-title">{{entreprise.nom}}</h3>
+                                <h3 class="profile-card-title">{{entreprise.Nom}}</h3>
                             </span>
                             <div class="profile-card-logo-container">
-                                <img src="/css/logo.png" alt="Logo">
+                                <img src="/image/logo_projet_web.png" alt="Logo">
                             </div>
                         </div>
                         <div class="profile-card-body">
                                 <p class="description">
-                                    {{entreprise.description_cartes}}
+                                    {{entreprise.phrase_intro}}
                                 </p>
                                 <br>
                                 <h4>Nous en vite : </h4>
                                 <p class="description">
-                                    {{entreprise.description_carte_2}}
+                                    {{entreprise.description_cartes}}
                                 </p>
                         </div>
                     </article>

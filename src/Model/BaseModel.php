@@ -1,5 +1,5 @@
 <?php
-namespace App\Model;
+namespace App\Model;    
 use App\Config\Database;
 use PDO;
 use PDOException;
@@ -60,10 +60,9 @@ class BaseModel extends Model
 
         $query = "UPDATE {$this->table}
                   SET $setClause
-                  WHERE {$this->primaryKey} = :id";
+                  WHERE {$this->primaryKey} = :{$this->primaryKey}";
 
-        $data['id'] = $id;
-
+        $data[$this->primaryKey] = $id;
         $stmt = $this->executeQuery($query, $data);
 
         return $stmt->rowCount();

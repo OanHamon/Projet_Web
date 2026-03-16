@@ -1,8 +1,53 @@
 {% extends 'base.twig.html' %}
 
 {% block styles %}
-        <link rel="stylesheet" href="/css/style_entreprise_page.css">
         <link rel="stylesheet" href="/css/token.css">
+        <link rel="stylesheet" href="/css/style_entreprise_page.css">
+        <!--A METRE ABSOLUMENT DANS LE CSS STYLE ENTREPRISE PAGE QD JE PEUX REFRESH LE CSS-->
+        <style> 
+            .star-rating {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: center;
+                font-size: 40px;
+            }
+
+            .star-rating input {
+                display: none;
+            }
+
+            .star-rating label {
+                cursor: pointer;
+                color: #ccc;
+                transition: color 0.2s;
+            }
+
+            .star-rating label:hover,
+            .star-rating label:hover ~ label {
+                color: #FFD700;
+            }
+
+            .star-rating input:checked ~ label {
+                color: #FFD700;
+            }
+
+            .section-list h2 {
+                font-size: 28px;
+                font-weight: 700;
+                color: var(--dark-blue);
+                margin-bottom: 30px;
+            }
+
+            .section-title {
+                margin-bottom: 30px;
+            }
+
+            .description-container-entreprise {
+                margin: 0px 70px 70px 40px;
+                line-height: 1.9;
+            }
+        </style>
+        <!--A METRE ABSOLUMENT DANS LE CSS STYLE ENTREPRISE PAGE QD JE PEUX REFRESH LE CSS-->
 {% endblock %}
 
 
@@ -12,7 +57,7 @@
         <section>
             <div class="image-banner-entreprise">
                 <div class="overlay">
-                    <h1>{{entreprise.nom}}</h1>
+                    <h1>{{entreprise.Nom}}</h1>
                     <p>{{entreprise.phrase_intro}}</p>
                 </div>  
         </section>
@@ -23,9 +68,7 @@
 
                     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
                     <script>
-                    const markdownText = `{{entreprise.description_entreprise}}
-
-        `;
+                    const markdownText = `{{entreprise.description_entreprise}}`;
                     document.getElementById("content").innerHTML = marked.parse(markdownText);
                     </script>
         <section>
@@ -34,20 +77,25 @@
             </div>
             <div class="carousel-container-entreprise">
                 {% for offre in offres %}
-                <a href="/offre/{{offre.id_offre}}" class="card-link">
-                <article class="stage-card card" >
-                        <div class="stage-card-header">
-                            <span class="icon">+</span>
-                        </div>
-                        <div class="stage-card-body">
-                            <h3>{{offre.titre}}</h3>
-                            <p class="company">{{offre.nom}}</p>
-                            <p class="description">
-                                {{offre.description_carte}}
-                            </p>
-                        </div>
-                    </article>
-                </a>
+                    <div class="card-wrapper" style="position: relative">
+                        <article class="stage-card card" >
+                            <form method="POST" action="/wishlist/add">
+                                <input type="hidden" name="id_offre" value="{{offre.id_offre}}">
+                                <button class="icon" style="position: absolute; top: 15px; right: 15px;">+</button>
+                            </form>
+                            <a href="/offre/{{offre.id_offre}}" class="card-link">
+                                <div class="stage-card-header">
+                                </div>
+                                <div class="stage-card-body">
+                                    <h3>{{offre.titre}}</h3>
+                                    <p class="company">{{offre.nom}}</p>
+                                    <p class="description">
+                                        {{offre.description_carte}}
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
                 {% else %}
                     <p>NO DATA FOUND</p>
                 {% endfor %}
@@ -92,11 +140,43 @@
 
         <section class="section-opinion">
             <h2>Donner votre avis</h2>
-            <div class="star-container">
-                
+            <form method="POST" action="/entreprise/{{entreprise.id_entreprise}}/rate">
+                <h3>Note Actuelle  : </h3>
+                <div class="star-rating">
 
-            </div>
+                    
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5">★</label>
+
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4">★</label>
+
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3">★</label>
+
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2">★</label>
+
+                    <input type="radio" id="star1" name="rating" value="1" >
+                    <label for="star1">★</label>
+
+                </div>
+            </form>
 
         </section>
     </main>
+<script>
+
+const entrepriseNote = {{note}};
+if(entrepriseNote){
+    document.getElementById('star' + entrepriseNote).checked = true;
+}
+document.querySelectorAll('.star-rating input').forEach(input => {
+    input.addEventListener('change', function() {
+        this.closest('form').submit();
+    });
+});
+
+
+</script>
     {% endblock %}

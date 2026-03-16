@@ -602,7 +602,7 @@ header nav{
 .stage-card{
     width: 250px;
     height: 250px;
-    background-color: var(--light-silver);
+    background-color: white;
     border-radius: 20px;
     scroll-snap-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -648,6 +648,7 @@ header nav{
   align-items: center;
   justify-content: center;
   font-size: 14px;
+  margin: 10px 20px 20px 220px;
 }
 
 

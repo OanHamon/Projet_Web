@@ -40,7 +40,7 @@ class EntrepriseModel extends BaseModel
         $query = "
         SELECT DISTINCT c.*
         FROM Competence c
-        JOIN Competence_Offre r ON r.id_competence = c.id_competence
+        JOIN Competence_demander r ON r.id_competence = c.id_competence
         JOIN Offre o ON o.id_offre = r.id_offre
         WHERE o.id_entreprise = :id
         ;";

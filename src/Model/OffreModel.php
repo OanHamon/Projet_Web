@@ -35,19 +35,19 @@ class OffreModel extends BaseModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getCompetences($idOffre)
-    {
-        $query = "
-        SELECT c.*
-        FROM Competence c
-        JOIN Competence_Offre r ON r.id_competence = c.id_competence
-        WHERE r.id_offre = :id
-        ;";
+        public function getCompetences($idOffre)
+        {
+            $query = "
+            SELECT c.*
+            FROM Competence c
+            JOIN Competence_demander r ON r.id_competence = c.id_competence
+            WHERE r.id_offre = :id
+            ;";
 
-        $stmt = $this->executeQuery($query, ['id' => $idOffre]);
+            $stmt = $this->executeQuery($query, ['id' => $idOffre]);
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
 
     public function getCandidats($idOffre)
     {
