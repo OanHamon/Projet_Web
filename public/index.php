@@ -36,6 +36,7 @@ $routeur->add('POST','/candidater/{id}',[UserController::class, 'candidaterOffre
 
 $routeur->add('GET','/search',[SearchController::class, 'renderSearchPage']);
 
+$routeur->add('GET','/mentionslegales',[HomeController::class, 'renderMentionsLegalesPage']);
 
 // === Auth ===
 
