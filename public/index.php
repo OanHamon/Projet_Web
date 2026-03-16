@@ -38,6 +38,12 @@ $routeur->add('GET','/search',[SearchController::class, 'renderSearchPage']);
 
 $routeur->add('GET','/mentionslegales',[HomeController::class, 'renderMentionsLegalesPage']);
 
+// === Auth ===
+
+$routeur->add('GET','/sign',[AuthController::class, 'renderAuthPage']);
+$routeur->add('POST','/inscription',[AuthController::class, 'create_account']);
+$routeur->add('POST','/signin',[AuthController::class, 'login']);
+
 
 $url    = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $method = $_SERVER['REQUEST_METHOD'];     
