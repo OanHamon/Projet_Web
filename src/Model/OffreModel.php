@@ -12,10 +12,10 @@ class OffreModel extends BaseModel
     public function getEntreprise($idOffre) // a refaire
     {
         $query = " 
-        SELECT e.*
-        FROM Entreprise e
-        WHERE e.id_entreprise = :id
-        ;";
+            SELECT e.*
+            FROM Entreprise e
+            JOIN Offre o ON o.id_entreprise = e.id_entreprise
+            WHERE o.id_offre = :id";
 
         $stmt = $this->executeQuery($query, ['id' => $idOffre]);
 

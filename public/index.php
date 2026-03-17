@@ -22,6 +22,8 @@ $routeur->add('GET','/offre/{id}',[OffreController::class, 'renderOffrePage']);
 
 // === Entreprise ===
 $routeur->add('GET','/entreprise_dashboard',[EntrepriseController::class, 'renderEntrepriseDashboardPage']);
+$routeur->add('GET','/entreprise_dashboard/showdata',[EntrepriseController::class, 'renderEntrepriseDashboardPage']);
+//$routeur->add('POST','/entreprise_dashboard/candidat',[EntrepriseController::class, 'showCandidatData']);
 $routeur->add('POST','/entreprise_dashboard/update_offre_info',[EntrepriseController::class, 'updateOffreInfo']);
 $routeur->add('POST','/entreprise_dashboard/delete_offre',[EntrepriseController::class, 'deleteOffre']);
 $routeur->add('POST','/entreprise_dashboard/create_offre',[EntrepriseController::class, 'createOffre']);

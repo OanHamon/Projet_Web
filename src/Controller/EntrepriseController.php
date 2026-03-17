@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Model\{EntrepriseModel,EvaluationModel,OffreModel,CompetenceModel};
+use App\Model\{EntrepriseModel,EvaluationModel,OffreModel,CompetenceModel, UserModel};
 
 class EntrepriseController extends Controller{
 
@@ -11,6 +11,7 @@ class EntrepriseController extends Controller{
     private $offreModel;
     private $entreprise_id; //id fix temporaire
     private $compModel;
+    private $userModel;
 
     function __construct(){
         parent::__construct();
@@ -18,7 +19,8 @@ class EntrepriseController extends Controller{
         $this->evalModel = new EvaluationModel();
         $this->offreModel = new OffreModel( );
         $this->compModel = new CompetenceModel();
-        $this->entreprise_id = 1;// id fix temporaire
+        $this->userModel = new UserModel();
+        $this->entreprise_id = 7;// id fix temporaire
     } 
 
     function renderEntreprisePage($id){
@@ -37,10 +39,30 @@ class EntrepriseController extends Controller{
         $all_competences = $this->compModel->getAll();
         
         $offre_to_display = NULL;
+        $showdata = NULL;
+        $candidats = NULL;
+        $candidat_data = NULL;
+        $cv_url = NULL;
+        $lm_url = NULL;
         $offre_competences = [];
 
         if(isset($_GET['offre_id'])){
             $id_to_display = $_GET['offre_id'];
+
+            if(isset($_GET['showdata']) && $_GET['showdata'] == 'true'){
+                $showdata = true;      
+                $candidats = $this->offreModel->getCandidats($id_to_display);    
+                if(isset($_GET['candidat_id'])){
+                    $candidat_data = $this->userModel->getById($_GET['candidat_id']);
+                    $candidature = $this->userModel->getCandidature($_GET['candidat_id'],$id_to_display);
+                    $cv_url = "/uploads/cv/" . $candidature['cv_url'];
+                    $lm_url = "/uploads/lm/" . $candidature['lm_url'];
+                } 
+            }
+            else{
+                $showdata = false; 
+            }
+            
             $offre_to_display = $this->offreModel->getById($id_to_display);
             $offre_competences = $this->offreModel->getCompetences($id_to_display);
         }
@@ -50,7 +72,20 @@ class EntrepriseController extends Controller{
             $createNew =true;
             
         }
-        echo $this->twig->render('entreprise_dashboard.twig.html',['entreprise'=>$entreprise,  'offres'=>$offres, 'offre_to_display'=>$offre_to_display, 'all_competences'=>$all_competences , 'offre_competences'=>$offre_competences, 'createNew'=>$createNew]);
+        echo $this->twig->render('entreprise_dashboard.twig.html',[
+            'entreprise'=>$entreprise,
+            'offres'=>$offres, 
+            'offre_to_display'=>$offre_to_display,
+            'showdata'=>$showdata ,
+            'all_competences'=>$all_competences , 
+            'offre_competences'=>$offre_competences, 
+            'createNew'=>$createNew,
+            'candidats'=>$candidats,
+            'candidat_data'=>$candidat_data,
+            'cv_url'=>$cv_url,
+            'lm_url'=>$lm_url,
+
+            ]);
     }
 
     function manageNotation($id){
@@ -157,4 +192,17 @@ class EntrepriseController extends Controller{
         header('Location: ' . $_SERVER['HTTP_REFERER']);
         exit();
     }
+
+
+    // a faire quand on aura bien les sessions
+
+    /*
+    function showCandidatData(){
+        if(isset([$_POST['id_offre']]) && isset([$_POST['id_etudiant']])){
+
+
+        }
+    }
+
+    */
 }
