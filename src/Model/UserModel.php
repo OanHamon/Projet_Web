@@ -55,8 +55,9 @@ class UserModel extends BaseModel
         return $result ? true : false;
     }
 
-    public function create_user($email, $password_hash, $nom, $prenom) 
+    public function create_user($email, $password_hash, $nom, $prenom, $role) 
     {
+        // Insert the user
         $query = "
         INSERT INTO Utilisateur (nom, prenom, email, mdp) VALUES
         (:nom,:prenom,:email,:mdp)
@@ -69,20 +70,22 @@ class UserModel extends BaseModel
             'mdp' => $password_hash
         ]);
 
-        $query = "
-            SELECT id_utilisateur
-            FROM Utilisateur
-            WHERE email = :email
-            LIMIT 1
-        ;";
+        // Retrieve last inserted user ID
+        $id_user = $this->conn->lastInsertId();
 
-        $stmt = $this->executeQuery($query, [
-            'email' => $email
-        ]);
+        // Insert user into role-specific table
+        if ($role === "etudiant") {
+            $query = "INSERT INTO Etudiant (id_etudiant, id_pilote) VALUES (:id,1);";
+            $this->executeQuery($query, ['id' => $id_user]);
+        } elseif ($role === "pilote") {
+            $query = "INSERT INTO Pilote (id_pilote) VALUES (:id);";
+            $this->executeQuery($query, ['id' => $id_user]);
+        } elseif ($role === "admin") {
+            $query = "INSERT INTO Admin (id_admin) VALUES (:id);";
+            $this->executeQuery($query, ['id' => $id_user]);
+        }
 
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        return $result ? $result['id_utilisateur'] : null;
+        return $id_user;
     }
 
     public function hashed_password_user_email($email) 
@@ -119,5 +122,22 @@ class UserModel extends BaseModel
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
         return $result ? $result['id_utilisateur'] : null;
+    }
+
+    public function get_user_role($id_user){
+
+        $queryEtudiant = "SELECT 1 FROM Etudiant WHERE id_etudiant = :id LIMIT 1;";
+        $stmtEtudiant = $this->executeQuery($queryEtudiant, ['id' => $id_user]);
+        if ($stmtEtudiant->fetch()) {return "etudiant";}
+
+        $queryAdmin = "SELECT 1 FROM Admin WHERE id_admin = :id LIMIT 1;";
+        $stmtAdmin = $this->executeQuery($queryAdmin, ['id' => $id_user]);
+        if ($stmtAdmin->fetch()) {return "admin";}
+
+        $queryPilote = "SELECT 1 FROM Pilote WHERE id_pilote = :id LIMIT 1;";
+        $stmtPilote = $this->executeQuery($queryPilote, ['id' => $id_user]);
+        if ($stmtPilote->fetch()) {return "pilote";}
+
+        return null;
     }
 }

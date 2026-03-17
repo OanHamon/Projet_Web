@@ -26,22 +26,29 @@
         </a>
 
         <ul class="header-links">
+
             <li><a href="/">Accueil</a></li>
             <li><a href="/#Stages">Nos Stages</a></li>
             <li><a href="/#Entreprises">Nos Entreprises</a></li>
-            <!--% if role == admin %-->
-            <li><a href="/student_dashboard">Sudent DashBoard</a></li>
-            <li><a href="/pilote_dashboard">Pilote DashBoard</a></li>
-            <li><a href="/entreprise_dashboard">Entreprise DashBoard</a></li>
-            <!--% else if role == etudiant %
-            <li><a href="/studentdashboard">Sudent DashBoard</a></li>
-            esle if role = entreprise
-             <li><a href="/studentdashboard">Entreprise DashBoard</a></li>
-            -->
+            
+        {% if session.role is defined %}
+            {% if session.role == 'admin' %}
+            <li><a href="/student_dashboard">Student Dashboard</a></li>
+            <li><a href="/pilote_dashboard">Pilote Dashboard</a></li>
+            <li><a href="/entreprise_dashboard">Entreprise Dashboard</a></li>
+            {% elseif session.role == 'etudiant' %}
+            <li><a href="/student_dashboard">Student Dashboard</a></li>
+            {% elseif session.role == 'pilote' %}
+            <li><a href="/pilote_dashboard">Pilote Dashboard</a></li>
+            {% elseif session.role == 'entreprise' %}
+            <li><a href="/entreprise_dashboard">Entreprise Dashboard</a></li>
+            {% endif %}
+        {% endif %}
+
         </ul>
 
         <div class="account-div">
-            {% if true %}
+            {% if session.userId is defined and session.userId %}
             <a href="/logout" class="signup">
                 Se déconnecter
             </a>

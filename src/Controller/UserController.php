@@ -68,6 +68,7 @@ class UserController extends Controller{
 
     function deleteAccount(){
         $this->userModel->deleteById($this->id);
+        $_SESSION = array();
         header('Location: /'); 
         exit(); 
     }

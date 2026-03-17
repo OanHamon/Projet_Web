@@ -12,7 +12,7 @@ abstract class Controller
     public function __construct()
     {
         $this->twig = TwigConfig::init();
-        print(isset($_SESSION['userId']) ? $_SESSION['userId'] : 'null');
+        $this->twig->addGlobal('session', $_SESSION);
     }
 }
 

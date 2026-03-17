@@ -31,7 +31,9 @@ class AuthController extends Controller{
             }
     
             if (empty($errors)) {
-                $_SESSION['userId'] = $this->userModel->get_user_id($email);
+                $userId = $this->userModel->get_user_id($email);
+                $_SESSION['userId'] = $userId;
+                $_SESSION['role'] = $this->userModel->get_user_role($userId);
                 header('Location: /student_dashboard');
                 exit;
             }
@@ -58,8 +60,9 @@ class AuthController extends Controller{
             }
     
             if (empty($errors)) {
-                $userId = $this->userModel->create_user($email, $password_hash, $nom, $prenom);
+                $userId = $this->userModel->create_user($email, $password_hash, $nom, $prenom, "etudiant");
                 $_SESSION['userId'] = $userId;
+                $_SESSION['role'] = $this->userModel->get_user_role($userId);
                 header('Location: /student_dashboard');
                 exit;
             }
