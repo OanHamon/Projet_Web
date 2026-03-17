@@ -26,7 +26,7 @@ class AuthController extends Controller{
                 header('Location: /dashboard');
                 exit;
             } else {
-                header('Location: /login');
+                header('Location: /sign');
                 exit;
             }
         }
@@ -44,13 +44,13 @@ class AuthController extends Controller{
             }
 
             if (!$this->userModel->user_exist_email($email)) {
-                //session_start();
-                //$_SESSION['userId'] = 
-                $this->userModel->create_user($email, $password_hash, $nom, $prenom);
+                $userId = $this->userModel->create_user($email, $password_hash, $nom, $prenom);
+                session_start();
+                $_SESSION['userId'] = $userId;
                 header('Location: /dashboard');
                 exit;
             } else {
-                header('Location: /login');// l'utilisateur existe déja
+                header('Location: /sign');// l'utilisateur existe déja
                 exit;
             }
         }

@@ -14,7 +14,13 @@ class UserController extends Controller{
         parent::__construct();
         $this->userModel = new UserModel();
         $this->wlModel = new WishlistModel();
-        $this->id=9;
+
+        // Vérifier si l'utilisateur est connecté
+        if (!isset($_SESSION['userId'])) {
+            header('Location: /sign');
+            exit;
+        }
+        $this->id=$_SESSION['userId'];
     }
 
     function renderStudentDashboardPage(){

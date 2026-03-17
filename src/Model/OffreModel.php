@@ -40,7 +40,7 @@ class OffreModel extends BaseModel
             $query = "
             SELECT c.*
             FROM Competence c
-            JOIN Competence_demander r ON r.id_competence = c.id_competence
+            JOIN Competence_Offre r ON r.id_competence = c.id_competence
             WHERE r.id_offre = :id
             ;";
 

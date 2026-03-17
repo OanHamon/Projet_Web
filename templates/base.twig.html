@@ -33,12 +33,18 @@
         </ul>
 
         <div class="account-div">
+            {% if _SESSION['userId'] is defined %}
+            <a href="/logout" class="signup">
+                Se déconnecter
+            </a>
+            {% else %}
             <a href="/sign" class="signup">
                 S'inscrire
             </a>
             <a href="/sign" class="login">
                 Se connecter
             </a>
+            {% endif %}
         </div>
     </nav>
 </header>
