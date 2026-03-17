@@ -17,94 +17,69 @@
 {% block content %}
     
     <main class="content-search-page">
-            <div class="stage-search-box">
-
-                <div class="search-box-label-bar">
-                    <label for="métiers">Métiers</label>
-                    <form class="search-container" role="search" method="get">
-                                <input type="hidden" name="job[]" value="">
-                                <input type="hidden" name="location[]" value="">
-                                <input type="hidden" name="neer" value="">
-                        <input type="search" name="job[]" placeholder="Recherchez votre métier" aria-label="Rechercher un stage">
-                        <button type="submit" aria-label="Lancer la recherche">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABsElEQVR4AbTUjVXDMAwEYJdFgEmASYBJgEmASYBJYBPQZyK/uEl/0rzmRbEsS3c6t/ZFOfOzlOA1+mEPMd6GHXz3EQB5HiFcDb44ko+Yf4ftJdpFABjIZQDk+xPOY9gm7DqMH0NBJJ8/sTkCBU+R+RKWIOF2L7K3iNyFyZNPTUz7d5sAOMkKd3Y1gkAkjyJbSPVouZQxAWCmo88u6/AEkTq/D4xWMSbADlhHLWGBY8vUw2llSYCVxPe2stxJFXDgVYQkEBTQgfFUQ9LVJsHNEJ0kDPFjh6yfVbC2+2wCSTs/qeArVnObwl31djhJoHsLTdqJFDCUatjYzgFZNbDykw1quEKlAgSs+w/XjGWf+0iHw8LtT7J7h8RTD5o6CuBUcJ9UwCfLcdeFRLFjTb4LL09zqxsTCEow2iod8Q+ZPJekbem6V7hNIMlN6srQkSt4coFFoa0UByyPcjcqJQgj5f/dJhBFIkmBOTWAkBl/I8gXR6Qh+REu5ghz3v6mZeZBhISR7jeSplvzTUysZTymxRZbR0LNXoIyPIgUAs1uzYflyaB7JHVhbovqwsoPkqrsDwAA///F7rH+AAAABklEQVQDAK4XUzHC974AAAAAAElFTkSuQmCC" alt="icon" />
-                        </button>
-                    </form>
-                </div>
-
-                <div class="search-box-label-bar">
-                    <label for="location">Localisation</label>
-                    <form method="get" class="search-container" role="search">
-
-                        <input type="hidden" name="job[]" value="' . htmlspecialchars($j) . '">
-                        <input type="hidden" name="location[]" value="' . htmlspecialchars($loc) . '">
-                        <input type="hidden" name="neer" value="">
-
-                        <input type="search" name="location[]" placeholder="Recherchez ou vous voulez" aria-label="Rechercher un stage">
-                        <button type="submit" aria-label="Lancer la recherche">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABsElEQVR4AbTUjVXDMAwEYJdFgEmASYBJgEmASYBJYBPQZyK/uEl/0rzmRbEsS3c6t/ZFOfOzlOA1+mEPMd6GHXz3EQB5HiFcDb44ko+Yf4ftJdpFABjIZQDk+xPOY9gm7DqMH0NBJJ8/sTkCBU+R+RKWIOF2L7K3iNyFyZNPTUz7d5sAOMkKd3Y1gkAkjyJbSPVouZQxAWCmo88u6/AEkTq/D4xWMSbADlhHLWGBY8vUw2llSYCVxPe2stxJFXDgVYQkEBTQgfFUQ9LVJsHNEJ0kDPFjh6yfVbC2+2wCSTs/qeArVnObwl31djhJoHsLTdqJFDCUatjYzgFZNbDykw1quEKlAgSs+w/XjGWf+0iHw8LtT7J7h8RTD5o6CuBUcJ9UwCfLcdeFRLFjTb4LL09zqxsTCEow2iod8Q+ZPJekbem6V7hNIMlN6srQkSt4coFFoa0UByyPcjcqJQgj5f/dJhBFIkmBOTWAkBl/I8gXR6Qh+REu5ghz3v6mZeZBhISR7jeSplvzTUysZTymxRZbR0LNXoIyPIgUAs1uzYflyaB7JHVhbovqwsoPkqrsDwAA///F7rH+AAAABklEQVQDAK4XUzHC974AAAAAAElFTkSuQmCC" alt="icon" />
-                        </button>
-                    </form>
-                </div>
-
-                
-
-                <form method="get" class="carte">
-                    
-                    <input type="hidden" name="job[]" value="{{ j|e }}">
-                    <input type="hidden" name="location[]" value="{{ loc|e }}">
-                    
-                    <div class="distance-slider-container">
-                        <label for="slider-distance">Distance (km)</label>
-                        <div class="distance-slider-form" role="search">
-                            <input type="range" id="slider-distance"
-                                min="1"
-                                max="100"
-                                value=""
-                                oninput="document.getElementById('distance-value').innerText = this.value + ' km';"
-                            >
-                            <span id="distance-value">50 km</span>
-                        </div>
-                    </div>
-                    <div id="map"></div>
-                    <input type="hidden" id="location" name="neer" value="">
-
-                    <input type="hidden" id="lat" value="">
-                    <input type="hidden" id="lng" value="">
-
-                    <button type="submit">OK</button>
-                </form>
-
-                <div class="tag-box">
-
-                    <div class="tag">
-                        <p>Tag name</p>
-                        <button type="submit" aria-label="Supprimer ce tag">X</button>
-                    </div>
-
+        <form method="POST" action="" class="stage-search-box">
+    
+            <div class="search-box-label-bar">
+                <label for="job-input">Métiers</label>
+                <div class="search-container">
+                    <input type="search" id="job-input" name="job[]" placeholder="Recherchez votre métier" aria-label="Ajouter un métier">
+                    <button type="submit" aria-label="Ajouter et Rechercher">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABsElEQVR4AbTUjVXDMAwEYJdFgEmASYBJgEmASYBJYBPQZyK/uEl/0rzmRbEsS3c6t/ZFOfOzlOA1+mEPMd6GHXz3EQB5HiFcDb44ko+Yf4ftJdpFABjIZQDk+xPOY9gm7DqMH0NBJJ8/sTkCBU+R+RKWIOF2L7K3iNyFyZNPTUz7d5sAOMkKd3Y1gkAkjyJbSPVouZQxAWCmo88u6/AEkTq/D4xWMSbADlhHLWGBY8vUw2llSYCVxPe2stxJFXDgVYQkEBTQgfFUQ9LVJsHNEJ0kDPFjh6yfVbC2+2wCSTs/qeArVnObwl31djhJoHsLTdqJFDCUatjYzgFZNbDykw1quEKlAgSs+w/XjGWf+0iHw8LtT7J7h8RTD5o6CuBUcJ9UwCfLcdeFRLFjTb4LL09zqxsTCEow2iod8Q+ZPJekbem6V7hNIMlN6srQkSt4coFFoa0UByyPcjcqJQgj5f/dJhBFIkmBOTWAkBl/I8gXR6Qh+REu5ghz3v6mZeZBhISR7jeSplvzTUysZTymxRZbR0LNXoIyPIgUAs1uzYflyaB7JHVhbovqwsoPkqrsDwAA///F7rH+AAAABklEQVQDAK4XUzHC974AAAAAAElFTkSuQmCC" alt="icon" />
+                    </button>
                 </div>
             </div>
-
-            <div class="search-stage-result-box">
-
-                <a href="#" class="card-stage">
-                    <div class="card-stage-header">
-                        titre
+        
+            <div class="tag-box">
+                {% for s_job in selected_jobs %}
+                    {% if s_job is not empty %}
+                    <div class="tag">
+                        <p>{{ s_job }}</p>
+                        <input type="hidden" name="job[]" value="{{ s_job }}">
+                        <button type="submit" onclick="this.parentElement.remove()">X</button>
                     </div>
-
+                    {% endif %}
+                {% endfor %}
+            </div>
+        
+            <div class="carte">
+                <div class="distance-slider-container">
+                    <label for="slider-distance">Distance (km)</label>
+                    <div class="distance-slider-form">
+                        <input type="range" id="slider-distance" name="dist"
+                            min="1" max="100" value="{{ dist|default(50) }}"
+                            oninput="document.getElementById('distance-value').innerText = this.value + ' km';"
+                        >
+                        <span id="distance-value">{{ dist|default(50) }} km</span>
+                    </div>
+                </div>
+                <div id="map"></div>
+        
+                <input type="hidden" id="lat" name="lat" value="{{ lat|default(0) }}">
+                <input type="hidden" id="lng" name="lng" value="{{ lng|default(0) }}">
+                
+                <button type="submit" class="btn-submit-all">OK</button>
+            </div>
+        
+        </form>
+        <div class="search-stage-result-box">
+            {% for job in jobs %}
+                <a href="/offre/{{ job.id_offre }}" class="card-stage">
+                    <div class="card-stage-header">
+                        {{ job.intitule }} </div>
                     <div class="card-stage-content">
                         <div class="card-stage-entreprise">
-                            entreprise
+                            {{ job.entreprise }}
                         </div>
                         <div class="card-stage-description">
-                            <p class="texte-description-card-stage">
-                                description_carte
-                            </p>
+                            <p>{{ job.description|slice(0, 150) }}...</p>
+                            <small>Distance : {{ job.distance|round(1) }} km</small>
                         </div>
                     </div>
                 </a>
-
-            </div>
-        </main>
+            {% else %}
+                <p>Aucune offre trouvée.</p>
+            {% endfor %}
+        </div>
+    </main>
         <script src="/scripts/map.js"></script>
 {% endblock %}
