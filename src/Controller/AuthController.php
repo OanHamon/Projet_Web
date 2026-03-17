@@ -26,13 +26,13 @@ class AuthController extends Controller{
                 $hashed_password = $this->userModel->hashed_password_user_email($email);
     
                 if (!password_verify($mdp, $hashed_password)) {
-                    $errors[] = "Mot de passe incorrect.";
+                    $errors[] = "Mot de passe incorrect !";
                 }
             }
     
             if (empty($errors)) {
                 $_SESSION['userId'] = $this->userModel->get_user_id($email);
-                header('Location: /dashboard');
+                header('Location: /student_dashboard');
                 exit;
             }
         }
@@ -60,7 +60,7 @@ class AuthController extends Controller{
             if (empty($errors)) {
                 $userId = $this->userModel->create_user($email, $password_hash, $nom, $prenom);
                 $_SESSION['userId'] = $userId;
-                header('Location: /dashboard');
+                header('Location: /student_dashboard');
                 exit;
             }
         }
