@@ -1,0 +1,41 @@
+<div class="candidatures-container">
+    <aside class="candidatures-list">
+        <h2>Candidats</h2>
+        <p>Nombre Actuel de candidats : {{ candidats|length }}</p>
+        <div class="candidats-container">
+            {% for candidat in candidats %}
+            <a href="/entreprise_dashboard?offre_id={{offre_to_display.id_offre}}&showdata=true&candidat_id={{candidat.id_utilisateur}}">
+                <div class="candidate-card">
+                    <h3>{{candidat.nom}}</h3><h3>{{candidat.prenom}}</h3>
+                </div>
+            </a>
+
+            
+            {% endfor %}
+
+            <!--
+                <form method="POST" action="/entreprise_dashboard/candidat">
+                    <input type="hidden" name="candidat_id" value="{{candidat.id_utilisateur}}">
+                    <input type="hidden" name="offre_id" value="{{offre_to_display.id_offre}}">
+                    <button type="submit" class="candidate-card" style="border: none;">
+                        <h3 >{{candidat.nom}}</h3>
+                        <h3>{{candidat.prenom}}</h3>
+                    </button>
+                </form>
+            -->
+        </div>
+    </aside>
+    <div class="candidature-detail">
+        {% if candidat_data %}
+            <h2>{{candidat_data.nom}} {{candidat_data.prenom}}</h2>
+            <p>{{candidat_data.email}}</p>
+            <div class="download-buttons">
+                <a href="{{cv_url}}" download>Télécharger CV</a>
+                <a href="{{lm_url}}" download>Télécharger LM</a>
+            </div>
+        {% else %}
+            <p>Sélectionnez un candidat</p>
+        {% endif %}
+
+    </div>
+</div>

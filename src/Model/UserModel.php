@@ -140,4 +140,19 @@ class UserModel extends BaseModel
 
         return null;
     }
+
+    function getCandidature($id_etudiant, $id_offre){
+
+        $query = "
+        SELECT * 
+            FROM Postule
+            WHERE id_etudiant = :id_etudiant
+            AND id_offre = :id_offre;
+        ";
+        $stmt = $this->executeQuery($query, [
+            'id_etudiant' => $id_etudiant,
+            'id_offre' => $id_offre
+        ]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
