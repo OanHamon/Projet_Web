@@ -14,7 +14,12 @@ class UserController extends Controller{
         parent::__construct();
         $this->userModel = new UserModel();
         $this->wlModel = new WishlistModel();
-        $this->id=9;
+
+        if (!isset($_SESSION['userId'])) {
+            header('Location: /signin');
+            exit;
+        }
+        $this->id=$_SESSION['userId'];
     }
 
     function renderStudentDashboardPage(){

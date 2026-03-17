@@ -59,7 +59,7 @@ class UserModel extends BaseModel
     {
         $query = "
         INSERT INTO Utilisateur (nom, prenom, email, mdp) VALUES
-        (':nom',':prenom',':email',':mdp')
+        (:nom,:prenom,:email,:mdp)
         ;";// mdp hashé
 
         $this->executeQuery($query, [
