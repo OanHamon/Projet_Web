@@ -10,6 +10,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use App\Router\Router;
 use App\Controller\{HomeController,OffreController,EntrepriseController,UserController};
 
+session_start();
 
 $routeur = new Router();
 
@@ -44,13 +45,16 @@ $routeur->add('GET','/pilote_dashboard',[UserController::class, 'renderPiloteDas
 
 $routeur->add('GET','/search',[SearchController::class, 'renderSearchPage']);
 
+// === Other Page ===
 $routeur->add('GET','/mentionslegales',[HomeController::class, 'renderMentionsLegalesPage']);
 
 // === Auth ===
 
-$routeur->add('GET','/sign',[AuthController::class, 'renderAuthPage']);
+$routeur->add('GET','/signup',[AuthController::class, 'renderSignUpPage']);
+$routeur->add('GET','/signin',[AuthController::class, 'renderSignInPage']);
 $routeur->add('POST','/inscription',[AuthController::class, 'create_account']);
-$routeur->add('POST','/signin',[AuthController::class, 'login']);
+$routeur->add('POST','/login',[AuthController::class, 'login']);
+$routeur->add('GET','/logout',[AuthController::class, 'logout']);
 
 
 

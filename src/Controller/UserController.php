@@ -14,7 +14,12 @@ class UserController extends Controller{
         parent::__construct();
         $this->userModel = new UserModel();
         $this->wlModel = new WishlistModel();
-        $this->id=9;
+
+        if (!isset($_SESSION['userId'])) {
+            header('Location: /signin');
+            exit;
+        }
+        $this->id=$_SESSION['userId'];
     }
 
     function renderStudentDashboardPage(){
@@ -63,6 +68,7 @@ class UserController extends Controller{
 
     function deleteAccount(){
         $this->userModel->deleteById($this->id);
+        $_SESSION = array();
         header('Location: /'); 
         exit(); 
     }

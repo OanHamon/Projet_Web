@@ -1,37 +1,49 @@
 :root {
+    /* --- Couleurs de la Marque --- */
     --sand-color: #e9d59b;
     --dark-blue: #151E3D;
-    --primary-blue: #5c8eeb;
+    --primary-blue: #5c8eeb; /* Bleu principal pour les actions */
+    --primary-dark: #1459c0; /* Bleu foncé pour les hovers */
     --light-blue: #b6e7f7;
+    
+    /* --- Gradients & Effets --- */
+    --bg-overlay: linear-gradient(135deg, var(--sand-color) 0%, #e1c070 100%);
+    --transition-speed: 0.6s;
 
+    /* --- Nuances de Gris / Silver --- */
     --dark-silver: #d9d9d9;
     --light-silver: #f1f1f1;
+    --bg-light: #f3f4f6;
 
+    /* --- Typographie --- */
     --font-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font-display: 'Jersey 25', sans-serif;
     --font-code: 'Courier New', monospace;
     --font-alt: 'Poppins', sans-serif;
 
+    /* --- Textes --- */
+    --text-primary: #1a1a2e;
+    --text-secondary: #333333;
+    --text-muted: #444444;
+    --text-light: #666666;
+    --text-tertiary: #555555;
+    --text-placeholder: #8c8c8c;
+    --brand-dark: #1a1a2e;
+
+    /* --- Structure & Espacement --- */
     --radius-sm: 4px;
     --radius-md: 10px;
     --radius-lg: 20px;
+    
     --space-xs: 4px;
     --space-sm: 8px;
     --space-md: 16px;
     --space-lg: 24px;
     --space-xl: 32px;
 
+    /* --- Ombres --- */
     --shadow-light: 0 5px 15px rgba(0,0,0,0.1);
     --shadow-medium: 0 10px 30px rgba(0,0,0,0.2);
-
-    --text-primary: #1a1a2e;
-    --text-secondary: #333333;
-    --text-muted: #444444;
-    --brand-dark: #1a1a2e;
-    --text-light: #666666;
-    --text-tertiary: #555555;
-    --primary-dark: #1459c0;
-    --text-placeholder: #8c8c8c;
 }
 
 *, *::before, *::after {
@@ -41,7 +53,6 @@
 }
 
 html, body {
-    height: 100%;
     font-family: var(--font-primary);
     background-color: var(--light-silver);
     color: var(--dark-blue);
@@ -89,7 +100,6 @@ header a:hover{
 
 header nav{
     padding: 20px;
-    /* height: 40px;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -103,7 +113,6 @@ header nav{
     display: flex;
     list-style: none;
     justify-content: space-evenly;
-    height: min-content;
     width: 100%;
 }
 
@@ -565,14 +574,11 @@ header nav{
 /* carousel helpers shared */
 .carousel-container,
 .stats-carousel {
-    margin-left: 25px;
     background-color: transparent;
-    height: 600px;
-    width: 100%;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-auto-flow: column;
-    gap: 3rem;
+    gap: 20px;
     overflow-x: auto;
     overflow-y: visible;
     padding: 20px;
