@@ -29,38 +29,41 @@ class SearchModel extends BaseModel
     }
 
     public function searchOffre($dist, $lat, $lng, $jobs = []) {
-        $jobWhereClause = '';
         $params = [
-            'dist' => $dist,
-            'lat' => $lat,
-            'lng' => $lng
+            'dist' => (float)$dist,
+            'lat'  => (float)$lat,
+            'lng'  => (float)$lng,
+            'lat2' => (float)$lat,   // PDO n'accepte pas :lat deux fois
         ];
+    
+        $jobWhereClause = '';
         if (!empty($jobs)) {
-            $placeholders = [];
+            $conditions = [];
             foreach ($jobs as $i => $job) {
-                $placeholders[] = ":job{$i}";
-                $params["job{$i}"] = mb_strtolower($job);
+                $key = "job{$i}";
+                $conditions[] = "LOWER(o.titre) LIKE :$key 
+                                 OR LOWER(o.description_carte) LIKE :desc{$i}";
+                $params[$key]       = '%' . mb_strtolower(trim($job)) . '%';
+                $params["desc{$i}"] = '%' . mb_strtolower(trim($job)) . '%';
             }
-            $jobWhereClause = "WHERE LOWER(intitule) IN (" . implode(", ", $placeholders) . ")";
+            $jobWhereClause = 'WHERE ' . implode(' OR ', $conditions);
         }
-
-        $query = " 
-        SELECT 
-            id_offre,
+    
+        $query = "
+            SELECT o.*, e.nom AS entreprise_nom,
             (6371 * acos(
-                cos(radians(:lat)) * cos(radians(lat)) * cos(radians(lng) - radians(:lng)) + 
-                sin(radians(:lat)) * sin(radians(lat))
+                cos(radians(:lat)) * cos(radians(o.lat))
+                * cos(radians(o.lng) - radians(:lng))
+                + sin(radians(:lat2)) * sin(radians(o.lat))
             )) AS distance
-        FROM Offre
-        {$jobWhereClause}
-        HAVING distance < :dist
-        ORDER BY distance;
+            FROM Offre o
+            JOIN Entreprise e ON e.id_entreprise = o.id_entreprise
+            {$jobWhereClause}
+            HAVING distance < :dist
+            ORDER BY distance
         ";
-
-        // Merge all params including job params
+    
         $stmt = $this->executeQuery($query, $params);
-
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-
     }
 }
