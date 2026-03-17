@@ -42,9 +42,11 @@ $routeur->add('GET','/mentionslegales',[HomeController::class, 'renderMentionsLe
 
 // === Auth ===
 
-$routeur->add('GET','/sign',[AuthController::class, 'renderAuthPage']);
+$routeur->add('GET','/signup',[AuthController::class, 'renderSignUpPage']);
+$routeur->add('GET','/signin',[AuthController::class, 'renderSignInPage']);
 $routeur->add('POST','/inscription',[AuthController::class, 'create_account']);
 $routeur->add('POST','/login',[AuthController::class, 'login']);
+$routeur->add('GET','/logout',[AuthController::class, 'logout']);
 
 
 $url    = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);

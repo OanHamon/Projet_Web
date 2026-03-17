@@ -15,9 +15,8 @@ class UserController extends Controller{
         $this->userModel = new UserModel();
         $this->wlModel = new WishlistModel();
 
-        // Vérifier si l'utilisateur est connecté
         if (!isset($_SESSION['userId'])) {
-            header('Location: /sign');
+            header('Location: /signin');
             exit;
         }
         $this->id=$_SESSION['userId'];

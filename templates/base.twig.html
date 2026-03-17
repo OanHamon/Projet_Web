@@ -33,15 +33,15 @@
         </ul>
 
         <div class="account-div">
-            {% if _SESSION['userId'] is defined %}
+            {% if $_SESSION %}
             <a href="/logout" class="signup">
                 Se déconnecter
             </a>
             {% else %}
-            <a href="/sign" class="signup">
+            <a href="/signup" class="signup">
                 S'inscrire
             </a>
-            <a href="/sign" class="login">
+            <a href="/signin" class="login">
                 Se connecter
             </a>
             {% endif %}
@@ -68,8 +68,8 @@
                     <span class="copyright-txt">©2026 BOLT (Bastien, Oan, Louis, Tychique)</span>
 
                     <div class="log-div">
-                        <span><a href="#">Log in</a></span>
-                        <span><a href="#">Sign up</a></span>
+                        <span><a href="/signin">Log in</a></span>
+                        <span><a href="/signup">Sign up</a></span>
                     </div>
 
                     <hr>
