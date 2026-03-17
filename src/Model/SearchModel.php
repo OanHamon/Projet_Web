@@ -28,27 +28,26 @@ class SearchModel extends BaseModel
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function searchOffre($dist, $lat, $lng, $jobs = []) {
+    public function searchOffre($dist, $lat, $lng, $key_words = []) {
         $params = [
             'dist' => (float)$dist,
             'lat'  => (float)$lat,
             'lng'  => (float)$lng,
-            'lat2' => (float)$lat,   // PDO n'accepte pas :lat deux fois
+            'lat2' => (float)$lat, // PDO n'accepte pas :lat deux fois
         ];
-    
-        $jobWhereClause = '';
-        if (!empty($jobs)) {
+
+        $keywordWhereClause = '';
+        if (!empty($key_words)) {
             $conditions = [];
-            foreach ($jobs as $i => $job) {
-                $key = "job{$i}";
-                $conditions[] = "LOWER(o.titre) LIKE :$key 
-                                 OR LOWER(o.description_carte) LIKE :desc{$i}";
-                $params[$key]       = '%' . mb_strtolower(trim($job)) . '%';
-                $params["desc{$i}"] = '%' . mb_strtolower(trim($job)) . '%';
+            foreach ($key_words as $i => $kw) {
+                $kwKey = "kw{$i}";
+                $conditions[] = "(LOWER(o.titre) LIKE :$kwKey OR LOWER(o.description_carte) LIKE :desc{$i})";
+                $params[$kwKey] = '%' . mb_strtolower(trim($kw)) . '%';
+                $params["desc{$i}"] = '%' . mb_strtolower(trim($kw)) . '%';
             }
-            $jobWhereClause = 'WHERE ' . implode(' OR ', $conditions);
+            $keywordWhereClause = 'WHERE ' . implode(' OR ', $conditions);
         }
-    
+
         $query = "
             SELECT o.*, e.nom AS entreprise_nom,
             (6371 * acos(
@@ -58,11 +57,11 @@ class SearchModel extends BaseModel
             )) AS distance
             FROM Offre o
             JOIN Entreprise e ON e.id_entreprise = o.id_entreprise
-            {$jobWhereClause}
+            {$keywordWhereClause}
             HAVING distance < :dist
             ORDER BY distance
         ";
-    
+
         $stmt = $this->executeQuery($query, $params);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

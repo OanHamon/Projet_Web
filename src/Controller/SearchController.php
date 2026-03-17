@@ -21,7 +21,7 @@ class SearchController extends Controller{
                 'dist'          => 50,
                 'lat'           => 0,
                 'lng'           => 0,
-                'selected_jobs' => [],
+                'selected_keywords' => [],
                 'jobs'          => []
             ]);
             return;
@@ -33,16 +33,15 @@ class SearchController extends Controller{
         $lng  = isset($_POST['lng']) ? $_POST['lng'] : 0;
 
         // 2. Récupération et nettoyage du tableau de métiers
-        $jobList = isset($_POST['job']) ? array_filter((array)$_POST['job']) : [];
+        $key_words = isset($_POST['job']) ? array_filter((array)$_POST['job']) : [];
 
         // 3. Exécution de la recherche via le modèle
         $jobs = [];
 
-        // On ne lance la recherche que si l'utilisateur a interagi (position ou métier)
-        if (($lat != 0 && $lng != 0) || !empty($jobList)) {
+        if (($lat != 0 && $lng != 0) || !empty($key_words)) {
             // Choix de la méthode de recherche selon la présence des jobs
-            if (!empty($jobList)) {
-                $jobs = $this->searchModel->searchOffre($dist, $lat, $lng, $jobList);
+            if (!empty($key_words)) {
+                $jobs = $this->searchModel->searchOffre($dist, $lat, $lng, $key_words);
             } else {
                 $jobs = $this->searchModel->searchOffre($dist, $lat, $lng);
             }
@@ -53,7 +52,7 @@ class SearchController extends Controller{
             'dist'          => $dist,
             'lat'           => $lat,
             'lng'           => $lng,
-            'selected_jobs' => $jobList,
+            'selected_keywords' => array_values($key_words),
             'jobs'          => $jobs
         ]);
     }

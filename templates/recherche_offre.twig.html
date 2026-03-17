@@ -17,13 +17,13 @@
 {% block content %}
     
     <main class="content-search-page">
-        <form method="POST" action="" class="stage-search-box">
+        <form method="POST" action="/search" class="stage-search-box">
     
             <div class="search-box-label-bar">
                 <label for="job-input" class="search-ocean-catchphrase">Plongez dans l'océan des opportunités</label>
                 <div class="search-container">
                     <input type="search" id="job-input" name="job[]" placeholder="Naviguez à la recherche d'une offre..." aria-label="Chercher par mots clées">
-                    <button type="submit" aria-label="Ajouter et Rechercher">
+                    <button type="submit" id="btn-add-keyword" aria-label="Ajouter le mot-clé">
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABsElEQVR4AbTUjVXDMAwEYJdFgEmASYBJgEmASYBJYBPQZyK/uEl/0rzmRbEsS3c6t/ZFOfOzlOA1+mEPMd6GHXz3EQB5HiFcDb44ko+Yf4ftJdpFABjIZQDk+xPOY9gm7DqMH0NBJJ8/sTkCBU+R+RKWIOF2L7K3iNyFyZNPTUz7d5sAOMkKd3Y1gkAkjyJbSPVouZQxAWCmo88u6/AEkTq/D4xWMSbADlhHLWGBY8vUw2llSYCVxPe2stxJFXDgVYQkEBTQgfFUQ9LVJsHNEJ0kDPFjh6yfVbC2+2wCSTs/qeArVnObwl31djhJoHsLTdqJFDCUatjYzgFZNbDykw1quEKlAgSs+w/XjGWf+0iHw8LtT7J7h8RTD5o6CuBUcJ9UwCfLcdeFRLFjTb4LL09zqxsTCEow2iod8Q+ZPJekbem6V7hNIMlN6srQkSt4coFFoa0UByyPcjcqJQgj5f/dJhBFIkmBOTWAkBl/I8gXR6Qh+REu5ghz3v6mZeZBhISR7jeSplvzTUysZTymxRZbR0LNXoIyPIgUAs1uzYflyaB7JHVhbovqwsoPkqrsDwAA///F7rH+AAAABklEQVQDAK4XUzHC974AAAAAAElFTkSuQmCC" alt="icon" />
                     </button>
                 </div>
@@ -88,4 +88,5 @@
         </div>
     </main>
         <script src="/scripts/map.js"></script>
+        <script src="/scripts/searchTag.js"></script>
 {% endblock %}
