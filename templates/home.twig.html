@@ -37,7 +37,7 @@
   
             <div class="carousel-container">
                 {% if offres|length == 0 %}
-                    <p>NO DATA FOUND</p>
+                    <p>Aucun stage présent dans la base de données</p>
                 {% else %}
                     {% for offre in offres %}
                     
@@ -74,7 +74,7 @@
 
         <div class="sec3-container">
             {% if entreprises|length == 0 %}
-                <p>NO DATA FOUND</p>
+                <p>Aucune entreprise présente dans la base de données</p>
             {% else %}
                 {% for entreprise in entreprises %}
                 <a href="/entreprise/{{entreprise.id_entreprise}}" class="card-link">

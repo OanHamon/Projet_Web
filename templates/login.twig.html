@@ -1,90 +1,97 @@
-{% extends 'base.twig.html' %}
+  <!DOCTYPE html>
+  <html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <title>WTTO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
-{% block styles %}
-  <link rel="stylesheet" href="/css/token.css">
-  <link rel="stylesheet" href="/css/style_login_page.css">
-{% endblock %}
-
-{% block content %}
-<main>
-  <div class="logo-wrapper">
-    <div class="logo-badge">
-      <img src="/image/logo_projet_web.png" alt="Logo" class="header-logo">
-    </div>
-  </div>
-
-  {% if errors %}
-  <div class="alert-danger">
-      <ul>
-          {% for error in errors %}
-              <li>{{ error }}</li>
-          {% endfor %}
-      </ul>
-  </div>
-  {% endif %}
-
-  <div class="container{% if login %} right-panel-active{% endif %}" id="container">
-
-    <div class="form-container sign-up-container">
-      <form action="/inscription" method="post">
-        <h1>S'inscrire</h1>
-        <div class="field-group">
-          <label for="signup-nom">Nom</label>
-          <input type="text" id="signup-nom" name="nom" required/>
-        </div>
-        <div class="field-group">
-          <label for="signup-prenom">Prénom</label>
-          <input type="text" id="signup-prenom" name="prenom" required/>
-        </div>
-        <div class="field-group">
-          <label for="signup-email">Email</label>
-          <input type="email" id="signup-email" name="email" required/>
-        </div>
-        <div class="field-group">
-          <label for="signup-mdp">Mot de passe</label>
-          <input type="password" id="signup-mdp" name="mdp" required/>
-        </div>
-        <div class="field-group">
-          <label for="signup-confirm">Confirmation mot de passe</label>
-          <input type="password" id="signup-confirm" name="mdp_confirm" required/>
-        </div>
-        <button type="submit" class="btn-main">S'inscrire</button>
-      </form>
-    </div>
-
-    <div class="form-container sign-in-container">
-      <form action="/login" method="post">
-        <h1>Se connecter</h1>
-        <div class="field-group">
-          <label for="signin-nom">Email</label>
-          <input type="email" id="signin-nom" name="email" required/>
-        </div>
-        <div class="field-group">
-          <label for="signin-mdp">Mots de passe</label>
-          <input type="password" id="signin-mdp" name="mdp" required/>
-        </div>
-        <button type="submit" class="btn-main">Se connecter</button>
-      </form>
-    </div>
-
-    <div class="overlay-container">
-      <div class="overlay">
-        <div class="overlay-panel overlay-left">
-          <h2>Déjà un compte ?</h2>
-          <button class="btn-ghost" id="signIn">Se connecter</button>
-          <a href="#" class="link-entreprise">Vous êtes une entreprise ?</a>
-        </div>
-        <div class="overlay-panel overlay-right">
-          <h2>Votre première fois ici ?</h2>
-          <button class="btn-ghost" id="signUp">Créer un compte</button>
-          <a href="#" class="link-entreprise">Vous êtes une entreprise ?</a>
+    <link rel="stylesheet" href="/css/token.css">
+    <link rel="stylesheet" href="/css/style_login_page.css">
+  </head>
+  <body>
+    <main>
+      <div class="logo-wrapper">
+        <div class="logo-badge">
+          <img src="/image/logo_projet_web.png" alt="Logo" class="header-logo">
         </div>
       </div>
-    </div>
 
-  </div>
-</main>
-  <script src="/scripts/loginpage.js"></script>
+      {% if errors %}
+      <div class="alert-danger">
+          <ul>
+              {% for error in errors %}
+                  <li>{{ error }}</li>
+              {% endfor %}
+          </ul>
+      </div>
+      {% endif %}
 
-{% endblock %}
+      <div class="container{% if login %} right-panel-active{% endif %}" id="container">
+
+        <div class="form-container sign-up-container">
+          <form action="/inscription" method="post">
+            <h1>S'inscrire</h1>
+            <div class="field-group">
+              <label for="signup-nom">Nom</label>
+              <input type="text" id="signup-nom" name="nom" required/>
+            </div>
+            <div class="field-group">
+              <label for="signup-prenom">Prénom</label>
+              <input type="text" id="signup-prenom" name="prenom" required/>
+            </div>
+            <div class="field-group">
+              <label for="signup-email">Email</label>
+              <input type="email" id="signup-email" name="email" required/>
+            </div>
+            <div class="field-group">
+              <label for="signup-mdp">Mot de passe</label>
+              <input type="password" id="signup-mdp" name="mdp" required/>
+            </div>
+            <div class="field-group">
+              <label for="signup-confirm">Confirmation mot de passe</label>
+              <input type="password" id="signup-confirm" name="mdp_confirm" required/>
+            </div>
+            <button type="submit" class="btn-main">S'inscrire</button>
+          </form>
+        </div>
+
+        <div class="form-container sign-in-container">
+          <form action="/login" method="post">
+            <h1>Se connecter</h1>
+            <div class="field-group">
+              <label for="signin-nom">Email</label>
+              <input type="email" id="signin-nom" name="email" required/>
+            </div>
+            <div class="field-group">
+              <label for="signin-mdp">Mots de passe</label>
+              <input type="password" id="signin-mdp" name="mdp" required/>
+            </div>
+            <button type="submit" class="btn-main">Se connecter</button>
+          </form>
+        </div>
+
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h2>Déjà un compte ?</h2>
+              <button class="btn-switch" id="signIn">Se connecter</button>
+              <a href="#" class="link-entreprise">Vous êtes une entreprise ?</a>
+            </div>
+            <div class="overlay-panel overlay-right">
+              <h2>Votre première fois ici ?</h2>
+              <button class="btn-switch" id="signUp">Créer un compte</button>
+              <a href="#" class="link-entreprise">Vous êtes une entreprise ?</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+    <script src="/scripts/loginpage.js"></script>
+  </body>
+</html>
