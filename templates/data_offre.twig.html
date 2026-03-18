@@ -30,8 +30,8 @@
             <h2>{{candidat_data.nom}} {{candidat_data.prenom}}</h2>
             <p>{{candidat_data.email}}</p>
             <div class="download-buttons">
-                <a href="{{cv_url}}" download>Télécharger CV</a>
-                <a href="{{lm_url}}" download>Télécharger LM</a>
+                <a href="/download?file={{cv_url}}&type=cv">Télécharger CV</a>
+                <a href="/download?file={{lm_url}}&type=lm">Télécharger LM</a>
             </div>
         {% else %}
             <p>Sélectionnez un candidat</p>

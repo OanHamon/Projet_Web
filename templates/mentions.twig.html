@@ -1,57 +1,77 @@
 {% extends 'base.twig.html' %}
 
+{# Définition d'une variable pour l'email pour éviter les répétitions #}
+{% set contact_email = "contact@projet-web.fr" %}
+
 {% block styles %}
-    {# On importe les styles de base du projet et le style spécifique aux mentions #}
-    <link rel="stylesheet" href="/css/token.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/style_mentions_page.css">
-    
-    {# Polices spécifiques aux mentions légales (DM Serif et DM Mono) #}
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+{# Polices en premier pour le pré-rendu #}
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+<link rel="stylesheet" href="/css/token.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style_mentions_page.css">
 {% endblock %}
 
 {% block content %}
 <main class="container">
 
-    <div class="ml-intro">
-        <p class="ml-breadcrumb">Projet Web &rsaquo; Mentions légales</p>
+    <header class="ml-intro">
+        <nav aria-label="Fil d'ariane">
+            <p class="ml-breadcrumb">Projet Web &rsaquo; Mentions légales</p>
+        </nav>
         <h1>Mentions légales</h1>
-        <p class="ml-subtitle">Informations relatives à l'éditeur, à l'hébergement ainsi qu'à la politique de confidentialité de ce site.</p>
-    </div>
+        <p class="ml-subtitle">Informations relatives à l'éditeur, à l'hébergement ainsi qu'à la politique de
+            confidentialité de ce site.</p>
+    </header>
 
-    <section class="bloc">
-        <h2>
-            <span class="ml-icon">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    {# Section Éditeur #}
+    <section class="bloc" aria-labelledby="titre-editeur"> {# L'attribut aria-labelledby permet de lier la section à son
+        titre pour une meilleure accessibilité #}
+        <h2 id="titre-editeur">
+            <span class="ml-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
             </span>
             Éditeur
             <span class="barre"></span>
         </h2>
 
         <div class="ml-grid">
-            <div class="ml-card">
-                <div class="ml-lbl">Nom</div>
-                <div class="ml-val">Votre Nom</div>
-            </div>
-            <div class="ml-card">
-                <div class="ml-lbl">Statut</div>
-                <div class="ml-val">Étudiant</div>
-            </div>
-            <div class="ml-card">
-                <div class="ml-lbl">Email</div>
+            <article class="ml-card">
+                <span class="ml-lbl">Nom</span>
+                <strong class="ml-val">Votre Nom</strong>
+            </article>
+            <article class="ml-card">
+                <span class="ml-lbl">Statut</span>
+                <span class="ml-val">Étudiant</span>
+            </article>
+            <article class="ml-card">
+                <span class="ml-lbl">Email</span>
                 <div class="ml-val">
-                    <a href="mailto:contact@projet-web.fr">contact@projet-web.fr</a>
+                    <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>
                 </div>
-            </div>
+            </article>
         </div>
 
         <p class="ml-note">Ce site est un projet fictif réalisé dans le cadre d'un exercice pédagogique.</p>
     </section>
 
-    <section class="bloc">
-        <h2>
-            <span class="ml-icon">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+    {# Section Hébergeur #}
+    <section class="bloc" aria-labelledby="titre-hebergeur">
+        <h2 id="titre-hebergeur">
+            <span class="ml-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="8" rx="2" />
+                    <rect x="2" y="14" width="20" height="8" rx="2" />
+                    <line x1="6" y1="6" x2="6.01" y2="6" />
+                    <line x1="6" y1="18" x2="6.01" y2="18" />
+                </svg>
             </span>
             Hébergeur
             <span class="barre"></span>
@@ -59,68 +79,56 @@
 
         <div class="ml-grid">
             <div class="ml-card">
-                <div class="ml-lbl">Société</div>
+                <span class="ml-lbl">Société</span>
                 <div class="ml-val">OVHcloud</div>
             </div>
             <div class="ml-card">
-                <div class="ml-lbl">Adresse</div>
-                <div class="ml-val">2 rue Kellermann, 59100 Roubaix, France</div>
+                <span class="ml-lbl">Adresse</span>
+                <address class="ml-val">2 rue Kellermann, 59100 Roubaix, France</address>
             </div>
             <div class="ml-card">
-                <div class="ml-lbl">Téléphone</div>
-                <div class="ml-val">1007</div>
+                <span class="ml-lbl">Téléphone</span>
+                <div class="ml-val"><a href="tel:1007">1007</a></div>
             </div>
         </div>
     </section>
 
-    <section class="bloc-content">
-        <h2>
-            <span class="ml-icon">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    {# Section Confidentialité #}
+    <section class="bloc-content" aria-labelledby="titre-privacy">
+        <h2 id="titre-privacy">
+            <span class="ml-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
             </span>
             Politique de confidentialité
             <span class="barre"></span>
         </h2>
 
-        <div>
+        <div class="ml-content-text">
             <h3>Données collectées</h3>
-            <p>Ce site peut collecter les données suivantes via ses formulaires : nom, prénom, adresse email et message.</p>
+            <p>Ce site peut collecter via ses formulaires : nom, prénom, email et message.</p>
+
+            <hr class="ml-sep">
+
+            <h3>Finalité et Conservation</h3>
+            <p>Les données servent uniquement à répondre à vos messages. Elles sont conservées <strong>12 mois</strong>
+                maximum et ne sont jamais transmises à des tiers.</p>
+
+            <hr class="ml-sep">
+
+            <h3>Vos Droits (RGPD)</h3>
+            <p>Vous dispose? d'un droit d'accès, de rectification et de suppression. Contactez-nous : <a
+                    href="mailto:{{ contact_email }}" class="ml-link-accent">{{ contact_email }}</a></p>
         </div>
 
-        <div class="ml-sep"></div>
-
-        <div>
-            <h3>Finalité de la collecte</h3>
-            <p>Les données sont collectées uniquement dans le but de répondre aux demandes envoyées par les utilisateurs. Aucune donnée n'est vendue ni transmise à des tiers.</p>
-        </div>
-
-        <div class="ml-sep"></div>
-
-        <div>
-            <h3>Durée de conservation</h3>
-            <p>Les données sont conservées pour une durée maximale de <strong>12 mois</strong>.</p>
-        </div>
-
-        <div class="ml-sep"></div>
-
-        <div>
-            <h3>Droits des utilisateurs</h3>
-            <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à : <a href="mailto:contact@projet-web.fr" style="color:var(--ml-accent);">contact@projet-web.fr</a></p>
-        </div>
-
-        <div class="ml-sep"></div>
-
-        <div>
-            <h3>Cookies</h3>
-            <p>Ce site peut utiliser des cookies à des fins statistiques ou techniques. Vous pouvez configurer votre navigateur pour les refuser à tout moment.</p>
-        </div>
-
-        <p class="mention-fictif">
-            ⚠️ Ce site est un projet fictif réalisé à des fins pédagogiques. Aucun service commercial réel n'est proposé.
-        </p>
+        <aside class="mention-fictif" role="alert">
+            <p>⚠️ <strong>Note importante :</strong> Ce site est un projet fictif. Aucun service réel n'est proposé.</p>
+        </aside>
     </section>
 
 </main>
 
-<div class="barre-droite"></div>
+<div class="barre-droite" aria-hidden="true"></div>
 {% endblock %}

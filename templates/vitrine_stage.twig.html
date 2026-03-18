@@ -2,88 +2,89 @@
 
 {% block styles %}
 
-  <link rel="stylesheet" href="/css/style_stage_page.css">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/token.css">
+<link rel="stylesheet" href="/css/style_stage_page.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/token.css">
 {% endblock %}
 
 {% block content %}
-    <main>
-      <div class="page-wrapper">
-        <div class="col-left">  
-          <div class="block-content-stage card-main">
-            <h1>{{offre.titre}}</h1>
-            <p class="intro">{{offre.localisation}}</p>
+<main>
+  <div class="page-wrapper">
+    <div class="col-left">
+      <div class="block-content-stage card-main">
+        <h1>{{offre.titre}}</h1>
+        <p class="intro">{{offre.localisation}}</p>
 
-            <div id="content"></div>
+        <div id="content"></div>
 
-            <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-            <script>
-              const markdownText = `{{offre.description_offre_de_stage}}
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script>
+          const markdownText = `{{offre.description_offre_de_stage}}
 
 `;
-              document.getElementById("content").innerHTML = marked.parse(markdownText);
-            </script>
+          document.getElementById("content").innerHTML = marked.parse(markdownText);
+        </script>
 
-            <section class="stage-block">
-              <h2>Rémuneration</h2>
-              <p>{{offre.remuneration_par_mois}} €</p>
-            </section>
-          </div>
+        <section class="stage-block">
+          <h2>Rémuneration</h2>
+          <p>{{offre.remuneration_par_mois}} €</p>
+        </section>
+      </div>
+    </div>
+
+
+    <div class="col-right">
+
+      <div class="block-content-stage card-entreprise">
+        <h2>{{entreprise.nom}}</h2>
+        <p>{{entreprise.description_cartes}}</p>
+        <a href="/entreprise/{{entreprise.id_entreprise}}"><button class="btn-detail">Voir les détails</button></a>
+      </div>
+
+      <div class="block-content-stage card-competences">
+        <h2>Compétences</h2>
+        <p class="comp-intro">Les competences spécifiques que nous recherchons pour ce stage.</p>
+
+        <div class="comp-section">
+          <p class="comp-label">Techniques :</p>
+          <ul class="comp-grid">
+            {% for competence in competences %}
+            {% if competence.categorie == 'Technique' %}
+            <li><span class="dot blue"></span>{{competence.nom}}</li>
+            {% endif %}
+            {% else %}
+            <p>NO DATA FOUND</p>
+            {% endfor %}
+          </ul>
         </div>
 
-
-        <div class="col-right">
-
-          <div class="block-content-stage card-entreprise">
-            <h2>{{entreprise.nom}}</h2>
-            <p>{{entreprise.description_cartes}}</p>
-            <a href="/entreprise/{{entreprise.id_entreprise}}"><button class="btn-detail" >Voir les détails</button></a>
-          </div>
-
-          <div class="block-content-stage card-competences">
-            <h2>Compétences</h2>
-            <p class="comp-intro">Les competences spécifiques que nous recherchons pour ce stage.</p>
-
-            <div class="comp-section">
-              <p class="comp-label">Techniques :</p>
-              <ul class="comp-grid">
-                {% for competence in competences %}
-                  {% if competence.categorie == 'Technique' %}
-                    <li><span class="dot blue"></span>{{competence.nom}}</li>
-                  {% endif %}
-                {% else %}
-                <p>NO DATA FOUND</p>
-                {% endfor %}
-              </ul>
-            </div>
-
-            <div class="comp-section">
-              <p class="comp-label">Social :</p>
-              <ul class="comp-grid">
-                {% for competence in competences %}
-                  {% if competence.categorie == 'Social' %}
-                    <li><span class="dot blue"></span>{{competence.nom}}</li>
-                  {% endif %}
-                {% else %}
-                  <p>NO DATA FOUND</p>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-
-          <div class="actions-row">
-            <button class="btn-action btn-stats" onclick="window.location.href='/statistiques'">Voir les Stats</button>
-            <form method="POST" action="/wishlist/add">
-              <input type="hidden" name="id_offre" value="{{offre.id_offre}}">
-              <button class="btn-action btn-wishlist" >Wish-Liste</button>
-            </form>
-
-          </div>
-          <button class="btn-postuler" onclick="window.location.href='/formulaire/{{offre.id_offre}}'">POSTULEZ - ICI</button>
+        <div class="comp-section">
+          <p class="comp-label">Social :</p>
+          <ul class="comp-grid">
+            {% for competence in competences %}
+            {% if competence.categorie == 'Social' %}
+            <li><span class="dot blue"></span>{{competence.nom}}</li>
+            {% endif %}
+            {% else %}
+            <p>NO DATA FOUND</p>
+            {% endfor %}
+          </ul>
         </div>
+      </div>
+
+      <div class="actions-row">
+        <button class="btn-action btn-stats" onclick="window.location.href='/statistiques'">Voir les Stats</button>
+        <form method="POST" action="/wishlist/add">
+          <input type="hidden" name="id_offre" value="{{offre.id_offre}}">
+          <button class="btn-action btn-wishlist"> Ajouter à la wishList</button>
+        </form>
 
       </div>
-    </main>
+      <button class="btn-postuler" onclick="window.location.href='/formulaire/{{offre.id_offre}}'">POSTULEZ -
+        ICI</button>
+    </div>
+
+  </div>
+</main>
 
 {% endblock %}
