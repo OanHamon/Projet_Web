@@ -49,7 +49,7 @@
         </ul>
 
         <div class="account-div">
-            {% if session.userId is defined and session.userId %}
+            {% if session.role is defined %}
             <a href="/logout" class="signup">
                 Se déconnecter
             </a>
