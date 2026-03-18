@@ -29,6 +29,7 @@ $routeur->add('POST','/entreprise_dashboard/update_offre_info',[EntrepriseContro
 $routeur->add('POST','/entreprise_dashboard/delete_offre',[EntrepriseController::class, 'deleteOffre']);
 $routeur->add('POST','/entreprise_dashboard/create_offre',[EntrepriseController::class, 'createOffre']);
 $routeur->add('POST','/entreprise_dashboard/updateinfo',[EntrepriseController::class, 'updateEntrepriseInfo']);
+$routeur->add('POST','/entreprise_dashboard/deleteaccount',[EntrepriseController::class, 'deleteAccount']);
 $routeur->add('GET','/entreprise/{id}',[EntrepriseController::class, 'renderEntreprisePage']);
 $routeur->add('POST','/entreprise/{id}/rate',[EntrepriseController::class, 'manageNotation']);
 
