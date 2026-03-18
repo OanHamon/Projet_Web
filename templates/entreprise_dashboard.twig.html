@@ -13,7 +13,7 @@
     <section>
         <div class="image-banner-entreprise">
             <div class="overlay">
-                <h1>{{entreprise.nom}}</h1>
+                <h1>{{ entreprise.nom ?? "L'entreprise n'existe pas" }}</h1>
                 <p>{{entreprise.phrase_intro}}</p>
             </div>  
      </section>
@@ -30,7 +30,7 @@
             <form class="entreprise-form" method="POST" action="/entreprise_dashboard/updateinfo">
                 <div class="form-group">
                     <label>Titre</label>
-                    <input type="text" name="titre" placeholder="{{entreprise.nom}}">
+                    <input type="text" name="nom" placeholder="{{entreprise.nom}}">
                 </div>
                 <div class="form-group">
                     <label>Petite phrase d'introduction</label>
@@ -44,6 +44,18 @@
                 <div class="form-group">
                     <label>Petite Description sur les cartes</label>
                     <textarea placeholder="{{entreprise.description_cartes}}" name="description_cartes"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" name='email' placeholder="{{entreprise.email}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Telephone</label>
+                        <input type="text" name="telephone" placeholder="{{entreprise.telephone}}">
+                    </div>
+
                 </div>
 
                 <div class="upload-row">
@@ -117,6 +129,8 @@
                             </div>
                         </a>
                     </li>
+                    {% else %}
+                    <p>Pas d'offre de stage ici</p>
                     {% endfor %}
                    
                 </ul>
@@ -143,14 +157,13 @@
     </section>
 
 
-    <!-- SUPPRESSION COMPTE -->
     <section class="danger-zone">
-
-        <h2>Supprimer le compte</h2>
-        <button class="delete-account-btn">Supprimer l’entreprise</button>
+        <form method="POST" action="/entreprise_dashboard/deleteaccount">
+            <label><h2>Supprimer le compte</h2></label>
+            <button class="delete-account-btn">Supprimer le compte</button>
+        </form>
 
     </section>
-
 </main>
 <script>
     document.querySelectorAll('.offre-item').forEach(item => {

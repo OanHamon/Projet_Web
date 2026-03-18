@@ -119,26 +119,17 @@ class EntrepriseController extends Controller{
 
     function updateEntrepriseInfo(){
 
-        if(isset($_POST['titre']) && isset($_POST['phrase_intro']) && isset($_POST['description_entreprise']) && isset($_POST['description_cartes'])){
-            $ttl = $_POST['titre'];
-            $pi = $_POST['phrase_intro'];
-            $de = $_POST['description_entreprise'];
-            $dc = $_POST['description_cartes'];
-            $data= [];
-            if(!empty($ttl)){$data['Nom']=$ttl;}
-            if(!empty($pi)){$data['phrase_intro']=$pi;}
-            if(!empty($de)){$data['description_entreprise']=$de;}
-            if(!empty($dc)){$data['description_cartes']=$dc;}
-            if(!empty($data)){$this->entrepriseModel->update($this->entreprise_id,$data);}
-
-
-            header('Location: /entreprise_dashboard');
-            exit();
+        $data= [];
+        $fields = ['nom', 'phrase_intro', 'description_entreprise','description_cartes', 'email', 'telephone'];
+        foreach($fields as $field){
+            if(!empty($_POST[$field])){
+                $data[$field] = $_POST[$field];
+            }
         }
-        else{
-            header('Location: /error?error=no_data_available');
-            exit();
-        }
+        if(!empty($data)){$this->entrepriseModel->update($this->entreprise_id,$data);}
+        header('Location: /entreprise_dashboard');
+        exit();
+
     }
 
     function updateOffreInfo(){
@@ -197,6 +188,16 @@ class EntrepriseController extends Controller{
         exit();
     }
 
+
+    function deleteAccount(){
+        $this->entrepriseModel->deleteById($this->entreprise_id);
+        if ( !$_SESSION['role'] == 'admin'){
+            $_SESSION = array();
+        }
+
+        header('Location: /'); 
+        exit(); 
+    }
 
     // a faire quand on aura bien les sessions
 

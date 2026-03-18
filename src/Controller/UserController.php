@@ -135,8 +135,9 @@ class UserController extends Controller{
             $id_offre = $id;
             $data = [ 'id_etudiant'=>$this->id, 'id_offre'=>$id_offre];
             if(!$postuleModel->find($data)){
-                if(isset($_POST['prenom']) && isset($_POST['nom'])&& isset($_POST['email']) && isset($_POST['phone'])){
-                    //Verifier les donnée coherente avec la session de l'utilisateur ici qd on aura mis enplace les sessions
+
+                if(isset($_POST['phone'])){
+                    //isset($_POST['prenom']) && isset($_POST['nom'])&& isset($_POST['email']) &&
                     if(isset($_FILES['cv']) && isset($_FILES['lm'])){
                         $cv = $_FILES['cv'];
                         $lm =$_FILES['lm'];
