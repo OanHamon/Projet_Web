@@ -20,11 +20,6 @@ class EntrepriseController extends Controller{
         $this->offreModel = new OffreModel( );
         $this->compModel = new CompetenceModel();
         $this->userModel = new UserModel();
-        if (!isset($_SESSION['companyId'])) {
-            header('Location: /signin');
-            exit;
-        }
-        $this->entreprise_id = $_SESSION['companyId'];
     } 
 
     function renderEntreprisePage($id){
@@ -38,6 +33,11 @@ class EntrepriseController extends Controller{
     }
 
     function renderEntrepriseDashboardPage(){
+        if (!isset($_SESSION['companyId'])) {
+            header('Location: /signin');
+            exit;
+        }
+        $this->entreprise_id = $_SESSION['companyId'];
         $entreprise = $this->entrepriseModel->getById($this->entreprise_id);
         $offres = $this->entrepriseModel->getOffres($this->entreprise_id);
         $all_competences = $this->compModel->getAll();
