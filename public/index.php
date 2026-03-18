@@ -60,6 +60,10 @@ $routeur->add('GET','/logout',[AuthController::class, 'logout']);
 
 
 
+$routeur->add('GET','/download',[EntrepriseController::class, 'downloadFile']);
+
+
+
 $url    = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $method = $_SERVER['REQUEST_METHOD'];     
 

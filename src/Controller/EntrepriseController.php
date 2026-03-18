@@ -59,8 +59,9 @@ class EntrepriseController extends Controller{
                 if(isset($_GET['candidat_id'])){
                     $candidat_data = $this->userModel->getById($_GET['candidat_id']);
                     $candidature = $this->userModel->getCandidature($_GET['candidat_id'],$id_to_display);
-                    $cv_url = "/uploads/cv/" . $candidature['cv_url'];
-                    $lm_url = "/uploads/lm/" . $candidature['lm_url'];
+
+                    $cv_url =  $candidature['cv_url'];
+                    $lm_url = $candidature['lm_url'];
                 } 
             }
             else{
@@ -91,6 +92,19 @@ class EntrepriseController extends Controller{
 
             ]);
     }
+    function downloadFile(){
+    $filename = $_GET['file'];
+    $type = $_GET['type']; // 'cv' ou 'lm'
+    $path = __DIR__ . '/../../public/uploads/' . $type . '/' . $filename;
+    echo $path;
+    if(file_exists($path)){
+        header('Content-Type: application/pdf');
+        header('Content-Disposition: attachment; filename="' . $filename . '"');
+        readfile($path);
+        echo 'finis';
+        exit();
+    }
+}
 
     function manageNotation($id){
         if(isset($_POST['rating'])){
