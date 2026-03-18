@@ -4,14 +4,15 @@ USE wtto;
 
 CREATE TABLE Entreprise(
    id_entreprise INT AUTO_INCREMENT,
-   nom VARCHAR(50),
+   nom VARCHAR(50) NOT NULL,
    description_cartes TEXT,
    phrase_intro VARCHAR(100),
    description_entreprise TEXT,
-   email VARCHAR(50),
+   email VARCHAR(50) NOT NULL,
    telephone VARCHAR(50),
-   mdp VARCHAR(50) NOT NULL,
-   PRIMARY KEY(id_entreprise)
+   mdp VARCHAR(256) NOT NULL,
+   PRIMARY KEY(id_entreprise),
+   UNIQUE(email)
 );
 ALTER TABLE Entreprise CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 

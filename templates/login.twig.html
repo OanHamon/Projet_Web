@@ -33,15 +33,24 @@
 
       <div class="container{% if login %} right-panel-active{% endif %}" id="container">
         <div class="form-container sign-up-container">
-          <form action="/inscription" method="post">
+          <form id="signup-form" action="/inscription" method="post">
             <h1>S'inscrire</h1>
             <div class="field-group">
-              <label for="signup-nom">Nom</label>
-              <input type="text" id="signup-nom" name="nom" required/>
+              <label for="signup-type">Type de Compte</label>
+              <select id="signup-type" name="type_compte" required>
+                <option value="" disabled selected>Choisir un type</option>
+                <option value="etudiant">Étudiant</option>
+                <option value="pilote">Pilote</option>
+                <option value="entreprise">Entreprise</option>
+              </select>
             </div>
-            <div class="field-group">
+            <div class="field-group" id="nom-group">
+              <label for="signup-nom">Nom</label>
+              <input type="text" id="signup-nom" name="nom" required />
+            </div>
+            <div class="field-group" id="prenom-group">
               <label for="signup-prenom">Prénom</label>
-              <input type="text" id="signup-prenom" name="prenom" required/>
+              <input type="text" id="signup-prenom" name="prenom" required />
             </div>
             <div class="field-group">
               <label for="signup-email">Email</label>
@@ -81,12 +90,10 @@
             <div class="overlay-panel overlay-left">
               <h2>Déjà un compte ?</h2>
               <button class="btn-switch" id="signIn">Se connecter</button>
-              <a href="#" class="link-entreprise">Vous êtes une entreprise ?</a>
             </div>
             <div class="overlay-panel overlay-right">
               <h2>Votre première fois ici ?</h2>
               <button class="btn-switch" id="signUp">Créer un compte</button>
-              <a href="#" class="link-entreprise">Vous êtes une entreprise ?</a>
             </div>
           </div>
         </div>
@@ -94,5 +101,6 @@
       </div>
     </main>
     <script src="/scripts/loginpage.js"></script>
+    <script src="/scripts/loginPageTypeCompte.js"></script>
   </body>
 </html>

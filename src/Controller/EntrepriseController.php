@@ -20,7 +20,11 @@ class EntrepriseController extends Controller{
         $this->offreModel = new OffreModel( );
         $this->compModel = new CompetenceModel();
         $this->userModel = new UserModel();
-        $this->entreprise_id = 7;// id fix temporaire
+        if (!isset($_SESSION['companyId'])) {
+            header('Location: /signin');
+            exit;
+        }
+        $this->entreprise_id = $_SESSION['companyId'];
     } 
 
     function renderEntreprisePage($id){

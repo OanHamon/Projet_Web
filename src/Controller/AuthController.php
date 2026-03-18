@@ -3,14 +3,17 @@
 namespace App\Controller;
 
 use App\Model\UserModel;
+use App\Model\EntrepriseModel;
 
 class AuthController extends Controller{
 
     private $userModel;
+    private $entrepriseModel;
 
     function __construct(){
         parent::__construct();
         $this->userModel = new UserModel();
+        $this->entrepriseModel = new EntrepriseModel();
     }
 
     function login(){
@@ -19,23 +22,42 @@ class AuthController extends Controller{
         if (isset($_POST['mdp']) && isset($_POST['email'])) {
             $email = $_POST['email'];
             $mdp   = $_POST['mdp'];
+            $emailIsEntreprise = $this->entrepriseModel->entreprise_exist_email($email);
     
-            if (!$this->userModel->user_exist_email($email)) {
+            if (!$this->userModel->user_exist_email($email) && !$emailIsEntreprise) {
                 $errors[] = "Cette adresse email n'existe pas, creez un compte.";
             } else {
-                $hashed_password = $this->userModel->hashed_password_user_email($email);
-    
+                if ($emailIsEntreprise) {
+                    $hashed_password = $this->entrepriseModel->hashed_password_entreprise_email($email);
+                } else {
+                    $hashed_password = $this->userModel->hashed_password_user_email($email);
+                }
+
                 if (!password_verify($mdp, $hashed_password)) {
                     $errors[] = "Mot de passe incorrect !";
                 }
             }
     
             if (empty($errors)) {
-                $userId = $this->userModel->get_user_id($email);
-                $_SESSION['userId'] = $userId;
-                $_SESSION['role'] = $this->userModel->get_user_role($userId);
-                header('Location: /student_dashboard');
-                exit;
+                if ($emailIsEntreprise) {
+                    $companyId = $this->entrepriseModel->get_company_id($email);
+                    $_SESSION['role'] = 'entreprise';
+                    $_SESSION['companyId'] = $companyId;
+                    header('Location: /entreprise_dashboard');
+                    exit;
+                } else {
+                    $userId = $this->userModel->get_user_id($email);
+                    $_SESSION['userId'] = $userId;
+                    $_SESSION['role'] = $this->userModel->get_user_role($userId);
+                    if ($_SESSION['role'] === 'etudiant') {
+                        header('Location: /student_dashboard');
+                    } elseif ($_SESSION['role'] === 'admin') {
+                        header('Location: /');
+                    } elseif ($_SESSION['role'] === 'pilote') {
+                        header('Location: /pilote_dashboard');
+                    }
+                    exit;
+                }
             }
         }
     
@@ -48,23 +70,49 @@ class AuthController extends Controller{
     function create_account() {
         $errors = [];
     
-        if (isset($_POST['prenom'], $_POST['nom'], $_POST['mdp'], $_POST['email'])) {
-    
+        if (isset($_POST['prenom'], $_POST['nom'], $_POST['mdp'], $_POST['email'], $_POST['type_compte'], $_POST['mdp_confirm'])) {
+
             $email = $_POST['email'];
             $nom = $_POST['nom'];
             $prenom = $_POST['prenom'];
-            $password_hash = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
-    
-            if ($this->userModel->user_exist_email($email)) {
+            $type_compte = $_POST['type_compte'];
+            $password = $_POST['mdp'];
+            $password_confirm = $_POST['mdp_confirm'];
+
+            if ($this->userModel->user_exist_email($email) || $this->entrepriseModel->entreprise_exist_email($email)) {
                 $errors[] = "Un compte existe déjà avec cette adresse email, connectez vous.";
             }
-    
+
+            if ($password !== $password_confirm) {
+                $errors[] = "Les mots de passe ne correspondent pas.";
+            }
+
+            $password_hash = password_hash($password, PASSWORD_DEFAULT);
+
+            if (empty($type_compte)) {
+                $errors[] = "Veuillez choisir un type de compte.";
+            }
+
             if (empty($errors)) {
-                $userId = $this->userModel->create_user($email, $password_hash, $nom, $prenom, "etudiant");
-                $_SESSION['userId'] = $userId;
-                $_SESSION['role'] = $this->userModel->get_user_role($userId);
-                header('Location: /student_dashboard');
-                exit;
+                if ($type_compte != 'entreprise') {
+                    $userId = $this->userModel->create_user($email, $password_hash, $nom, $prenom, $type_compte);
+                    $_SESSION['userId'] = $userId;
+                    $_SESSION['role'] = $type_compte;
+                    if ($_SESSION['role'] === 'etudiant') {
+                        header('Location: /student_dashboard');
+                    } elseif ($_SESSION['role'] === 'admin') {
+                        header('Location: /');
+                    } elseif ($_SESSION['role'] === 'pilote') {
+                        header('Location: /pilote_dashboard');
+                    }
+                    exit;
+                } else {
+                    $companyId = $this->entrepriseModel->create_entreprise($nom, $email, $password_hash);
+                    $_SESSION['companyId'] = $companyId;
+                    $_SESSION['role'] = 'entreprise';
+                    header('Location: /entreprise_dashboard');
+                    exit;
+                }
             }
         }
     
