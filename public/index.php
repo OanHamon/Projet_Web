@@ -43,7 +43,8 @@ $routeur->add('GET','/pilote_dashboard',[UserController::class, 'renderPiloteDas
 
 // === Search ===
 
-$routeur->add('GET','/search',[SearchController::class, 'renderSearchPage']);
+$routeur->add('GET',  '/search', [SearchController::class, 'renderSearchPage']);
+$routeur->add('POST', '/search', [SearchController::class, 'renderSearchPage']);
 
 // === Other Page ===
 $routeur->add('GET','/mentionslegales',[HomeController::class, 'renderMentionsLegalesPage']);

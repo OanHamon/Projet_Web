@@ -169,6 +169,7 @@ form {
     min-height: 600px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
 
   .overlay-container {
@@ -181,6 +182,7 @@ form {
     padding: 30px 20px;
     opacity: 1;
     transform: none !important;
+    align-items: start;
     display: none; /* On cache par défaut */
   }
 
@@ -192,9 +194,19 @@ form {
   .container.right-panel-active .sign-up-container {
     display: flex;
   }
+}
 
-  /* Ajout d'un lien pour switch sur mobile */
-  .mobile-toggle {
+.alert-danger{
+  color: red;
+  font-weight: bold;
+}
+
+.switch_mobile {
+  display: none;
+}
+
+@media (max-width: 650px) {
+  .switch_mobile {
     display: block;
     margin-top: 20px;
     font-size: 13px;
@@ -203,12 +215,4 @@ form {
     text-align: center;
     cursor: pointer;
   }
-}
-
-/* Cache le lien par défaut sur PC */
-.mobile-toggle { display: none; }
-
-.alert-danger{
-  color: red;
-  font-weight: bold;
 }

@@ -32,7 +32,6 @@
       {% endif %}
 
       <div class="container{% if login %} right-panel-active{% endif %}" id="container">
-
         <div class="form-container sign-up-container">
           <form action="/inscription" method="post">
             <h1>S'inscrire</h1>
@@ -58,6 +57,7 @@
             </div>
             <button type="submit" class="btn-main">S'inscrire</button>
           </form>
+          <a href="/signin" class="switch_mobile">Déjà un compte ? Connectez-vous</a>
         </div>
 
         <div class="form-container sign-in-container">
@@ -73,6 +73,7 @@
             </div>
             <button type="submit" class="btn-main">Se connecter</button>
           </form>
+          <a href="/signup" class="switch_mobile">Pas encore de compte ? Inscrivez-vous</a>
         </div>
 
         <div class="overlay-container">
