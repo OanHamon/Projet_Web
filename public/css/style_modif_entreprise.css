@@ -2,15 +2,12 @@
    STRUCTURE GLOBALE
 ========================= */
 
-.dashboard-entreprise {
-    padding: 60px 40px 120px;
-    background: linear-gradient(180deg, #f4f8ff 0%, #ffffff 100%);
+
+.content-dashboard{
+    padding: 70px;
 }
 
 .image-banner-entreprise {
-    margin-top: -60px;
-    margin-left: -40px;
-    padding-right: 80px;
     width: 100%;
     height: 260px;
     background: linear-gradient(135deg, var(--light-blue), #ffffff);
@@ -210,12 +207,18 @@ input[type="file"] {
     border-left: 4px solid #2f6fe4;
 }
 
+.offre-actions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .offre-actions button {
     background: none;
     border: none;
     cursor: pointer;
     font-size: 14px;
-    margin-left: 6px;
 }
 
 .form-row {

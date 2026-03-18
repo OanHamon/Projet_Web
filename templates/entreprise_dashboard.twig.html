@@ -16,154 +16,155 @@
                 <h1>{{ entreprise.nom ?? "L'entreprise n'existe pas" }}</h1>
                 <p>{{entreprise.phrase_intro}}</p>
             </div>  
-     </section>
-
-
-    <section class="entreprise-info">
-
-        <div class="entreprise-block-content entreprise-card">
-            <h2>Votre Entreprise</h2>
-            <p class="subtitle">
-                Ici décrivez votre entreprise pour sa vitrine visible par les étudiants
-            </p>
-
-            <form class="entreprise-form" method="POST" action="/entreprise_dashboard/updateinfo">
-                <div class="form-group">
-                    <label>Titre</label>
-                    <input type="text" name="nom" placeholder="{{entreprise.nom}}">
-                </div>
-                <div class="form-group">
-                    <label>Petite phrase d'introduction</label>
-                    <textarea placeholder="{{entreprise.phrase_intro}}" name="phrase_intro"></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Description de l'entreprise (en markdown)</label>
-                    <textarea placeholder="Ecrivez-ici" name="description_entreprise"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Petite Description sur les cartes</label>
-                    <textarea placeholder="{{entreprise.description_cartes}}" name="description_cartes"></textarea>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="text" name='email' placeholder="{{entreprise.email}}">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Telephone</label>
-                        <input type="text" name="telephone" placeholder="{{entreprise.telephone}}">
-                    </div>
-
-                </div>
-
-                <div class="upload-row">
-
-                    <div class="upload-group">
-                        <label>Entrez votre Bannière</label>
-                        <input type="file" name="banniere">
-                    </div>
-
-                    <div class="upload-group">
-                        <label>Entrez votre Logo</label>
-                        <input type="file" name="logo">
-                    </div>
-
-                </div>
-
-                <button class="save-btn">Enregistrer</button>
-            </form>
-        </div>
-
     </section>
 
-    <section class="offres-section">
+    <div class="content-dashboard">
+        <section class="entreprise-info">
 
-        <div class="offres-container">
+            <div class="entreprise-block-content entreprise-card">
+                <h2>Votre Entreprise</h2>
+                <p class="subtitle">
+                    Ici décrivez votre entreprise pour sa vitrine visible par les étudiants
+                </p>
 
-            <aside class="offres-list">
+                <form class="entreprise-form" method="POST" action="/entreprise_dashboard/updateinfo">
+                    <div class="form-group">
+                        <label>Titre</label>
+                        <input type="text" name="nom" placeholder="{{entreprise.nom}}">
+                    </div>
+                    <div class="form-group">
+                        <label>Petite phrase d'introduction</label>
+                        <textarea placeholder="{{entreprise.phrase_intro}}" name="phrase_intro"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Description de l'entreprise (en markdown)</label>
+                        <textarea placeholder="Ecrivez-ici" name="description_entreprise"></textarea>
+                    </div>
 
-                <div class="offres-header" id="ModifOffre">
-                    <h3>Vos Offres</h3>
-                    <a href="/entreprise_dashboard?create=true"><button class="add-offre">+</button></a>
-                </div>
+                    <div class="form-group">
+                        <label>Petite Description sur les cartes</label>
+                        <textarea placeholder="{{entreprise.description_cartes}}" name="description_cartes"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" name='email' placeholder="{{entreprise.email}}">
+                        </div>
 
-                <ul class="offre-items">
+                        <div class="form-group">
+                            <label>Telephone</label>
+                            <input type="text" name="telephone" placeholder="{{entreprise.telephone}}">
+                        </div>
 
-                    {% for offre in offres %}
-                    <li class="offre-item ">
-                        <a href="/entreprise_dashboard?offre_id={{offre.id_offre}}&showdata=true">
-                            <div class="offre-content">
-                                <h4>{{offre.titre}}</h4>
-                            <!--  <p>{{offre.description_carte}}</p> -->
-                            </div>
-                            <div class="offre-actions">
-                                <a href="/entreprise_dashboard?offre_id={{offre.id_offre}}&showdata=false">
-                                    <svg id="Pencil-Box--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16" width="16">
-                                    <desc>
-                                            Pencil Box Streamline Icon: https://streamlinehq.com
-                                        </desc>
-                                        <defs></defs>
-                                        <path d="m12.86875 7.5 0 6.5625 -11.93125 0 0 -11.93125 7.1625000000000005 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                        <path d="m7.5 9.8875 -2.9812499999999997 0.59375 0.59375 -2.9812499999999997 6.0687500000000005 -6.0687500000000005a1.68125 1.68125 0 0 1 1.1937499999999999 -0.49375 1.6875 1.6875 0 0 1 1.6875 1.6875 1.68125 1.68125 0 0 1 -0.49375 1.1937499999999999Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                    </svg>
-                                </a>
-                                <form method="POST" action="/entreprise_dashboard/delete_offre">
-                                    <input type="hidden" name="id_offre" value="{{offre.id_offre}}">
-                                    <button type="submit">
-                                        <svg id="Trash--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16" width="16">
-                                            <desc>
-                                                Trash Streamline Icon: https://streamlinehq.com
+                    </div>
+
+                    <div class="upload-row">
+
+                        <div class="upload-group">
+                            <label>Entrez votre Bannière</label>
+                            <input type="file" name="banniere">
+                        </div>
+
+                        <div class="upload-group">
+                            <label>Entrez votre Logo</label>
+                            <input type="file" name="logo">
+                        </div>
+
+                    </div>
+
+                    <button class="save-btn">Enregistrer</button>
+                </form>
+            </div>
+
+        </section>
+
+        <section class="offres-section">
+
+            <div class="offres-container">
+
+                <aside class="offres-list">
+
+                    <div class="offres-header" id="ModifOffre">
+                        <h3>Vos Offres</h3>
+                        <a href="/entreprise_dashboard?create=true"><button class="add-offre">+</button></a>
+                    </div>
+
+                    <ul class="offre-items">
+
+                        {% for offre in offres %}
+                        <li class="offre-item ">
+                            <a href="/entreprise_dashboard?offre_id={{offre.id_offre}}&showdata=true">
+                                <div class="offre-content">
+                                    <h4>{{offre.titre}}</h4>
+                                    <p>{{offre.description_carte}}</p>
+                                </div>
+                                <div class="offre-actions">
+                                    <a href="/entreprise_dashboard?offre_id={{offre.id_offre}}&showdata=false">
+                                        <svg id="Pencil-Box--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16" width="16">
+                                        <desc>
+                                                Pencil Box Streamline Icon: https://streamlinehq.com
                                             </desc>
                                             <defs></defs>
-                                            <path d="M10.549999999999999 14.0625H4.45a1.1875 1.1875 0 0 1 -1.1875 -1.125L2.725 3.325h9.549999999999999l-0.5375 9.6125a1.1875 1.1875 0 0 1 -1.1875 1.125Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                            <path d="m1.53125 3.325 11.9375 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                            <path d="M6.30625 0.9375h2.3874999999999997a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 1.1937499999999999v1.1937499999999999H5.1125V2.13125a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 -1.1937499999999999Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                            <path d="m7.5 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                            <path d="m9.8875 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                            <path d="m5.1125 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                            <path d="m12.86875 7.5 0 6.5625 -11.93125 0 0 -11.93125 7.1625000000000005 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                            <path d="m7.5 9.8875 -2.9812499999999997 0.59375 0.59375 -2.9812499999999997 6.0687500000000005 -6.0687500000000005a1.68125 1.68125 0 0 1 1.1937499999999999 -0.49375 1.6875 1.6875 0 0 1 1.6875 1.6875 1.68125 1.68125 0 0 1 -0.49375 1.1937499999999999Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
                                         </svg>
-                                    </button>
-                                </form>
-                            </div>
-                        </a>
-                    </li>
-                    {% else %}
-                    <p>Pas d'offre de stage ici</p>
-                    {% endfor %}
-                   
-                </ul>
+                                    </a>
+                                    <form method="POST" action="/entreprise_dashboard/delete_offre">
+                                        <input type="hidden" name="id_offre" value="{{offre.id_offre}}">
+                                        <button type="submit">
+                                            <svg id="Trash--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16" width="16">
+                                                <desc>
+                                                    Trash Streamline Icon: https://streamlinehq.com
+                                                </desc>
+                                                <defs></defs>
+                                                <path d="M10.549999999999999 14.0625H4.45a1.1875 1.1875 0 0 1 -1.1875 -1.125L2.725 3.325h9.549999999999999l-0.5375 9.6125a1.1875 1.1875 0 0 1 -1.1875 1.125Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                                <path d="m1.53125 3.325 11.9375 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                                <path d="M6.30625 0.9375h2.3874999999999997a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 1.1937499999999999v1.1937499999999999H5.1125V2.13125a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 -1.1937499999999999Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                                <path d="m7.5 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                                <path d="m9.8875 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                                <path d="m5.1125 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                            </svg>
+                                        </button>
+                                    </form>
+                                </div>
+                            </a>
+                        </li>
+                        {% else %}
+                        <p>Pas d'offre de stage ici</p>
+                        {% endfor %}
+                    
+                    </ul>
 
-            </aside>
+                </aside>
 
-            <div class="offre-editor entreprise-block-content">
+                <div class="offre-editor entreprise-block-content">
 
-                {% if createNew %}
-                    {% include 'form_create_offre.twig.html' %}
-                {% elseif offre_to_display %}
-                    {% if showdata == false %}
-                        {% include 'form_edit_offre.twig.html' %}
-                    {% elseif showdata == true %}
-                        {% include 'data_offre.twig.html' %}
+                    {% if createNew %}
+                        {% include 'form_create_offre.twig.html' %}
+                    {% elseif offre_to_display %}
+                        {% if showdata == false %}
+                            {% include 'form_edit_offre.twig.html' %}
+                        {% elseif showdata == true %}
+                            {% include 'data_offre.twig.html' %}
+                        {% endif %}
                     {% endif %}
-                {% endif %}
-               
+                
+
+                </div>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <section class="danger-zone">
-        <form method="POST" action="/entreprise_dashboard/deleteaccount">
-            <label><h2>Supprimer le compte</h2></label>
-            <button class="delete-account-btn">Supprimer le compte</button>
-        </form>
+        <section class="danger-zone">
+            <form method="POST" action="/entreprise_dashboard/deleteaccount">
+                <label><h2>Supprimer le compte</h2></label>
+                <button class="delete-account-btn">Supprimer le compte</button>
+            </form>
 
-    </section>
+        </section>
+    </div>
 </main>
 <script>
     document.querySelectorAll('.offre-item').forEach(item => {
