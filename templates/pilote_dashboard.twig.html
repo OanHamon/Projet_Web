@@ -1,138 +1,165 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compte Pilote</title>
+{% extends 'base.twig.html' %}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/token.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/style_compte_pilote_page.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <input class="header-burger-input" type="checkbox" id="votre_id" tabindex="0">
-            <label for="votre_id" class="burger"><span></span><span></span><span></span></label>
+    {% block styles %}
+        <link rel="stylesheet" href="/css/token.css">
+         <link rel="stylesheet" href="/css/style_compte_pilote_page.css">
 
-            <a href="index.html" class="logo-link" style="display:inline-block;">
-                <img src="../assets/image/logo_projet_web.png" alt="Logo" class="header-logo">
-            </a>
+    {% endblock %}
 
-            <ul class="header-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="vitrine_stage.html">Nos Stages</a></li>
-                <li><a href="vitrine_entreprise.html">Nos Entreprises</a></li>
-            </ul>
-
-            <div class="account-div">
-                <a href="login.html" class="signup">S'inscrire</a>
-                <a href="login.html" class="login">Se connecter</a>
-            </div>
-        </nav>
-    </header>
-
+{% block content %}
     <main>
         <!-- SECTION COMPTE PILOTE -->
         <section class="hero">
-            <h1>Compte Pilote</h1>
-            <div class="search-container">
-                <input type="text" placeholder="Recherchez dans l'océan des stages">
-                <button class="search-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                </button>
-            </div>
-            <p class="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
-            </p>
+            <h1>Mon Compte Pilote :</h1>
+            <p>Jeremy Gallet    </p>
         </section>
 
-        <section class="list-section">
-            <div class="list-card">
-                <div class="list-item">
-                    <span>Compte 1</span>
-                    <div class="icons">
-                        <button onclick="openModal('edit-profile')" title="Modifier">✏️</button>
-                        <button onclick="openModal('delete-profile')" title="Supprimer">🗑️</button>
+        <section class="modif-block">
+            <div class="field-container">
+
+        <div class="account-card dashboard-student-card">
+            <h2>Mon Compte</h2>
+
+            <form class="account-form" method="POST" action="/pilote_dashboard/updateinfo" >
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Prénom</label>
+                        <input type="text" name='prenom' placeholder="Prenom">
                     </div>
-                </div>
-                <div class="list-item">
-                    <span>Classe</span>
-                    <div class="icons">
-                        <button onclick="openModal('add-class')" title="Ajouter">➕</button>
-                        <button onclick="openModal('delete-class')" title="Supprimer">🗑️</button>
+
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <input type="text" name="nom" placeholder="Nom">
                     </div>
+
                 </div>
-                <div class="list-item">
-                    <span>Etudiant</span>
-                    <div class="icons">
-                        <button onclick="openModal('add-student')" title="Ajouter">➕</button>
-                        <button onclick="openModal('delete-student')" title="Supprimer">🗑️</button>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" name="email" placeholder="email">
+                </div>
+                <br>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Mots de passe</label>
+                        <input type="text" name="mdp" placeholder="MDP">
                     </div>
-                </div>
-            </div>
-        </section>
+                    <div class="form-group">
+                        <label>Confirmation</label>
+                        <input type="text" name="mdp" placeholder="MDP">
+                    </div>
 
-        <!-- SECTION PILOTE -->
-        <section class="pilote-section">
-            <h2 class="pilote-title">Pilote</h2>
 
-            <div class="columns-container">
-
-                <div id="section-classes" class="column">
-                    <div class="column-header">Classes</div>
-                    <ul class="list-items">
-                        <li onclick="showSection('section-eleves')">Classe 1</li>
-                        <li onclick="showSection('section-eleves')">Classe 2</li>
-                        <li onclick="showSection('section-eleves')">Classe 3</li>
-                    </ul>
                 </div>
 
-                <div id="section-eleves" class="column hidden">
-                    <div class="column-header">Élèves</div>
-                    <ul class="list-items">
-                        <li onclick="showSection('section-stages')">Élève 1</li>
-                        <li onclick="showSection('section-stages')">Élève 2</li>
-                        <li onclick="showSection('section-stages')">Élève 3</li>
-                    </ul>
-                    <button class="btn-back" onclick="hideSection('section-eleves')">← Retour aux classes</button>
-                </div>
+                <br>
+                <br>
 
-                <div id="section-stages" class="column hidden">
-                    <div class="column-header">Stages</div>
-                    <ul class="list-items">
-                        <li>Stage Développement Web</li>
-                        <li>Stage Design UI/UX</li>
-                        <li>Stage Marketing</li>
-                    </ul>
-                    <button class="btn-back" onclick="hideSection('section-stages')">← Retour aux élèves</button>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <!-- MODALS -->
-    <div class="overlay" id="modal-edit-profile">
-        <div class="modal-card">
-            <button class="modal-close" onclick="closeModal('edit-profile')">&times;</button>
-            <h3>Modifier le profil</h3>
-            <label>Nom</label><input type="text">
-            <label>Prénom</label><input type="text">
-            <label>Mot de Passe</label><input type="password">
-            <button class="btn-save">Enregistrer</button>
+                <button class="btn-primary">Enregistrer</button>
+            </form>
         </div>
-    </div>
 
-    <div class="overlay" id="modal-delete-profile">
+            </div>
+
+        </section>
+
+        <section class="pilote-section">
+            <div class="pere">
+                <h2 class="pilote-title"></h2>
+
+                <aside class="columns-container">
+                    <div class="offres-header" id="ModifOffre">
+                        <h3>Vos Eleves</h3>
+                        <a href="/pilote_dashboard?create=true"><div class="add-student">+</div></a>
+                    </div>
+                    <ul>
+                        <li class="student-item" style="position: relative">
+                            <a href="/pilote_dashboard?etudiant_id=X">
+                                <div class="student-content">
+                                    <h4>Socrate Hamon</h4>
+                                </div>
+                            </a>
+                            <form method="POST" action="/pilote_dashboard/delete_student" style="position: absolute; top: 10px; right: 10px;">
+                                <input type="hidden" name="id_etudiant" value="X">
+                                <button type="submit">
+                                    <svg id="Trash--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16" width="16">
+                                        <desc>
+                                        Trash Streamline Icon: https://streamlinehq.com
+                                        </desc>
+                                        <defs></defs>
+                                        <path d="M10.549999999999999 14.0625H4.45a1.1875 1.1875 0 0 1 -1.1875 -1.125L2.725 3.325h9.549999999999999l-0.5375 9.6125a1.1875 1.1875 0 0 1 -1.1875 1.125Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="m1.53125 3.325 11.9375 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="M6.30625 0.9375h2.3874999999999997a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 1.1937499999999999v1.1937499999999999H5.1125V2.13125a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 -1.1937499999999999Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="m7.5 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="m9.8875 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="m5.1125 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                    </svg>
+                                </button>
+                            </form>
+                        </li>
+                        <li class="student-item" style="position: relative">
+                            <a href="/pilote_dashboard?etudiant_id=X">
+                                <div class="student-content">
+                                    <h4>Jadina Hamon</h4>
+                                </div>
+                            </a>
+                            <form method="POST" action="/pilote_dashboard/delete_student" style="position: absolute; top: 10px; right: 10px;">
+                                <input type="hidden" name="id_etudiant" value="X">
+                                <button type="submit">
+                                    <svg id="Trash--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16" width="16">
+                                        <desc>
+                                        Trash Streamline Icon: https://streamlinehq.com
+                                        </desc>
+                                        <defs></defs>
+                                        <path d="M10.549999999999999 14.0625H4.45a1.1875 1.1875 0 0 1 -1.1875 -1.125L2.725 3.325h9.549999999999999l-0.5375 9.6125a1.1875 1.1875 0 0 1 -1.1875 1.125Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="m1.53125 3.325 11.9375 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="M6.30625 0.9375h2.3874999999999997a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 1.1937499999999999v1.1937499999999999H5.1125V2.13125a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 -1.1937499999999999Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="m7.5 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="m9.8875 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="m5.1125 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                    </svg>
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </aside>
+
+                <div class="student-block-content">
+                    <h3>Votre Eleve</h3>
+                    <p>Socrate Hamon</p>
+                    <p>Nombre d'offre postuler : 3</p>
+                    <a>
+                        <div>
+                            <h3>Stage 1</h3>
+                        </div>
+
+                    </a>
+                    <a>
+                        <div>
+                            <h3>Stage 2</h3>
+                        </div>
+
+                    </a>
+                    <a>
+                        <div>
+                            <h3>Stage 3</h3>
+                        </div>
+
+                    </a>
+
+
+                </div>
+            </div>
+        </section>
+
+    <section class="danger-zone">
+
+        <h2>Supprimer le compte</h2>
+        <button class="delete-account-btn">Supprimer l’entreprise</button>
+
+    </section>
+
+    <div class="overlay hidden" id="modal-delete-profile">
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal('delete-profile')">&times;</button>
             <div id="content-delete-profile">
@@ -146,112 +173,7 @@
         </div>
     </div>
 
-    <div class="overlay" id="modal-add-class">
-        <div class="modal-card">
-            <button class="modal-close" onclick="closeModal('add-class')">&times;</button>
-            <h3>Ajouter une Classe</h3>
-            <label>Nom</label><input type="text">
-            <label>Effectif</label><input type="text">
-            <button class="btn-save">Enregistrer</button>
-        </div>
-    </div>
-
-    <div class="overlay" id="modal-delete-class">
-        <div class="modal-card">
-            <button class="modal-close" onclick="closeModal('delete-class')">&times;</button>
-            <div id="content-delete-class">
-                <h3>Supprimer la classe</h3>
-                <p>Confirmer la suppression</p>
-                <div class="btn-group">
-                    <button class="btn-dark" onclick="confirmDelete('delete-class', 'La classe a été supprimée.')">Oui</button>
-                    <button class="btn-dark" onclick="closeModal('delete-class')">Non</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="overlay" id="modal-add-student">
-        <div class="modal-card">
-            <button class="modal-close" onclick="closeModal('add-student')">&times;</button>
-            <h3>Ajouter un Élève</h3>
-            <label>Nom</label><input type="text">
-            <label>Prénom</label><input type="text">
-            <div class="class-selector">
-                <button onclick="selectClass(this)">Classe 1</button>
-                <button onclick="selectClass(this)">Classe 2</button>
-            </div>
-            <button class="btn-save" style="margin-top:15px;">Enregistrer</button>
-        </div>
-    </div>
-
-    <div class="overlay" id="modal-delete-student">
-        <div class="modal-card">
-            <button class="modal-close" onclick="closeModal('delete-student')">&times;</button>
-            <div id="content-delete-student">
-                <h3>Supprimer l'élève</h3>
-                <p>Confirmer la suppression</p>
-                <div class="btn-group">
-                    <button class="btn-dark" onclick="confirmDelete('delete-student', 'L\'élève a été supprimé.')">Oui</button>
-                    <button class="btn-dark" onclick="closeModal('delete-student')">Non</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <div class="ocean">
-            <div class="waves">
-                <div class="wave" id="wave_1"></div>
-                <div class="wave" id="wave_2"></div>
-                <div class="wave" id="wave_3"></div>
-                <div class="wave" id="wave_4"></div>
-                <div class="wave" id="wave_5"></div>
-            </div>
-            <div class="continuite">
-                <div class="footer-content">
-                    <div class="footer-top-div">
-                        <span class="copyright-txt">© 2026 Cmp</span>
-                        <div class="log-div">
-                            <span><a href="#">Log in</a></span>
-                            <span><a href="#">Sign up</a></span>
-                        </div>
-                        <hr>
-                    </div>
-                    <div class="footer-bottom-div">
-                        <span class="legal-link">
-                            <a href="#mentionLegales">Mentions Legales</a>
-                            <a href="#ploitiqueDeConfidentialité">Politique de confidentialté</a>
-                        </span>
-                        <span class="footer-logo">
-                            <img src="../assets/css/logo.png" alt="Logo">
-                        </span>
-                        <div class="speed-link">
-                            <div class="quick-links">
-                                <span class="title">Liens rapides :</span>
-                                <ul>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                    <li><a href="#">Bullet point 1</a></li>
-                                    <li><a href="#">Bullet point 2</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+    
     <script>
         // --- Modals ---
         function openModal(id) {
@@ -302,31 +224,9 @@
             });
         });
 
-        // --- Colonnes Pilote ---
-        function showSection(sectionId) {
-            const sectionToShow = document.getElementById(sectionId);
-            if (!sectionToShow) return;
-
-            sectionToShow.classList.remove('hidden');
-            sectionToShow.classList.remove('slide-in');
-            void sectionToShow.offsetWidth;
-            sectionToShow.classList.add('slide-in');
-        }
-
-        function hideSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (!section) return;
-
-            section.classList.remove('slide-in');
-            section.classList.add('slide-out');
-
-            section.addEventListener('animationend', function handler() {
-                section.classList.add('hidden');
-                section.classList.remove('slide-out');
-                section.removeEventListener('animationend', handler);
-            });
-        }
+  
     </script>
 
-</body>
-</html>
+{% endblock %}
+
+
