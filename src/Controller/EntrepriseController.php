@@ -20,11 +20,6 @@ class EntrepriseController extends Controller{
         $this->offreModel = new OffreModel( );
         $this->compModel = new CompetenceModel();
         $this->userModel = new UserModel();
-        if (!isset($_SESSION['companyId'])) {
-            header('Location: /signin');
-            exit;
-        }
-        $this->entreprise_id = $_SESSION['companyId'];
     } 
 
     function renderEntreprisePage($id){
@@ -38,6 +33,11 @@ class EntrepriseController extends Controller{
     }
 
     function renderEntrepriseDashboardPage(){
+        if (!isset($_SESSION['companyId'])) {
+            header('Location: /signin');
+            exit;
+        }
+        $this->entreprise_id = $_SESSION['companyId'];
         $entreprise = $this->entrepriseModel->getById($this->entreprise_id);
         $offres = $this->entrepriseModel->getOffres($this->entreprise_id);
         $all_competences = $this->compModel->getAll();
@@ -59,8 +59,9 @@ class EntrepriseController extends Controller{
                 if(isset($_GET['candidat_id'])){
                     $candidat_data = $this->userModel->getById($_GET['candidat_id']);
                     $candidature = $this->userModel->getCandidature($_GET['candidat_id'],$id_to_display);
-                    $cv_url = "/uploads/cv/" . $candidature['cv_url'];
-                    $lm_url = "/uploads/lm/" . $candidature['lm_url'];
+
+                    $cv_url =  $candidature['cv_url'];
+                    $lm_url = $candidature['lm_url'];
                 } 
             }
             else{
@@ -90,6 +91,19 @@ class EntrepriseController extends Controller{
             'lm_url'=>$lm_url,
 
             ]);
+    }
+    function downloadFile(){
+        $filename = $_GET['file'];
+        $type = $_GET['type']; // 'cv' ou 'lm'
+        $path = __DIR__ . '/../../public/uploads/' . $type . '/' . $filename;
+        var_dump($path);
+        if(file_exists($path)){
+            header('Content-Type: application/pdf');
+            header('Content-Disposition: attachment; filename="' . $filename . '"');
+            readfile($path);
+            echo 'finis';
+            exit();
+        }
     }
 
     function manageNotation($id){
