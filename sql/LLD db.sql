@@ -9,7 +9,7 @@ CREATE TABLE Entreprise(
    phrase_intro VARCHAR(100),
    description_entreprise TEXT,
    email VARCHAR(50) NOT NULL,
-   telephone VARCHAR(50),
+   telephone BIGINT,
    mdp VARCHAR(256) NOT NULL,
    PRIMARY KEY(id_entreprise),
    UNIQUE(email)

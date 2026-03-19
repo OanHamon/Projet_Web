@@ -195,6 +195,8 @@ input[type="file"] {
     justify-content: space-between;
     transition: 0.2s ease;
     cursor: pointer;
+    flex-wrap: wrap;
+    word-break: break-word;
 }
 
 .offre-item:hover {
