@@ -31,13 +31,17 @@ class EntrepriseController extends Controller{
 
         echo $this->twig->render('vitrine_entreprise.twig.html',['entreprise'=>$entreprise, 'offres'=>$offres, 'competences'=>$competences, 'note'=>$note]);
     }
-
-    function renderEntrepriseDashboardPage(){
-        if (!isset($_SESSION['companyId'])) {
+    private function requireEntrepriseAuth(){
+        if(!isset($_SESSION['companyId'])){
             header('Location: /signin');
-            exit;
+            exit();
         }
         $this->entreprise_id = $_SESSION['companyId'];
+    }
+    
+
+    function renderEntrepriseDashboardPage(){
+        $this->requireEntrepriseAuth();
         $entreprise = $this->entrepriseModel->getById($this->entreprise_id);
         $offres = $this->entrepriseModel->getOffres($this->entreprise_id);
         $all_competences = $this->compModel->getAll();
@@ -180,7 +184,7 @@ class EntrepriseController extends Controller{
     }
 
     function createOffre(){
-
+        $this->requireEntrepriseAuth();
         $fields = ['titre', 'description_carte', 'description_offre_de_stage','remuneration_par_mois', 'date_debut', 'date_fin'];
         $data = [];
         foreach($fields as $field){
