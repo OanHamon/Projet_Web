@@ -93,18 +93,18 @@ class EntrepriseController extends Controller{
             ]);
     }
     function downloadFile(){
-    $filename = $_GET['file'];
-    $type = $_GET['type']; // 'cv' ou 'lm'
-    $path = __DIR__ . '/../../public/uploads/' . $type . '/' . $filename;
-    echo $path;
-    if(file_exists($path)){
-        header('Content-Type: application/pdf');
-        header('Content-Disposition: attachment; filename="' . $filename . '"');
-        readfile($path);
-        echo 'finis';
-        exit();
+        $filename = $_GET['file'];
+        $type = $_GET['type']; // 'cv' ou 'lm'
+        $path = __DIR__ . '/../../public/uploads/' . $type . '/' . $filename;
+        var_dump($path);
+        if(file_exists($path)){
+            header('Content-Type: application/pdf');
+            header('Content-Disposition: attachment; filename="' . $filename . '"');
+            readfile($path);
+            echo 'finis';
+            exit();
+        }
     }
-}
 
     function manageNotation($id){
         if(isset($_POST['rating'])){
