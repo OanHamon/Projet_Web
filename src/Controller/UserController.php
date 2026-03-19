@@ -203,7 +203,6 @@ class UserController extends Controller{
         
         move_uploaded_file($file['tmp_name'], $finale_path);
         var_dump( $finale_path);
-        exit();
         return $file['name'];   
     }
 
