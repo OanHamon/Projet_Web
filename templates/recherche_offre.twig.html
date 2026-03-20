@@ -1,8 +1,8 @@
 {% extends 'base.twig.html' %}
 
 {% block styles %}
-    <link rel="stylesheet" href="/css/style_search_page.css">
     <link rel="stylesheet" href="/css/token.css">
+    <link rel="stylesheet" href="/css/style_search_page.css">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
             integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -17,13 +17,14 @@
 {% block content %}
     
     <main class="content-search-page">
-        <form method="POST" action="/search" class="stage-search-box">
+
+        <form method="POST" action="/search" class="stage-search-box card">
     
             <div class="search-box-label-bar">
-                <label for="job-input" class="search-ocean-catchphrase">Plongez dans l'océan des opportunités</label>
+                <label class="search-ocean-catchphrase">Plongez dans l'océan des opportunités</label>
                 <div class="search-container">
-                    <input type="search" id="job-input" name="job[]" placeholder="Naviguez à la recherche d'une offre..." aria-label="Chercher par mots clées">
-                    <button type="submit" id="btn-add-keyword" aria-label="Ajouter le mot-clé">
+                    <input type="search" name="key_words[]" placeholder="Recherchez dans l'océan des stages" aria-label="Rechercher un stage">
+                    <button type="submit" aria-label="Lancer la recherche">
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABsElEQVR4AbTUjVXDMAwEYJdFgEmASYBJgEmASYBJYBPQZyK/uEl/0rzmRbEsS3c6t/ZFOfOzlOA1+mEPMd6GHXz3EQB5HiFcDb44ko+Yf4ftJdpFABjIZQDk+xPOY9gm7DqMH0NBJJ8/sTkCBU+R+RKWIOF2L7K3iNyFyZNPTUz7d5sAOMkKd3Y1gkAkjyJbSPVouZQxAWCmo88u6/AEkTq/D4xWMSbADlhHLWGBY8vUw2llSYCVxPe2stxJFXDgVYQkEBTQgfFUQ9LVJsHNEJ0kDPFjh6yfVbC2+2wCSTs/qeArVnObwl31djhJoHsLTdqJFDCUatjYzgFZNbDykw1quEKlAgSs+w/XjGWf+0iHw8LtT7J7h8RTD5o6CuBUcJ9UwCfLcdeFRLFjTb4LL09zqxsTCEow2iod8Q+ZPJekbem6V7hNIMlN6srQkSt4coFFoa0UByyPcjcqJQgj5f/dJhBFIkmBOTWAkBl/I8gXR6Qh+REu5ghz3v6mZeZBhISR7jeSplvzTUysZTymxRZbR0LNXoIyPIgUAs1uzYflyaB7JHVhbovqwsoPkqrsDwAA///F7rH+AAAABklEQVQDAK4XUzHC974AAAAAAElFTkSuQmCC" alt="icon" />
                     </button>
                 </div>
@@ -34,9 +35,10 @@
                     {% if kw is not empty %}
                     <div class="tag">
                         <p>{{ kw }}</p>
-                        <input type="hidden" name="job[]" value="{{ kw }}">
+                        <input type="hidden" name="key_words[]" value="{{ kw }}">
                         <button type="button" onclick="
                             this.closest('.tag').querySelector('input').disabled = true;
+                            this.closest('form').submit();
                             this.closest('.tag').remove();
                         ">X</button>
                     </div>
@@ -48,10 +50,9 @@
                 <div class="distance-slider-container">
                     <label for="slider-distance">Distance (km)</label>
                     <div class="distance-slider-form">
-                        <input type="range" id="slider-distance" name="dist"
+                        <input type="range" id="slider-distance"
                             min="1" max="100" value="{{ dist|default(50) }}"
-                            oninput="document.getElementById('distance-value').innerText = this.value + ' km';"
-                        >
+                            oninput="document.getElementById('distance-value').innerText = this.value + ' km';">
                         <span id="distance-value">{{ dist|default(50) }} km</span>
                     </div>
                 </div>
@@ -62,23 +63,37 @@
                 
                 <button type="submit" class="btn-submit-all">OK</button>
             </div>
-        
         </form>
+
         <div class="search-stage-result-box">
-            {% for job in jobs %}
-                <a href="/offre/{{ job.id_offre }}" class="card-stage">
+            {% for offre in offres %}
+                <a href="/offre/{{ offre.id_offre }}" class="card-stage">
                     <div class="card-stage-header">
-                        {{ job.titre }}
+                        {{ offre.titre }}
                     </div>
                     <div class="card-stage-content">
                         <div class="card-stage-entreprise">
-                            {{ job.entreprise_nom }}
+                            {{ offre.entreprise_nom }}
                         </div>
                         <div class="card-stage-description">
+                            <div class="dates-offre">
+                                <span>
+                                    {% if offre.date_debut %}
+                                        Du {{ offre.date_debut|date("d/m/Y") }}
+                                    {% endif %}
+                                </span>
+                                <span>
+                                    {% if offre.date_fin %}
+                                        au {{ offre.date_fin|date("d/m/Y") }}
+                                    {% endif %}
+                                </span>
+                            </div>
                             <p class="texte-description-card-stage">
-                                {{ job.description_carte }}
+                                {{ offre.description_carte }}
                             </p>
-                            <small>{{ job.distance|round(1) }} km</small>
+                            {% if dist is not null and dist != '' %}
+                                <small>{{ offre.distance|round(1) }} km</small>
+                            {% endif %}
                         </div>
                     </div>
                 </a>
@@ -88,5 +103,4 @@
         </div>
     </main>
         <script src="/scripts/map.js"></script>
-        <script src="/scripts/searchTag.js"></script>
 {% endblock %}

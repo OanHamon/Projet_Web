@@ -9,45 +9,27 @@ class SearchModel extends BaseModel
     protected $table = "Offre";
     protected $primaryKey = "id_offre";
 
-    public function getOffreAround($dist, $lat, $lng)
-    {
-        $query = " 
-        SELECT 
-        *,
-        (6371 * acos(
-            cos(radians(:lat)) * cos(radians(lat)) * cos(radians(lng) - radians(:lng)) + 
-            sin(radians(:lat)) * sin(radians(lat))
-        )) AS distance
-        FROM Offre
-        HAVING distance < :dist
-        ORDER BY distance;
-        ;";
-
-        $stmt = $this->executeQuery($query, ['dist' => $dist, 'lat' => $lat, 'lng' => $lng]);
-
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
-
     public function searchOffre($dist, $lat, $lng, $key_words = []) {
         $params = [
-            'dist' => (float)$dist,
             'lat'  => (float)$lat,
             'lng'  => (float)$lng,
-            'lat2' => (float)$lat, // PDO n'accepte pas :lat deux fois
+            'lat2' => (float)$lat,
         ];
-
-        $keywordWhereClause = '';
-        if (!empty($key_words)) {
-            $conditions = [];
-            foreach ($key_words as $i => $kw) {
-                $kwKey = "kw{$i}";
-                $conditions[] = "(LOWER(o.titre) LIKE :$kwKey OR LOWER(o.description_carte) LIKE :desc{$i})";
-                $params[$kwKey] = '%' . mb_strtolower(trim($kw)) . '%';
-                $params["desc{$i}"] = '%' . mb_strtolower(trim($kw)) . '%';
-            }
-            $keywordWhereClause = 'WHERE ' . implode(' OR ', $conditions);
+    
+        $conditions = [];
+        foreach ($key_words as $i => $kw) {
+            $kwKey = "kw{$i}";
+            $descKey = "desc{$i}";
+            $entKey = "ent{$i}";
+            // On cherche dans le titre OU la description OU le nom de l'entreprise
+            $conditions[] = "(LOWER(o.titre) LIKE :$kwKey OR LOWER(o.description_carte) LIKE :$descKey OR LOWER(e.nom) LIKE :$entKey)";
+            $params[$kwKey] = '%' . mb_strtolower(trim($kw)) . '%';
+            $params[$descKey] = '%' . mb_strtolower(trim($kw)) . '%';
+            $params[$entKey] = '%' . mb_strtolower(trim($kw)) . '%';
         }
-
+    
+        $whereSql = !empty($conditions) ? 'WHERE ' . implode(' OR ', $conditions) : '';
+    
         $query = "
             SELECT o.*, e.nom AS entreprise_nom,
             (6371 * acos(
@@ -57,12 +39,19 @@ class SearchModel extends BaseModel
             )) AS distance
             FROM Offre o
             JOIN Entreprise e ON e.id_entreprise = o.id_entreprise
-            {$keywordWhereClause}
-            HAVING distance < :dist
-            ORDER BY distance
+            {$whereSql}
         ";
+    
+        if ($dist !== null && $dist > 0) {
+            $params['dist'] = (float)$dist;
+            $query .= " HAVING distance <= :dist ORDER BY distance ASC";
+        }
 
-        $stmt = $this->executeQuery($query, $params);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($dist == null || $dist <= 0 && $key_words == []) {
+            $query .= " ORDER BY o.date_debut ASC";
+        }
+
+        $query .= " LIMIT 100";
+        return $this->executeQuery($query, $params)->fetchAll(PDO::FETCH_ASSOC);
     }
 }
