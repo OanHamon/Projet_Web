@@ -40,9 +40,7 @@
                     <p>Aucun stage présent dans la base de données</p>
                 {% else %}
                     {% for offre in offres %}
-                    
-
-                    <div class="card-wrapper" style="position: relative">
+                    <div class="card-wrapper">
                         <article class="stage-card card" >
                             <form method="POST" action="/wishlist/add">
                                 <input type="hidden" name="id_offre" value="{{offre.id_offre}}">

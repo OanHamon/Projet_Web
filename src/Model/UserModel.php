@@ -75,7 +75,7 @@ class UserModel extends BaseModel
 
         // Insert user into role-specific table
         if ($role === "etudiant") {
-            $query = "INSERT INTO Etudiant (id_etudiant, id_pilote) VALUES (:id,1);";
+            $query = "INSERT INTO Etudiant (id_etudiant, id_pilote) VALUES (:id,NULL);";
             $this->executeQuery($query, ['id' => $id_user]);
         } elseif ($role === "pilote") {
             $query = "INSERT INTO Pilote (id_pilote) VALUES (:id);";
