@@ -155,4 +155,13 @@ class UserModel extends BaseModel
         ]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    function getEtudiant_pilote($id_pilote){
+        $query="
+        select * from Utilisateur join Etudiant on Utilisateur.id_utilisateur = Etudiant.id_etudiant WHERE Etudiant.id_pilote = :id_pilote ;";
+        $stmt =$this->executeQuery($query, [
+            'id_pilote' => $id_pilote
+        ]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

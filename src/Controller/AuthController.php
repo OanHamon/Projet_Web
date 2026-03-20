@@ -83,9 +83,19 @@ class AuthController extends Controller{
                 $errors[] = "Un compte existe déjà avec cette adresse email, connectez vous.";
             }
 
+            if(strlen($password) < 4){
+                $errors[] = "Le mot de passe doit avoir au moins 4 caractères.";
+            }
+            if(!preg_match('/[0-9]/', $password)){
+                $errors[] = "Le mot de passe doit contenir au moins 1 chiffre.";
+            }
+            if(!preg_match('/[^a-zA-Z0-9]/', $password)){
+                $errors[] = "Le mot de passe doit contenir au moins 1 caractère spécial.";
+            }
             if ($password !== $password_confirm) {
                 $errors[] = "Les mots de passe ne correspondent pas.";
             }
+
 
             $password_hash = password_hash($password, PASSWORD_DEFAULT);
 

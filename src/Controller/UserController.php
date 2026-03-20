@@ -30,8 +30,32 @@ class UserController extends Controller{
     }
 
     function renderPiloteDashboardPage(){
+        $etudiants = $this->userModel->getEtudiant_pilote($this->id);
+        $user = $this->userModel->getById($this->id);
+        echo $this->twig->render('pilote_dashboard.twig.html', ['user'=>$user, 'etudiants'=>$etudiants]);
+    }
 
-        echo $this->twig->render('pilote_dashboard.twig.html');
+    function updatePiloteInfo(){
+        if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email'])) {
+            $prenom = $_POST['prenom'];
+            $nom = $_POST['nom'];
+            $data = [];
+            $email = $_POST['email'];
+
+            if(!empty($_POST['nom'])){
+                $data['nom'] = $_POST['nom'];
+            }
+            if(!empty($_POST['prenom'])){
+                $data['prenom'] = $_POST['prenom'];
+            }
+            if(!empty($_POST['email'])){
+                $data['email'] = $_POST['email'];
+            }
+    
+        $this->userModel->update($this->id, $data);
+        header('Location: /pilote_dashboard');
+        exit();
+    }
     }
 
 

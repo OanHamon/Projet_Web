@@ -136,7 +136,7 @@ class EntrepriseController extends Controller{
 
 
     function updateEntrepriseInfo(){
-
+        $this->requireEntrepriseAuth();
         $data= [];
         $fields = ['nom', 'phrase_intro', 'description_entreprise','description_cartes', 'email', 'telephone'];
         foreach($fields as $field){
@@ -208,6 +208,7 @@ class EntrepriseController extends Controller{
 
 
     function deleteAccount(){
+        $this->requireEntrepriseAuth();
         $this->entrepriseModel->deleteById($this->entreprise_id);
         if ( !$_SESSION['role'] == 'admin'){
             $_SESSION = array();

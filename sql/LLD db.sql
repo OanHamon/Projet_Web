@@ -48,6 +48,7 @@ CREATE TABLE Offre(
    FOREIGN KEY(id_entreprise) REFERENCES Entreprise(id_entreprise) ON DELETE CASCADE
 );
 ALTER TABLE Offre CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER TABLE Offre MODIFY titre VARCHAR(100);
 
 CREATE TABLE Pilote(
    id_pilote INT,
