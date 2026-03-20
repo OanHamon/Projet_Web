@@ -12,7 +12,7 @@
         <!-- SECTION COMPTE PILOTE -->
         <section class="hero">
             <h1>Mon Compte Pilote :</h1>
-            <p>Jeremy Gallet    </p>
+            <p>{{user.prenom}} {{user.nom}}</p>
         </section>
 
         <section class="modif-block">
@@ -25,18 +25,18 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Prénom</label>
-                        <input type="text" name='prenom' placeholder="Prenom">
+                        <input type="text" name='prenom' placeholder="{{user.prenom}}">
                     </div>
 
                     <div class="form-group">
                         <label>Nom</label>
-                        <input type="text" name="nom" placeholder="Nom">
+                        <input type="text" name="nom" placeholder="{{user.nom}}">
                     </div>
 
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="text" name="email" placeholder="email">
+                    <input type="text" name="email" placeholder="{{user.email}}">
                 </div>
                 <br>
                 <div class="form-row">
@@ -98,6 +98,30 @@
                             </form>
                         </li>
                         <li class="student-item" style="position: relative">
+                            <a href="/pilote_dashboard?etudiant_id=X">
+                                <div class="student-content">
+                                    <h4>Jadina Hamon</h4>
+                                </div>
+                            </a>
+                            <form method="POST" action="/pilote_dashboard/delete_student" style="position: absolute; top: 10px; right: 10px;">
+                                <input type="hidden" name="id_etudiant" value="X">
+                                <button type="submit">
+                                    <svg id="Trash--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16" width="16">
+                                        <desc>
+                                        Trash Streamline Icon: https://streamlinehq.com
+                                        </desc>
+                                        <defs></defs>
+                                        <path d="M10.549999999999999 14.0625H4.45a1.1875 1.1875 0 0 1 -1.1875 -1.125L2.725 3.325h9.549999999999999l-0.5375 9.6125a1.1875 1.1875 0 0 1 -1.1875 1.125Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="m1.53125 3.325 11.9375 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="M6.30625 0.9375h2.3874999999999997a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 1.1937499999999999v1.1937499999999999H5.1125V2.13125a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 -1.1937499999999999Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="m7.5 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="m9.8875 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="m5.1125 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                    </svg>
+                                </button>
+                            </form>
+                        </li>
+                                                <li class="student-item" style="position: relative">
                             <a href="/pilote_dashboard?etudiant_id=X">
                                 <div class="student-content">
                                     <h4>Jadina Hamon</h4>

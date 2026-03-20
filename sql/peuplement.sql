@@ -15,7 +15,124 @@ INSERT INTO Competence (nom, categorie) VALUES
 -- description_cartes = texte simple, description_entreprise = markdown
 -- ============================================================
 INSERT INTO Entreprise (nom, description_cartes, phrase_intro, description_entreprise, email, telephone, mdp) VALUES
-('Capgemini',         'Leader mondial du conseil numérique. 350 000 collaborateurs dans 50 pays. Expertise cloud, data, IA.',                            'Façonner l''avenir du numérique avec vous.',          '## À propos de Capgemini\n\nCapgemini est un **groupe international** spécialisé dans le conseil, les services informatiques et la transformation numérique. Fondé en 1967, il accompagne ses clients dans leurs projets d''innovation.\n\n### Nos domaines\n\n- Cloud & Infrastructure\n- Data & Intelligence Artificielle\n- Développement d''applications\n- Cybersécurité\n\n> "Technology for people" est notre philosophie centrale.',                                                                                                         'rh@capgemini.fr',           '0155295000', 'cap2024'),
+('Capgemini',         'Leader mondial du conseil numérique. 350 000 collaborateurs dans 50 pays. Expertise cloud, data, IA.',                            'Façonner l''avenir du numérique avec vous.',          
+'# 🏢 Capgemini – Présentation de l’entreprise  
+**Leader mondial du conseil, des services numériques et de la transformation technologique**
+
+---
+
+## 🌍 Qui est Capgemini ?
+Capgemini est l’un des acteurs majeurs du secteur du numérique à l’échelle mondiale. Fondé en 1967 en France, le groupe est aujourd’hui présent dans plus de **50 pays** et compte plus de **350 000 collaborateurs**.  
+Sa mission : accompagner les entreprises et organisations dans leur transformation digitale, en combinant expertise technologique, innovation et compréhension métier.
+
+Capgemini se distingue par une culture profondément humaine, collaborative et orientée vers l’innovation durable. Le groupe intervient sur des projets stratégiques pour des clients issus de secteurs variés : finance, énergie, industrie, télécommunications, santé, services publics, retail, transport, etc.
+
+---
+
+## 🚀 Domaines d’expertise
+Capgemini intervient sur l’ensemble de la chaîne de valeur numérique :
+
+### **💡 Conseil & Stratégie**
+- Transformation digitale  
+- Optimisation des processus métiers  
+- Accompagnement au changement  
+- Stratégies data & cloud  
+
+### **🛠️ Services Technologiques**
+- Développement d’applications web et mobiles  
+- Modernisation des systèmes d’information  
+- Intégration de solutions logicielles  
+- Architecture logicielle et cloud  
+
+### **📊 Data, IA & Analytics**
+- Intelligence artificielle  
+- Big Data & Data Engineering  
+- Machine Learning & automatisation  
+- Gouvernance et valorisation des données  
+
+### **☁️ Cloud & Infrastructure**
+- Migration cloud (AWS, Azure, GCP)  
+- Cybersécurité  
+- Gestion d’infrastructures hybrides  
+- DevOps & automatisation  
+
+### **🌐 Ingénierie & Industrie 4.0**
+- IoT  
+- Systèmes embarqués  
+- Ingénierie logicielle industrielle  
+- Smart factories  
+
+---
+
+## 🧬 ADN & Valeurs
+Capgemini repose sur un socle de valeurs fortes :
+
+- **Esprit d’équipe** : collaboration, partage et intelligence collective.  
+- **Confiance** : transparence et respect mutuel.  
+- **Liberté** : autonomie et prise d’initiative.  
+- **Modestie** : rester accessible et à l’écoute.  
+- **Fun** : cultiver un environnement de travail agréable.  
+- **Audace** : innover, expérimenter, oser.  
+
+Ces valeurs sont regroupées sous la philosophie interne :  
+### **"The Capgemini Way"**
+
+---
+
+## 🌱 Engagements & Responsabilité
+Capgemini s’engage activement dans :
+
+### **Développement durable**
+- Objectif de neutralité carbone  
+- Réduction de l’empreinte énergétique des systèmes d’information  
+- Projets Green IT  
+
+### **Diversité & Inclusion**
+- Programmes pour l’égalité des chances  
+- Promotion des femmes dans la tech  
+- Inclusion des talents en situation de handicap  
+
+### **Innovation**
+- Laboratoires R&D  
+- Partenariats avec startups, universités et centres de recherche  
+- Investissement dans l’IA, le cloud, la cybersécurité et la data  
+
+---
+
+## 🎓 Capgemini & les jeunes talents
+Capgemini accueille chaque année des milliers de stagiaires, alternants et jeunes diplômés.  
+L’entreprise propose :
+
+- Un environnement d’apprentissage riche  
+- Des projets concrets à forte valeur ajoutée  
+- Un accompagnement par des experts  
+- Des perspectives d’évolution rapides  
+- Une culture d’entreprise bienveillante et formatrice  
+
+---
+
+## 📌 Quelques chiffres clés
+| Indicateur | Valeur |
+|-----------|--------|
+| Année de création | 1967 |
+| Fondateur | Serge Kampf |
+| Présence | +50 pays |
+| Collaborateurs | +350 000 |
+| Siège mondial | Paris, France |
+| Secteurs clients | +20 industries |
+
+---
+
+## 🎯 Pourquoi Capgemini ?
+- Un leader mondial reconnu  
+- Une expertise technologique de pointe  
+- Une culture humaine et collaborative  
+- Des projets innovants et d’envergure  
+- Une entreprise tournée vers l’avenir  
+
+---
+
+',                                                                                                         'rh@capgemini.fr',           '0155295000', 'cap2024'),
 ('Thales',            'Leader mondial en technologies de défense et sécurité numérique. 81 000 employés dans 68 pays.',                                  'La technologie au service d''un monde plus sûr.',     '## À propos de Thales\n\nThales est un groupe technologique mondial opérant dans les marchés de la **défense**, de la **sécurité** et de l''**aérospatiale**.\n\n### Secteurs d''activité\n\n1. Défense & sécurité\n2. Aéronautique\n3. Transport\n4. Numérique & Cyber\n\n### Engagements\n\n- Sobriété numérique\n- Diversité & inclusion\n- Formation continue',                                                                                                                                                    'stages@thales.fr',          '0157778000', 'thales2024'),
 ('Société Générale',  'Groupe bancaire international. DSI de 10 000 personnes. Projets fintech, open banking et IA.',                                    'La banque qui innove pour vous.',                     '## Société Générale – DSI\n\nLa **DSI de Société Générale** est l''une des plus importantes d''Europe avec plus de 10 000 collaborateurs IT.\n\n### Projets phares\n\n- Migration cloud AWS & Azure\n- Développement d''API bancaires\n- Intelligence artificielle appliquée aux risques\n\n```\nStack technique : Java, Python, Kafka, Kubernetes\n```',                                                                                                                                                                        'it-rh@socgen.fr',           '0142140000', 'socgen2024'),
 ('Airbus',            'Leader mondial de l''aéronautique et de l''espace. 134 000 employés. R&D de pointe en simulation et IA.',                         'Pionnier de l''aviation de demain.',                  '## Airbus Digital\n\nAirbus investit massivement dans la **transformation digitale** de ses processus industriels.\n\n### Domaines IT\n\n| Domaine | Technologies |\n|---|---|\n| Simulation | Python, C++ |\n| MES / ERP | SAP, Java |\n| Data | Spark, Hadoop |\n| Cyber | SIEM, IAM |\n\n### Valeurs\n\n- Innovation responsable\n- Travail en équipe internationale\n- Excellence ingénierie',                                                                                                                          'stages.it@airbus.fr',       '0561933333', 'airbus2024'),
@@ -63,7 +180,95 @@ INSERT INTO Etudiant (id_etudiant, id_pilote) VALUES
 INSERT INTO Offre (date_debut,date_fin,lat,lng,titre,description_carte,remuneration_par_mois,description_offre_de_stage,id_entreprise) VALUES
 
 -- === CAPGEMINI (1) ===
-('2025-04-01','2025-09-30',48.896008,2.318260,'Stage Dev Full Stack','Stage 6 mois Paris La Defense. Stack React Node.js PostgreSQL.',1200,'## Développeur Full Stack – Capgemini\n\n### Mission\n\nIntégré dans une équipe Agile de 8 personnes, vous contribuerez au développement d''une **plateforme SaaS** pour des clients grands comptes.\n\n### Tâches\n\n- Développement de composants **React** (TypeScript)\n- API REST en **Node.js / Express**\n- Modélisation **PostgreSQL**\n- Participation aux code reviews et sprints Scrum\n\n### Profil\n\n- Bac+4/5 en informatique\n- JavaScript / TypeScript\n- Git\n\n### Ce que vous apprendrez\n\n- Architecture microservices\n- CI/CD avec GitHub Actions',1),
+('2025-04-01','2025-09-30',48.896008,2.318260,'Stage Dev Full Stack','Stage 6 mois Paris La Defense. Stack React Node.js PostgreSQL.',1200,
+'
+# 🚀 Stage Développeur Full Stack  
+**React • Node.js • PostgreSQL**  
+📍 *Paris – La Défense*  
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Ce stage s’adresse à un(e) étudiant(e) souhaitant évoluer dans un environnement technique moderne et exigeant. Intégré(e) au sein d’une équipe de développement agile, vous participerez à la conception, au développement et à l’amélioration d’applications web full stack reposant sur une architecture JavaScript complète.
+
+Vous interviendrez sur l’ensemble du cycle de vie des fonctionnalités : analyse, conception, développement, tests, déploiement et optimisation.
+
+---
+
+## 🎯 Objectifs pédagogiques
+- Développer une véritable expertise sur une stack JavaScript moderne.  
+- Comprendre et appliquer les bonnes pratiques de développement logiciel.  
+- Travailler en équipe dans un environnement agile (Scrum / Kanban).  
+- Gagner en autonomie sur des projets concrets à forte valeur ajoutée.  
+
+---
+
+## 🛠️ Missions principales
+
+### **Frontend – React**
+- Développer des interfaces modernes, responsives et performantes.  
+- Créer des composants réutilisables (hooks, context, state management).  
+- Intégrer des maquettes UI/UX en collaboration avec les designers.  
+- Optimiser les performances et l’accessibilité.
+
+### **Backend – Node.js**
+- Concevoir et implémenter des API REST robustes et sécurisées.  
+- Participer à l’architecture backend (Express, NestJS selon contexte).  
+- Mettre en place des tests unitaires et d’intégration.  
+- Contribuer à la documentation technique.
+
+### **Base de données – PostgreSQL**
+- Modéliser et maintenir des schémas de données.  
+- Rédiger des requêtes SQL optimisées.  
+- Gérer les migrations et l’évolution du modèle de données.  
+
+### **Collaboration & Qualité**
+- Participer aux cérémonies agiles (daily, sprint planning, rétrospectives).  
+- Contribuer aux revues de code et à l’amélioration continue.  
+- Utiliser des outils de CI/CD pour automatiser les déploiements.  
+- Travailler avec Git et GitHub/GitLab en workflow collaboratif.
+
+---
+
+## 🧰 Stack & Outils utilisés
+| Domaine | Technologies |
+|--------|--------------|
+| **Frontend** | React, TypeScript, Redux/Context, TailwindCSS/Material UI |
+| **Backend** | Node.js, Express/NestJS, JWT, REST API |
+| **Base de données** | PostgreSQL, Prisma/Sequelize, SQL |
+| **DevOps** | Docker, CI/CD, GitHub Actions/GitLab CI |
+| **Méthodologie** | Agile Scrum, Code Review, Pair Programming |
+
+---
+
+## 📚 Compétences développées
+- Maîtrise d’une stack JavaScript complète (React + Node.js).  
+- Compréhension des architectures web modernes.  
+- Gestion de projet agile et travail en équipe.  
+- Rigueur dans la qualité du code et les bonnes pratiques.  
+- Capacité à analyser, concevoir et implémenter des solutions techniques.  
+
+---
+
+## 👤 Profil recherché
+- Étudiant(e) en informatique (Bac+3 à Bac+5).  
+- Connaissances de base en JavaScript/TypeScript.  
+- Motivation, curiosité et envie d’apprendre.  
+- Capacité à travailler en équipe et à communiquer efficacement.  
+
+---
+
+## 🎁 Bonus appréciés (non obligatoires)
+- Notions de Docker ou CI/CD.  
+- Intérêt pour l’UX/UI.  
+- Appétence pour les architectures cloud (AWS, GCP, Azure).  
+
+---
+
+## 📩 Candidature
+Envoyer CV + portfolio/GitHub si disponible.  
+',1),
 ('2025-05-01','2025-10-31',48.896008,2.318260,'Stage Data Analyst','Stage 6 mois Paris. Analyse de données grands comptes avec Power BI et Python.',1150,'## Data Analyst – Capgemini\n\n### Mission\n\nVous rejoindrez l''équipe **Data & Analytics** pour accompagner nos clients dans l''exploitation de leurs données.\n\n### Tâches\n\n- Dashboards **Power BI**\n- Nettoyage de données (Python/pandas)\n- Rédaction de rapports d''analyse\n- Présentation aux parties prenantes\n\n### Profil\n\n- Bac+4/5 informatique ou statistiques\n- SQL et Python\n- Sens de la communication\n\n### Environnement\n\nAzure Data Factory et Databricks.',1),
 ('2025-06-01','2025-11-30',48.896008,2.318260,'Stage Consultant Cloud Azure','Stage 6 mois Paris. Migration cloud Azure de clients grands comptes.',1250,'## Consultant Cloud Azure – Capgemini\n\n### Mission\n\nCapgemini accompagne ses clients **Grands Comptes** dans leur migration vers Azure.\n\n### Missions\n\n- Audit des architectures existantes\n- Rédaction de **plans de migration cloud**\n- Déploiement d''infrastructures via **Terraform**\n- Suivi des indicateurs de coût\n\n### Stack\n\n```\nAzure · Terraform · PowerShell · Python\n```\n\n### Profil\n\n- Bac+5 IT ou école d''ingénieurs\n- Notions réseau et virtualisation',1),
 ('2025-03-15','2025-09-15',43.296482,5.381794,'Stage Dev Backend Java','Stage 6 mois Marseille. Développement backend Java pour application logistique.',1100,'## Développeur Backend Java – Capgemini Marseille\n\n### Mission\n\nDéveloppement d''une **application de gestion logistique** pour un client transport.\n\n### Technologies\n\n- Java 17 + Spring Boot\n- PostgreSQL + Hibernate\n- Docker + GitLab CI\n- Tests JUnit / Mockito\n\n### Profil\n\n- Bac+4/5 en développement logiciel\n- Java solide\n- Principes SOLID\n\n### Lieu\n\nMarseille centre – télétravail 2j/sem.',1),
