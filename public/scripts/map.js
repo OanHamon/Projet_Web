@@ -30,9 +30,6 @@ function updateMapElements(newLat, newLng, newDist) {
 
     latInput.value = newLat;
     lngInput.value = newLng;
-
-    // Met à jour le tag de localisation
-    updateLocationTag(newLat, newLng, newDist);
 }
 
 function updateLocationTag(newLat, newLng, newDist) {

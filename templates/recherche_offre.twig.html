@@ -22,7 +22,7 @@
             <div class="search-box-label-bar">
                 <label for="job-input" class="search-ocean-catchphrase">Plongez dans l'océan des opportunités</label>
                 <div class="search-container">
-                    <input type="search" id="job-input" name="job[]" placeholder="Naviguez à la recherche d'une offre..." aria-label="Chercher par mots clées">
+                    <input type="search" id="job-input" name="key_words" placeholder="Naviguez à la recherche d'une offre..." aria-label="Chercher par mots clées">
                     <button type="submit" id="btn-add-keyword" aria-label="Ajouter le mot-clé">
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABsElEQVR4AbTUjVXDMAwEYJdFgEmASYBJgEmASYBJYBPQZyK/uEl/0rzmRbEsS3c6t/ZFOfOzlOA1+mEPMd6GHXz3EQB5HiFcDb44ko+Yf4ftJdpFABjIZQDk+xPOY9gm7DqMH0NBJJ8/sTkCBU+R+RKWIOF2L7K3iNyFyZNPTUz7d5sAOMkKd3Y1gkAkjyJbSPVouZQxAWCmo88u6/AEkTq/D4xWMSbADlhHLWGBY8vUw2llSYCVxPe2stxJFXDgVYQkEBTQgfFUQ9LVJsHNEJ0kDPFjh6yfVbC2+2wCSTs/qeArVnObwl31djhJoHsLTdqJFDCUatjYzgFZNbDykw1quEKlAgSs+w/XjGWf+0iHw8LtT7J7h8RTD5o6CuBUcJ9UwCfLcdeFRLFjTb4LL09zqxsTCEow2iod8Q+ZPJekbem6V7hNIMlN6srQkSt4coFFoa0UByyPcjcqJQgj5f/dJhBFIkmBOTWAkBl/I8gXR6Qh+REu5ghz3v6mZeZBhISR7jeSplvzTUysZTymxRZbR0LNXoIyPIgUAs1uzYflyaB7JHVhbovqwsoPkqrsDwAA///F7rH+AAAABklEQVQDAK4XUzHC974AAAAAAElFTkSuQmCC" alt="icon" />
                     </button>
@@ -34,7 +34,7 @@
                     {% if kw is not empty %}
                     <div class="tag">
                         <p>{{ kw }}</p>
-                        <input type="hidden" name="job[]" value="{{ kw }}">
+                        <input type="hidden" name="key_words" value="{{ kw }}">
                         <button type="button" onclick="
                             this.closest('.tag').querySelector('input').disabled = true;
                             this.closest('.tag').remove();
@@ -65,20 +65,20 @@
         
         </form>
         <div class="search-stage-result-box">
-            {% for job in jobs %}
+            {% for offre in offres %}
                 <a href="/offre/{{ job.id_offre }}" class="card-stage">
                     <div class="card-stage-header">
-                        {{ job.titre }}
+                        {{ offre.titre }}
                     </div>
                     <div class="card-stage-content">
                         <div class="card-stage-entreprise">
-                            {{ job.entreprise_nom }}
+                            {{ offre.entreprise_nom }}
                         </div>
                         <div class="card-stage-description">
                             <p class="texte-description-card-stage">
-                                {{ job.description_carte }}
+                                {{ offre.description_carte }}
                             </p>
-                            <small>{{ job.distance|round(1) }} km</small>
+                            <small>{{ offre.distance|round(1) }} km</small>
                         </div>
                     </div>
                 </a>
