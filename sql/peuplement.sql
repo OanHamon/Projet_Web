@@ -8,616 +8,3258 @@ INSERT INTO Competence (nom, categorie) VALUES
 ('React', 'Technique'),('Vue.js', 'Technique'),('Angular', 'Technique'),
 ('Node.js', 'Technique'),('Laravel', 'Technique'),('Docker', 'Technique'),
 ('Git', 'Technique'),('Linux', 'Technique'),('Machine Learning', 'Technique'),
-('Cybersécurité', 'Technique'),('Gestion de projet', 'Social'),('Communication', 'Social');
+('Cybersécurité', 'Technique'),('Gestion de projet', 'Social'),('Communication', 'Social'),
+('Travail en équipe', 'Social'),('Rédaction', 'Social'),('Créativité', 'Social'),
+('Sens commercial', 'Social'),('Analyse', 'Social');
 
 -- ============================================================
--- ENTREPRISES (20)
--- description_cartes = texte simple, description_entreprise = markdown
+-- ENTREPRISES
 -- ============================================================
+
+-- INFORMATIQUE (4)
 INSERT INTO Entreprise (nom, description_cartes, phrase_intro, description_entreprise, email, telephone, mdp) VALUES
-('Capgemini',         'Leader mondial du conseil numérique. 350 000 collaborateurs dans 50 pays. Expertise cloud, data, IA.',                            'Façonner l''avenir du numérique avec vous.',          
-'# 🏢 Capgemini – Présentation de l’entreprise  
-**Leader mondial du conseil, des services numériques et de la transformation technologique**
+('Nexatech Solutions',
+'Startup parisienne spécialisée en développement web et mobile. 120 collaborateurs. Projets innovants pour grands comptes et startups.',
+'Construire le numérique de demain, aujourd''hui.',
+'# 🚀 Nexatech Solutions – Présentation
+
+**Agence de développement web & mobile nouvelle génération**
 
 ---
 
-## 🌍 Qui est Capgemini ?
-Capgemini est l’un des acteurs majeurs du secteur du numérique à l’échelle mondiale. Fondé en 1967 en France, le groupe est aujourd’hui présent dans plus de **50 pays** et compte plus de **350 000 collaborateurs**.  
-Sa mission : accompagner les entreprises et organisations dans leur transformation digitale, en combinant expertise technologique, innovation et compréhension métier.
+## 🌍 Qui sommes-nous ?
+Nexatech Solutions est une startup parisienne fondée en 2018, spécialisée dans la conception et le développement d''applications web et mobiles sur mesure. Avec 120 collaborateurs passionnés, nous accompagnons aussi bien des startups en phase de lancement que des grands comptes dans leur transformation numérique.
 
-Capgemini se distingue par une culture profondément humaine, collaborative et orientée vers l’innovation durable. Le groupe intervient sur des projets stratégiques pour des clients issus de secteurs variés : finance, énergie, industrie, télécommunications, santé, services publics, retail, transport, etc.
-
----
-
-## 🚀 Domaines d’expertise
-Capgemini intervient sur l’ensemble de la chaîne de valeur numérique :
-
-### **💡 Conseil & Stratégie**
-- Transformation digitale  
-- Optimisation des processus métiers  
-- Accompagnement au changement  
-- Stratégies data & cloud  
-
-### **🛠️ Services Technologiques**
-- Développement d’applications web et mobiles  
-- Modernisation des systèmes d’information  
-- Intégration de solutions logicielles  
-- Architecture logicielle et cloud  
-
-### **📊 Data, IA & Analytics**
-- Intelligence artificielle  
-- Big Data & Data Engineering  
-- Machine Learning & automatisation  
-- Gouvernance et valorisation des données  
-
-### **☁️ Cloud & Infrastructure**
-- Migration cloud (AWS, Azure, GCP)  
-- Cybersécurité  
-- Gestion d’infrastructures hybrides  
-- DevOps & automatisation  
-
-### **🌐 Ingénierie & Industrie 4.0**
-- IoT  
-- Systèmes embarqués  
-- Ingénierie logicielle industrielle  
-- Smart factories  
+Notre philosophie : livrer des produits de qualité, dans les délais, avec une communication transparente.
 
 ---
 
-## 🧬 ADN & Valeurs
-Capgemini repose sur un socle de valeurs fortes :
+## 🛠️ Nos expertises
 
-- **Esprit d’équipe** : collaboration, partage et intelligence collective.  
-- **Confiance** : transparence et respect mutuel.  
-- **Liberté** : autonomie et prise d’initiative.  
-- **Modestie** : rester accessible et à l’écoute.  
-- **Fun** : cultiver un environnement de travail agréable.  
-- **Audace** : innover, expérimenter, oser.  
+### **Développement Web**
+- Applications React, Vue.js, Angular
+- Backends robustes (Node.js, Laravel, Django)
+- APIs REST et GraphQL
 
-Ces valeurs sont regroupées sous la philosophie interne :  
-### **"The Capgemini Way"**
+### **Développement Mobile**
+- Applications iOS (Swift) et Android (Kotlin)
+- Cross-platform (Flutter, React Native)
+
+### **Cloud & DevOps**
+- Déploiement AWS, GCP, Azure
+- CI/CD, Docker, Kubernetes
+- Monitoring et observabilité
 
 ---
 
-## 🌱 Engagements & Responsabilité
-Capgemini s’engage activement dans :
+## 🎯 Nos valeurs
+- **Qualité avant tout** : chaque ligne de code compte
+- **Agilité** : nous nous adaptons aux besoins de nos clients
+- **Bienveillance** : un environnement de travail humain et stimulant
+- **Innovation** : nous encourageons l''expérimentation
 
-### **Développement durable**
-- Objectif de neutralité carbone  
-- Réduction de l’empreinte énergétique des systèmes d’information  
-- Projets Green IT  
+---
 
-### **Diversité & Inclusion**
-- Programmes pour l’égalité des chances  
-- Promotion des femmes dans la tech  
-- Inclusion des talents en situation de handicap  
+## 🎓 Rejoignez-nous
+Chaque année, Nexatech accueille des stagiaires et alternants qui participent à de vrais projets clients. Vous serez encadré(e) par des développeurs seniors bienveillants et aurez rapidement des responsabilités.',
+'rh@nexatech.fr', '0145678901', 'nexatech2024'),
+
+('DataSphere',
+'Entreprise lyonnaise experte en data engineering et intelligence artificielle. 200 collaborateurs. Clients dans la santé, la finance et l''industrie.',
+'Transformer la donnée en valeur.',
+'# 📊 DataSphere – La donnée au cœur de tout
+
+**Expert en Data Engineering, Machine Learning et BI**
+
+---
+
+## 🌍 Qui sommes-nous ?
+DataSphere est une entreprise lyonnaise fondée en 2015, spécialisée dans la valorisation des données. Nous aidons nos clients à collecter, traiter, analyser et exploiter leurs données pour prendre de meilleures décisions.
+
+Avec 200 collaborateurs et des clients dans la santé, la finance et l''industrie, nous sommes reconnus comme un acteur de référence dans le domaine de la data en France.
+
+---
+
+## 🛠️ Nos expertises
+
+### **Data Engineering**
+- Pipelines ETL (Spark, Airflow, Kafka)
+- Lacs de données et entrepôts (Snowflake, BigQuery)
+- Streaming temps réel
+
+### **Machine Learning & IA**
+- Modèles prédictifs et recommandation
+- NLP et traitement du langage
+- Vision artificielle
+
+### **Business Intelligence**
+- Dashboards Power BI, Tableau, Metabase
+- Reporting automatisé
+- KPIs et suivi de performance
+
+---
+
+## 🎯 Nos valeurs
+- **Data-driven** : chaque décision s''appuie sur les données
+- **Rigueur scientifique** : nous appliquons les meilleures pratiques
+- **Impact** : nos modèles ont un effet concret sur les métiers
+- **Curiosité** : nous encourageons la veille technologique
+
+---
+
+## 🎓 Rejoignez-nous
+DataSphere offre un environnement stimulant pour les profils data. Vous travaillerez sur des problématiques réelles avec des données à grande échelle.',
+'carrieres@datasphere.fr', '0472345678', 'datasphere2024'),
+
+('CyberShield',
+'Entreprise bordelaise spécialisée en cybersécurité. 80 collaborateurs. SOC, pentest, audit et conseil en sécurité des systèmes d''information.',
+'Protéger le numérique, sécuriser l''avenir.',
+'# 🛡️ CyberShield – Experts en Cybersécurité
+
+**SOC | Pentest | Audit | Conseil SSI**
+
+---
+
+## 🌍 Qui sommes-nous ?
+CyberShield est une entreprise bordelaise fondée en 2016, dédiée à la protection des systèmes d''information. Nous intervenons auprès d''entreprises de toutes tailles, des PME aux grands groupes, pour les aider à évaluer, renforcer et surveiller leur sécurité informatique.
+
+---
+
+## 🛠️ Nos services
+
+### **SOC (Security Operations Center)**
+- Surveillance 24/7 des infrastructures
+- Détection et réponse aux incidents (SIEM, EDR)
+- Threat intelligence
+
+### **Tests d''intrusion**
+- Pentest web, réseau, mobile
+- Red Team / Blue Team
+- Social engineering
+
+### **Audit & Conseil**
+- Audit ISO 27001 / RGPD
+- Analyse de risques
+- Rédaction de politiques de sécurité
+
+---
+
+## 🎯 Nos valeurs
+- **Éthique** : nous travaillons dans le respect strict des cadres légaux
+- **Excellence technique** : nos équipes se forment en continu
+- **Confidentialité** : discrétion absolue avec nos clients
+- **Pédagogie** : nous formons et sensibilisons les équipes de nos clients
+
+---
+
+## 🎓 Rejoignez-nous
+CyberShield recrute des profils passionnés par la sécurité informatique. Vous interviendrez sur des missions variées avec une grande montée en compétences.',
+'jobs@cybershield.fr', '0556789012', 'cybershield2024'),
+
+('CloudNative',
+'ESN nantaise spécialisée en architecture cloud et DevOps. 150 collaborateurs. Partenaire AWS, Azure et GCP certifié.',
+'L''infrastructure de demain, disponible aujourd''hui.',
+'# ☁️ CloudNative – Experts Cloud & DevOps
+
+**Architecture Cloud | DevOps | Infrastructure as Code**
+
+---
+
+## 🌍 Qui sommes-nous ?
+CloudNative est une ESN nantaise fondée en 2017, spécialisée dans les architectures cloud natives et les pratiques DevOps. Nous sommes partenaires certifiés AWS, Microsoft Azure et Google Cloud Platform.
+
+Nos 150 collaborateurs accompagnent les entreprises dans leur migration vers le cloud, l''automatisation de leurs infrastructures et la mise en place de pipelines CI/CD robustes.
+
+---
+
+## 🛠️ Nos expertises
+
+### **Cloud Public**
+- Migration et modernisation (lift & shift, re-architecture)
+- AWS, Azure, GCP — certifications avancées
+- FinOps : optimisation des coûts cloud
+
+### **DevOps & SRE**
+- Pipelines CI/CD (GitLab CI, GitHub Actions, Jenkins)
+- Infrastructure as Code (Terraform, Ansible, Pulumi)
+- Monitoring et observabilité (Prometheus, Grafana, Datadog)
+
+### **Conteneurs & Orchestration**
+- Docker, Kubernetes (EKS, AKS, GKE)
+- Helm, ArgoCD, Flux
+- Service mesh (Istio, Linkerd)
+
+---
+
+## 🎯 Nos valeurs
+- **Automatisation** : si ça peut être scripté, ça doit l''être
+- **Fiabilité** : nos systèmes tiennent leurs SLA
+- **Open Source** : nous contribuons à la communauté
+- **Formation** : nous finançons les certifications cloud
+
+---
+
+## 🎓 Rejoignez-nous
+CloudNative offre un environnement technique de pointe. Vous travaillerez sur des architectures réelles en production.',
+'talent@cloudnative.fr', '0240123456', 'cloudnative2024'),
+
+-- FINANCE (3)
+('Crédit Partenaires',
+'Banque régionale indépendante. 500 collaborateurs. Spécialisée dans le crédit aux particuliers et PME. En pleine transformation digitale.',
+'La banque de proximité qui vous ressemble.',
+'# 🏦 Crédit Partenaires – Banque de Proximité
+
+**Crédit aux particuliers | Financement PME | Épargne**
+
+---
+
+## 🌍 Qui sommes-nous ?
+Crédit Partenaires est une banque régionale indépendante fondée en 1978. Avec 500 collaborateurs répartis dans 45 agences, nous sommes l''un des derniers acteurs bancaires 100% régionaux en France.
+
+Notre mission : offrir des solutions financières personnalisées à nos clients particuliers et entreprises, avec une relation humaine au cœur de chaque interaction.
+
+---
+
+## 🏗️ Nos activités
+
+### **Particuliers**
+- Crédits immobiliers et à la consommation
+- Épargne et placements
+- Assurances et prévoyance
+
+### **Professionnels & PME**
+- Financement de projets
+- Gestion de trésorerie
+- Leasing et crédit-bail
+
+### **Transformation Digitale**
+- Application mobile clients
+- Plateforme de gestion en ligne
+- Automatisation des processus internes
+
+---
+
+## 🎯 Nos valeurs
+- **Proximité** : nous connaissons nos clients par leur prénom
+- **Responsabilité** : financement éthique et durable
+- **Innovation** : nous modernisons nos outils sans perdre l''humain
+- **Solidarité** : soutien aux projets locaux et associatifs
+
+---
+
+## 🎓 Rejoignez-nous
+Crédit Partenaires offre des stages enrichissants dans un environnement bancaire à taille humaine. Idéal pour comprendre le monde de la finance et de la relation client.',
+'recrutement@creditpartenaires.fr', '0345678901', 'creditp2024'),
+
+('FinStart Conseil',
+'Cabinet de conseil en finance d''entreprise et M&A. 60 collaborateurs. Accompagnement des PME et ETI dans leurs opérations financières stratégiques.',
+'Votre partenaire pour les décisions financières qui comptent.',
+'# 💼 FinStart Conseil – Cabinet de Conseil Financier
+
+**Finance d''entreprise | M&A | Stratégie | Levée de fonds**
+
+---
+
+## 🌍 Qui sommes-nous ?
+FinStart Conseil est un cabinet de conseil financier indépendant fondé en 2010. Nos 60 consultants accompagnent les PME et ETI françaises dans leurs opérations financières stratégiques : fusions-acquisitions, levées de fonds, restructurations, valorisations.
+
+Notre différence : une approche sur mesure, des équipes disponibles et un engagement fort sur les résultats.
+
+---
+
+## 🛠️ Nos expertises
+
+### **Fusions & Acquisitions (M&A)**
+- Due diligence financière
+- Valorisation d''entreprises
+- Structuration des opérations
+
+### **Levées de fonds**
+- Capital-risque et private equity
+- Préparation des dossiers investisseurs
+- Accompagnement dans les négociations
+
+### **Conseil en stratégie financière**
+- Business plans et modèles financiers
+- Optimisation de la structure financière
+- Accompagnement à l''introduction en bourse
+
+---
+
+## 🎯 Nos valeurs
+- **Excellence** : qualité irréprochable dans chaque mission
+- **Indépendance** : conseil objectif, sans conflit d''intérêt
+- **Confidentialité** : discrétion absolue
+- **Engagement** : nous partageons les enjeux de nos clients
+
+---
+
+## 🎓 Rejoignez-nous
+FinStart Conseil offre des stages de haute intensité. Vous serez rapidement impliqué dans de vraies missions clients avec une forte valeur ajoutée.',
+'rh@finstartconseil.fr', '0156789012', 'finstart2024'),
+
+('AssurPro',
+'Courtier en assurances professionnelles. 180 collaborateurs. Spécialiste des risques entreprises, responsabilité civile et assurance construction.',
+'Couvrir les risques pour libérer les projets.',
+'# 🔒 AssurPro – Courtier en Assurances Professionnelles
+
+**Assurance entreprises | RC Pro | Construction | Prévoyance**
+
+---
+
+## 🌍 Qui sommes-nous ?
+AssurPro est un courtier en assurances professionnelles fondé en 2001. Avec 180 collaborateurs, nous sommes spécialisés dans la protection des entreprises contre leurs risques professionnels.
+
+Nous travaillons avec l''ensemble des compagnies d''assurance du marché pour proposer les meilleures solutions à nos clients.
+
+---
+
+## 🛠️ Nos activités
+
+### **Assurance Responsabilité**
+- RC professionnelle et décennale
+- Protection juridique
+- Cyber-risques
+
+### **Assurance Construction**
+- Tous Risques Chantier
+- Dommages-Ouvrage
+- Garantie de parfait achèvement
+
+### **Prévoyance & Santé**
+- Mutuelle collective
+- Prévoyance et retraite complémentaire
+- Épargne salariale
+
+---
+
+## 🎯 Nos valeurs
+- **Expertise** : maîtrise technique de l''ensemble des risques professionnels
+- **Conseil** : nous guidons nos clients vers les meilleures solutions
+- **Réactivité** : disponibilité en cas de sinistre
+- **Intégrité** : transparence totale sur nos honoraires
+
+---
+
+## 🎓 Rejoignez-nous
+AssurPro propose des stages enrichissants au cœur du monde de l''assurance. Vous développerez une expertise rare et très recherchée sur le marché.',
+'carrieres@assurpro.fr', '0467890123', 'assurpro2024'),
+
+-- COMMUNICATION/MARKETING (3)
+('Agence Horizon',
+'Agence de communication globale basée à Paris. 90 collaborateurs. Stratégie de marque, publicité, digital et relations presse pour grands comptes.',
+'Des idées qui marquent les esprits.',
+'# 🎨 Agence Horizon – Communication Globale
+
+**Stratégie de marque | Publicité | Digital | Relations Presse**
+
+---
+
+## 🌍 Qui sommes-nous ?
+Agence Horizon est une agence de communication globale fondée en 2008 à Paris. Avec 90 collaborateurs créatifs et stratèges, nous accompagnons les marques dans la construction et le développement de leur image.
+
+Nos clients : des grands comptes nationaux et internationaux dans les secteurs du luxe, de la grande consommation, du tourisme et des services.
+
+---
+
+## 🛠️ Nos expertises
+
+### **Stratégie de marque**
+- Identité visuelle et brand book
+- Positionnement et plateforme de marque
+- Architecture de marque
+
+### **Création publicitaire**
+- Campagnes TV, print, digital
+- Conception et production de contenus
+- Storytelling et brand content
+
+### **Communication Digitale**
+- Stratégie réseaux sociaux
+- SEO/SEA et marketing de contenu
+- Email marketing et automation
+
+### **Relations Presse**
+- Communiqués et conférences de presse
+- Influence et partenariats médias
+- Gestion de crise
+
+---
+
+## 🎯 Nos valeurs
+- **Créativité** : sortir des sentiers battus
+- **Stratégie** : la créativité au service des objectifs
+- **Collaboration** : travailler main dans la main avec nos clients
+- **Impact** : des campagnes qui produisent des résultats mesurables
+
+---
+
+## 🎓 Rejoignez-nous
+Horizon est le terrain idéal pour développer vos compétences en communication. Vous travaillerez sur des campagnes réelles pour des marques reconnues.',
+'jobs@agencehorizon.fr', '0145678912', 'horizon2024'),
+
+('InfluenceMedia',
+'Agence de marketing digital et influence. 50 collaborateurs. Spécialiste des campagnes social media, content marketing et influence pour marques lifestyle.',
+'Amplifier votre voix là où votre audience vous attend.',
+'# 📱 InfluenceMedia – Marketing Digital & Influence
+
+**Social Media | Content Marketing | Influence | Analytics**
+
+---
+
+## 🌍 Qui sommes-nous ?
+InfluenceMedia est une agence de marketing digital fondée en 2019 à Lyon. Spécialisée dans le marketing d''influence et le content marketing, nous aidons les marques lifestyle, beauté, mode et food à développer leur présence en ligne.
+
+Avec 50 collaborateurs passionnés par les nouvelles tendances digitales, nous gérons des campagnes pour des marques nationales et internationales.
+
+---
+
+## 🛠️ Nos expertises
+
+### **Marketing d''influence**
+- Identification et qualification des influenceurs
+- Gestion des partenariats et campagnes
+- Mesure des performances (KPIs, ROI)
+
+### **Content Marketing**
+- Stratégie éditoriale et calendrier de contenu
+- Production de contenus (texte, photo, vidéo)
+- Optimisation SEO
+
+### **Social Media Management**
+- Gestion quotidienne des réseaux sociaux
+- Community management
+- Publicité sociale (Meta Ads, TikTok Ads)
+
+### **Analytics & Reporting**
+- Dashboards de performance
+- Analyse de l''audience
+- Recommandations data-driven
+
+---
+
+## 🎯 Nos valeurs
+- **Authenticité** : des partenariats sincères et transparents
+- **Créativité** : des contenus qui engagent vraiment
+- **Data** : des décisions basées sur les chiffres
+- **Tendances** : toujours un coup d''avance
+
+---
+
+## 🎓 Rejoignez-nous
+InfluenceMedia est l''agence idéale pour les profils créatifs et analytiques. Vous baignerez dans l''univers des réseaux sociaux et du marketing digital au quotidien.',
+'talent@influencemedia.fr', '0472890123', 'influence2024'),
+
+('Com''Event',
+'Agence événementielle et relations publiques. 70 collaborateurs. Organisation d''événements corporate, salons professionnels et séminaires en France et Europe.',
+'Créer des moments qui fédèrent et inspirent.',
+'# 🎉 Com''Event – Agence Événementielle & RP
+
+**Événements Corporate | Salons | Séminaires | Relations Publiques**
+
+---
+
+## 🌍 Qui sommes-nous ?
+Com''Event est une agence événementielle et de relations publiques fondée en 2005 à Bordeaux. Avec 70 collaborateurs, nous organisons chaque année plus de 150 événements pour des entreprises, institutions et associations.
+
+Notre expertise couvre l''ensemble de la chaîne événementielle : de la conception au bilan post-événement, en passant par la logistique, la communication et les relations presse.
+
+---
+
+## 🛠️ Nos expertises
+
+### **Événements Corporate**
+- Séminaires et conventions d''entreprise
+- Soirées de gala et remises de prix
+- Team building et incentives
+
+### **Salons & Expositions**
+- Conception et construction de stands
+- Animation et expériences visiteurs
+- Gestion logistique
+
+### **Relations Publiques**
+- Relations presse et médias
+- Gestion de l''image institutionnelle
+- Lobbying et affaires publiques
+
+### **Communication événementielle**
+- Identité visuelle des événements
+- Communication digitale avant/pendant/après
+- Live streaming et contenu vidéo
+
+---
+
+## 🎯 Nos valeurs
+- **Excellence opérationnelle** : zéro défaut le jour J
+- **Créativité** : des concepts originaux et mémorables
+- **Réactivité** : gestion des imprévus avec calme
+- **Durabilité** : événements éco-responsables
+
+---
+
+## 🎓 Rejoignez-nous
+Com''Event offre une immersion totale dans le monde de l''événementiel. Vous participerez à la conception et à l''organisation d''événements réels.',
+'recrutement@comevent.fr', '0556789123', 'comevent2024'),
+
+-- INGÉNIERIE (3)
+('Ingénia Tech',
+'Bureau d''études en ingénierie industrielle. 300 collaborateurs. Conception mécanique, simulation numérique et gestion de projets pour secteurs automobile et aéronautique.',
+'Concevoir avec précision, livrer avec excellence.',
+'# ⚙️ Ingénia Tech – Bureau d''Études Industriel
+
+**Conception Mécanique | Simulation | Gestion de Projet | R&D**
+
+---
+
+## 🌍 Qui sommes-nous ?
+Ingénia Tech est un bureau d''études en ingénierie industrielle fondé en 1995 à Toulouse. Avec 300 collaborateurs, nous intervenons pour les plus grands donneurs d''ordre des secteurs automobile et aéronautique.
+
+Notre expertise couvre l''ensemble du cycle de développement produit : de la conception à la mise en production, en passant par la simulation et les essais.
+
+---
+
+## 🛠️ Nos expertises
+
+### **Conception Mécanique**
+- Modélisation 3D (CATIA, SolidWorks, NX)
+- Design for Manufacturing (DFM)
+- Conception de systèmes complexes
+
+### **Simulation Numérique**
+- Calculs par éléments finis (Abaqus, ANSYS)
+- Simulation de crash et de fatigue
+- Dynamique des fluides (CFD)
+
+### **Gestion de Projet**
+- Pilotage de projets R&D
+- Coordination des équipes pluridisciplinaires
+- Gestion des risques techniques
+
+### **Essais & Validation**
+- Bancs d''essais instrumentés
+- Campagnes de mesures
+- Corrélation calcul/essai
+
+---
+
+## 🎯 Nos valeurs
+- **Rigueur** : l''ingénierie ne tolère pas l''approximation
+- **Innovation** : nous intégrons les dernières technologies
+- **Travail en équipe** : la pluridisciplinarité est notre force
+- **Formation** : nous investissons dans nos collaborateurs
+
+---
+
+## 🎓 Rejoignez-nous
+Ingénia Tech offre des stages techniques de haut niveau. Vous travaillerez sur des projets réels avec des ingénieurs expérimentés.',
+'rh@ingeniatech.fr', '0561890123', 'ingeniatech2024'),
+
+('GreenBuild',
+'Cabinet d''ingénierie spécialisé en bâtiments durables et efficacité énergétique. 120 collaborateurs. Conseil et maîtrise d''œuvre pour constructions HQE et BEPOS.',
+'Bâtir mieux pour un avenir durable.',
+'# 🌿 GreenBuild – Ingénierie du Bâtiment Durable
+
+**HQE | BEPOS | Efficacité Énergétique | BIM | Maîtrise d''Œuvre**
+
+---
+
+## 🌍 Qui sommes-nous ?
+GreenBuild est un cabinet d''ingénierie spécialisé dans la construction durable et l''efficacité énergétique des bâtiments. Fondé en 2012 à Grenoble, nous accompagnons maîtres d''ouvrage, architectes et entreprises de construction dans la réalisation de bâtiments à faible impact environnemental.
+
+---
+
+## 🛠️ Nos expertises
+
+### **Conception Énergétique**
+- Études thermiques (RT2020, RE2020)
+- Simulations thermiques dynamiques
+- Optimisation des systèmes CVC
+
+### **Bâtiment à Énergie Positive (BEPOS)**
+- Intégration de l''énergie solaire (PV, thermique)
+- Pompes à chaleur et géothermie
+- Systèmes de stockage d''énergie
+
+### **BIM (Building Information Modeling)**
+- Modélisation 3D des bâtiments
+- Coordination BIM et clash detection
+- Maquette numérique tout au long du cycle de vie
+
+### **Certifications & Labels**
+- HQE, BREEAM, LEED
+- BBC Rénovation, Passivhaus
+- Accompagnement à la certification E+C-
+
+---
+
+## 🎯 Nos valeurs
+- **Durabilité** : chaque bâtiment est conçu pour l''avenir
+- **Innovation** : intégration des dernières solutions techniques
+- **Pédagogie** : nous expliquons nos choix à nos clients
+- **Engagement** : réduction mesurable de l''empreinte carbone
+
+---
+
+## 🎓 Rejoignez-nous
+GreenBuild offre des stages au croisement de l''ingénierie et du développement durable. Idéal pour les profils motivés par les enjeux environnementaux.',
+'jobs@greenbuild.fr', '0456789012', 'greenbuild2024'),
+
+('Électro Ingénierie',
+'Société d''ingénierie électrique et électronique. 90 collaborateurs. Conception de systèmes embarqués, automatisme industriel et réseaux électriques pour l''industrie.',
+'L''énergie et l''électronique au service de l''industrie.',
+'# ⚡ Électro Ingénierie – Systèmes Électriques & Embarqués
+
+**Systèmes Embarqués | Automatisme | Réseaux Électriques | SCADA**
+
+---
+
+## 🌍 Qui sommes-nous ?
+Électro Ingénierie est une société d''ingénierie électrique et électronique fondée en 2003 à Nantes. Nos 90 ingénieurs et techniciens conçoivent des systèmes électriques complexes pour l''industrie, l''énergie et les transports.
+
+---
+
+## 🛠️ Nos expertises
+
+### **Systèmes Embarqués**
+- Microcontrôleurs et microprocesseurs
+- Firmware C/C++ temps réel
+- Protocoles de communication (CAN, Modbus, Profibus)
+
+### **Automatisme Industriel**
+- Programmation d''automates (Siemens, Schneider, Allen-Bradley)
+- Supervision SCADA (Wonderware, WinCC)
+- Robotique industrielle
+
+### **Réseaux Électriques**
+- Distribution HTA/BTA
+- Compensation d''énergie réactive
+- Études de courts-circuits et de coordination
+
+### **IoT Industriel**
+- Capteurs et actionneurs connectés
+- Edge computing
+- Télémaintenance
+
+---
+
+## 🎯 Nos valeurs
+- **Expertise** : maîtrise technique dans tous nos domaines
+- **Fiabilité** : nos systèmes fonctionnent en toutes conditions
+- **Sécurité** : la sûreté des installations est notre priorité
+- **Adaptabilité** : chaque projet est unique
+
+---
+
+## 🎓 Rejoignez-nous
+Électro Ingénierie offre des stages techniques enrichissants. Vous travaillerez sur des projets industriels concrets avec des ingénieurs expérimentés.',
+'recrutement@electroingenierie.fr', '0240678901', 'electroing2024'),
+
+-- GÉNÉRALISTE (3)
+('Groupe Avenir RH',
+'Cabinet de conseil en ressources humaines et recrutement. 200 collaborateurs. Recrutement, formation, gestion des talents et conseil en organisation pour toutes tailles d''entreprises.',
+'Révéler et développer les talents d''aujourd''hui et de demain.',
+'# 👥 Groupe Avenir RH – Conseil en Ressources Humaines
+
+**Recrutement | Formation | Gestion des Talents | Conseil RH**
+
+---
+
+## 🌍 Qui sommes-nous ?
+Groupe Avenir RH est un cabinet de conseil en ressources humaines fondé en 2000. Avec 200 collaborateurs répartis dans 12 bureaux en France, nous accompagnons les entreprises dans toutes leurs problématiques RH.
+
+Notre conviction : les ressources humaines sont le premier actif stratégique d''une entreprise.
+
+---
+
+## 🛠️ Nos expertises
+
+### **Recrutement & Chasse de têtes**
+- Recrutement cadres et dirigeants
+- Assessment centers
+- Intégration et onboarding
+
+### **Formation & Développement**
+- Formations managériales et comportementales
+- Coaching individuel et collectif
+- E-learning et blended learning
+
+### **Gestion des Talents**
+- GPEC et plans de succession
+- Évaluation de la performance
+- Fidélisation et engagement
+
+### **Conseil en Organisation**
+- Diagnostic organisationnel
+- Conduite du changement
+- Transformation des modes de travail
+
+---
+
+## 🎯 Nos valeurs
+- **Humanité** : les personnes avant tout
+- **Éthique** : respect et équité dans toutes nos pratiques
+- **Excellence** : qualité de service irréprochable
+- **Partenariat** : relation durable avec nos clients
+
+---
+
+## 🎓 Rejoignez-nous
+Avenir RH offre une immersion dans le monde des ressources humaines. Vous développerez une vision 360° des problématiques RH en entreprise.',
+'talent@avenirhr.fr', '0145234567', 'avenirhr2024'),
+
+('ConsultGroup',
+'Cabinet de conseil en stratégie et management. 150 collaborateurs. Accompagnement des entreprises dans leur transformation, leur développement et l''optimisation de leur performance.',
+'Penser la stratégie, déployer l''excellence.',
+'# 🎯 ConsultGroup – Conseil en Stratégie & Management
+
+**Stratégie | Transformation | Performance | Innovation**
+
+---
+
+## 🌍 Qui sommes-nous ?
+ConsultGroup est un cabinet de conseil en stratégie et management fondé en 1998 à Paris. Nos 150 consultants accompagnent des entreprises de toutes tailles et de tous secteurs dans leurs projets de transformation et de développement.
+
+Notre approche : pragmatique, orientée résultats, avec une forte implication de nos équipes.
+
+---
+
+## 🛠️ Nos expertises
+
+### **Stratégie d''Entreprise**
+- Diagnostic stratégique
+- Plans de développement
+- Stratégies d''internationalisation
+
+### **Transformation & Conduite du Changement**
+- Transformation digitale
+- Réorganisation et restructuration
+- Accompagnement au changement
+
+### **Performance Opérationnelle**
+- Lean management
+- Optimisation des processus
+- Réduction des coûts
 
 ### **Innovation**
-- Laboratoires R&D  
-- Partenariats avec startups, universités et centres de recherche  
-- Investissement dans l’IA, le cloud, la cybersécurité et la data  
+- Open innovation
+- Design thinking
+- Accompagnement à l''entrepreneuriat interne
 
 ---
 
-## 🎓 Capgemini & les jeunes talents
-Capgemini accueille chaque année des milliers de stagiaires, alternants et jeunes diplômés.  
-L’entreprise propose :
-
-- Un environnement d’apprentissage riche  
-- Des projets concrets à forte valeur ajoutée  
-- Un accompagnement par des experts  
-- Des perspectives d’évolution rapides  
-- Une culture d’entreprise bienveillante et formatrice  
+## 🎯 Nos valeurs
+- **Pragmatisme** : des recommandations actionnables
+- **Rigueur** : analyses solides et méthodologie éprouvée
+- **Engagement** : nous allons jusqu''au bout des missions
+- **Diversité** : équipes pluridisciplinaires et internationales
 
 ---
 
-## 📌 Quelques chiffres clés
-| Indicateur | Valeur |
-|-----------|--------|
-| Année de création | 1967 |
-| Fondateur | Serge Kampf |
-| Présence | +50 pays |
-| Collaborateurs | +350 000 |
-| Siège mondial | Paris, France |
-| Secteurs clients | +20 industries |
+## 🎓 Rejoignez-nous
+ConsultGroup offre des stages d''excellence. Vous serez rapidement impliqué dans des missions stratégiques auprès de dirigeants.',
+'carrieres@consultgroup.fr', '0156234567', 'consultgroup2024'),
+
+('EcoServices',
+'Entreprise de services environnementaux et développement durable. 250 collaborateurs. Conseil RSE, gestion des déchets, bilan carbone et certification environnementale.',
+'Agir concrètement pour un monde plus responsable.',
+'# 🌍 EcoServices – Services Environnementaux & RSE
+
+**RSE | Bilan Carbone | Gestion des Déchets | Certification Environnementale**
 
 ---
 
-## 🎯 Pourquoi Capgemini ?
-- Un leader mondial reconnu  
-- Une expertise technologique de pointe  
-- Une culture humaine et collaborative  
-- Des projets innovants et d’envergure  
-- Une entreprise tournée vers l’avenir  
+## 🌍 Qui sommes-nous ?
+EcoServices est une entreprise de services environnementaux fondée en 2009 à Lyon. Avec 250 collaborateurs, nous aidons les organisations privées et publiques à mesurer, réduire et compenser leur impact environnemental.
+
+Dans un contexte de transition écologique accélérée, EcoServices se positionne comme un partenaire incontournable des entreprises engagées dans une démarche durable.
 
 ---
 
-',                                                                                                         'rh@capgemini.fr',           '0155295000', 'cap2024'),
-('Thales',            'Leader mondial en technologies de défense et sécurité numérique. 81 000 employés dans 68 pays.',                                  'La technologie au service d''un monde plus sûr.',     '## À propos de Thales\n\nThales est un groupe technologique mondial opérant dans les marchés de la **défense**, de la **sécurité** et de l''**aérospatiale**.\n\n### Secteurs d''activité\n\n1. Défense & sécurité\n2. Aéronautique\n3. Transport\n4. Numérique & Cyber\n\n### Engagements\n\n- Sobriété numérique\n- Diversité & inclusion\n- Formation continue',                                                                                                                                                    'stages@thales.fr',          '0157778000', 'thales2024'),
-('Société Générale',  'Groupe bancaire international. DSI de 10 000 personnes. Projets fintech, open banking et IA.',                                    'La banque qui innove pour vous.',                     '## Société Générale – DSI\n\nLa **DSI de Société Générale** est l''une des plus importantes d''Europe avec plus de 10 000 collaborateurs IT.\n\n### Projets phares\n\n- Migration cloud AWS & Azure\n- Développement d''API bancaires\n- Intelligence artificielle appliquée aux risques\n\n```\nStack technique : Java, Python, Kafka, Kubernetes\n```',                                                                                                                                                                        'it-rh@socgen.fr',           '0142140000', 'socgen2024'),
-('Airbus',            'Leader mondial de l''aéronautique et de l''espace. 134 000 employés. R&D de pointe en simulation et IA.',                         'Pionnier de l''aviation de demain.',                  '## Airbus Digital\n\nAirbus investit massivement dans la **transformation digitale** de ses processus industriels.\n\n### Domaines IT\n\n| Domaine | Technologies |\n|---|---|\n| Simulation | Python, C++ |\n| MES / ERP | SAP, Java |\n| Data | Spark, Hadoop |\n| Cyber | SIEM, IAM |\n\n### Valeurs\n\n- Innovation responsable\n- Travail en équipe internationale\n- Excellence ingénierie',                                                                                                                          'stages.it@airbus.fr',       '0561933333', 'airbus2024'),
-('OVHcloud',          'Premier hébergeur européen et acteur du cloud souverain. 2 600 employés, 400 000 serveurs dans le monde.',                        'Le cloud fait en Europe, pour l''Europe.',             '## OVHcloud – Rejoignez l''aventure\n\nOVHcloud est le **leader européen** du cloud avec des datacenters sur 4 continents.\n\n### Ce qui nous rend uniques\n\n- Infrastructure **bare metal** et cloud public\n- Engagement fort pour la **souveraineté des données**\n- Culture open source (Kubernetes, OpenStack)\n\n> Chez OVHcloud, chaque stagiaire participe à de vrais projets en production.',                                                                                                                          'rh@ovhcloud.com',           '0972101007', 'ovh2024'),
-('Dassault Systèmes', 'Éditeur mondial de logiciels 3D et PLM. 23 000 collaborateurs dans 140 pays. Éditeur de CATIA et SolidWorks.',                   'Inventer le futur du monde virtuel.',                 '## Dassault Systèmes\n\nÉditeur de **CATIA**, **SolidWorks** et de la plateforme **3DEXPERIENCE**, leader mondial du PLM.\n\n### Technologies clés\n\n- Modélisation 3D et simulation\n- Digital twin industriel\n- Cloud & collaboration\n\n### Chiffres clés\n\n- 23 000 employés\n- 300 000 clients dans 11 secteurs\n- 27% du CA réinvesti en R&D',                                                                                                                                                                       'stages@3ds.com',            '0140992040', 'ds2024'),
-('BNP Paribas',       'Première banque de la zone euro. DSI de 15 000 personnes. Leader open banking et IA financière.',                                 'La banque d''un monde qui change.',                   '## BNP Paribas – IT & Digital\n\nAvec une **DSI de 15 000 collaborateurs**, BNP Paribas est l''un des plus grands employeurs IT en France.\n\n### Domaines d''expertise\n\n- Open banking & API\n- Intelligence artificielle & data\n- Sécurité des systèmes d''information\n- Cloud hybride\n\n### Notre culture\n\nNous valorisons la **diversité**, l''**innovation** et l''engagement sociétal dans tous nos projets.',                                                                                                         'it-stages@bnpparibas.fr',  '0140146666', 'bnp2024'),
-('Sopra Steria',      'Leader européen de la transformation digitale. 50 000 collaborateurs dans 30 pays. Secteur public, finance, défense.',            'Ensemble, construisons un futur digital positif.',    '## Sopra Steria\n\nSopra Steria est un **leader européen** de la transformation numérique proposant conseil, intégration de systèmes et édition de logiciels.\n\n### Secteurs d''activité\n\n- Finance & Assurance\n- Défense & Sécurité\n- Transport & Énergie\n- Secteur public\n\n### Engagements RSE\n\n- Neutralité carbone d''ici 2028\n- 40% de femmes dans les équipes tech\n- Programme de mentorat actif',                                                                                                          'recrutement@soprasteria.com','0155004000','sopra2024'),
-('Amadeus',           'Leader mondial des solutions IT pour le voyage. 22 000 collaborateurs dans 190 pays. 2 milliards de transactions par an.',        'La technologie qui connecte le monde du voyage.',     '## Amadeus IT Group\n\nAmadeus est le **leader mondial** des solutions technologiques pour les compagnies aériennes, hôtels et agences de voyage.\n\n### Technologies\n\n```\nJava · C++ · Python · Kafka · Cassandra\nKubernetes · AWS · Azure\n```\n\n### Chiffres\n\n- 2 milliards de transactions/an\n- 1,7 milliard € investis en R&D\n- Bureau R&D à Sophia Antipolis',                                                                                                                                               'stages@amadeus.com',        '0492945000', 'ama2024'),
-('Ubisoft',           'Créateur de jeux vidéo de renommée mondiale. 20 000 employés dans 30 pays. Franchises Assassin''s Creed, Far Cry.',               'Imaginer des mondes. Créer des expériences.',         '## Ubisoft\n\nUbisoft est l''un des leaders mondiaux du **jeu vidéo** avec des franchises iconiques.\n\n### Studios en France\n\n- Paris (siège)\n- Montpellier\n- Lyon\n- Bordeaux\n\n### Technologies\n\n- Moteur Anvil Next (propriétaire)\n- C++, Python, Lua\n- Outils R&D IA et cloud gaming\n\n> Rejoindre Ubisoft, c''est rejoindre une communauté de passionnés.',                                                                                                                                                        'stages@ubisoft.com',        '0155055100', 'ubi2024'),
-('Orange',            'Opérateur télécom et services numériques. 137 000 collaborateurs. Leader 5G et cybersécurité en Europe.',                         'Connecter les personnes et les technologies.',        '## Orange – Innovation & Digital\n\nOrange est l''un des principaux opérateurs télécoms mondiaux et développe des services numériques via **Orange Business** et **Orange Cyberdefense**.\n\n### Domaines IT\n\n- Réseaux 5G & IoT\n- Cybersécurité\n- Cloud & datacenters\n- IA & big data\n\n### Pour les stagiaires\n\n- Projets à fort impact\n- Accès aux labs R&D\n- Communauté Young Talent',                                                                                                                              'stages@orange.fr',          '0900800700', 'orange2024'),
-('Michelin',          'Leader mondial du pneumatique. 132 000 collaborateurs dans 170 pays. En pleine transformation digitale des usines.',              'Les meilleures technologies pour avancer.',           '## Michelin Digital\n\nMichelin engage une profonde **transformation digitale** de ses usines et processus logistiques.\n\n### Projets IT\n\n- MES (Manufacturing Execution System)\n- Jumeaux numériques d''usines\n- IA prédictive maintenance\n- Supply chain digitale\n\n### Valeurs\n\n- Respect des personnes\n- Développement durable\n- Mobilité pour tous',                                                                                                                                                             'stages.it@michelin.com',    '0473987654', 'michelin2024'),
-('Decathlon',         'Leader mondial du sport et e-commerce. 100 000 collaborateurs dans 60 pays. DSI de 2 000 personnes.',                            'La tech au service du sport pour tous.',              '## Decathlon Technology\n\nDecathlon dispose d''une **DSI de 2 000 personnes** qui développe tous les outils digitaux de l''enseigne.\n\n### Projets phares\n\n- Plateforme e-commerce (200M visites/an)\n- Applications mobiles sportives\n- RFID & IoT en magasin\n- IA recommandation produits\n\n### Culture tech\n\n- Squads autonomes en Agile\n- Open source et partage\n- Hackathons réguliers',                                                                                                                         'tech-stages@decathlon.fr',  '0320882000', 'deca2024'),
-('SNCF',              'Groupe ferroviaire national. 150 000 collaborateurs. DSI de 5 000 personnes gérant une des plus grandes infras IT de France.',    'La mobilité intelligente pour tous.',                 '## SNCF Connect & Tech\n\nLa **DSI du groupe SNCF** gère l''une des plus grandes infrastructures IT de France.\n\n### Domaines\n\n- Billetterie & distribution (SNCF Connect)\n- Systèmes embarqués trains\n- Big data & prédiction trafic\n- Cybersécurité des infrastructures critiques\n\n### Avantages stagiaires\n\n- Projets à impact national\n- Carte Avantage SNCF\n- Accompagnement RH dédié',                                                                                                                           'stages.dsi@sncf.fr',        '0180500000', 'sncf2024'),
-('Criteo',            'Leader mondial de la publicité numérique à la performance. 3 500 employés. 700 TB de données traitées par jour.',                 'La tech qui transforme le commerce en ligne.',        '## Criteo\n\nCriteo est une **entreprise tech cotée au NASDAQ** spécialisée dans le reciblage publicitaire.\n\n### Stack technique\n\n```\nPython · Scala · Spark · Kafka\nC# · .NET · React · AWS\n```\n\n### Ce qui nous différencie\n\n- 3 500 ingénieurs et data scientists\n- 700 TB de données traitées/jour\n- Bureau parisien de 1 000 personnes\n- Culture très internationale (50 nationalités)',                                                                                                                   'jobs@criteo.com',           '0185495050', 'criteo2024'),
-('Veolia',            'Leader mondial de la gestion des ressources eau, déchets et énergie. 213 000 collaborateurs.',                                    'La transformation écologique en action.',             '## Veolia Digital\n\nVeolia transforme ses métiers grâce au **digital**.\n\n### Projets IT\n\n- Smart water management\n- IoT et capteurs terrain\n- IA pour optimisation énergétique\n- Dashboards temps réel\n\n### Engagement RSE\n\nChaque projet IT chez Veolia a un **impact environnemental mesurable** : réduction de CO2, économies d''eau, valorisation des déchets.',                                                                                                                                                  'stages.digital@veolia.fr',  '0171750000', 'veolia2024'),
-('Euronext',          'Première bourse paneuropéenne. 2 200 employés dans 18 pays. Bourses de Paris, Amsterdam, Bruxelles, Dublin.',                     'Les marchés financiers au cœur de l''économie.',      '## Euronext Technology\n\nEuronext opère les **bourses européennes** et développe toute sa stack technologique en interne.\n\n### Technologies\n\n- Systèmes de trading ultra-basse latence\n- C++, Java, Python\n- Kafka, Redis, PostgreSQL\n- Infra on-premise haute disponibilité\n\n### Spécificités\n\nConcevoir des systèmes qui **traitent des millions d''ordres par seconde**.',                                                                                                                                       'tech-stages@euronext.com',  '0185148585', 'euro2024'),
-('Doctolib',          'Leader européen de la santé digitale. 3 000 employés. 80 millions de patients utilisateurs en Europe.',                          'La tech au service de la santé de tous.',             '## Doctolib Engineering\n\nDoctolib est l''une des **scale-up tech les plus en vue d''Europe** avec une mission à fort impact social.\n\n### Stack\n\n```\nRuby on Rails · React · TypeScript\nPostgreSQL · Redis · AWS · Kubernetes\n```\n\n### Culture ingénierie\n\n- Équipes produit autonomes\n- Engineering excellence\n- 99.99% de disponibilité\n- Sécurité données de santé (HDS)',                                                                                                                                       'jobs@doctolib.fr',          '0186860000', 'docto2024'),
-('Renault Group',     'Constructeur automobile en transformation électrique et digitale. 105 000 collaborateurs. Leader du VE en Europe.',               'Inventer l''automobile de demain, dès aujourd''hui.', '## Renault Digital\n\nRenault Digital porte la **transformation numérique** du Groupe en développant logiciels embarqués et services connectés.\n\n### Projets\n\n- Logiciels embarqués véhicule (ADAS)\n- Applications de mobilité (My Renault)\n- Supply chain digitale\n- Data platform groupe\n\n### Technologies\n\n- C / C++ embarqué\n- Python & Java\n- AWS & Azure\n- CI/CD GitLab',                                                                                                                           'stages.digital@renault.fr', '0176842323', 'renault2024'),
-('Worldline',         'Leader européen des paiements numériques. 18 000 collaborateurs dans 50 pays. Des milliards de transactions sécurisées.',         'Sécuriser chaque paiement, partout dans le monde.',   '## Worldline\n\nWorldline est le **leader européen des services de paiement**, traitant des milliards de transactions chaque année.\n\n### Expertise IT\n\n- Protocoles de paiement (EMV, 3DS)\n- Sécurité cryptographique\n- APIs de paiement open banking\n- Systèmes haute disponibilité\n\n### Pour les stagiaires\n\n- Formation aux normes PCI-DSS\n- Projets à impact réel\n- Environnement international',                                                                                                         'stages@worldline.com',      '0173290000', 'wl2024');
+## 🛠️ Nos expertises
+
+### **Conseil RSE**
+- Diagnostic RSE et plan d''action
+- Reporting extra-financier (CSRD, GRI)
+- Stratégie développement durable
+
+### **Bilan Carbone**
+- Mesure des émissions (scope 1, 2, 3)
+- Plans de réduction
+- Compensation carbone
+
+### **Gestion des Déchets**
+- Audit des filières déchets
+- Plans de réduction et valorisation
+- Économie circulaire
+
+### **Certification Environnementale**
+- ISO 14001, ISO 50001
+- Label RSE
+- Accompagnement B Corp
+
+---
+
+## 🎯 Nos valeurs
+- **Impact** : des actions concrètes et mesurables
+- **Transparence** : honnêteté dans les bilans et les objectifs
+- **Engagement** : nous appliquons ce que nous préconisons
+- **Pédagogie** : sensibiliser et former les équipes
+
+---
+
+## 🎓 Rejoignez-nous
+EcoServices offre des stages au cœur des enjeux environnementaux. Vous contribuerez directement à des projets à impact positif.',
+'jobs@ecoservices.fr', '0472123456', 'ecoservices2024');
 
 -- ============================================================
--- UTILISATEURS
+-- OFFRES DE STAGE
 -- ============================================================
-INSERT INTO Utilisateur (nom, prenom, email, mdp) VALUES
-('Martin','Sophie','sophie.martin@ecole.fr','$2y$10$hashedpwd1'),
-('Dubois','Pierre','pierre.dubois@ecole.fr','$2y$10$hashedpwd2'),
-('Admin','System','admin@wtto.fr','$2y$10$hashedpwdadmin'),
-('Bernard','Lucas','lucas.bernard@etudiant.fr','$2y$10$hashedpwd4'),
-('Petit','Emma','emma.petit@etudiant.fr','$2y$10$hashedpwd5'),
-('Robert','Nathan','nathan.robert@etudiant.fr','$2y$10$hashedpwd6'),
-('Richard','Chloé','chloe.richard@etudiant.fr','$2y$10$hashedpwd7'),
-('Moreau','Hugo','hugo.moreau@etudiant.fr','$2y$10$hashedpwd8'),
-('Simon','Léa','lea.simon@etudiant.fr','$2y$10$hashedpwd9'),
-('Laurent','Tom','tom.laurent@etudiant.fr','$2y$10$hashedpwd10');
+INSERT INTO Offre (date_debut, date_fin, lat, lng, titre, description_carte, remuneration_par_mois, description_offre_de_stage, id_entreprise) VALUES
 
-INSERT INTO Pilote (id_pilote) VALUES (1),(2);
-INSERT INTO Admin (id_admin) VALUES (3);
-INSERT INTO Etudiant (id_etudiant, id_pilote) VALUES
-(4,1),(5,1),(6,1),(7,2),(8,2),(9,2),(10,2);
-
--- ============================================================
--- OFFRES DE STAGE (~100)
--- description_carte = texte simple | description_offre_de_stage = markdown
--- ============================================================
-INSERT INTO Offre (date_debut,date_fin,lat,lng,titre,description_carte,remuneration_par_mois,description_offre_de_stage,id_entreprise) VALUES
-
--- === CAPGEMINI (1) ===
-('2025-04-01','2025-09-30',48.896008,2.318260,'Stage Dev Full Stack','Stage 6 mois Paris La Defense. Stack React Node.js PostgreSQL.',1200,
-'
-# 🚀 Stage Développeur Full Stack  
-**React • Node.js • PostgreSQL**  
-📍 *Paris – La Défense*  
+-- NEXATECH (1)
+('2025-04-01','2025-09-30',48.856613,2.352222,'Stage Développeur Full Stack React/Node.js',
+'Stage 6 mois Paris. Développement d''une plateforme SaaS B2B en React et Node.js au sein d''une équipe agile de 8 personnes.',1200,
+'# 🚀 Stage Développeur Full Stack – Nexatech Solutions
+**React | Node.js | PostgreSQL | Docker**
+📍 *Paris – 11ème arrondissement*
 ⏳ *Durée : 6 mois*
 
 ---
 
 ## 📝 Présentation du stage
-Ce stage s’adresse à un(e) étudiant(e) souhaitant évoluer dans un environnement technique moderne et exigeant. Intégré(e) au sein d’une équipe de développement agile, vous participerez à la conception, au développement et à l’amélioration d’applications web full stack reposant sur une architecture JavaScript complète.
-
-Vous interviendrez sur l’ensemble du cycle de vie des fonctionnalités : analyse, conception, développement, tests, déploiement et optimisation.
+Au sein de l''équipe produit de Nexatech, vous contribuerez au développement d''une plateforme SaaS B2B destinée aux PME. Vous travaillerez en méthode Scrum avec des sprints de 2 semaines.
 
 ---
 
-## 🎯 Objectifs pédagogiques
-- Développer une véritable expertise sur une stack JavaScript moderne.  
-- Comprendre et appliquer les bonnes pratiques de développement logiciel.  
-- Travailler en équipe dans un environnement agile (Scrum / Kanban).  
-- Gagner en autonomie sur des projets concrets à forte valeur ajoutée.  
+## 🎯 Missions
+- Développement de composants React (TypeScript, hooks, context)
+- Conception et implémentation d''APIs REST avec Node.js/Express
+- Modélisation et optimisation des requêtes PostgreSQL
+- Participation aux code reviews et rétroactions d''équipe
+- Rédaction de tests unitaires et d''intégration (Jest, Cypress)
 
 ---
 
-## 🛠️ Missions principales
-
-### **Frontend – React**
-- Développer des interfaces modernes, responsives et performantes.  
-- Créer des composants réutilisables (hooks, context, state management).  
-- Intégrer des maquettes UI/UX en collaboration avec les designers.  
-- Optimiser les performances et l’accessibilité.
-
-### **Backend – Node.js**
-- Concevoir et implémenter des API REST robustes et sécurisées.  
-- Participer à l’architecture backend (Express, NestJS selon contexte).  
-- Mettre en place des tests unitaires et d’intégration.  
-- Contribuer à la documentation technique.
-
-### **Base de données – PostgreSQL**
-- Modéliser et maintenir des schémas de données.  
-- Rédiger des requêtes SQL optimisées.  
-- Gérer les migrations et l’évolution du modèle de données.  
-
-### **Collaboration & Qualité**
-- Participer aux cérémonies agiles (daily, sprint planning, rétrospectives).  
-- Contribuer aux revues de code et à l’amélioration continue.  
-- Utiliser des outils de CI/CD pour automatiser les déploiements.  
-- Travailler avec Git et GitHub/GitLab en workflow collaboratif.
-
----
-
-## 🧰 Stack & Outils utilisés
+## 🧰 Stack technique
 | Domaine | Technologies |
 |--------|--------------|
-| **Frontend** | React, TypeScript, Redux/Context, TailwindCSS/Material UI |
-| **Backend** | Node.js, Express/NestJS, JWT, REST API |
-| **Base de données** | PostgreSQL, Prisma/Sequelize, SQL |
-| **DevOps** | Docker, CI/CD, GitHub Actions/GitLab CI |
-| **Méthodologie** | Agile Scrum, Code Review, Pair Programming |
-
----
-
-## 📚 Compétences développées
-- Maîtrise d’une stack JavaScript complète (React + Node.js).  
-- Compréhension des architectures web modernes.  
-- Gestion de projet agile et travail en équipe.  
-- Rigueur dans la qualité du code et les bonnes pratiques.  
-- Capacité à analyser, concevoir et implémenter des solutions techniques.  
+| Frontend | React 18, TypeScript, TailwindCSS |
+| Backend | Node.js, Express, JWT |
+| BDD | PostgreSQL, Prisma |
+| DevOps | Docker, GitHub Actions |
 
 ---
 
 ## 👤 Profil recherché
-- Étudiant(e) en informatique (Bac+3 à Bac+5).  
-- Connaissances de base en JavaScript/TypeScript.  
-- Motivation, curiosité et envie d’apprendre.  
-- Capacité à travailler en équipe et à communiquer efficacement.  
+- Bac+3 à Bac+5 en informatique
+- Maîtrise de JavaScript/TypeScript
+- Bases en SQL et Git
+- Curiosité et esprit d''équipe',
+1),
+
+('2025-05-01','2025-10-31',48.856613,2.352222,'Stage Développeur Mobile React Native',
+'Stage 6 mois Paris. Développement de l''application mobile cross-platform d''un client grand compte en React Native.',1150,
+'# 📱 Stage Développeur Mobile – Nexatech Solutions
+**React Native | TypeScript | Firebase | REST APIs**
+📍 *Paris – 11ème arrondissement*
+⏳ *Durée : 6 mois*
 
 ---
 
-## 🎁 Bonus appréciés (non obligatoires)
-- Notions de Docker ou CI/CD.  
-- Intérêt pour l’UX/UI.  
-- Appétence pour les architectures cloud (AWS, GCP, Azure).  
+## 📝 Présentation du stage
+Vous rejoindrez l''équipe mobile de Nexatech pour développer une application iOS/Android pour un client dans le secteur du retail. L''application est en cours de refonte complète.
 
 ---
 
-## 📩 Candidature
-Envoyer CV + portfolio/GitHub si disponible.  
-',1),
-('2025-05-01','2025-10-31',48.896008,2.318260,'Stage Data Analyst','Stage 6 mois Paris. Analyse de données grands comptes avec Power BI et Python.',1150,'## Data Analyst – Capgemini\n\n### Mission\n\nVous rejoindrez l''équipe **Data & Analytics** pour accompagner nos clients dans l''exploitation de leurs données.\n\n### Tâches\n\n- Dashboards **Power BI**\n- Nettoyage de données (Python/pandas)\n- Rédaction de rapports d''analyse\n- Présentation aux parties prenantes\n\n### Profil\n\n- Bac+4/5 informatique ou statistiques\n- SQL et Python\n- Sens de la communication\n\n### Environnement\n\nAzure Data Factory et Databricks.',1),
-('2025-06-01','2025-11-30',48.896008,2.318260,'Stage Consultant Cloud Azure','Stage 6 mois Paris. Migration cloud Azure de clients grands comptes.',1250,'## Consultant Cloud Azure – Capgemini\n\n### Mission\n\nCapgemini accompagne ses clients **Grands Comptes** dans leur migration vers Azure.\n\n### Missions\n\n- Audit des architectures existantes\n- Rédaction de **plans de migration cloud**\n- Déploiement d''infrastructures via **Terraform**\n- Suivi des indicateurs de coût\n\n### Stack\n\n```\nAzure · Terraform · PowerShell · Python\n```\n\n### Profil\n\n- Bac+5 IT ou école d''ingénieurs\n- Notions réseau et virtualisation',1),
-('2025-03-15','2025-09-15',43.296482,5.381794,'Stage Dev Backend Java','Stage 6 mois Marseille. Développement backend Java pour application logistique.',1100,'## Développeur Backend Java – Capgemini Marseille\n\n### Mission\n\nDéveloppement d''une **application de gestion logistique** pour un client transport.\n\n### Technologies\n\n- Java 17 + Spring Boot\n- PostgreSQL + Hibernate\n- Docker + GitLab CI\n- Tests JUnit / Mockito\n\n### Profil\n\n- Bac+4/5 en développement logiciel\n- Java solide\n- Principes SOLID\n\n### Lieu\n\nMarseille centre – télétravail 2j/sem.',1),
-('2025-04-01','2025-09-30',44.837789,-0.579180,'Stage Dev React Node.js','Stage 6 mois Bordeaux. Portail client pour services numériques assurance.',1100,'## Développeur React/Node.js – Capgemini Bordeaux\n\n### Mission\n\nDéveloppement du **portail client** d''une compagnie d''assurance partenaire.\n\n### Technologies\n\n- React 18 + TypeScript\n- Node.js + Express\n- PostgreSQL\n- Jest + Cypress\n\n### Tâches\n\n- Parcours utilisateur\n- Intégration d''APIs REST\n- Tests E2E\n\n### Profil\n\n- Bac+4/5 développement web\n- React et Node.js',1),
-('2025-04-01','2025-09-30',43.296482,5.381794,'Stage Dev Python Scraping','Stage 6 mois Marseille. Outil de veille concurrentielle automatisé pour assureur.',1000,'## Développeur Python Scraping – Capgemini Marseille\n\n### Mission\n\nDéveloppement d''un **outil de veille concurrentielle** automatisé.\n\n### Technologies\n\n- Python (Scrapy, Selenium)\n- PostgreSQL + SQLAlchemy\n- Airflow + Docker\n\n### Profil\n\n- Bac+4/5 data ou développement\n- Python solide\n- HTML, XPath',1),
+## 🎯 Missions
+- Développement de fonctionnalités en React Native + TypeScript
+- Intégration des APIs REST du backend
+- Implémentation de notifications push (Firebase)
+- Tests sur appareils réels (iOS et Android)
+- Optimisation des performances et de l''expérience utilisateur
 
--- === THALES (2) ===
-('2025-03-01','2025-08-31',48.732090,2.148020,'Stage Cybersécurité SOC','Stage 6 mois Velizy. SIEM Splunk, pentest et audit de sécurité.',1400,'## Analyste Cybersécurité – Thales\n\n### Contexte\n\nThales DIS recrute un stagiaire pour renforcer son équipe **SOC**.\n\n### Missions\n\n1. Analyse des alertes sur **SIEM Splunk**\n2. Exercices de **pentest**\n3. Rédaction de rapports d''audit\n4. Veille **CVE**\n\n### Stack\n\n| Outil | Usage |\n|---|---|\n| Splunk | SIEM |\n| Wireshark | Réseau |\n| Nmap | Reconnaissance |\n| Python | Scripting |\n\n> Stage idéal Red Team / Blue Team.',2),
-('2025-04-01','2025-09-30',48.732090,2.148020,'Stage Dev Embarqué C++','Stage 6 mois Velizy. Logiciel embarqué C++ pour systèmes de défense.',1350,'## Développeur Embarqué C++ – Thales\n\n### Mission\n\nDéveloppement de logiciels embarqués pour des **systèmes de communication sécurisés**.\n\n### Technologies\n\n- C++ temps réel (RTOS)\n- Protocoles sécurisés\n- Tests HIL\n- CMake, Git\n\n### Profil\n\n- Ingénieur informatique/électronique\n- C++ maîtrisé\n- Habilitation défense éligibilité',2),
-('2025-05-01','2025-10-31',48.732090,2.148020,'Stage IA Vision par ordinateur','Stage 6 mois Velizy. Modèles de détection d''objets pour surveillance aérienne.',1450,'## IA & Vision par ordinateur – Thales\n\n### Mission\n\nDéveloppement de **modèles de détection d''objets** pour applications de surveillance aérienne.\n\n### Tâches\n\n- Entraînement de réseaux (YOLOv8, DETR)\n- Annotation de datasets\n- Optimisation embarquée (ONNX, TensorRT)\n- Évaluation (mAP, latence)\n\n### Stack\n\n```python\nPyTorch · OpenCV · CUDA · ONNX · TensorRT\n```\n\n### Profil\n\n- Master 2 IA/ML\n- Deep learning maîtrisé',2),
-('2025-06-01','2025-11-30',43.124228,5.928000,'Stage Systèmes Navals','Stage 6 mois Toulon. Modélisation de systèmes de combat navals.',1300,'## Ingénieur Systèmes Navals – Thales Toulon\n\n### Contexte\n\nThales développe des **systèmes de combat** pour la Marine Nationale.\n\n### Missions\n\n- Rédaction de **spécifications systèmes**\n- Modélisation SysML\n- Interface logiciel/matériel\n- Suivi des tests d''intégration\n\n### Profil\n\n- Ingénieur systèmes ou électronique\n- Architecture systèmes\n- Anglais technique\n- Habilitation défense',2),
-('2025-04-15','2025-10-15',48.390394,-4.486076,'Stage DevOps Naval Brest','Stage 6 mois Brest. Pipelines CI/CD pour logiciels de défense navale.',1200,'## Ingénieur DevOps Naval – Thales Brest\n\n### Mission\n\nMise en place des **pipelines CI/CD** pour les logiciels navals Thales.\n\n### Technologies\n\n- GitLab CI/CD\n- Docker + Kubernetes\n- Ansible, SonarQube\n\n### Contraintes\n\n- Environnement air-gap\n- Certification EN 50128\n\n### Profil\n\n- Formation DevOps\n- Docker/Kubernetes\n- Habilitation défense',2),
-('2025-05-15','2025-11-15',48.117266,-1.677793,'Stage DevSecOps Rennes','Stage 6 mois Rennes. Integration securite dans pipelines CI/CD defence.',1200,'## DevSecOps – Thales Rennes\n\n### Mission\n\nIntégration des pratiques de **sécurité dans les pipelines CI/CD** des projets de défense.\n\n### Tâches\n\n- SAST (SonarQube, Semgrep)\n- DAST (OWASP ZAP)\n- Scan Docker (Trivy)\n- Gestion des secrets (Vault)\n\n### Profil\n\n- Cybersécurité ou DevOps\n- CI/CD\n- Vulnérabilités logicielles\n- Habilitation défense',2),
-('2025-04-01','2025-09-30',48.390394,-4.486076,'Stage Réseaux Militaires','Stage 6 mois Brest. Architecture réseaux sécurisés pour la Marine Nationale.',1400,'## Ingénieur Réseaux Militaires – Thales Brest\n\n### Mission\n\nConception de réseaux **sécurisés et résilients** pour les navires de la Marine Nationale.\n\n### Technologies\n\n- Cisco / Juniper\n- VPN IPsec / TLS\n- Protocoles OTAN (Link 16)\n- Chiffrement souverain\n\n### Profil\n\n- Réseaux & télécom\n- TCP/IP avancé\n- Habilitation défense\n\n### Avantages\n\n- Prime de confidentialité\n- Visite de navires',2),
+---
 
--- === SOCIÉTÉ GÉNÉRALE (3) ===
-('2025-06-01','2025-11-30',48.858370,2.294481,'Stage Data Engineer','Stage 6 mois Paris 8e. Pipelines Spark Kafka pour modeles de risque de credit.',1350,'## Data Engineer – Société Générale\n\n### Description\n\nVous rejoindrez la **Direction Data & Analytics** pour les pipelines de données des modèles de risque.\n\n### Responsabilités\n\n- **Pipelines ETL** avec Apache Spark\n- Ingestion temps réel via **Kafka**\n- Python (pandas, PySpark)\n- Cloud **Azure**\n\n### Compétences requises\n\n```python\nrequired = [\n    "Python (pandas, numpy)",\n    "SQL avancé",\n    "Notions Spark"\n]\n```\n\n### Avantages\n\n- Formations internes\n- Tickets resto + transport 50%',3),
-('2025-04-01','2025-09-30',48.858370,2.294481,'Stage Dev Java Microservices','Stage 6 mois Paris. Microservices bancaires Java Spring Cloud pour open banking.',1200,'## Développeur Java Microservices – Société Générale\n\n### Mission\n\nDéveloppement de **microservices** pour la plateforme d''open banking.\n\n### Technologies\n\n- Java 17 + Spring Boot + Spring Cloud\n- Apache Kafka\n- PostgreSQL + JPA\n- Docker + Kubernetes\n- TDD (JUnit, Mockito)\n\n### Profil\n\n- Bac+4/5 développement\n- Java et Spring maîtrisés\n- API REST\n\n### Équipe\n\n12 développeurs, méthode **SAFe**.',3),
-('2025-05-15','2025-11-15',48.858370,2.294481,'Stage Sécurité SI Bancaire','Stage 6 mois Paris. Audit securisation SI bancaire conformite ISO 27001 DORA.',1300,'## SSI – Société Générale\n\n### Mission\n\nAu sein de la **DSSI**, sécurisation des infrastructures de la banque.\n\n### Tâches\n\n- Audits de sécurité (OWASP)\n- Gestion des vulnérabilités (Qualys)\n- Rédaction de politiques de sécurité\n- Sensibilisation des développeurs\n\n### Profil\n\n- Master cybersécurité\n- OWASP Top 10\n- Python/Bash\n\n### Normes\n\nFormation **ISO 27001** et **DORA**.',3),
+## 🧰 Stack technique
+- React Native 0.73, TypeScript
+- Redux Toolkit, React Query
+- Firebase (Auth, Messaging, Analytics)
+- Fastlane pour la distribution
 
--- === AIRBUS (4) ===
-('2025-04-15','2025-10-15',43.605699,1.441600,'Stage DevOps Cloud','Stage 6 mois Toulouse. Kubernetes Docker CI/CD pour Digital Factory Airbus.',1300,'## Ingénieur DevOps – Airbus\n\n### Environnement\n\nAu sein de la **Digital Factory** d''Airbus, équipe Platform Engineering.\n\n### Missions\n\n- Déploiements avec **Helm / Kubernetes**\n- Pipelines **CI/CD** (GitLab CI)\n- Monitoring **Prometheus + Grafana**\n- Infrastructure as code (**Terraform**)\n\n### Profil\n\n- Bac+4/5 informatique\n- Linux, Docker/Kubernetes\n- Anglais courant\n\n### Lieu\n\nToulouse – Site Saint-Martin (métro B)',4),
-('2025-03-01','2025-08-31',43.605699,1.441600,'Stage Dev C++ Simulation','Stage 6 mois Toulouse. Simulation numerique de structures aeronautiques en C++.',1350,'## Développeur C++ Simulation – Airbus\n\n### Mission\n\nDéveloppement de modules de **simulation numérique** pour calculs de structures d''avions.\n\n### Stack\n\n```\nC++17 · CMake · Python · MPI · HDF5\n```\n\n### Tâches\n\n- C++ moderne (C++17/20)\n- Intégration dans le solver interne\n- Optimisation (profiling)\n- Tests unitaires et validation\n\n### Profil\n\n- Ingénieur informatique ou mécanique numérique\n- Bon niveau C++',4),
-('2025-05-01','2025-10-31',43.605699,1.441600,'Stage Data Scientist Manufacturing','Stage 6 mois Toulouse. IA predictive pour detection de defauts en production.',1400,'## Data Scientist Manufacturing – Airbus\n\n### Contexte\n\nIA dans les usines pour **prédire les défauts** et optimiser les cadences.\n\n### Missions\n\n- Analyse de données industrielles\n- Modèles de classification et régression\n- Déploiement via MLflow\n- Collaboration avec ingénieurs méthodes\n\n### Stack\n\n- Python (scikit-learn, XGBoost)\n- Spark, MLflow, DVC\n- Tableaux Tableau\n\n### Profil\n\n- Master 2 Data Science\n- Python ML',4),
-('2025-06-01','2025-11-30',43.605699,1.441600,'Stage Réseaux IoT Usine','Stage 6 mois Toulouse. Architecture IoT industrielle pour lignes d''assemblage.',1200,'## Architecte Réseau IoT – Airbus\n\n### Mission\n\nConception et déploiement de l''**architecture IoT industrielle**.\n\n### Tâches\n\n- Design réseau (LoRaWAN, MQTT)\n- Déploiement capteurs et passerelles\n- Supervision et monitoring\n- Documentation technique\n\n### Profil\n\n- Réseaux & télécommunications\n- IoT (MQTT, AMQP)\n- Linux embarqué\n- Anglais professionnel',4),
+---
 
--- === OVHCLOUD (5) ===
-('2025-05-01','2025-10-31',50.690830,3.175630,'Stage Dev Backend Go','Stage 6 mois Roubaix. Microservices Golang pour le cloud public OVHcloud.',1100,'## Développeur Backend Go – OVHcloud\n\n### Mission\n\nDéveloppement de microservices en **Go** pour la gestion des ressources cloud.\n\n### Ce que vous ferez\n\n- Microservices en **Golang**\n- API REST de gestion des instances\n- Tests unitaires et d''intégration\n- Code reviews rigoureuses\n\n### Stack\n\n```\nGo 1.22 · PostgreSQL · Redis · RabbitMQ\nKubernetes · GitLab CI · Prometheus\n```\n\n### Culture\n\n- Open source first\n- Hackathons réguliers',5),
-('2025-04-01','2025-09-30',50.690830,3.175630,'Stage Ingénieur Réseau Datacenter','Stage 6 mois Roubaix. Infrastructure réseau backbone des datacenters OVHcloud.',1050,'## Ingénieur Infrastructure Réseau – OVHcloud\n\n### Mission\n\nGestion et évolution des **réseaux backbone** d''OVHcloud.\n\n### Tâches\n\n- Configuration Juniper / Cisco\n- Automatisation réseau (Ansible, Python)\n- Supervision et alerting\n\n### Profil\n\n- Réseaux & télécoms\n- BGP, OSPF, VLAN\n- Python scripting',5),
-('2025-06-01','2025-11-30',50.690830,3.175630,'Stage Dev Frontend React','Stage 6 mois Roubaix. Interface de gestion cloud utilisee par 1,5M clients.',1000,'## Développeur Frontend React – OVHcloud\n\n### Mission\n\nDéveloppement du **Control Panel OVHcloud**, utilisé par 1,5 million de clients.\n\n### Technologies\n\n- React + TypeScript\n- Design system interne (ODS)\n- Tests Cypress + Jest\n- i18n (15 langues)\n\n### Profil\n\n- Bac+4/5 développement web\n- React / TypeScript\n- Accessibilité (WCAG)\n\n### Open Source\n\nCode open source : https://github.com/ovh/manager',5),
-('2025-04-15','2025-10-15',50.629250,3.057256,'Stage QA Automatisation','Stage 6 mois Lille. Framework de tests automatises pour la plateforme cloud.',1050,'## QA Automatisation – OVHcloud Lille\n\n### Mission\n\nDéveloppement du **framework de tests automatisés** pour la plateforme OVHcloud.\n\n### Technologies\n\n- Python + pytest\n- Selenium + Playwright\n- Robot Framework\n- GitLab CI, Allure\n\n### Tâches\n\n- Tests E2E Control Panel\n- Tests API REST (Postman)\n- Intégration CI\n\n### Profil\n\n- Développement ou QA\n- Python\n- Rigueur et sens du détail',5),
+## 👤 Profil recherché
+- Bac+4/5 en développement mobile
+- Connaissance de React ou React Native
+- Sensibilité à l''UX mobile
+- Rigueur dans les tests',
+1),
 
--- === DASSAULT SYSTÈMES (6) ===
-('2025-04-01','2025-09-30',48.771199,2.332090,'Stage Dev 3DEXPERIENCE','Stage 6 mois Velizy. Developpement de composants pour la plateforme 3DEXPERIENCE.',1300,'## Développeur 3DEXPERIENCE – Dassault Systèmes\n\n### Mission\n\nDéveloppement de composants pour la plateforme **3DEXPERIENCE** utilisée par des milliers d''ingénieurs industriels.\n\n### Technologies\n\n- Java EE / Jakarta EE\n- JavaScript + React (UI)\n- APIs REST & GraphQL\n- Git, Jenkins, SonarQube\n\n### Profil\n\n- Master ou ingénieur informatique\n- Java confirmé\n- Intérêt pour les outils CAO/PLM',6),
-('2025-05-01','2025-10-31',48.771199,2.332090,'Stage R&D Simulation Mécanique','Stage 6 mois Velizy. Algorithmes de simulation par elements finis pour SIMULIA.',1400,'## R&D Simulation Mécanique – Dassault Systèmes\n\n### Mission\n\nDéveloppement d''algorithmes de **simulation par éléments finis** pour SIMULIA.\n\n### Tâches\n\n- Algorithmes numérique (C++)\n- Validation sur cas de référence\n- Documentation scientifique\n- Collaboration avec PhD researchers\n\n### Profil\n\n- Master 2 calcul scientifique / mécanique numérique\n- C++ et Python\n- Bases en éléments finis\n\n### Publication\n\nCo-publication possible selon les résultats.',6),
-('2025-04-01','2025-09-30',45.188529,5.724524,'Stage Dev Python Flask Grenoble','Stage 6 mois Grenoble. APIs microservices Python pour exposer fonctions de simulation.',1100,'## Développeur Python Flask – Dassault Systèmes Grenoble\n\n### Mission\n\nDéveloppement d''**APIs microservices** Python pour exposer les fonctionnalités de simulation.\n\n### Technologies\n\n- Python 3.11 + FastAPI\n- Docker + Kubernetes\n- OpenAPI / Swagger\n- PostgreSQL\n\n### Profil\n\n- Bac+4/5 développement\n- Python\n- API REST\n\n### Lieu\n\nGrenoble – à proximité des Alpes.',6),
+('2025-04-01','2025-09-30',48.856613,2.352222,'Stage DevOps & Infrastructure Cloud',
+'Stage 6 mois Paris. Mise en place et amélioration des pipelines CI/CD et de l''infrastructure cloud de l''agence.',1100,
+'# ☁️ Stage DevOps – Nexatech Solutions
+**Docker | Kubernetes | GitHub Actions | AWS**
+📍 *Paris – 11ème arrondissement*
+⏳ *Durée : 6 mois*
 
--- === BNP PARIBAS (7) ===
-('2025-04-01','2025-09-30',48.876670,2.329870,'Stage Dev Java Paiement International','Stage 6 mois Paris. Microservices bancaires pour la plateforme de paiement.',1250,'## Développeur Java Microservices – BNP Paribas\n\n### Mission\n\nDéveloppement de **microservices** pour la plateforme de paiement international.\n\n### Technologies\n\n- Java 17 + Spring Boot\n- Kafka (event sourcing)\n- MongoDB + PostgreSQL\n- OpenShift\n- TDD\n\n### Profil\n\n- Bac+4/5 développement\n- Java et Spring\n- Notions finance\n\n### Contexte\n\nFormation aux normes **PSD2**.',7),
-('2025-05-01','2025-10-31',48.876670,2.329870,'Stage ML Détection de Fraudes','Stage 6 mois Paris. Modeles ML scoring et detection de fraudes bancaires.',1350,'## Machine Learning Risques – BNP Paribas\n\n### Mission\n\nDéveloppement de **modèles de scoring** pour la détection de fraudes et le risque de crédit.\n\n### Tâches\n\n- Feature engineering transactionnel\n- Modèles (XGBoost, LightGBM, réseaux de neurones)\n- Interprétabilité (SHAP, LIME)\n- MLflow + Databricks\n\n### Données\n\n> **Milliards de transactions** réelles anonymisées.\n\n### Profil\n\n- Master 2 Data Science\n- Python avancé (scikit-learn, PyTorch)',7),
-('2025-06-01','2025-11-30',48.876670,2.329870,'Stage Analyste SOC Cyber','Stage 6 mois Paris. Surveillance temps reel et reponse aux incidents bancaires.',1300,'## Analyste SOC – BNP Paribas\n\n### Mission\n\nSurveillance en temps réel de l''**infrastructure bancaire**.\n\n### Tâches\n\n- Triage alertes SIEM (IBM QRadar)\n- Analyse forensique\n- Playbooks de réponse\n- Threat hunting\n\n### Profil\n\n- Master cybersécurité\n- MITRE ATT&CK\n- Linux et réseau\n\n### Avantages\n\n- Formations certifiantes (CompTIA, SANS)',7),
-('2025-04-15','2025-10-15',45.748040,4.846760,'Stage Data Analyst BI Lyon','Stage 6 mois Lyon. Tableaux de bord Power BI pour la direction BNP Paribas.',1100,'## Data Analyst BI – BNP Paribas Lyon\n\n### Mission\n\nCréation de **tableaux de bord décisionnels** pour les équipes de direction.\n\n### Technologies\n\n- Power BI + DAX\n- SQL Server\n- Python (pandas)\n- Azure Synapse\n\n### Profil\n\n- Formation data ou business\n- Power BI requis\n- SQL avancé\n- Sens de la communication',7),
-('2025-05-01','2025-10-31',48.856614,2.352222,'Stage Dev Kotlin Android Finance','Stage 6 mois Paris. Application Android de gestion de flotte BNP Paribas Leasing.',1150,'## Développeur Kotlin Android – BNP Paribas\n\n### Mission\n\nApplication Android de **gestion de flotte** pour BNP Paribas Leasing Solutions.\n\n### Technologies\n\n- Kotlin + Jetpack Compose\n- Coroutines + Flow\n- Room + Retrofit + Hilt\n\n### Profil\n\n- Bac+4/5 mobile\n- Kotlin Android\n- Clean Architecture MVVM',7),
+---
 
--- === SOPRA STERIA (8) ===
-('2025-04-01','2025-09-30',48.874510,2.287540,'Stage Dev .NET Secteur Public','Stage 6 mois Paris. Application GRH pour un ministere client.',1100,'## Développeur .NET – Sopra Steria Paris\n\n### Mission\n\nDéveloppement d''une application de **gestion RH** pour un ministère client.\n\n### Technologies\n\n- C# .NET 8 + ASP.NET Core\n- Angular 17 (front)\n- SQL Server\n- Azure DevOps\n\n### Profil\n\n- Bac+4/5 développement\n- C# (ou Java)\n- Architecture MVC\n\n### Contexte\n\nMission en régie chez le client, 4j/5 sur site.',8),
-('2025-05-01','2025-10-31',45.748040,4.846760,'Stage Dev Angular Assurance','Stage 6 mois Lyon. Refonte interface portail gestion de sinistres assurance.',1050,'## Développeur Angular – Sopra Steria Lyon\n\n### Mission\n\nRefonte de l''interface d''un portail de **gestion de sinistres**.\n\n### Technologies\n\n- Angular 17 + RxJS\n- Java Spring Boot\n- Jest + Cypress\n- Azure Pipelines\n\n### Profil\n\n- Bac+4/5 web\n- Angular ou React\n- Goût pour l''UX\n\n### Équipe\n\n15 personnes, Scrum.',8),
-('2025-05-01','2025-10-31',47.322047,5.041480,'Stage Dev Vue.js Industrie','Stage 6 mois Dijon. Application de suivi de production industrielle.',1050,'## Développeur Full Stack Vue.js – Sopra Steria Dijon\n\n### Mission\n\nApplication de **suivi de production** pour une PME industrielle.\n\n### Technologies\n\n- Vue.js 3 + Pinia\n- FastAPI (Python)\n- MySQL, Docker\n\n### Profil\n\n- Bac+4/5 développement\n- Vue.js ou React + Python\n- Autonomie',8),
-('2025-06-01','2025-11-30',47.751569,7.335888,'Stage Dev Android Terrain','Stage 6 mois Mulhouse. Application Android pour techniciens terrain.',1000,'## Développeur Android – Sopra Steria Mulhouse\n\n### Mission\n\n**Application Android** pour la saisie des interventions des techniciens terrain.\n\n### Technologies\n\n- Kotlin + Jetpack Compose\n- Room + Retrofit\n- Hilt\n\n### Contexte\n\nApplication offline avec synchronisation différée.\n\n### Profil\n\n- Bac+4/5 mobile\n- Kotlin ou Java Android\n- Jetpack apprécié',8),
-('2025-04-01','2025-09-30',48.573406,7.752111,'Stage Data Engineer ETL Banking','Stage 6 mois Strasbourg. Pipelines ETL datawarehouse decisionnel banque regionale.',1100,'## Data Engineer ETL – Sopra Banking Strasbourg\n\n### Mission\n\n**Pipelines ETL** alimentant le datawarehouse décisionnel d''une banque régionale.\n\n### Technologies\n\n- Talend Open Studio\n- Python + pandas\n- Oracle Database\n- Power BI\n\n### Profil\n\n- Bac+4/5 informatique ou data\n- SQL avancé\n- Python et ETL appréciés',8),
-('2025-05-01','2025-10-31',48.692054,6.184417,'Stage Dev Java EE Nancy','Stage 6 mois Nancy. Refonte SI de gestion pour collectivite locale.',1000,'## Développeur Java EE – Sopra Steria Nancy\n\n### Mission\n\nRefonte d''un **système d''information** de gestion pour collectivité locale.\n\n### Technologies\n\n- Java 11 + Jakarta EE\n- JSF / PrimeFaces\n- Oracle DB, JBoss/WildFly\n\n### Profil\n\n- Bac+4/5 Java\n- Java EE ou Spring\n- Sens du service public',8),
-('2025-04-15','2025-10-15',43.296482,5.381794,'Stage Dev Java Spring Boot Logistique','Stage 6 mois Marseille. API de gestion logistique portuaire pour le Grand Port.',1100,'## Développeur Java Spring Boot – Sopra Steria Marseille\n\n### Mission\n\n**API de gestion logistique portuaire** pour le Grand Port Maritime de Marseille.\n\n### Technologies\n\n- Java 17 + Spring Boot 3\n- REST + OpenAPI\n- Oracle DB, GitLab CI\n\n### Profil\n\n- Bac+4/5 Java\n- Spring Boot\n- Logistique appréciée',8),
+## 📝 Présentation du stage
+Vous intégrerez l''équipe infrastructure de Nexatech pour automatiser et fiabiliser les déploiements des projets clients.
 
--- === AMADEUS (9) ===
-('2025-04-01','2025-09-30',43.616420,7.054840,'Stage Dev Java Distribué Voyage','Stage 6 mois Sophia Antipolis. Systemes distribues pour reservation aerienne.',1300,'## Développeur Java Distribué – Amadeus\n\n### Mission\n\nDéveloppement du **moteur de disponibilité** des vols, traité en temps réel.\n\n### Technologies\n\n- Java 17 + frameworks internes\n- Cassandra (NoSQL)\n- Kafka (messaging)\n- Tests de performance (JMeter)\n\n### Enjeux\n\n> **2 milliards de transactions** par an. Chaque milliseconde compte.\n\n### Profil\n\n- Ingénieur ou Master info\n- Java solide\n- Anglais professionnel requis',9),
-('2025-05-01','2025-10-31',43.616420,7.054840,'Stage Data Engineer Trafic Aérien','Stage 6 mois Sophia Antipolis. Pipelines de donnees pour analyser reservations aeriennes.',1250,'## Data Engineer – Amadeus\n\n### Mission\n\n**Pipelines de données** pour analyser les tendances de réservation aérienne mondiales.\n\n### Technologies\n\n- Python + PySpark\n- Kafka + Flink\n- Snowflake, Airflow\n\n### Données\n\n- 500 millions de recherches de vols / jour\n- 200 compagnies aériennes\n\n### Profil\n\n- Master 2 Data Engineering\n- Python et SQL avancés\n- Anglais obligatoire',9),
-('2025-04-01','2025-09-30',43.704948,7.262012,'Stage Frontend React Voyage','Stage 6 mois Nice. Interface de recherche et reservation vols Amadeus.',1200,'## UX/Frontend React – Amadeus Nice\n\n### Mission\n\nRefonte de l''interface de **recherche et réservation** de vols.\n\n### Technologies\n\n- React 18 + TypeScript\n- Storybook\n- Figma (collaboration)\n- Jest + Testing Library\n\n### Profil\n\n- Bac+4/5 front\n- React + TypeScript\n- Accessibilité\n- Anglais courant',9),
+---
 
--- === UBISOFT (10) ===
-('2025-04-01','2025-09-30',48.873417,2.329815,'Stage Dev Gameplay C++','Stage 6 mois Paris. Developpement de mecaniques de jeu pour un titre AAA.',1200,'## Développeur Gameplay C++ – Ubisoft\n\n### Mission\n\nDéveloppement de **mécaniques de gameplay** pour un titre AAA en production (confidentiel).\n\n### Technologies\n\n- C++ (Anvil Next engine)\n- Lua (scripting)\n- Perforce, Optick (profiling)\n\n### Tâches\n\n- Features gameplay\n- Bugs gameplay\n- Optimisation\n- Collaboration game designers\n\n### Profil\n\n- Ingénieur ou Master\n- C++ solide\n- Portfolio jeux vidéo',10),
-('2025-05-01','2025-10-31',48.873417,2.329815,'Stage Dev Outils Pipeline 3D','Stage 6 mois Paris. Outils pipeline assets 3D pour artistes et game designers.',1150,'## Développeur Outils R&D – Ubisoft\n\n### Mission\n\nDéveloppement d''**outils de production** pour les artistes et designers.\n\n### Technologies\n\n- Python (pipeline)\n- C++ (plugins moteur)\n- Qt (interfaces)\n- DCC : Maya, Houdini\n\n### Tâches\n\n- Plugins Maya/Houdini\n- Automatisation d''assets\n- Interfaces opérateurs\n\n### Profil\n\n- Info ou TAD\n- Python requis\n- DCC apprécié',10),
-('2025-04-15','2025-10-15',48.573406,7.752111,'Stage Dev Unity Serious Game','Stage 6 mois Strasbourg. Serious game de formation aux risques en entreprise.',1000,'## Développeur Unity – Ubisoft / partenaire\n\n### Mission\n\nDéveloppement d''un **serious game** de formation aux risques en entreprise.\n\n### Technologies\n\n- Unity 2023 + C#\n- Blender (assets simples)\n- Git LFS\n\n### Profil\n\n- Développement ou game design\n- Unity + C#\n- Portfolio Unity indispensable',10),
+## 🎯 Missions
+- Amélioration des pipelines CI/CD (GitHub Actions)
+- Containerisation des applications (Docker, Docker Compose)
+- Migration vers Kubernetes (EKS sur AWS)
+- Monitoring avec Prometheus et Grafana
+- Rédaction de documentation technique
 
--- === ORANGE (11) ===
-('2025-04-01','2025-09-30',48.906920,2.303490,'Stage Dev 5G IoT','Stage 6 mois Paris. Solutions IoT industrielles exploitant le reseau 5G Orange.',1200,'## Développeur 5G/IoT – Orange\n\n### Mission\n\nDéveloppement de **démonstrateurs IoT** exploitant les capacités 5G d''Orange.\n\n### Technologies\n\n- Python + MQTT\n- LoRaWAN, NB-IoT\n- AWS IoT Core\n- Docker + Kubernetes\n\n### Tâches\n\n- Prototypage IoT industriel\n- Intégration Live Objects\n- Tests latence 5G\n\n### Profil\n\n- Réseaux ou embarqué\n- Python et notions IoT',11),
-('2025-05-01','2025-10-31',48.906920,2.303490,'Stage Cybersécurité Télécom','Stage 6 mois Paris. Securite des infrastructures telecom Orange Cyberdefense.',1300,'## Cybersécurité Réseau – Orange Cyberdefense\n\n### Mission\n\nSécurisation des **réseaux télécoms** d''Orange Cyberdefense.\n\n### Tâches\n\n- Analyse flux réseau (DPI)\n- Règles firewall\n- Red Team exercises\n- Veille CVE télécom (SS7, Diameter)\n\n### Profil\n\n- Master cybersécurité ou réseaux\n- TCP/IP, BGP, MPLS\n- Python scripting\n\n### Certification\n\n**CEH** possible en fin de stage.',11),
-('2025-05-01','2025-10-31',47.218371,-1.553621,'Stage Dev IoT Industrie Nantes','Stage 6 mois Nantes. Maintenance predictive connectee pour equipements industriels.',1050,'## Développeur IoT Industrie – Orange Business Nantes\n\n### Mission\n\n**Maintenance prédictive connectée** pour équipements industriels.\n\n### Technologies\n\n- Python + MQTT\n- InfluxDB (time-series)\n- Grafana\n- Raspberry Pi + capteurs\n\n### Tâches\n\n- Firmware capteurs (MicroPython)\n- Backend de collecte\n- Dashboard temps réel\n\n### Profil\n\n- IoT ou systèmes embarqués\n- Python\n- Débrouillardise électronique',11),
-('2025-04-01','2025-09-30',48.117266,-1.677793,'Stage Dev Vue.js Supervision','Stage 6 mois Rennes. Interface de supervision reseau pour equipes NOC Orange.',1100,'## Développeur Vue.js – Orange Rennes\n\n### Mission\n\n**Interface de supervision réseau** pour les équipes NOC d''Orange.\n\n### Technologies\n\n- Vue.js 3 + TypeScript + Pinia\n- D3.js (visualisations réseau)\n- FastAPI (Python)\n- WebSockets\n\n### Profil\n\n- Bac+4/5 front\n- Vue.js ou React\n- Intérêt pour les réseaux',11),
+---
 
--- === MICHELIN (12) ===
-('2025-04-15','2025-10-15',45.785367,3.086380,'Stage Dev MES Industrie 4.0','Stage 6 mois Clermont-Ferrand. MES pour nouvelles lignes de production pneumatiques.',1100,'## Développeur MES – Michelin\n\n### Mission\n\nDéveloppement du **Manufacturing Execution System** pour les nouvelles lignes de production.\n\n### Technologies\n\n- Java + Spring Boot (backend)\n- React (supervision)\n- OPC-UA (protocole industriel)\n- SQL Server\n\n### Contexte\n\nEn lien direct avec les **opérateurs d''usine**.\n\n### Profil\n\n- Informatique industrielle\n- Java requis\n- Esprit terrain',12),
-('2025-05-01','2025-10-31',45.785367,3.086380,'Stage DS Maintenance Prédictive','Stage 6 mois Clermont-Ferrand. Prediction de pannes machine par IA sur donnees capteurs.',1150,'## Data Scientist Maintenance Prédictive – Michelin\n\n### Mission\n\nModèles de **maintenance prédictive** pour anticiper les pannes.\n\n### Données\n\n- Capteurs vibratoires, thermiques, acoustiques\n- Historiques 10 ans\n- 50 000 points de mesure\n\n### Stack\n\n- Python (scikit-learn, TensorFlow)\n- Time series (Prophet, LSTM)\n- Databricks + Delta Lake\n\n### Profil\n\n- Master 2 Data Science\n- Séries temporelles\n\n### Impact\n\n> **100 000€ d''économie** par panne évitée.',12),
-('2025-05-01','2025-10-31',47.322047,5.041480,'Stage DS NLP Rapports','Stage 6 mois Dijon. NLP pour classification automatique de rapports d''incident.',1200,'## Data Scientist NLP – Michelin\n\n### Mission\n\nModèles de **traitement automatique du langage** pour l''analyse des rapports d''incident.\n\n### Technologies\n\n- Python + Transformers (HuggingFace)\n- spaCy + NLTK\n- PostgreSQL, MLflow\n\n### Tâches\n\n- Classification automatique des rapports\n- Extraction d''entités nommées\n- Fine-tuning BERT\n\n### Profil\n\n- Master 2 NLP ou Data Science\n- Python avancé\n- Transformers HuggingFace',12),
-('2025-04-15','2025-10-15',43.316667,-1.983333,'Stage Dev Python Industriel Bayonne','Stage 6 mois Bayonne. Automatisation controle qualite en usine par vision artificielle.',1050,'## Développeur Python Industriel – Michelin Bayonne\n\n### Mission\n\nAutomatisation du **contrôle qualité** par vision artificielle.\n\n### Technologies\n\n- Python 3 + OpenCV\n- OPC-UA (PLC)\n- SQLite\n- Tkinter (interface opérateur)\n\n### Profil\n\n- Informatique industrielle\n- Python solide\n- Vision artificielle appréciée\n\n### Lieu\n\nBayonne – côte Basque.',12),
+## 🧰 Stack technique
+- Docker, Kubernetes (EKS)
+- GitHub Actions, Terraform
+- AWS (EC2, S3, RDS, EKS)
+- Prometheus, Grafana, Datadog
 
--- === DECATHLON (13) ===
-('2025-04-01','2025-09-30',50.665220,3.100500,'Stage Dev Backend PHP Ecommerce','Stage 6 mois Villeneuve d Ascq. Nouvelles fonctionnalites plateforme e-commerce Decathlon.',1050,'## Développeur Backend PHP/Symfony – Decathlon\n\n### Mission\n\nNouvelles fonctionnalités pour la **plateforme e-commerce** Decathlon (200M visites/an).\n\n### Technologies\n\n- PHP 8 + Symfony 6\n- MySQL + ElasticSearch\n- RabbitMQ\n- Docker + GitLab CI\n\n### Profil\n\n- Bac+4/5 web\n- PHP/Symfony\n- RESTful API\n\n### Avantages\n\n- Réduction Decathlon 30%\n- Campus sport gratuit',13),
-('2025-05-01','2025-10-31',50.665220,3.100500,'Stage Data Analyst Ecommerce','Stage 6 mois Villeneuve d Ascq. Analyse comportement client en ligne et AB tests.',1000,'## Data Analyst E-commerce – Decathlon\n\n### Mission\n\nAnalyse du **comportement utilisateur** pour améliorer les taux de conversion.\n\n### Tâches\n\n- Funnels de conversion (GA4)\n- A/B tests\n- Dashboards Looker Studio\n- Recommandations UX\n\n### Stack\n\n```\nPython · BigQuery · Looker Studio · GA4 · SQL\n```\n\n### Profil\n\n- Data ou marketing digital\n- SQL et Python\n- Sens produit\n\n### Avantages\n\n- Sport pendant la pause déjeuner !',13),
-('2025-06-01','2025-11-30',43.610769,3.876716,'Stage Dev PHP Laravel Sport','Stage 6 mois Montpellier. Plateforme de gestion d evenements sportifs clubs Decathlon.',1000,'## Développeur PHP Laravel – Decathlon Digital\n\n### Mission\n\nPlateforme de **gestion d''événements sportifs** pour les clubs partenaires.\n\n### Technologies\n\n- PHP 8 + Laravel 11\n- Vue.js 3\n- MySQL\n- Stripe (paiement)\n\n### Tâches\n\n- Inscriptions et paiement en ligne\n- Notifications (email/SMS)\n- API mobile\n\n### Profil\n\n- PHP/Laravel\n- Passion sport est un plus',13),
-('2025-04-01','2025-09-30',50.629250,3.057256,'Stage Cloud Engineer AWS','Stage 6 mois Lille. Migration et optimisation e-commerce Decathlon vers AWS.',1150,'## Cloud Engineer AWS – Decathlon\n\n### Mission\n\nMigration des services e-commerce Decathlon vers **AWS**.\n\n### Technologies\n\n- AWS (ECS, RDS, Lambda, CloudFront)\n- Terraform\n- GitHub Actions\n- Datadog\n\n### Tâches\n\n- Infrastructure as Code\n- Optimisation coûts AWS\n- Alerting\n\n### Profil\n\n- Cloud ou systèmes\n- AWS (SAA appréciée)\n- Terraform apprécié',13),
+---
 
--- === SNCF (14) ===
-('2025-04-01','2025-09-30',48.882750,2.360000,'Stage Dev Mobile React Native SNCF','Stage 6 mois Paris. SNCF Connect application voyage 20 millions utilisateurs.',1200,'## Développeur Mobile React Native – SNCF Connect\n\n### Mission\n\nNouvelles fonctionnalités pour **SNCF Connect**, l''application de voyage (20M utilisateurs).\n\n### Technologies\n\n- React Native (iOS + Android)\n- TypeScript\n- Redux Toolkit\n- Jest + Detox\n\n> Chaque feature est utilisée des millions de fois.\n\n### Profil\n\n- Mobile\n- React Native ou Flutter\n- UX/performance mobile\n\n### Avantages\n\n- Carte Avantage SNCF\n- Télétravail 3j/sem',14),
-('2025-05-01','2025-10-31',48.882750,2.360000,'Stage Ingénieur Systèmes Embarqués Train','Stage 6 mois Paris. Logiciels embarques TGV M nouvelle generation certification SIL4.',1250,'## Ingénieur Systèmes Embarqués – SNCF\n\n### Mission\n\nLogiciels embarqués pour les **trains TGV M** de nouvelle génération.\n\n### Technologies\n\n- C / C++ temps réel (RTOS VxWorks)\n- Protocoles ferroviaires (ETCS, GSM-R)\n- Simulation HIL\n- Certification EN 50128\n\n### Profil\n\n- Ingénieur systèmes/embarqué\n- C/C++\n- Sécurité-innocuité\n\n### Spécificité\n\nCertification **SIL 4** (niveau maximal).',14),
-('2025-06-01','2025-11-30',45.748040,4.846760,'Stage Big Data Prédiction Trafic','Stage 6 mois Lyon. Prediction des retards et optimisation des circulations ferroviaires.',1150,'## Big Data Trafic – SNCF Lyon\n\n### Mission\n\nModèles de **prédiction des retards** et optimisation des circulations.\n\n### Données\n\n- GPS de 4 000 trains en temps réel\n- Historiques 15 ans\n- Météo, travaux, incidents\n\n### Stack\n\n- Spark + Hadoop (200 nœuds)\n- Python + scikit-learn\n- Kafka, Grafana\n\n### Profil\n\n- Master 2 Data Science ou Big Data\n- Spark et Python',14),
-('2025-04-15','2025-10-15',48.832424,2.358520,'Stage Architecte Microservices Billetterie','Stage 6 mois Paris. Refonte architecture microservices billetterie SNCF Connect.',1350,'## Architecte Microservices – SNCF\n\n### Mission\n\nRefonte de l''**architecture de la billetterie** vers microservices.\n\n### Tâches\n\n- Design architecture cible\n- Migration monolithe -> microservices\n- Event-driven (Kafka)\n- API Gateway (Kong)\n\n### Stack\n\n```\nJava 17 · Spring Cloud · Kafka · Kong\nDocker · Kubernetes · AWS\n```\n\n### Profil\n\n- Ingénieur ou Master 2\n- Java Spring Cloud\n- Expérience microservices',14),
-('2025-06-01','2025-11-30',48.692054,6.184417,'Stage Dev Swift iOS SNCF Nancy','Stage 6 mois Nancy. Application iOS SNCF Connect nouvelles fonctionnalites voyage.',1100,'## Développeur Swift iOS – SNCF Nancy\n\n### Mission\n\nNouvelles fonctionnalités de l''**application iOS SNCF Connect**.\n\n### Technologies\n\n- Swift 5.9 + SwiftUI\n- Combine\n- XCTest\n- Fastlane\n\n### Profil\n\n- Bac+4/5 mobile\n- Swift iOS\n- SwiftUI apprécié',14),
+## 👤 Profil recherché
+- Bac+4/5 informatique ou systèmes
+- Bases Linux et scripting Bash/Python
+- Notions de Docker et CI/CD
+- Autonomie et rigueur',
+1),
 
--- === CRITEO (15) ===
-('2025-04-01','2025-09-30',48.868370,2.310880,'Stage Dev Scala Spark Big Data','Stage 6 mois Paris. Pipelines distribues pour 700 TB de donnees publicitaires.',1400,'## Développeur Scala/Spark – Criteo\n\n### Mission\n\nDéveloppement de **pipelines de traitement** pour les données publicitaires.\n\n### Technologies\n\n- Scala + Apache Spark\n- Kafka (streaming)\n- AWS S3 + EMR\n- Hive, Iceberg\n\n> **700 TB de données** traitées chaque jour.\n\n### Profil\n\n- Ingénieur ou Master\n- Scala ou Java\n- Systèmes distribués\n- Anglais courant',15),
-('2025-05-01','2025-10-31',48.868370,2.310880,'Stage ML Publicité Ciblée','Stage 6 mois Paris. Algorithmes de recommandation et prediction de clics CTR.',1450,'## Machine Learning – Criteo\n\n### Mission\n\nAmélioration des **algorithmes de recommandation** et prédiction de clics.\n\n### Tâches\n\n- Deep learning (CTR prediction)\n- Feature store et engineering\n- A/B testing online\n- Serving (latence < 5ms)\n\n### Stack\n\n```python\nPyTorch · Spark · Feast · Kubeflow\n```\n\n### Profil\n\n- Master 2 ML ou PhD\n- Deep learning\n- Systèmes de recommandation',15),
-('2025-05-15','2025-11-15',48.856614,2.352222,'Stage Product Owner Tech','Stage 6 mois Paris. Coordination sprints Agile et backlog pour feature team data.',1200,'## Product Owner Tech – Criteo\n\n### Mission\n\nCoordination des **sprints Agile** et backlog d''une feature team data.\n\n### Tâches\n\n- User stories\n- Priorisation du backlog\n- Animation Scrum\n- Interface métier / tech\n\n### Profil\n\n- Bac+4/5 info + gestion\n- Notions techniques\n- Leadership\n\n### Certification\n\n**PSPO (Scrum.org)** offerte.',15),
+('2025-06-01','2025-11-30',48.856613,2.352222,'Stage Développeur Backend PHP/Laravel',
+'Stage 6 mois Paris. Développement de nouvelles fonctionnalités sur une plateforme e-commerce Laravel pour un client retail.',1050,
+'# 🐘 Stage Développeur Backend PHP/Laravel – Nexatech
+**PHP 8 | Laravel 11 | MySQL | API REST**
+📍 *Paris – 11ème arrondissement*
+⏳ *Durée : 6 mois*
 
--- === VEOLIA (16) ===
-('2025-04-15','2025-10-15',48.803840,2.120280,'Stage Dev IoT Smart Water','Stage 6 mois Aubervilliers. Solutions IoT surveillance reseaux eau potable.',1100,'## Développeur IoT Smart Water – Veolia\n\n### Mission\n\n**IoT pour la surveillance** des réseaux d''eau potable.\n\n### Tâches\n\n- Firmware embarqué (C/C++)\n- Capteurs pression / débit\n- Backend (Python + MQTT)\n- Dashboard Grafana\n\n### Impact\n\n> **1 million de litres d''eau économisés** par fuite détectée.\n\n### Profil\n\n- Embarqué ou IoT\n- C/C++ et Python\n- Sensibilité environnementale',16),
-('2025-05-01','2025-10-31',48.803840,2.120280,'Stage DS Optimisation Énergie','Stage 6 mois Aubervilliers. Modeles d''optimisation energetique pour reseaux de chaleur.',1150,'## Data Scientist Énergie – Veolia\n\n### Mission\n\nModèles d''**optimisation énergétique** pour les réseaux de chaleur.\n\n### Données\n\n- Capteurs thermiques temps réel\n- Météo et historiques de consommation\n\n### Tâches\n\n- Prédiction (LSTM, Prophet)\n- Optimisation (algorithmes génétiques)\n- Tableaux de bord carbone\n\n### Profil\n\n- Master 2 Data Science\n- Python ML\n- Intérêt environnemental\n\n### Engagement\n\nContribution directe à la **réduction de CO2**.',16),
-('2025-05-01','2025-10-31',49.443232,1.099971,'Stage Dev Fullstack Environnement','Stage 6 mois Rouen. Outil de suivi des indicateurs environnementaux industriels.',1050,'## Développeur Fullstack PHP – Veolia Rouen\n\n### Mission\n\nOutil de **suivi des indicateurs environnementaux** pour sites industriels.\n\n### Technologies\n\n- PHP 8 + Symfony 7\n- React (dashboard)\n- PostgreSQL, Docker\n\n### Profil\n\n- Bac+4/5 développement\n- PHP/Symfony\n- Sensibilité environnementale',16),
+---
 
--- === EURONEXT (17) ===
-('2025-04-01','2025-09-30',48.865950,2.346340,'Stage Dev C++ Trading Haute Fréquence','Stage 6 mois Paris. Moteur de matching d ordres boursiers ultra-basse latence.',1500,'## Développeur C++ Trading – Euronext\n\n### Mission\n\nDéveloppement du **moteur de matching d''ordres**, le cœur des bourses européennes.\n\n### Technologies\n\n- C++17 (ultra-optimisé)\n- Linux kernel bypass (DPDK)\n- FIX protocol\n- Tests en nanosecondes\n\n> **10 millions d''ordres/seconde**, latence de 10 microsecondes.\n\n### Profil\n\n- Top école ou Master info\n- C++ avancé (templates, mémoire)\n- Passion performance système',17),
-('2025-05-01','2025-10-31',48.865950,2.346340,'Stage Ingénieur Infrastructure Critique','Stage 6 mois Paris. Infrastructure critique SLA 99.999% pour bourses europeennes.',1300,'## Ingénieur Infrastructure – Euronext\n\n### Mission\n\nMaintenance et évolution de l''**infrastructure critique** des bourses de Paris, Amsterdam et Bruxelles.\n\n### Technologies\n\n- Linux (RHEL) + bare metal\n- Ansible\n- Monitoring Nagios + Prometheus\n- Réseau ultra-faible latence\n\n### Profil\n\n- Systèmes & réseaux\n- Linux avancé\n- Haute disponibilité\n- Rigueur absolue (SLA 99.999%)',17),
-('2025-05-01','2025-10-31',45.188529,5.724524,'Stage SRE Platform Engineering','Stage 6 mois Grenoble. Fiabilite et observabilite des systemes de marche Euronext.',1350,'## SRE Platform Engineering – Euronext Grenoble\n\n### Mission\n\nAmélioration de la **fiabilité et observabilité** des systèmes de marché.\n\n### Tâches\n\n- SLI/SLO/SLA definition\n- Instrumentation (Prometheus + Grafana)\n- Chaos engineering\n- Runbooks automatisés\n\n### Stack\n\n```\nLinux · Prometheus · Grafana · Ansible · Python · Go\n```\n\n### Profil\n\n- Systèmes ou SRE\n- Linux avancé\n- Python et Go',17),
+## 📝 Présentation du stage
+Vous interviendrez sur le backend d''une plateforme e-commerce développée sous Laravel pour un client dans le secteur du retail. Le projet est en production avec plus de 50 000 commandes par mois.
 
--- === DOCTOLIB (18) ===
-('2025-04-01','2025-09-30',48.860320,2.349670,'Stage Dev Ruby on Rails Santé','Stage 6 mois Paris. Nouvelles features Doctolib 80 millions de patients en Europe.',1300,'## Développeur Ruby on Rails – Doctolib\n\n### Mission\n\nNouvelles fonctionnalités sur la **plateforme Doctolib** (80M patients).\n\n### Technologies\n\n- Ruby on Rails 7\n- React + TypeScript\n- PostgreSQL + Redis\n- AWS (hébergement HDS)\n\n### Tâches\n\n- Features produit (cycle complet)\n- Code reviews et pair programming\n- Tests RSpec (TDD)\n\n### Profil\n\n- Bac+4/5 développement\n- Ruby ou Python\n- Qualité logicielle\n\n> Vos features utilisées par **500 000 médecins**.',18),
-('2025-05-01','2025-10-31',48.860320,2.349670,'Stage SRE Plateforme Santé','Stage 6 mois Paris. Disponibilite et performance plateforme de sante SLA 99.99%.',1350,'## Site Reliability Engineer – Doctolib\n\n### Mission\n\nGarantir la **disponibilité et performance** de la plateforme (99.99% SLA).\n\n### Tâches\n\n- Monitoring (Datadog, PagerDuty)\n- Capacity planning et load testing\n- Terraform, Ansible\n- Post-mortems\n\n### Stack\n\n```\nAWS · Kubernetes · Terraform · Datadog · Grafana\n```\n\n### Profil\n\n- DevOps ou systèmes\n- Linux et Python/Bash\n- Sens des responsabilités',18),
+---
 
--- === RENAULT (19) ===
-('2025-04-01','2025-09-30',48.825210,2.204900,'Stage Dev Embarqué ADAS','Stage 6 mois Guyancourt. Fonctions ADAS pour vehicule electrique Renault.',1300,'## Développeur Logiciel Embarqué – Renault\n\n### Mission\n\nDéveloppement de fonctions **ADAS** pour les véhicules électriques Renault.\n\n### Technologies\n\n- C / C++ embarqué (AUTOSAR)\n- MATLAB/Simulink\n- CANoe (CAN bus)\n- Git + Jenkins\n\n### Profil\n\n- Ingénieur systèmes embarqués\n- C/C++\n- AUTOSAR ou RTOS\n- Permis B apprécié\n\n### Futur\n\nFonctions pour la **Renault 5 E-Tech** et future R4.',19),
-('2025-05-01','2025-10-31',48.825210,2.204900,'Stage Dev Mobile Flutter Renault','Stage 6 mois Guyancourt. Application My Renault services connectes vehicule electrique.',1150,'## Développeur Mobile Flutter – Renault\n\n### Mission\n\n**Application My Renault** pour contrôler son véhicule à distance.\n\n### Technologies\n\n- Flutter (iOS + Android)\n- Dart\n- API REST véhicule\n- Firebase (notifications)\n\n### Features\n\n- Pré-conditionnement\n- Suivi de charge VE\n- Localisation et navigation\n- Diagnostic à distance\n\n### Profil\n\n- Mobile (Flutter ou React Native)',19),
-('2025-06-01','2025-11-30',44.837789,-0.579180,'Stage Ingénieur Test Automobile','Stage 6 mois Bordeaux. Validation logiciels embarques calculateurs Renault.',1200,'## Ingénieur Test Automobile – Renault Bordeaux\n\n### Mission\n\nValidation des **logiciels embarqués** des calculateurs.\n\n### Technologies\n\n- MATLAB/Simulink\n- Python (automation)\n- CANoe / CANalyzer\n- DOORS (exigences)\n\n### Profil\n\n- Ingénieur systèmes\n- Python\n- CANbus apprécié\n- Rigueur',19),
+## 🎯 Missions
+- Développement de nouvelles fonctionnalités métier
+- Optimisation des requêtes SQL (MySQL, Eloquent)
+- Mise en place d''APIs REST consommées par le frontend
+- Rédaction de tests unitaires (PHPUnit, Pest)
+- Participation aux revues de code
 
--- === WORLDLINE (20) ===
-('2025-04-01','2025-09-30',48.796480,2.121220,'Stage Dev Java Paiement Sécurisé','Stage 6 mois Bezons. Protocoles de paiement securise EMV ISO 8583.',1200,'## Développeur Paiement Java – Worldline\n\n### Mission\n\nDéveloppement de modules de **traitement des transactions** pour terminaux de paiement.\n\n### Technologies\n\n- Java 17 + Spring Boot\n- Protocoles EMV, ISO 8583\n- HSM (Hardware Security Module)\n- Tests conformité PCI-DSS\n\n### Profil\n\n- Bac+4/5 développement\n- Java\n- Cryptographie et sécurité\n\n### Certifications\n\nFormation **PCI-DSS** et EMVCo.',20),
-('2025-05-01','2025-10-31',48.796480,2.121220,'Stage Ingénieur Sécurité Paiements','Stage 6 mois Bezons. Pentest et audit securite des systemes de paiement.',1300,'## Ingénieur Sécurité Paiements – Worldline\n\n### Mission\n\nAudit et renforcement de la **sécurité des systèmes de paiement**.\n\n### Tâches\n\n- Pentests APIs de paiement\n- Analyse cryptographique\n- Conformité 3DS2 / SCA\n- Documentation sécurité\n\n### Stack\n\n- Burp Suite, OWASP ZAP\n- Python scripting\n- HSM Thales/Utimaco\n\n### Profil\n\n- Master cybersécurité\n- Cryptographie (RSA, AES, ECC)\n\n### Certification\n\n**OSCP** possible.',20),
-('2025-06-01','2025-11-30',47.218371,-1.553621,'Stage Sécurité Applicative Paiement','Stage 6 mois Nantes. Pentests et audits des applications de paiement Worldline.',1200,'## Sécurité Applicative – Worldline Nantes\n\n### Mission\n\nPentests et audits de sécurité sur les **applications de paiement**.\n\n### Tâches\n\n- Tests d''intrusion (OWASP)\n- Revue de code sécurisé\n- Bug bounty interne\n- Rapports\n\n### Stack\n\n- Burp Suite Pro, OWASP ZAP\n- Python scripting, Kali Linux\n\n### Profil\n\n- Master cybersécurité\n- OWASP Top 10\n- Bases réseau et web',20),
-('2025-05-01','2025-10-31',49.894067,2.295753,'Stage Dev C# Réconciliation Comptable','Stage 6 mois Amiens. Module de reconciliation comptable pour transactions Worldline.',1050,'## Développeur C# .NET – Worldline Amiens\n\n### Mission\n\nModule de **réconciliation comptable** pour les transactions de paiement.\n\n### Technologies\n\n- C# .NET 8\n- SQL Server\n- WPF (interface)\n- Azure DevOps\n\n### Profil\n\n- Bac+4/5 développement\n- C# requis\n- Notions comptabilité appréciées',20);
+---
+
+## 🧰 Stack technique
+- PHP 8.3, Laravel 11
+- MySQL, Redis (cache)
+- API REST, Sanctum
+- PHPUnit, Pest, Laravel Telescope
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 développement web
+- Maîtrise de PHP et notions de Laravel
+- SQL intermédiaire
+- Sens de la qualité du code',
+1),
+
+('2025-04-15','2025-10-15',45.760000,4.841388,'Stage Développeur Frontend Vue.js',
+'Stage 6 mois Lyon. Refonte de l''interface d''une application de gestion interne en Vue.js 3 pour une ETI industrielle.',1000,
+'# 🟢 Stage Développeur Frontend Vue.js – Nexatech (Lyon)
+**Vue.js 3 | TypeScript | Pinia | Vite**
+📍 *Lyon – Part-Dieu*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous travaillerez sur la refonte complète de l''interface utilisateur d''une application de gestion interne pour un client industriel. Migration de Vue 2 vers Vue 3.
+
+---
+
+## 🎯 Missions
+- Migration des composants Vue 2 vers Vue 3 (Composition API)
+- Implémentation du state management avec Pinia
+- Consommation d''APIs REST
+- Design responsive en collaboration avec le designer UX
+- Tests E2E avec Playwright
+
+---
+
+## 🧰 Stack technique
+- Vue.js 3, TypeScript, Pinia
+- Vite, Vitest, Playwright
+- TailwindCSS, Headless UI
+- GitLab CI
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 développement frontend
+- Maîtrise de JavaScript/TypeScript
+- Notions de Vue.js ou React
+- Sensibilité UX',
+1),
+
+-- DATASPHERE (2)
+('2025-04-01','2025-09-30',45.760000,4.841388,'Stage Data Engineer – Pipelines Big Data',
+'Stage 6 mois Lyon. Conception et optimisation de pipelines de données pour des clients dans la santé et la finance avec Spark et Airflow.',1300,
+'# 📊 Stage Data Engineer – DataSphere
+**Apache Spark | Airflow | Kafka | Snowflake**
+📍 *Lyon – Confluence*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous rejoindrez l''équipe Data Engineering de DataSphere pour travailler sur des pipelines de données à grande échelle pour des clients dans les secteurs de la santé et de la finance.
+
+---
+
+## 🎯 Missions
+- Conception de pipelines ETL avec Apache Spark (PySpark)
+- Orchestration des workflows avec Apache Airflow
+- Ingestion de données en streaming (Kafka)
+- Optimisation des requêtes sur Snowflake
+- Monitoring de la qualité des données (Great Expectations)
+
+---
+
+## 🧰 Stack technique
+| Couche | Technologies |
+|--------|--------------|
+| Ingestion | Kafka, Debezium |
+| Transformation | Spark, dbt |
+| Stockage | Snowflake, S3 |
+| Orchestration | Airflow |
+| Qualité | Great Expectations |
+
+---
+
+## 👤 Profil recherché
+- Master 2 Data Engineering ou informatique
+- Python avancé (pandas, PySpark)
+- SQL intermédiaire à avancé
+- Notions de Spark ou Airflow appréciées',
+2),
+
+('2025-05-01','2025-10-31',45.760000,4.841388,'Stage Data Scientist – Machine Learning & NLP',
+'Stage 6 mois Lyon. Développement de modèles de traitement du langage naturel pour automatiser l''analyse de documents clients.',1350,
+'# 🤖 Stage Data Scientist NLP – DataSphere
+**Python | Transformers | HuggingFace | MLflow**
+📍 *Lyon – Confluence*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous travaillerez sur des modèles NLP pour automatiser l''extraction d''informations clés dans des documents contractuels pour un client dans le secteur financier.
+
+---
+
+## 🎯 Missions
+- Fine-tuning de modèles de langage (BERT, CamemBERT)
+- Extraction d''entités nommées (NER)
+- Classification automatique de documents
+- Déploiement de modèles avec MLflow et FastAPI
+- Évaluation et amélioration continue des performances
+
+---
+
+## 🧰 Stack technique
+- Python, HuggingFace Transformers
+- spaCy, NLTK, scikit-learn
+- MLflow, DVC, BentoML
+- PostgreSQL, Elasticsearch
+
+---
+
+## 👤 Profil recherché
+- Master 2 IA, Data Science ou NLP
+- Python avancé
+- Maîtrise des Transformers et du deep learning
+- Rigueur scientifique et sens de l''expérimentation',
+2),
+
+('2025-06-01','2025-11-30',45.760000,4.841388,'Stage Analyste BI & Data Visualisation',
+'Stage 6 mois Lyon. Création de tableaux de bord décisionnels pour la direction générale d''un groupe industriel client.',1100,
+'# 📈 Stage Analyste BI – DataSphere
+**Power BI | DAX | SQL | Python**
+📍 *Lyon – Confluence*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous rejoindrez l''équipe BI pour concevoir et déployer des tableaux de bord stratégiques pour la direction générale d''un groupe industriel de 3 000 collaborateurs.
+
+---
+
+## 🎯 Missions
+- Recueil des besoins auprès des directions métier
+- Modélisation des données (Star Schema, Snowflake Schema)
+- Développement de rapports Power BI (DAX, M)
+- Mise en place d''un catalogue de données
+- Formation des utilisateurs finaux
+
+---
+
+## 🧰 Stack technique
+- Power BI, DAX, Power Query (M)
+- SQL Server, Azure Synapse
+- Python (pandas, matplotlib)
+- dbt pour la transformation
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 data, statistiques ou business
+- Maîtrise de SQL
+- Power BI requis
+- Sens de la communication et pédagogie',
+2),
+
+('2025-04-01','2025-09-30',43.295097,-0.370797,'Stage Data Analyst – Santé & Données Médicales',
+'Stage 6 mois Pau. Analyse de données médicales pour améliorer le suivi patient d''un réseau de cliniques privées cliente.',1200,
+'# 🏥 Stage Data Analyst Santé – DataSphere (Pau)
+**Python | SQL | Tableau | RGPD Santé**
+📍 *Pau*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous travaillerez sur des données médicales pseudonymisées pour améliorer le parcours patient d''un réseau de cliniques privées. Un stage à fort impact sur la santé publique.
+
+---
+
+## 🎯 Missions
+- Analyse exploratoire de données médicales
+- Construction d''indicateurs de suivi patient
+- Visualisation avec Tableau et Python (matplotlib, seaborn)
+- Veille sur la conformité RGPD et HDS
+- Présentation des résultats aux équipes médicales
+
+---
+
+## 🧰 Stack technique
+- Python (pandas, scikit-learn, matplotlib)
+- SQL (PostgreSQL)
+- Tableau Desktop
+- Jupyter Notebooks
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 data, statistiques ou santé publique
+- Python et SQL intermédiaires
+- Sensibilité aux enjeux éthiques des données de santé
+- Rigueur et discrétion',
+2),
+
+('2025-05-15','2025-11-15',45.760000,4.841388,'Stage Ingénieur MLOps',
+'Stage 6 mois Lyon. Mise en place d''une plateforme MLOps pour industrialiser le déploiement des modèles de machine learning de l''entreprise.',1250,
+'# 🔧 Stage Ingénieur MLOps – DataSphere
+**MLflow | Kubeflow | Docker | Kubernetes**
+📍 *Lyon – Confluence*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous contribuerez à la construction de la plateforme MLOps interne de DataSphere, permettant d''industrialiser le cycle de vie des modèles de machine learning.
+
+---
+
+## 🎯 Missions
+- Mise en place de MLflow pour le tracking des expériences
+- Containerisation des modèles (Docker, FastAPI)
+- Déploiement sur Kubernetes avec Kubeflow Pipelines
+- Monitoring des modèles en production (data drift, performance)
+- Documentation et formation des data scientists
+
+---
+
+## 🧰 Stack technique
+- MLflow, DVC, BentoML
+- Docker, Kubernetes, Helm
+- Python, FastAPI
+- Prometheus, Grafana
+
+---
+
+## 👤 Profil recherché
+- Bac+5 informatique ou Data Science
+- Python avancé
+- DevOps et Docker/Kubernetes
+- Intérêt pour le ML et l''industrialisation',
+2),
+
+-- CYBERSHIELD (3)
+('2025-03-01','2025-08-31',44.837789,-0.579180,'Stage Analyste Cybersécurité – SOC',
+'Stage 6 mois Bordeaux. Analyse des alertes de sécurité, investigation d''incidents et amélioration des règles de détection au sein du SOC de l''entreprise.',1400,
+'# 🛡️ Stage Analyste SOC – CyberShield
+**SIEM | EDR | Threat Intelligence | MITRE ATT&CK**
+📍 *Bordeaux – Centre*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous intégrerez le SOC (Security Operations Center) de CyberShield pour participer à la surveillance et à la réponse aux incidents de sécurité pour nos clients.
+
+---
+
+## 🎯 Missions
+- Analyse et triage des alertes SIEM (Splunk, IBM QRadar)
+- Investigation des incidents de sécurité (forensique)
+- Amélioration des règles de détection
+- Rédaction de rapports d''incidents
+- Veille sur les nouvelles menaces (CVE, threat intel)
+
+---
+
+## 🧰 Stack technique
+- Splunk, IBM QRadar (SIEM)
+- CrowdStrike, SentinelOne (EDR)
+- Wireshark, Zeek (analyse réseau)
+- MITRE ATT&CK framework
+
+---
+
+## 👤 Profil recherché
+- Master 2 cybersécurité ou réseaux
+- Connaissance des protocoles réseaux (TCP/IP, DNS, HTTP)
+- Linux avancé
+- Curiosité et persévérance face aux incidents complexes',
+3),
+
+('2025-04-01','2025-09-30',44.837789,-0.579180,'Stage Pentesteur Web & Applicatif',
+'Stage 6 mois Bordeaux. Réalisation de tests d''intrusion sur des applications web et des APIs pour des clients dans la finance et la santé.',1450,
+'# 🔐 Stage Pentesteur – CyberShield
+**Pentest Web | API | OWASP | Burp Suite**
+📍 *Bordeaux – Centre*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous effectuerez des tests d''intrusion sur des applications web et des APIs pour évaluer leur résistance aux attaques. Vous travaillerez en équipe Red Team.
+
+---
+
+## 🎯 Missions
+- Tests d''intrusion boîte noire et boîte grise sur applications web
+- Tests d''API (REST, GraphQL) selon OWASP API Security Top 10
+- Rédaction de rapports de pentest détaillés
+- Présentation des résultats aux clients
+- Veille sur les nouvelles vulnérabilités
+
+---
+
+## 🧰 Outils & Méthodes
+- Burp Suite Pro, OWASP ZAP
+- Metasploit, SQLMap, ffuf
+- Kali Linux
+- OWASP Testing Guide, PTES
+
+---
+
+## 👤 Profil recherché
+- Master 2 cybersécurité
+- Connaissance de l''OWASP Top 10
+- Bases en Python ou Bash (scripting)
+- Éthique et respect du cadre légal',
+3),
+
+('2025-05-01','2025-10-31',44.837789,-0.579180,'Stage Consultant Cybersécurité & Conformité',
+'Stage 6 mois Bordeaux. Accompagnement de clients PME dans leur mise en conformité RGPD et ISO 27001, audit de leur posture de sécurité.',1250,
+'# 📋 Stage Consultant SSI & Conformité – CyberShield
+**ISO 27001 | RGPD | Analyse de risques | EBIOS RM**
+📍 *Bordeaux – Centre*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous accompagnerez des PME dans leur démarche de mise en conformité RGPD et ISO 27001. Un rôle hybride technique et organisationnel.
+
+---
+
+## 🎯 Missions
+- Audit de la posture de sécurité des clients
+- Analyse de risques (méthode EBIOS RM)
+- Rédaction de politiques de sécurité (PSSI)
+- Accompagnement à la mise en conformité RGPD
+- Sensibilisation des collaborateurs clients
+
+---
+
+## 🧰 Méthodes & Référentiels
+- ISO 27001 / 27002
+- RGPD, CNIL
+- EBIOS Risk Manager
+- CIS Controls, NIST CSF
+
+---
+
+## 👤 Profil recherché
+- Master 2 cybersécurité, droit numérique ou management
+- Connaissance de l''ISO 27001 et du RGPD
+- Qualités rédactionnelles
+- Sens de la pédagogie et de la relation client',
+3),
+
+('2025-06-01','2025-11-30',44.837789,-0.579180,'Stage Ingénieur Sécurité Cloud & DevSecOps',
+'Stage 6 mois Bordeaux. Intégration des pratiques de sécurité dans les pipelines CI/CD de clients en transformation cloud.',1350,
+'# 🔒 Stage DevSecOps – CyberShield
+**DevSecOps | SAST/DAST | Trivy | Vault**
+📍 *Bordeaux – Centre*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous aiderez des clients en migration cloud à intégrer la sécurité dès les phases de développement (shift left security).
+
+---
+
+## 🎯 Missions
+- Intégration d''outils SAST dans les pipelines CI (SonarQube, Semgrep)
+- Tests de sécurité dynamiques (DAST) avec OWASP ZAP
+- Scan des images Docker (Trivy, Snyk)
+- Gestion des secrets (HashiCorp Vault)
+- Formation des équipes développement
+
+---
+
+## 🧰 Stack technique
+- GitLab CI / GitHub Actions
+- SonarQube, Semgrep, OWASP ZAP
+- Trivy, Snyk, Checkov
+- HashiCorp Vault, AWS Secrets Manager
+
+---
+
+## 👤 Profil recherché
+- Bac+5 cybersécurité ou DevOps
+- CI/CD et Docker
+- Connaissance des vulnérabilités applicatives
+- Esprit méthodique',
+3),
+
+('2025-04-15','2025-10-15',43.604652,1.444209,'Stage Analyste Forensique & Réponse à Incident',
+'Stage 6 mois Toulouse. Investigation forensique sur des incidents de sécurité réels, analyse de malwares et reconstruction de chronologies d''attaque.',1400,
+'# 🔍 Stage Forensique & Incident Response – CyberShield (Toulouse)
+**Forensique | Malware Analysis | Volatility | Wireshark**
+📍 *Toulouse*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous rejoindrez l''équipe CSIRT de CyberShield pour investiguer des incidents de sécurité et analyser des malwares dans un laboratoire dédié.
+
+---
+
+## 🎯 Missions
+- Analyse forensique de disques et mémoire (Autopsy, Volatility)
+- Analyse statique et dynamique de malwares
+- Reconstruction de chronologies d''attaque
+- Rédaction de rapports d''investigation
+- Reverse engineering de code malveillant (Ghidra, IDA)
+
+---
+
+## 🧰 Outils
+- Volatility, Autopsy, FTK Imager
+- Wireshark, NetworkMiner
+- Ghidra, IDA Free, x64dbg
+- YARA, STIX/TAXII
+
+---
+
+## 👤 Profil recherché
+- Master 2 cybersécurité
+- Bases en assembleur x86/x64
+- Linux avancé
+- Curiosité intellectuelle et patience',
+3),
+
+-- CLOUDNATIVE (4)
+('2025-04-01','2025-09-30',47.218371,-1.553621,'Stage Ingénieur Cloud AWS',
+'Stage 6 mois Nantes. Migration d''une architecture monolithique vers des microservices sur AWS pour un client e-commerce.',1200,
+'# ☁️ Stage Ingénieur Cloud AWS – CloudNative
+**AWS | Terraform | Kubernetes | CI/CD**
+📍 *Nantes – Île de Nantes*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous participerez à la migration d''une application e-commerce monolithique vers une architecture microservices sur AWS. Un projet technique ambitieux avec un fort impact business.
+
+---
+
+## 🎯 Missions
+- Conception de l''architecture cible (ECS, EKS, RDS, SQS)
+- Écriture de l''infrastructure en code (Terraform)
+- Mise en place des pipelines CI/CD (GitHub Actions)
+- Migration progressive des services
+- Optimisation des coûts cloud (FinOps)
+
+---
+
+## 🧰 Stack technique
+- AWS (ECS, EKS, RDS, S3, CloudFront, SQS)
+- Terraform, Packer
+- GitHub Actions, ArgoCD
+- Datadog, CloudWatch
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 informatique ou systèmes
+- Notions d''AWS (certification SAA appréciée)
+- Docker et Kubernetes
+- Linux et scripting',
+4),
+
+('2025-05-01','2025-10-31',47.218371,-1.553621,'Stage Ingénieur Platform Engineering',
+'Stage 6 mois Nantes. Construction d''une Internal Developer Platform (IDP) pour améliorer la productivité des équipes de développement clients.',1150,
+'# 🏗️ Stage Platform Engineering – CloudNative
+**Backstage | Kubernetes | GitOps | ArgoCD**
+📍 *Nantes – Île de Nantes*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous contribuerez à la construction d''une Internal Developer Platform basée sur Backstage (CNCF) pour standardiser et accélérer le développement chez nos clients.
+
+---
+
+## 🎯 Missions
+- Déploiement et configuration de Backstage
+- Développement de plugins Backstage (TypeScript)
+- Mise en place de workflows GitOps (ArgoCD, Flux)
+- Construction de templates de projets standardisés
+- Documentation de la plateforme
+
+---
+
+## 🧰 Stack technique
+- Backstage (CNCF), TypeScript
+- Kubernetes, Helm
+- ArgoCD, Flux
+- GitHub, GitLab
+
+---
+
+## 👤 Profil recherché
+- Bac+5 informatique, DevOps ou SRE
+- Kubernetes intermédiaire
+- TypeScript/React (pour les plugins Backstage)
+- Intérêt pour l''expérience développeur (DX)',
+4),
+
+('2025-04-15','2025-10-15',47.218371,-1.553621,'Stage SRE – Observabilité & Fiabilité',
+'Stage 6 mois Nantes. Amélioration de l''observabilité et de la fiabilité des systèmes clients grâce à l''instrumentation et aux SLOs.',1100,
+'# 🔭 Stage SRE – CloudNative
+**Prometheus | Grafana | OpenTelemetry | SLOs**
+📍 *Nantes – Île de Nantes*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous travaillerez sur l''observabilité des systèmes clients pour réduire les MTTR et améliorer la fiabilité globale.
+
+---
+
+## 🎯 Missions
+- Instrumentation d''applications (OpenTelemetry)
+- Création de tableaux de bord Grafana
+- Définition et suivi des SLI/SLO/SLA
+- Mise en place d''alerting intelligent (PagerDuty)
+- Pratique du chaos engineering (Chaos Monkey, Litmus)
+
+---
+
+## 🧰 Stack technique
+- Prometheus, Grafana, Loki, Tempo
+- OpenTelemetry
+- PagerDuty, OpsGenie
+- Chaos Monkey, Litmus
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 systèmes, DevOps ou SRE
+- Linux avancé
+- Python ou Go (scripting)
+- Intérêt pour la fiabilité et la performance',
+4),
+
+('2025-06-01','2025-11-30',47.218371,-1.553621,'Stage Ingénieur Sécurité Cloud (CloudSec)',
+'Stage 6 mois Nantes. Audit et renforcement de la sécurité des infrastructures cloud de clients, mise en place de Cloud Security Posture Management.',1200,
+'# 🔐 Stage CloudSec – CloudNative
+**CSPM | IAM | Security Hub | Terraform**
+📍 *Nantes – Île de Nantes*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous contribuerez à sécuriser les infrastructures cloud de nos clients en mettant en place des outils de Cloud Security Posture Management (CSPM).
+
+---
+
+## 🎯 Missions
+- Audit des configurations cloud (AWS Security Hub, Prowler)
+- Mise en place d''une politique IAM au moindre privilège
+- Chiffrement des données at-rest et in-transit
+- Compliance as Code (Checkov, Open Policy Agent)
+- Reporting et suivi des remédiations
+
+---
+
+## 🧰 Stack technique
+- AWS Security Hub, Prowler, ScoutSuite
+- Checkov, Open Policy Agent (OPA)
+- Terraform (sécurisation des ressources)
+- CloudTrail, GuardDuty
+
+---
+
+## 👤 Profil recherché
+- Bac+5 cybersécurité ou cloud
+- AWS et Terraform
+- Connaissance des bonnes pratiques de sécurité cloud
+- Rigueur et sens du détail',
+4),
+
+('2025-04-01','2025-09-30',44.837789,-0.579180,'Stage Ingénieur Azure DevOps',
+'Stage 6 mois Bordeaux. Accompagnement d''une ETI dans sa migration vers Azure et la mise en place de pratiques DevOps modernes.',1100,
+'# 🔵 Stage Azure DevOps – CloudNative (Bordeaux)
+**Azure | Azure DevOps | Terraform | AKS**
+📍 *Bordeaux – Mériadeck*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous accompagnerez une ETI dans sa migration vers Microsoft Azure et la modernisation de ses pratiques de développement et de déploiement.
+
+---
+
+## 🎯 Missions
+- Migration de VMs on-premise vers Azure (IaaS, PaaS)
+- Configuration d''Azure DevOps (pipelines, repos, boards)
+- Containerisation des applications (Docker, AKS)
+- Infrastructure as Code avec Terraform
+- Formation des équipes internes du client
+
+---
+
+## 🧰 Stack technique
+- Azure (VM, App Service, AKS, SQL, Storage)
+- Azure DevOps (Pipelines, Repos)
+- Terraform, Bicep
+- Docker, Kubernetes (AKS)
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 informatique ou systèmes
+- Notions d''Azure et de CI/CD
+- Docker apprécié
+- Pédagogie pour la formation client',
+4),
+
+-- CREDIT PARTENAIRES (5)
+('2025-04-01','2025-09-30',47.081013,2.398782,'Stage Chargé de Relations Clientèle – Agence',
+'Stage 6 mois Bourges. Accueil et conseil des clients particuliers et professionnels, gestion des opérations courantes et participation à la vente de produits bancaires.',900,
+'# 🏦 Stage Chargé de Relations Clientèle – Crédit Partenaires
+**Relation client | Conseil financier | Gestion de portefeuille**
+📍 *Bourges – Agence Centre*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous serez accueilli(e) dans une agence bancaire de Crédit Partenaires pour développer vos compétences en relation client et en conseil financier.
+
+---
+
+## 🎯 Missions
+- Accueil physique et téléphonique des clients
+- Conseil et orientation vers les produits adaptés (épargne, crédit, assurance)
+- Suivi du portefeuille clients de votre tuteur
+- Participation aux entretiens de découverte
+- Gestion des opérations courantes (virements, ouvertures de compte)
+
+---
+
+## Compétences développées
+- Relation client en face à face
+- Connaissance des produits bancaires
+- Techniques de vente conseil
+- Réglementation bancaire et déontologie
+
+---
+
+## 👤 Profil recherché
+- Bac+2 à Bac+4 en banque, finance ou commerce
+- Excellent relationnel
+- Rigueur et sens de la confidentialité
+- Appétence pour le conseil',
+5),
+
+('2025-05-01','2025-10-31',47.081013,2.398782,'Stage Analyste Risques de Crédit',
+'Stage 6 mois Bourges. Analyse des dossiers de crédit particuliers et professionnels, évaluation des risques et rédaction d''avis de crédit.',1050,
+'# 📊 Stage Analyste Risques – Crédit Partenaires
+**Analyse financière | Scoring | Gestion des risques**
+📍 *Bourges – Direction Générale*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Au sein de la Direction des Risques, vous analyserez des dossiers de crédit immobilier et professionnel pour évaluer leur risque et formuler des recommandations.
+
+---
+
+## 🎯 Missions
+- Analyse financière de dossiers de crédit (bilans, comptes de résultat)
+- Évaluation de la solvabilité des clients
+- Rédaction d''avis de crédit motivés
+- Suivi du portefeuille de crédits à risque
+- Participation à l''amélioration des modèles de scoring
+
+---
+
+## Compétences développées
+- Analyse financière et comptable
+- Évaluation des risques de crédit
+- Réglementation bancaire (Bâle III, IFRS 9)
+- Rigueur analytique
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 finance, banque ou comptabilité
+- Maîtrise d''Excel (modélisation financière)
+- Rigueur et esprit analytique
+- Discrétion',
+5),
+
+('2025-06-01','2025-11-30',47.081013,2.398782,'Stage Chef de Projet Digital – Transformation Bancaire',
+'Stage 6 mois Bourges. Participation à la transformation digitale de la banque, gestion de projets d''amélioration de l''application mobile et de la plateforme en ligne.',1100,
+'# 💻 Stage Chef de Projet Digital – Crédit Partenaires
+**Gestion de projet | UX | Agilité | Transformation digitale**
+📍 *Bourges – Direction Digitale*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous intégrerez la Direction Digitale pour contribuer aux projets de transformation numérique de la banque.
+
+---
+
+## 🎯 Missions
+- Recueil et formalisation des besoins métiers
+- Rédaction de user stories et de cahiers des charges
+- Coordination avec les équipes techniques et les prestataires
+- Suivi de l''avancement des projets (Jira, Confluence)
+- Tests fonctionnels et recette utilisateur
+
+---
+
+## Compétences développées
+- Gestion de projet en méthode agile
+- Cahiers des charges et spécifications fonctionnelles
+- Relation avec les équipes IT
+- Vision de la transformation digitale bancaire
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 management, gestion de projet ou informatique
+- Intérêt pour la finance et le numérique
+- Sens de l''organisation
+- Curiosité et adaptabilité',
+5),
+
+('2025-04-15','2025-10-15',47.081013,2.398782,'Stage Contrôleur de Gestion',
+'Stage 6 mois Bourges. Participation au contrôle budgétaire, à l''analyse de la performance financière et à la production des reportings mensuels de la banque.',1000,
+'# 📉 Stage Contrôleur de Gestion – Crédit Partenaires
+**Contrôle budgétaire | Reporting | Excel | Power BI**
+📍 *Bourges – Direction Financière*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Au sein de la Direction Financière, vous contribuerez aux travaux de contrôle de gestion et de reporting financier.
+
+---
+
+## 🎯 Missions
+- Participation à l''élaboration du budget et des prévisions
+- Production des reportings mensuels (P&L, tableau de bord)
+- Analyse des écarts budget/réalisé
+- Optimisation des outils de reporting (Power BI, Excel)
+- Support aux analyses ad hoc pour la direction
+
+---
+
+## Compétences développées
+- Contrôle budgétaire et analyse financière
+- Maîtrise avancée d''Excel et Power BI
+- Présentation de données financières
+- Vision de la performance bancaire
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 finance, contrôle de gestion ou comptabilité
+- Excel avancé (TCD, formules complexes)
+- Power BI apprécié
+- Rigueur et sens du détail',
+5),
+
+-- FINSTART CONSEIL (6)
+('2025-04-01','2025-09-30',48.856613,2.352222,'Stage Analyste M&A – Fusions & Acquisitions',
+'Stage 6 mois Paris. Participation à des missions de conseil en fusions-acquisitions pour des PME et ETI : valorisation, due diligence et structuration des opérations.',1400,
+'# 💼 Stage Analyste M&A – FinStart Conseil
+**M&A | Valorisation | Due Diligence | Modélisation financière**
+📍 *Paris – 8ème arrondissement*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous participerez activement à des missions de conseil en fusions-acquisitions pour des PME et ETI françaises. Un stage de haute intensité avec une forte exposition aux dirigeants.
+
+---
+
+## 🎯 Missions
+- Construction de modèles financiers (LBO, DCF, comparables)
+- Valorisation d''entreprises (multiples, DCF, actif net réévalué)
+- Participation à la due diligence financière
+- Rédaction de mémorandums de cession et de teaser
+- Veille sectorielle et identification de cibles/acquéreurs
+
+---
+
+## Compétences développées
+- Modélisation financière avancée sous Excel
+- Techniques de valorisation
+- Processus M&A de A à Z
+- Qualités rédactionnelles et de présentation
+
+---
+
+## 👤 Profil recherché
+- Bac+5 finance, grande école de commerce ou d''ingénieurs
+- Excel avancé (modélisation financière)
+- Intérêt fort pour la finance d''entreprise
+- Rigueur et résistance au stress',
+6),
+
+('2025-05-01','2025-10-31',48.856613,2.352222,'Stage Analyste Levée de Fonds & Capital-Risque',
+'Stage 6 mois Paris. Accompagnement de startups et PME innovantes dans leur levée de fonds : préparation des dossiers, valorisation et mise en relation investisseurs.',1350,
+'# 🚀 Stage Analyste Levée de Fonds – FinStart Conseil
+**Venture Capital | Pitchdeck | Valorisation | Due Diligence**
+📍 *Paris – 8ème arrondissement*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous accompagnerez des startups et PME innovantes dans la préparation et l''exécution de leurs levées de fonds auprès de fonds de capital-risque et de private equity.
+
+---
+
+## 🎯 Missions
+- Préparation des pitchdeck et mémorandums d''investissement
+- Valorisation pré-money des sociétés
+- Analyse des term sheets et des contrats d''investissement
+- Identification et approche des investisseurs potentiels
+- Suivi des due diligences
+
+---
+
+## Compétences développées
+- Écosystème startup et venture capital
+- Valorisation de sociétés innovantes
+- Négociation et structuration d''opérations
+- Réseau professionnel dans la finance
+
+---
+
+## 👤 Profil recherché
+- Bac+5 finance ou grande école
+- Intérêt pour l''entrepreneuriat et l''innovation
+- Excel et PowerPoint avancés
+- Curiosité et sens du contact',
+6),
+
+('2025-06-01','2025-11-30',48.856613,2.352222,'Stage Analyste Stratégie Financière & Business Plan',
+'Stage 6 mois Paris. Elaboration de business plans et de plans stratégiques pour des dirigeants de PME en phase de développement ou de restructuration.',1300,
+'# 📊 Stage Analyste Stratégie – FinStart Conseil
+**Business Plan | Stratégie | Modélisation | Présentation**
+📍 *Paris – 8ème arrondissement*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous aiderez des dirigeants de PME à formaliser leur stratégie de développement dans des business plans rigoreux et convaincants.
+
+---
+
+## 🎯 Missions
+- Diagnostic stratégique (SWOT, Porter, PESTEL)
+- Construction de business plans et de projections financières
+- Benchmark concurrentiel et analyse de marché
+- Rédaction de présentations stratégiques pour dirigeants
+- Suivi de la mise en œuvre des recommandations
+
+---
+
+## Compétences développées
+- Analyse stratégique et financière
+- Présentation à des décideurs
+- Conseil en entreprise
+- Vision globale des enjeux d''une PME
+
+---
+
+## 👤 Profil recherché
+- Bac+5 finance, stratégie ou grande école
+- Excel et PowerPoint avancés
+- Sens de la synthèse et de la communication
+- Intérêt pour les PME',
+6),
+
+-- ASSURPRO (7)
+('2025-04-01','2025-09-30',43.604652,1.444209,'Stage Chargé de Clientèle Assurances Professionnelles',
+'Stage 6 mois Toulouse. Gestion d''un portefeuille de clients professionnels, conseil en assurance RC Pro et construction, suivi des contrats.',950,
+'# 🔒 Stage Chargé de Clientèle – AssurPro
+**Assurance professionnelle | RC Pro | Conseil | Gestion de portefeuille**
+📍 *Toulouse – Centre*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous intégrerez une équipe de chargés de clientèle pour gérer et développer un portefeuille de clients professionnels (artisans, TPE, PME).
+
+---
+
+## 🎯 Missions
+- Gestion quotidienne du portefeuille clients
+- Conseil et placement de contrats (RC Pro, multirisque)
+- Traitement des demandes de modifications et avenants
+- Accompagnement des clients en cas de sinistre
+- Prospection et développement commercial
+
+---
+
+## Compétences développées
+- Techniques d''assurance professionnelle
+- Relation client B2B
+- Gestion administrative des contrats
+- Réglementation assurance (DDA)
+
+---
+
+## 👤 Profil recherché
+- Bac+2 à Bac+4 en assurance, banque ou commerce
+- Bon relationnel et sens du service
+- Rigueur administrative
+- Intérêt pour les métiers de l''assurance',
+7),
+
+('2025-05-01','2025-10-31',43.604652,1.444209,'Stage Gestionnaire Sinistres',
+'Stage 6 mois Toulouse. Instruction et gestion des dossiers de sinistres pour les clients professionnels, coordination avec les compagnies d''assurance et les experts.',1000,
+'# 📋 Stage Gestionnaire Sinistres – AssurPro
+**Gestion de sinistres | Expertise | Droit des assurances**
+📍 *Toulouse – Centre*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Au sein du service sinistres, vous instruirez des dossiers de sinistres complexes pour des clients professionnels et serez l''interface entre les assurés et les compagnies d''assurance.
+
+---
+
+## 🎯 Missions
+- Ouverture et instruction des dossiers de sinistres
+- Analyse des garanties contractuelles
+- Coordination avec les experts et les compagnies
+- Suivi des indemnisations et clôture des dossiers
+- Conseil aux clients sur leurs droits et recours
+
+---
+
+## Compétences développées
+- Droit des assurances et des contrats
+- Gestion de situations conflictuelles
+- Analyse de documents complexes
+- Négociation avec les compagnies
+
+---
+
+## 👤 Profil recherché
+- Bac+3 à Bac+5 en droit, assurance ou gestion
+- Rigueur et méthode
+- Résistance au stress
+- Empathie et sens du service client',
+7),
+
+('2025-06-01','2025-11-30',43.604652,1.444209,'Stage Développeur Python – Outils Internes',
+'Stage 6 mois Toulouse. Développement d''outils d''automatisation et de reporting pour les équipes commerciales et de gestion d''AssurPro.',1050,
+'# 🐍 Stage Développeur Python – AssurPro
+**Python | Automatisation | Power BI | API**
+📍 *Toulouse – Centre*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous développerez des outils internes pour automatiser les tâches répétitives des équipes commerciales et améliorer le reporting.
+
+---
+
+## 🎯 Missions
+- Automatisation de la génération de documents (contrats, avenants)
+- Développement de scripts Python pour le traitement de données
+- Création de tableaux de bord Power BI
+- Intégration avec les APIs des compagnies d''assurance partenaires
+- Documentation technique
+
+---
+
+## 🧰 Stack technique
+- Python (pandas, openpyxl, requests)
+- Power BI
+- APIs REST
+- SQL (MySQL)
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 informatique ou mathématiques
+- Python intermédiaire
+- SQL de base
+- Autonomie et sens pratique',
+7),
+
+-- AGENCE HORIZON (8)
+('2025-04-01','2025-09-30',48.856613,2.352222,'Stage Chef de Projet Communication',
+'Stage 6 mois Paris. Coordination de campagnes de communication 360° pour des clients grands comptes dans les secteurs de la grande consommation et du luxe.',1100,
+'# 🎨 Stage Chef de Projet Communication – Agence Horizon
+**Gestion de projet | Communication 360° | Relations clients**
+📍 *Paris – 9ème arrondissement*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous serez l''interface opérationnelle entre les clients et les équipes créatives de l''agence. Un rôle central dans la mise en œuvre des campagnes de communication.
+
+---
+
+## 🎯 Missions
+- Coordination des équipes créatives, studio et production
+- Suivi des plannings et des budgets
+- Présentation des recommandations aux clients
+- Gestion des prestataires (photographes, imprimeurs, studios)
+- Compte-rendu et suivi post-campagne
+
+---
+
+## Compétences développées
+- Gestion de projet en agence
+- Relation client
+- Vision des métiers de la communication
+- Organisation et rigueur
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 communication, marketing ou gestion de projet
+- Excellent relationnel
+- Sens de l''organisation
+- Curiosité créative',
+8),
+
+('2025-05-01','2025-10-31',48.856613,2.352222,'Stage Concepteur-Rédacteur',
+'Stage 6 mois Paris. Création de contenus créatifs pour des campagnes publicitaires multicanal (print, digital, TV) pour des marques grand public.',1050,
+'# ✍️ Stage Concepteur-Rédacteur – Agence Horizon
+**Copywriting | Storytelling | Campagnes publicitaires | Brand content**
+📍 *Paris – 9ème arrondissement*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous travaillerez en tandem avec un directeur artistique pour concevoir des campagnes publicitaires créatives pour des marques reconnues.
+
+---
+
+## 🎯 Missions
+- Conception d''idées créatives en réponse aux briefs clients
+- Rédaction de copy pour tous supports (print, digital, TV, radio)
+- Participation aux brainstormings créatifs
+- Présentation des concepts aux équipes et aux clients
+- Veille créative et concurrentielle
+
+---
+
+## Compétences développées
+- Copywriting et storytelling
+- Compréhension des codes publicitaires
+- Travail en binôme créatif
+- Présentation et défense d''idées
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 communication, lettres ou école de publicité
+- Excellentes qualités rédactionnelles
+- Créativité et originalité
+- Portfolio de créations apprécié',
+8),
+
+('2025-06-01','2025-11-30',48.856613,2.352222,'Stage Responsable Relations Presse',
+'Stage 6 mois Paris. Gestion des relations presse pour des clients du secteur tourisme et luxe : rédaction de communiqués, organisation de conférences de presse, suivi des retombées.',1100,
+'# 📰 Stage Relations Presse – Agence Horizon
+**RP | Rédaction | Presse | Influence | Événements médias**
+📍 *Paris – 9ème arrondissement*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous gérerez les relations presse pour des clients dans les secteurs du tourisme et du luxe, en étant l''interface entre les marques et les journalistes.
+
+---
+
+## 🎯 Missions
+- Rédaction et diffusion de communiqués et dossiers de presse
+- Organisation de conférences de presse et voyages de presse
+- Gestion et entretien du fichier médias
+- Suivi et mesure des retombées presse (Cision, Meltwater)
+- Veille médiatique quotidienne
+
+---
+
+## Compétences développées
+- Techniques de relations presse
+- Rédaction journalistique
+- Réseau dans les médias
+- Gestion d''événements médias
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 communication, journalisme ou lettres
+- Excellentes qualités rédactionnelles
+- Réseau journalistes un plus
+- Rigueur et disponibilité',
+8),
+
+('2025-04-15','2025-10-15',48.856613,2.352222,'Stage Planneur Stratégique',
+'Stage 6 mois Paris. Réalisation d''études stratégiques et de veilles concurrentielles pour guider la création publicitaire et les recommandations aux clients.',1150,
+'# 🎯 Stage Planneur Stratégique – Agence Horizon
+**Stratégie de marque | Études | Insights consommateurs | Positionnement**
+📍 *Paris – 9ème arrondissement*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous nourrirez la réflexion stratégique de l''agence en réalisant des études de marché, des analyses consommateurs et des veilles sectorielles.
+
+---
+
+## 🎯 Missions
+- Analyse des tendances de consommation
+- Études qualitatives et quantitatives
+- Rédaction de notes stratégiques et de briefs créatifs
+- Veille concurrentielle et sectorielle
+- Présentation des insights aux équipes créatives et aux clients
+
+---
+
+## Compétences développées
+- Analyse et synthèse d''informations complexes
+- Compréhension des comportements consommateurs
+- Rédaction stratégique
+- Présentation à des équipes pluridisciplinaires
+
+---
+
+## 👤 Profil recherché
+- Bac+5 marketing, communication ou sciences sociales
+- Curiosité intellectuelle et esprit analytique
+- Qualités rédactionnelles
+- Intérêt pour les marques et la publicité',
+8),
+
+-- INFLUENCEMEDIA (9)
+('2025-04-01','2025-09-30',45.760000,4.841388,'Stage Chargé de Campagnes Influence Marketing',
+'Stage 6 mois Lyon. Gestion de campagnes d''influence pour des marques lifestyle et beauté : identification d''influenceurs, briefing, suivi et mesure des performances.',1000,
+'# 📱 Stage Influence Marketing – InfluenceMedia
+**Influence | Social Media | Briefing | KPIs | Créateurs de contenu**
+📍 *Lyon – Presqu''île*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous gérerez des campagnes d''influence de bout en bout pour des marques lifestyle et beauté, de la sélection des influenceurs à la mesure des résultats.
+
+---
+
+## 🎯 Missions
+- Identification et qualification d''influenceurs (micro, macro, nano)
+- Rédaction des briefs créatifs
+- Coordination des créateurs de contenu
+- Suivi des publications et vérification de la conformité
+- Reporting des performances (reach, engagement, conversions)
+
+---
+
+## Compétences développées
+- Marketing d''influence et fonctionnement des réseaux sociaux
+- Gestion de relations avec des créateurs de contenu
+- Analyse de données (KPIs social media)
+- Autonomie et organisation
+
+---
+
+## 👤 Profil recherché
+- Bac+3 à Bac+5 marketing, communication ou digital
+- Maîtrise des réseaux sociaux (Instagram, TikTok, YouTube)
+- Sens de l''organisation
+- Connaissance des univers lifestyle/beauté appréciée',
+9),
+
+('2025-05-01','2025-10-31',45.760000,4.841388,'Stage Community Manager & Content Creator',
+'Stage 6 mois Lyon. Animation des réseaux sociaux de clients dans le secteur food et lifestyle, création de contenus engageants et gestion des communautés.',950,
+'# 🎬 Stage Community Manager – InfluenceMedia
+**Community Management | Création de contenu | Réseaux sociaux | Engagement**
+📍 *Lyon – Presqu''île*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous animerez les réseaux sociaux de marques food et lifestyle, en créant des contenus engageants et en gérant les interactions avec les communautés.
+
+---
+
+## 🎯 Missions
+- Création et programmation de contenus (posts, stories, reels)
+- Animation et modération des communautés
+- Rédaction de captions et adaptation du ton de marque
+- Veille sur les tendances des réseaux sociaux
+- Reporting mensuel des performances
+
+---
+
+## Compétences développées
+- Community management
+- Création de contenus visuels (Canva, Adobe Express)
+- Copywriting pour les réseaux sociaux
+- Analyse des statistiques social media
+
+---
+
+## 👤 Profil recherché
+- Bac+3 à Bac+5 communication ou marketing digital
+- Créatif(ve) et à l''aise avec les réseaux sociaux
+- Maîtrise de Canva ou outils similaires
+- Sens de l''écriture et du storytelling',
+9),
+
+('2025-06-01','2025-11-30',45.760000,4.841388,'Stage Data Analyst Marketing Digital',
+'Stage 6 mois Lyon. Analyse des performances des campagnes digitales, construction de tableaux de bord et formulation de recommandations d''optimisation.',1050,
+'# 📊 Stage Data Analyst Marketing – InfluenceMedia
+**Google Analytics | Meta Ads | Data Studio | A/B Testing**
+📍 *Lyon – Presqu''île*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous analyserez les performances des campagnes digitales et social media pour optimiser le ROI de nos clients.
+
+---
+
+## 🎯 Missions
+- Analyse des données de campagnes (Meta Ads, Google Ads, TikTok Ads)
+- Construction de dashboards de reporting (Looker Studio, Tableau)
+- Tests A/B sur les contenus et les audiences
+- Formulation de recommandations d''optimisation
+- Veille sur les évolutions des algorithmes des plateformes
+
+---
+
+## Compétences développées
+- Analyse de données marketing
+- Maîtrise des outils analytics
+- ROI et attribution des campagnes
+- Présentation de résultats à des clients
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 marketing digital, data ou statistiques
+- Google Analytics, Meta Business Manager
+- Excel/Google Sheets avancé
+- Curiosité pour les données',
+9),
+
+-- COM EVENT (10)
+('2025-04-01','2025-09-30',44.837789,-0.579180,'Stage Chef de Projet Événementiel',
+'Stage 6 mois Bordeaux. Organisation d''événements corporate (séminaires, conventions, soirées de gala) pour des clients grands comptes dans toute la France.',1000,
+'# 🎉 Stage Chef de Projet Événementiel – Com''Event
+**Événements corporate | Logistique | Coordination | Budget**
+📍 *Bordeaux – Chartrons*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous coordonnerez l''organisation d''événements corporate de A à Z, de la conception à la clôture, pour des clients grands comptes.
+
+---
+
+## 🎯 Missions
+- Participation aux appels d''offres et conception des propositions
+- Recherche et négociation avec les prestataires (traiteurs, lieux, AV)
+- Coordination logistique avant et pendant l''événement
+- Gestion du budget et des imprévus
+- Bilan et retour d''expérience post-événement
+
+---
+
+## Compétences développées
+- Organisation et gestion de projet événementiel
+- Négociation avec les prestataires
+- Gestion du stress et des imprévus
+- Sens du service et de la qualité
+
+---
+
+## 👤 Profil recherché
+- Bac+3 à Bac+5 événementiel, communication ou gestion
+- Excellent sens de l''organisation
+- Polyvalence et réactivité
+- Disponibilité (déplacements ponctuels)',
+10),
+
+('2025-05-01','2025-10-31',44.837789,-0.579180,'Stage Chargé de Relations Publiques & Institutionnelles',
+'Stage 6 mois Bordeaux. Gestion des relations avec les médias, les institutions et les partenaires stratégiques pour des clients du secteur public et des associations.',1000,
+'# 🤝 Stage Relations Publiques – Com''Event
+**RP | Institutions | Partenariats | Communication institutionnelle**
+📍 *Bordeaux – Chartrons*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous gérerez les relations institutionnelles et publiques de clients du secteur public et associatif, en développant leur réseau de partenaires.
+
+---
+
+## 🎯 Missions
+- Identification et approche de partenaires institutionnels
+- Rédaction de dossiers de partenariat
+- Organisation de rencontres et de tables rondes
+- Suivi des relations avec les élus et institutions
+- Veille réglementaire et institutionnelle
+
+---
+
+## Compétences développées
+- Techniques de relations publiques
+- Communication institutionnelle
+- Réseau dans les institutions et associations
+- Rédaction formelle et diplomatique
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 communication, sciences politiques ou droit
+- Intérêt pour la sphère publique et institutionnelle
+- Qualités rédactionnelles
+- Sens du protocole',
+10),
+
+('2025-06-01','2025-11-30',44.837789,-0.579180,'Stage Coordinateur Logistique Événements',
+'Stage 6 mois Bordeaux. Gestion de la logistique opérationnelle des événements : transport, hébergement, restauration, technique AV et décoration.',900,
+'# 🚚 Stage Coordinateur Logistique – Com''Event
+**Logistique événementielle | Prestataires | Budget | Opérationnel**
+📍 *Bordeaux – Chartrons*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous serez en charge de la logistique opérationnelle des événements organisés par Com''Event : de la réservation des prestataires à la gestion sur site.
+
+---
+
+## 🎯 Missions
+- Recherche et réservation des prestataires (lieux, transport, hôtels)
+- Gestion des demandes techniques (AV, scénographie, mobilier)
+- Coordination sur site le jour de l''événement
+- Suivi du budget logistique
+- Gestion des imprévus et ajustements de dernière minute
+
+---
+
+## Compétences développées
+- Logistique et coordination opérationnelle
+- Négociation avec les fournisseurs
+- Gestion du budget et optimisation des coûts
+- Réactivité et gestion du stress
+
+---
+
+## 👤 Profil recherché
+- Bac+2 à Bac+4 logistique, tourisme ou événementiel
+- Sens de l''organisation et polyvalence
+- Permis B apprécié
+- Disponibilité (week-ends ponctuels)',
+10),
+
+-- INGENIA TECH (11)
+('2025-04-01','2025-09-30',43.604652,1.444209,'Stage Ingénieur Calcul Structures',
+'Stage 6 mois Toulouse. Réalisation de calculs par éléments finis pour la validation de pièces structurales dans le secteur aéronautique.',1300,
+'# ⚙️ Stage Ingénieur Calcul – Ingénia Tech
+**Éléments finis | ANSYS | Abaqus | Mécanique des structures**
+📍 *Toulouse – Blagnac*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous réaliserez des études de calcul par éléments finis pour valider des pièces structurales de systèmes aéronautiques en cours de développement.
+
+---
+
+## 🎯 Missions
+- Modélisation géométrique et maillage des pièces
+- Définition des cas de charge et conditions aux limites
+- Réalisation des calculs (statique, dynamique, fatigue)
+- Interprétation des résultats et rédaction des rapports
+- Corrélation calcul/essai
+
+---
+
+## 🧰 Outils
+- ANSYS Mechanical, Abaqus
+- CATIA V5/V6 (modélisation)
+- Python (post-traitement)
+- NASTRAN (apprécié)
+
+---
+
+## 👤 Profil recherché
+- Master 2 ou ingénieur mécanique, matériaux ou aéronautique
+- Bases en mécanique des structures
+- Maîtrise d''un logiciel FEA (ANSYS, Abaqus, NASTRAN)
+- Rigueur et sens de l''analyse',
+11),
+
+('2025-05-01','2025-10-31',43.604652,1.444209,'Stage Ingénieur Conception Mécanique 3D',
+'Stage 6 mois Toulouse. Conception et modélisation 3D de sous-systèmes mécaniques pour des équipements automobiles, de la maquette numérique aux plans de définition.',1250,
+'# 🔧 Stage Ingénieur Conception Mécanique – Ingénia Tech
+**CATIA V5 | SolidWorks | Conception 3D | Plans de définition**
+📍 *Toulouse – Blagnac*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous concevrez des sous-systèmes mécaniques pour des équipements automobiles, de la modélisation 3D jusqu''aux plans de définition pour la fabrication.
+
+---
+
+## 🎯 Missions
+- Modélisation 3D de pièces et d''assemblages (CATIA V5/SolidWorks)
+- Rédaction des plans de définition
+- Analyse de la faisabilité de fabrication (DFM/DFA)
+- Participation aux revues de conception
+- Gestion documentaire du projet
+
+---
+
+## 🧰 Outils
+- CATIA V5 ou SolidWorks
+- ENOVIA (PDM)
+- AutoCAD (2D complémentaire)
+- Excel (suivi de projet)
+
+---
+
+## 👤 Profil recherché
+- Master 2 ou ingénieur mécanique, productique ou génie industriel
+- Maîtrise de CATIA V5 ou SolidWorks
+- Connaissance des tolérances et cotation fonctionnelle
+- Rigueur et précision',
+11),
+
+('2025-06-01','2025-11-30',43.604652,1.444209,'Stage Ingénieur Simulation Thermique & Fluides',
+'Stage 6 mois Toulouse. Réalisation d''études CFD pour l''optimisation du refroidissement de systèmes électroniques embarqués dans le secteur aéronautique.',1350,
+'# 🌡️ Stage Ingénieur CFD – Ingénia Tech
+**CFD | ANSYS Fluent | Star-CCM+ | Thermique**
+📍 *Toulouse – Blagnac*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous réaliserez des simulations de dynamique des fluides (CFD) pour optimiser le refroidissement de boîtiers électroniques embarqués dans des avions.
+
+---
+
+## 🎯 Missions
+- Modélisation des géométries d''échange thermique
+- Paramétrage et réalisation des simulations CFD
+- Post-traitement et interprétation des résultats
+- Propositions d''optimisation des designs
+- Rédaction des rapports techniques
+
+---
+
+## 🧰 Outils
+- ANSYS Fluent, Star-CCM+
+- CATIA V5 (import géométrie)
+- Python (post-traitement)
+- MATLAB (validation analytique)
+
+---
+
+## 👤 Profil recherché
+- Master 2 ou ingénieur mécanique des fluides ou thermique
+- Notions de CFD
+- Maîtrise d''ANSYS Fluent ou Star-CCM+ appréciée
+- Rigueur scientifique',
+11),
+
+('2025-04-15','2025-10-15',43.604652,1.444209,'Stage Ingénieur Chef de Projet R&D',
+'Stage 6 mois Toulouse. Pilotage d''un projet de R&D en conception mécanique innovante : coordination des équipes pluridisciplinaires, suivi planning et risques.',1200,
+'# 📋 Stage Chef de Projet R&D – Ingénia Tech
+**Gestion de projet | R&D | Coordination | Planification**
+📍 *Toulouse – Blagnac*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous piloterez un projet de R&D en ingénierie mécanique, en coordonnant des équipes pluridisciplinaires (mécaniciens, thermiciens, électroniciens).
+
+---
+
+## 🎯 Missions
+- Élaboration et suivi du planning projet (MS Project, Jira)
+- Coordination des équipes pluridisciplinaires
+- Gestion des risques techniques et planning
+- Animation des revues de projet
+- Reporting auprès du management et du client
+
+---
+
+## Compétences développées
+- Gestion de projet en contexte industriel
+- Coordination pluridisciplinaire
+- Communication technique et managériale
+- Vision système d''un projet R&D
+
+---
+
+## 👤 Profil recherché
+- Master 2 ou ingénieur (toutes spécialités)
+- Leadership et sens de l''organisation
+- Aisance relationnelle
+- Anglais technique',
+11),
+
+-- GREENBUILD (12)
+('2025-04-01','2025-09-30',45.188529,5.724524,'Stage Ingénieur Thermique & Énergétique du Bâtiment',
+'Stage 6 mois Grenoble. Réalisation d''études thermiques dynamiques pour des bâtiments tertiaires et résidentiels dans le cadre de la RE2020.',1200,
+'# 🌿 Stage Ingénieur Thermique – GreenBuild
+**RE2020 | STD | Bâtiments à énergie positive | BEPOS**
+📍 *Grenoble – Europole*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous réaliserez des études thermiques dynamiques pour des projets de construction neuve et de rénovation, dans le cadre de la réglementation RE2020.
+
+---
+
+## 🎯 Missions
+- Simulations thermiques dynamiques (DesignBuilder, TRNSYS)
+- Optimisation des systèmes CVC (chauffage, ventilation, climatisation)
+- Calculs énergétiques et bilan carbone
+- Dimensionnement des systèmes d''énergies renouvelables
+- Rédaction des notes de calcul et rapports
+
+---
+
+## 🧰 Outils
+- DesignBuilder, TRNSYS, PLEIADES
+- AutoCAD, Revit (extraction données)
+- Excel (bilans énergétiques)
+- Logiciels RE2020
+
+---
+
+## 👤 Profil recherché
+- Master 2 ou ingénieur génie civil, énergie ou environnement
+- Bases en thermique du bâtiment
+- Logiciels de STD appréciés
+- Sensibilité aux enjeux environnementaux',
+12),
+
+('2025-05-01','2025-10-31',45.188529,5.724524,'Stage Coordinateur BIM',
+'Stage 6 mois Grenoble. Coordination BIM de projets de construction durable : gestion de la maquette numérique, détection de conflits et formation des équipes projet.',1150,
+'# 🏗️ Stage Coordinateur BIM – GreenBuild
+**BIM | Revit | Navisworks | IFC | Autodesk**
+📍 *Grenoble – Europole*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous coordonnerez le BIM sur des projets de construction durable, en gérant la maquette numérique et en assurant la cohérence entre les différents corps de métier.
+
+---
+
+## 🎯 Missions
+- Coordination des maquettes BIM multi-disciplinaires
+- Détection et résolution des conflits (clash detection)
+- Mise en place et respect de la convention BIM
+- Formation des équipes projet aux outils BIM
+- Extraction des données pour les études thermiques et énergétiques
+
+---
+
+## 🧰 Outils
+- Revit, ArchiCAD
+- Navisworks, Solibri
+- BIM 360 / ACC (Autodesk)
+- IFC, BCF
+
+---
+
+## 👤 Profil recherché
+- Master 2 ou ingénieur génie civil, architecture ou BIM
+- Maîtrise de Revit
+- Connaissance du processus BIM
+- Sens de la coordination et de la communication',
+12),
+
+('2025-06-01','2025-11-30',45.188529,5.724524,'Stage Chargé de Certification & Labels Environnementaux',
+'Stage 6 mois Grenoble. Accompagnement des projets de construction dans l''obtention de certifications HQE, BREEAM et BBC Rénovation.',1100,
+'# 🏅 Stage Certification Environnementale – GreenBuild
+**HQE | BREEAM | BBC Rénovation | Audit | Conformité**
+📍 *Grenoble – Europole*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous accompagnerez des projets de construction neuve et de rénovation dans l''obtention de certifications environnementales (HQE, BREEAM, BBC).
+
+---
+
+## 🎯 Missions
+- Analyse des projets par rapport aux référentiels de certification
+- Constitution des dossiers de certification
+- Coordination avec les équipes de maîtrise d''œuvre
+- Participation aux audits de certification
+- Veille réglementaire et normative
+
+---
+
+## Compétences développées
+- Référentiels de certifications environnementales
+- Analyse de conformité et audit
+- Coordination de projets de construction
+- Réglementation environnementale du bâtiment
+
+---
+
+## 👤 Profil recherché
+- Master 2 génie civil, environnement ou architecture
+- Intérêt fort pour la construction durable
+- Rigueur et sens du détail
+- Qualités rédactionnelles',
+12),
+
+-- ELECTRO INGENIERIE (13)
+('2025-04-01','2025-09-30',47.218371,-1.553621,'Stage Ingénieur Systèmes Embarqués',
+'Stage 6 mois Nantes. Développement firmware en C/C++ pour des automates industriels connectés destinés à des sites de production agroalimentaires.',1200,
+'# ⚡ Stage Ingénieur Systèmes Embarqués – Électro Ingénierie
+**C/C++ | Microcontrôleurs | Protocoles industriels | RTOS**
+📍 *Nantes – Saint-Herblain*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous développerez le firmware d''automates industriels connectés pour des clients dans le secteur agroalimentaire.
+
+---
+
+## 🎯 Missions
+- Développement firmware en C/C++ sur microcontrôleurs STM32
+- Implémentation de protocoles de communication (Modbus, CAN)
+- Tests unitaires et intégration système
+- Débogage et optimisation du code embarqué
+- Rédaction de la documentation technique
+
+---
+
+## 🧰 Stack technique
+- C/C++, RTOS (FreeRTOS)
+- STM32CubeIDE, Keil MDK
+- Modbus RTU/TCP, CAN Bus
+- Oscilloscope, analyseur de protocole
+
+---
+
+## 👤 Profil recherché
+- Master 2 ou ingénieur électronique, informatique embarquée
+- C/C++ maîtrisé
+- Notions de microcontrôleurs
+- Curiosité pour le hardware',
+13),
+
+('2025-05-01','2025-10-31',47.218371,-1.553621,'Stage Ingénieur Automatisme & SCADA',
+'Stage 6 mois Nantes. Programmation d''automates Siemens et développement d''interfaces de supervision SCADA pour des lignes de production industrielles.',1150,
+'# 🤖 Stage Ingénieur Automatisme – Électro Ingénierie
+**Siemens S7 | TIA Portal | WinCC | SCADA**
+📍 *Nantes – Saint-Herblain*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous programmerez des automates industriels Siemens et développerez des interfaces de supervision pour des lignes de production.
+
+---
+
+## 🎯 Missions
+- Programmation d''automates S7-1500 (TIA Portal, ladder, ST)
+- Développement d''interfaces SCADA (WinCC, Ignition)
+- Mise en service et tests sur ligne de production
+- Rédaction des dossiers de définition fonctionnelle
+- Formation des opérateurs
+
+---
+
+## 🧰 Outils
+- Siemens TIA Portal (S7-300/400/1500)
+- WinCC, Ignition (SCADA)
+- Profinet, Profibus
+- SolidEdge (synoptiques)
+
+---
+
+## 👤 Profil recherché
+- Master 2 ou ingénieur automatisme, électronique ou génie industriel
+- Notions d''automates programmables
+- Esprit terrain et pratique
+- Rigeur et sécurité',
+13),
+
+('2025-06-01','2025-11-30',47.218371,-1.553621,'Stage Ingénieur Études Électriques',
+'Stage 6 mois Nantes. Réalisation d''études électriques (bilans de puissance, schémas HTA/BTA, calculs de court-circuit) pour des projets industriels.',1100,
+'# ⚡ Stage Ingénieur Études Électriques – Électro Ingénierie
+**Caneco BT/HTA | ECODIAL | Schémas électriques | Normes NFC**
+📍 *Nantes – Saint-Herblain*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous réaliserez des études électriques complètes pour des projets industriels : du bilan de puissance aux schémas de câblage.
+
+---
+
+## 🎯 Missions
+- Réalisation des bilans de puissance
+- Calculs de dimensionnement des câbles et protections (Caneco BT)
+- Calculs de courts-circuits (ECODIAL, SKM PowerTools)
+- Rédaction des schémas électriques (AutoCAD Electrical, SEE Electrical)
+- Application des normes NFC 15-100 et IEC 60364
+
+---
+
+## 🧰 Outils
+- Caneco BT/HTA, ECODIAL
+- AutoCAD Electrical, SEE Electrical
+- SKM PowerTools
+- Excel (bilans de puissance)
+
+---
+
+## 👤 Profil recherché
+- Master 2 ou ingénieur génie électrique
+- Bases en dimensionnement électrique
+- Connaissance des normes électriques
+- Rigueur et précision',
+13),
+
+-- AVENIR RH (14)
+('2025-04-01','2025-09-30',48.856613,2.352222,'Stage Chargé de Recrutement',
+'Stage 6 mois Paris. Gestion du processus de recrutement de A à Z pour des postes cadres et non-cadres dans des secteurs variés.',1000,
+'# 👥 Stage Chargé de Recrutement – Groupe Avenir RH
+**Recrutement | Sourcing | Entretiens | Assessment**
+📍 *Paris – 2ème arrondissement*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous gérerez le processus de recrutement de A à Z pour des clients dans des secteurs variés : rédaction d''annonces, sourcing, entretiens et présentation des candidats.
+
+---
+
+## 🎯 Missions
+- Rédaction et diffusion des annonces de recrutement
+- Sourcing de candidats (LinkedIn, CVthèques, cooptation)
+- Conduite des entretiens téléphoniques et en présentiel
+- Rédaction des synthèses et présentation aux clients
+- Suivi des candidats et des recrutements
+
+---
+
+## Compétences développées
+- Techniques de sourcing et d''entretien
+- Connaissance du marché de l''emploi
+- Relation client et gestion des attentes
+- Pratique des outils RH (ATS)
+
+---
+
+## 👤 Profil recherché
+- Bac+3 à Bac+5 RH, psychologie ou commerce
+- Sens de l''écoute et empathie
+- Capacité à gérer plusieurs processus simultanément
+- Aisance relationnelle',
+14),
+
+('2025-05-01','2025-10-31',48.856613,2.352222,'Stage Consultant Formation & Développement RH',
+'Stage 6 mois Paris. Conception et déploiement de programmes de formation pour des clients entreprises : analyse des besoins, ingénierie pédagogique et suivi.',1050,
+'# 📚 Stage Consultant Formation – Groupe Avenir RH
+**Ingénierie pédagogique | Formation | GPEC | E-learning**
+📍 *Paris – 2ème arrondissement*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous concevrez et déploierez des programmes de formation pour des clients entreprises, de l''analyse des besoins à l''évaluation des résultats.
+
+---
+
+## 🎯 Missions
+- Analyse des besoins en formation (entretiens avec les managers)
+- Ingénierie pédagogique et conception des modules
+- Coordination des formateurs internes et externes
+- Animation de sessions de formation (soft skills)
+- Évaluation de l''efficacité des formations
+
+---
+
+## Compétences développées
+- Ingénierie de formation
+- Animation de groupes
+- Conseil RH
+- Connaissance des dispositifs de formation (CPF, plan de développement)
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 RH, psychologie du travail ou sciences de l''éducation
+- Intérêt pour la pédagogie et le développement des compétences
+- Aisance à l''oral
+- Sens de l''organisation',
+14),
+
+('2025-06-01','2025-11-30',48.856613,2.352222,'Stage Consultant RH & Gestion des Talents',
+'Stage 6 mois Paris. Accompagnement de clients dans la mise en place d''outils de gestion des talents : évaluation de la performance, plans de succession et engagement.',1100,
+'# 🌟 Stage Consultant Talents – Groupe Avenir RH
+**GPEC | Évaluation | Talent Management | Engagement**
+📍 *Paris – 2ème arrondissement*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous accompagnerez des DRH dans la structuration de leur politique de gestion des talents.
+
+---
+
+## 🎯 Missions
+- Conception d''outils d''évaluation des compétences
+- Mise en place de plans de succession
+- Réalisation d''enquêtes d''engagement (conception, analyse)
+- Accompagnement à la mise en place de l''entretien annuel
+- Benchmark des pratiques RH innovantes
+
+---
+
+## Compétences développées
+- Gestion des talents et GPEC
+- Psychologie organisationnelle
+- Conseil en entreprise
+- Analyse de données RH
+
+---
+
+## 👤 Profil recherché
+- Bac+5 RH, psychologie du travail ou management
+- Sens analytique
+- Discrétion et éthique
+- Aisance relationnelle avec les dirigeants',
+14),
+
+-- CONSULTGROUP (15)
+('2025-04-01','2025-09-30',48.856613,2.352222,'Stage Consultant Junior en Stratégie',
+'Stage 6 mois Paris. Participation à des missions de conseil en stratégie pour des PME et ETI : diagnostic, recommandations et accompagnement à la mise en œuvre.',1300,
+'# 🎯 Stage Consultant Stratégie – ConsultGroup
+**Stratégie | Diagnostic | Recommandations | Transformation**
+📍 *Paris – 8ème arrondissement*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous intégrerez une équipe de conseil pour accompagner des dirigeants de PME et ETI dans leurs décisions stratégiques.
+
+---
+
+## 🎯 Missions
+- Réalisation de diagnostics stratégiques (entretiens, analyses)
+- Analyse de données et benchmarks sectoriels
+- Rédaction de recommandations stratégiques
+- Préparation et animation de réunions clients
+- Suivi de la mise en œuvre des recommandations
+
+---
+
+## Compétences développées
+- Méthodes de conseil en stratégie
+- Analyse et synthèse d''informations complexes
+- Communication avec des dirigeants
+- Vision globale des enjeux d''entreprise
+
+---
+
+## 👤 Profil recherché
+- Bac+5 grande école de commerce ou d''ingénieurs
+- Esprit analytique et synthétique
+- Excellentes qualités rédactionnelles et orales
+- Curiosité intellectuelle',
+15),
+
+('2025-05-01','2025-10-31',48.856613,2.352222,'Stage Consultant Transformation Organisationnelle',
+'Stage 6 mois Paris. Accompagnement de grandes entreprises dans leurs projets de réorganisation et de conduite du changement.',1250,
+'# 🔄 Stage Consultant Transformation – ConsultGroup
+**Conduite du changement | Lean | Processus | Organisation**
+📍 *Paris – 8ème arrondissement*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous accompagnerez des grandes entreprises dans leurs projets de transformation organisationnelle.
+
+---
+
+## 🎯 Missions
+- Cartographie et analyse des processus existants
+- Identification des axes d''amélioration
+- Accompagnement au changement (communication, formation)
+- Animation d''ateliers de travail avec les équipes
+- Suivi et mesure des indicateurs de transformation
+
+---
+
+## Compétences développées
+- Analyse organisationnelle
+- Conduite du changement
+- Lean management et amélioration continue
+- Facilitation et animation d''ateliers
+
+---
+
+## 👤 Profil recherché
+- Bac+5 management, ingénierie ou grande école
+- Sens de la relation humaine
+- Capacité à gérer les résistances au changement
+- Écoute et pédagogie',
+15),
+
+('2025-06-01','2025-11-30',48.856613,2.352222,'Stage Analyste Performance Opérationnelle',
+'Stage 6 mois Paris. Diagnostic et optimisation des processus opérationnels de clients industriels et de services pour améliorer leur efficience.',1200,
+'# 📊 Stage Analyste Performance – ConsultGroup
+**Lean | Six Sigma | Processus | KPIs | Optimisation**
+📍 *Paris – 8ème arrondissement*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous réaliserez des diagnostics de performance opérationnelle et proposerez des plans d''amélioration pour des clients dans l''industrie et les services.
+
+---
+
+## 🎯 Missions
+- Analyse des processus opérationnels (VSM, cartographie)
+- Identification des gaspillages et des dysfonctionnements
+- Construction des plans d''amélioration continue
+- Accompagnement à la mise en œuvre des actions
+- Mesure des gains réalisés
+
+---
+
+## Compétences développées
+- Lean management et Six Sigma
+- Analyse de données opérationnelles
+- Conseil terrain
+- Présentation de résultats à des managers
+
+---
+
+## 👤 Profil recherché
+- Bac+5 ingénierie, management ou grande école
+- Approche terrain et pragmatique
+- Sens de l''analyse
+- Aisance relationnelle',
+15),
+
+-- ECOSERVICES (16)
+('2025-04-01','2025-09-30',45.760000,4.841388,'Stage Consultant RSE & Développement Durable',
+'Stage 6 mois Lyon. Accompagnement d''entreprises dans l''élaboration de leur stratégie RSE, la rédaction de leurs rapports extra-financiers et la mise en place d''actions concrètes.',1050,
+'# 🌍 Stage Consultant RSE – EcoServices
+**RSE | CSRD | Reporting extra-financier | Stratégie durable**
+📍 *Lyon – Presqu''île*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous accompagnerez des entreprises de tailles variées dans l''élaboration et la mise en œuvre de leur stratégie RSE.
+
+---
+
+## 🎯 Missions
+- Diagnostic RSE (analyse des parties prenantes, matérialité)
+- Élaboration de la stratégie et du plan d''action RSE
+- Rédaction des rapports extra-financiers (CSRD, GRI, DPEF)
+- Suivi des indicateurs RSE
+- Sensibilisation des équipes internes des clients
+
+---
+
+## Compétences développées
+- Référentiels RSE (GRI, CSRD, ISO 26000)
+- Analyse de matérialité
+- Rédaction de rapports formels
+- Conseil en stratégie durable
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 développement durable, management ou sciences sociales
+- Connaissance des enjeux RSE
+- Qualités rédactionnelles
+- Sens de la conviction et de la pédagogie',
+16),
+
+('2025-05-01','2025-10-31',45.760000,4.841388,'Stage Chargé de Mission Bilan Carbone',
+'Stage 6 mois Lyon. Réalisation de bilans carbone (scope 1, 2, 3) pour des entreprises des secteurs industrie et services, et élaboration de plans de réduction.',1000,
+'# 🌱 Stage Bilan Carbone – EcoServices
+**Bilan Carbone | GHG Protocol | Décarbonation | Scope 3**
+📍 *Lyon – Presqu''île*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous réaliserez des bilans carbone pour des entreprises industrielles et de services, en couvrant l''ensemble des scopes d''émissions.
+
+---
+
+## 🎯 Missions
+- Collecte des données d''émissions auprès des clients
+- Calcul des émissions scope 1, 2 et 3 (méthode Bilan Carbone ADEME)
+- Identification des postes d''émissions prioritaires
+- Élaboration des plans de réduction
+- Présentation des résultats aux dirigeants
+
+---
+
+## Compétences développées
+- Méthode Bilan Carbone® et GHG Protocol
+- Analyse des chaînes de valeur
+- Stratégies de décarbonation
+- Communication avec des dirigeants d''entreprise
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 environnement, énergie ou ingénierie
+- Rigueur dans le traitement des données
+- Intérêt fort pour le changement climatique
+- Sens de la communication',
+16),
+
+('2025-06-01','2025-11-30',45.760000,4.841388,'Stage Chargé de Mission Économie Circulaire',
+'Stage 6 mois Lyon. Accompagnement d''entreprises industrielles dans la mise en place de démarches d''économie circulaire : réduction des déchets, recyclage et valorisation.',950,
+'# ♻️ Stage Économie Circulaire – EcoServices
+**Économie circulaire | Déchets | Recyclage | Éco-conception**
+📍 *Lyon – Presqu''île*
+⏳ *Durée : 6 mois*
+
+---
+
+## 📝 Présentation du stage
+Vous accompagnerez des entreprises industrielles dans la transition vers l''économie circulaire.
+
+---
+
+## 🎯 Missions
+- Audit des flux de déchets et des ressources
+- Identification des opportunités de réduction et valorisation
+- Mise en relation avec des filières de recyclage et de réemploi
+- Accompagnement à la mise en place de l''éco-conception
+- Reporting et suivi des indicateurs économie circulaire
+
+---
+
+## Compétences développées
+- Diagnostic des flux de matières
+- Économie circulaire et écologie industrielle
+- Réseau des filières de valorisation
+- Gestion de projet environnemental
+
+---
+
+## 👤 Profil recherché
+- Bac+4/5 environnement, chimie ou génie des procédés
+- Intérêt pour l''industrie et l''environnement
+- Capacité d''analyse
+- Sens du terrain',
+16);
 
 -- ============================================================
--- COMPETENCES DEMANDEES
+-- UTILISATEURS
+-- ============================================================
+INSERT INTO Utilisateur (nom, prenom, email, mdp) VALUES
+('Dupont','Claire','claire.dupont@ecole.fr','$2y$10$hashedpwd1'),
+('Moreau','Antoine','antoine.moreau@ecole.fr','$2y$10$hashedpwd2'),
+('Bernard','Julie','julie.bernard@ecole.fr','$2y$10$hashedpwd3'),
+('Lefebvre','Maxime','maxime.lefebvre@ecole.fr','$2y$10$hashedpwd4'),
+('Martin','Sophie','sophie.martin@etudiant.fr','$2y$10$hashedpwd5'),
+('Petit','Lucas','lucas.petit@etudiant.fr','$2y$10$hashedpwd6'),
+('Durand','Emma','emma.durand@etudiant.fr','$2y$10$hashedpwd7'),
+('Leroy','Nathan','nathan.leroy@etudiant.fr','$2y$10$hashedpwd8'),
+('Simon','Chloé','chloe.simon@etudiant.fr','$2y$10$hashedpwd9'),
+('Laurent','Hugo','hugo.laurent@etudiant.fr','$2y$10$hashedpwd10'),
+('Michel','Léa','lea.michel@etudiant.fr','$2y$10$hashedpwd11'),
+('Garcia','Tom','tom.garcia@etudiant.fr','$2y$10$hashedpwd12'),
+('Roux','Inès','ines.roux@etudiant.fr','$2y$10$hashedpwd13'),
+('Vincent','Paul','paul.vincent@etudiant.fr','$2y$10$hashedpwd14'),
+('Fournier','Marie','marie.fournier@etudiant.fr','$2y$10$hashedpwd15'),
+('Morel','Théo','theo.morel@etudiant.fr','$2y$10$hashedpwd16');
+
+INSERT INTO Pilote (id_pilote) VALUES (1),(2),(3),(4);
+
+INSERT INTO Etudiant (id_etudiant, id_pilote) VALUES
+(5,1),(6,1),(7,1),(8,2),
+(9,2),(10,2),(11,3),(12,3),
+(13,3),(14,4),(15,4),(16,4);
+
+-- ============================================================
+-- COMPETENCES DEMANDEES PAR OFFRE
 -- ============================================================
 INSERT INTO Competence_Offre VALUES
+-- Nexatech offres (1-5)
 (1,2),(1,9),(1,12),(1,6),(1,15),
-(2,1),(2,6),(2,15),
-(3,1),(3,14),(3,15),(3,16),
-(4,3),(4,6),(4,15),(4,14),
-(5,2),(5,9),(5,15),
-(6,1),(6,6),(6,15),
-(7,1),(7,18),(7,16),
-(8,4),(8,15),(8,16),
-(9,1),(9,17),(9,15),
-(10,15),(10,16),
-(11,15),(11,16),(11,1),
-(12,16),(12,15),(12,1),
-(13,3),(13,6),(13,15),(13,7),
-(14,1),(14,6),(14,15),
-(15,1),(15,18),(15,16),
-(16,6),(16,15),(16,16),(16,14),
-(17,16),(17,15),(17,1),
-(18,2),(18,9),(18,15),
-(19,3),(19,2),(19,15),
-(20,4),(20,1),(20,15),
-(21,3),(21,6),(21,14),(21,15),
-(22,1),(22,17),(22,6),
-(23,1),(23,18),(23,16),
-(24,6),(24,15),(24,1),
-(25,15),(25,6),
-(26,2),(26,11),(26,15),
-(27,2),(27,10),(27,15),
-(28,2),(28,15),(28,6),
-(29,3),(29,6),(29,15),(29,14),
+(2,2),(2,9),(2,15),(2,20),
+(3,14),(3,16),(3,15),(3,1),
+(4,5),(4,13),(4,6),(4,15),
+(5,2),(5,10),(5,15),
+-- DataSphere offres (6-10)
+(6,1),(6,6),(6,15),(6,17),
+(7,1),(7,17),(7,6),(7,25),
+(8,6),(8,1),(8,25),(8,20),
+(9,1),(9,6),(9,25),
+(10,14),(10,1),(10,15),(10,16),
+-- CyberShield offres (11-15)
+(11,18),(11,16),(11,15),
+(12,18),(12,6),(12,16),
+(13,18),(13,19),(13,22),
+(14,18),(14,14),(14,15),(14,16),
+(15,18),(15,16),(15,1),
+-- CloudNative offres (16-20)
+(16,14),(16,16),(16,15),(16,6),
+(17,14),(17,2),(17,16),
+(18,16),(18,1),(18,15),
+(19,14),(19,18),(19,16),
+(20,14),(20,16),(20,15),
+-- Crédit Partenaires offres (21-24)
+(21,20),(21,24),(21,19),
+(22,6),(22,25),(22,19),
+(23,19),(23,6),(23,20),
+(24,6),(24,25),(24,19),
+-- FinStart offres (25-27)
+(25,6),(25,25),(25,19),(25,22),
+(26,6),(26,25),(26,24),
+(27,6),(27,25),(27,22),
+-- AssurPro offres (28-30)
+(28,20),(28,24),(28,19),
+(29,19),(29,22),(29,25),
 (30,1),(30,6),(30,15),
-(31,1),(31,18),(31,16),
-(32,4),(32,15),(32,16),
-(33,2),(33,11),(33,15),
-(34,2),(34,10),(34,1),(34,15),
-(35,3),(35,6),(35,15),(35,7),
-(36,1),(36,17),(36,6),
-(37,1),(37,6),(37,15),
-(38,5),(38,6),(38,15),(38,2),
-(39,5),(39,6),(39,15),
-(40,14),(40,16),(40,15),(40,1),
-(41,6),(41,15),(41,16),(41,14),
-(42,2),(42,9),(42,15),
-(43,3),(43,6),(43,15),(43,14),
-(44,1),(44,17),(44,6),
-(45,1),(45,18),(45,16),
-(46,15),(46,6),(46,14),
-(47,3),(47,6),(47,15),
-(48,2),(48,9),(48,15),
-(49,2),(49,11),(49,15),
-(50,3),(50,6),(50,15),(50,14),
-(51,1),(51,6),(51,15),
-(52,1),(52,17),(52,6),
-(53,1),(53,16),(53,15),
-(54,4),(54,15),(54,16),
-(55,5),(55,6),(55,15),(55,2),
-(56,5),(56,6),(56,15),
-(57,5),(57,2),(57,15),(57,6),
-(58,14),(58,16),(58,15),(58,1),
-(59,1),(59,17),(59,6),(59,15),
-(60,1),(60,16),(60,15),
-(61,4),(61,15),(61,16),
-(62,2),(62,15),(62,6),
-(63,4),(63,15),(63,16),
-(64,14),(64,16),(64,15),(64,1),
-(65,2),(65,9),(65,15),
-(66,2),(66,11),(66,15),
-(67,3),(67,6),(67,15),(67,14),
-(68,1),(68,17),(68,6),
-(69,1),(69,18),(69,16),
-(70,4),(70,15),(70,16),
-(71,6),(71,15),(71,16),(71,14),
-(72,2),(72,9),(72,15),
-(73,3),(73,6),(73,15),(73,14),
-(74,1),(74,17),(74,6),
-(75,1),(75,18),(75,16),
-(76,15),(76,6),(76,14),
-(77,3),(77,6),(77,15),
-(78,2),(78,9),(78,15),
-(79,2),(79,11),(79,15),
-(80,4),(80,15),(80,16);
-
--- ============================================================
--- EVALUATIONS
--- ============================================================
-INSERT INTO Evaluation_entreprise VALUES
-(1,4,4),(1,5,5),(1,6,4),
-(2,7,5),(2,8,4),
-(3,9,3),(3,10,4),
-(4,4,5),(4,7,5),
-(5,5,4),(5,6,3),
-(6,4,4),(7,5,5),(8,6,4),
-(9,7,4),(10,8,5),(11,9,4),
-(12,10,3),(13,4,5),(14,5,4),
-(15,6,5),(16,7,3),(17,8,5),
-(18,9,5),(19,10,4),(20,4,4);
+-- Horizon offres (31-34)
+(31,19),(31,20),(31,22),(31,23),
+(32,22),(32,21),(32,23),
+(33,22),(33,21),(33,20),
+(34,22),(34,25),(34,20),(34,23),
+-- InfluenceMedia offres (35-37)
+(35,23),(35,20),(35,22),(35,24),
+(36,23),(36,22),(36,21),
+(37,1),(37,25),(37,20),(37,23),
+-- ComEvent offres (38-40)
+(38,19),(38,20),(38,22),
+(39,22),(39,21),(39,20),
+(40,19),(40,20),(40,22),
+-- Ingénia Tech offres (41-44)
+(41,4),(41,15),(41,25),
+(42,4),(42,15),(42,22),
+(43,4),(43,1),(43,25),
+(44,19),(44,20),(44,22),(44,25),
+-- GreenBuild offres (45-47)
+(45,4),(45,25),(45,15),
+(46,14),(46,15),(46,19),
+(47,19),(47,22),(47,25),
+-- Électro Ingénierie offres (48-50)
+(48,4),(48,16),(48,15),
+(49,4),(49,16),(49,15),
+(50,4),(50,16),(50,6),
+-- Avenir RH offres (51-53)
+(51,20),(51,22),(51,19),(51,21),
+(52,22),(52,21),(52,19),(52,20),
+(53,19),(53,22),(53,25),(53,21),
+-- ConsultGroup offres (54-56)
+(54,19),(54,25),(54,22),(54,20),
+(55,19),(55,21),(55,22),(55,20),
+(56,25),(56,19),(56,20),(56,22),
+-- EcoServices offres (57-59)
+(57,19),(57,22),(57,25),(57,21),
+(58,25),(58,19),(58,22),
+(59,19),(59,22),(59,25);
 
 -- ============================================================
 -- WISHLISTS
 -- ============================================================
 INSERT INTO Wishlist VALUES
-(4,1),(4,3),(4,22),(4,45),
-(5,7),(5,9),(5,44),(5,68),
-(6,13),(6,20),(6,35),(6,50),
-(7,8),(7,11),(7,70),(7,79),
-(8,16),(8,18),(8,55),(8,71),
-(9,21),(9,29),(9,39),(9,65),
-(10,36),(10,42),(10,60),(10,10);
+(5,1),(5,6),(5,16),(5,31),
+(6,2),(6,11),(6,35),(6,51),
+(7,7),(7,22),(7,38),(7,54),
+(8,3),(8,12),(8,41),(8,28),
+(9,8),(9,17),(9,45),(9,57),
+(10,4),(10,32),(10,48),(10,21),
+(11,9),(11,18),(11,36),(11,59),
+(12,5),(12,13),(12,42),(12,25),
+(13,10),(13,23),(13,50),(13,38),
+(14,15),(14,33),(14,46),(14,55),
+(15,20),(15,37),(15,52),(15,29),
+(16,14),(16,24),(16,43),(16,58);
 
 -- ============================================================
 -- CANDIDATURES
 -- ============================================================
 INSERT INTO Postule VALUES
-(4,1,'cv/lucas_cv.pdf','lm/lucas_lm.pdf'),
-(5,7,'cv/emma_cv.pdf','lm/emma_lm.pdf'),
-(6,13,'cv/nathan_cv.pdf','lm/nathan_lm.pdf'),
-(7,8,'cv/chloe_cv.pdf','lm/chloe_lm.pdf'),
-(8,16,'cv/hugo_cv.pdf','lm/hugo_lm.pdf'),
-(9,21,'cv/lea_cv.pdf','lm/lea_lm.pdf'),
-(10,36,'cv/tom_cv.pdf','lm/tom_lm.pdf'),
-(4,22,'cv/lucas_cv.pdf','lm/lucas_lm2.pdf'),
-(5,9,'cv/emma_cv.pdf','lm/emma_lm2.pdf'),
-(6,35,'cv/nathan_cv.pdf','lm/nathan_lm2.pdf');
+(5,1,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(6,11,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(7,22,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(8,3,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(9,17,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(10,32,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(11,35,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(12,41,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(13,48,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(14,54,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(15,57,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(16,28,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(5,7,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(6,2,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(7,38,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(8,12,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(9,45,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(10,21,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(11,9,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf')),
+(12,25,CONCAT('cv/',UNHEX(MD5(RAND())),'_cv.pdf'),CONCAT('lm/',UNHEX(MD5(RAND())),'_lm.pdf'));
 
 -- ============================================================
--- VILLE
+-- EVALUATIONS
+-- ============================================================
+INSERT INTO Evaluation_entreprise VALUES
+(1,5,5),(1,6,4),(1,7,5),
+(2,8,4),(2,9,5),(2,10,3),
+(3,11,5),(3,12,4),
+(4,13,4),(4,14,5),
+(5,5,3),(5,15,4),
+(6,6,5),(6,16,4),
+(7,7,4),(7,8,3),
+(8,9,5),(8,10,4),
+(9,11,4),(9,12,5),
+(10,13,3),(10,14,4),
+(11,5,5),(11,15,4),
+(12,6,4),(12,16,5),
+(13,7,3),(13,8,4),
+(14,9,5),(14,10,4),
+(15,11,4),(15,12,5),
+(16,13,4),(16,14,3);
+
+-- ============================================================
+-- VILLES
 -- ============================================================
 INSERT INTO Ville (nom, lat, lng) VALUES
 ('Paris', 48.856613, 2.352222),
-('Marseille', 43.296482, 5.369780),
 ('Lyon', 45.760000, 4.841388),
-('Toulouse', 43.604652, 1.444209),
-('Nice', 43.700936, 7.268391),
-('Nantes', 47.218371, -1.553621),
-('Montpellier', 43.611931, 3.877716),
-('Strasbourg', 48.573405, 7.752111),
 ('Bordeaux', 44.837789, -0.579180),
-('Lille', 50.629250, 3.057256),
-('Rennes', 48.117266, -1.677793),
-('Reims', 49.258329, 4.031696),
-('Le Havre', 49.494370, 0.107929),
-('Saint-Étienne', 45.439695, 4.387178),
-('Toulon', 43.124228, 5.928000),
+('Nantes', 47.218371, -1.553621),
+('Toulouse', 43.604652, 1.444209),
 ('Grenoble', 45.188529, 5.724524),
-('Dijon', 47.322047, 5.041480),
-('Angers', 47.478419, -0.563166),
-('Nîmes', 43.836699, 4.360054),
-('Villeurbanne', 45.771944, 4.890169),
-('Clermont-Ferrand', 45.777222, 3.087025),
-('Le Mans', 48.006110, 0.199556),
-('Aix-en-Provence', 43.529742, 5.447427),
-('Brest', 48.390394, -4.486076),
-('Tours', 47.394144, 0.684840),
-('Amiens', 49.895037, 2.302976),
-('Limoges', 45.833619, 1.261105),
-('Annecy', 45.899247, 6.129384),
-('Perpignan', 42.688659, 2.894833),
-('Boulogne-Billancourt', 48.839695, 2.239912),
-('Metz', 49.119308, 6.175715),
-('Besançon', 47.237829, 6.024053),
-('Orléans', 47.902733, 1.909252),
-('Saint-Denis', 48.936181, 2.357443),
-('Argenteuil', 48.947210, 2.246684),
-('Rouen', 49.443231, 1.099971),
-('Montreuil', 48.864049, 2.443211),
-('Mulhouse', 47.750839, 7.335888),
-('Caen', 49.182863, -0.370679),
-('Nancy', 48.692054, 6.184417),
-('Saint-Paul', 21.009624, 55.270718),
-('Roubaix', 50.692704, 3.174561),
-('Tourcoing', 50.722970, 3.161172),
-('Nanterre', 48.892427, 2.206964),
-('Avignon', 43.949316, 4.805528),
-('Vitry-sur-Seine', 48.787527, 2.392930),
-('Créteil', 48.790367, 2.455572),
-('Poitiers', 46.580224, 0.340375),
-('Courbevoie', 48.896725, 2.243196),
-('Versailles', 48.804865, 2.120355),
-('Colombes', 48.922530, 2.254010),
-('Fort-de-France', 14.616064, -61.058780),
-('Aulnay-sous-Bois', 48.938192, 2.494153),
-('Asnières-sur-Seine', 48.914817, 2.287141),
-('Rueil-Malmaison', 48.876397, 2.189697),
-('Aubervilliers', 48.914050, 2.383413),
-('Champigny-sur-Marne', 48.819468, 2.524535),
-('La Rochelle', 46.160329, -1.151139),
-('Antibes', 43.580418, 7.125102),
-('Calais', 50.951290, 1.858686),
-('Saint-Maur-des-Fossés', 48.793026, 2.494441),
-('Drancy', 48.925346, 2.445684),
-('Mérignac', 44.832136, -0.684321),
-('Ajaccio', 41.926991, 8.736888),
-('Issy-les-Moulineaux', 48.823402, 2.274425),
-('Noisy-le-Grand', 48.849479, 2.562755),
-('Levallois-Perret', 48.893205, 2.288215),
 ('Pau', 43.295097, -0.370797),
-('La Seyne-sur-Mer', 43.098648, 5.879927),
-('Cannes', 43.552849, 7.017369),
-('Cergy', 49.038430, 2.078728),
-('Lorient', 47.748252, -3.370244),
-('Valence', 44.933393, 4.892360),
-('Quimper', 47.996089, -4.102920),
-('Villeneuve-d’Ascq', 50.609753, 3.130473),
-('Antony', 48.759968, 2.305993),
-('La Roche-sur-Yon', 46.669719, -1.426436),
-('Vénissieux', 45.698524, 4.879399),
-('Sarcelles', 48.997192, 2.380270),
-('Fréjus', 43.432171, 6.737034),
-('Cholet', 47.059885, -0.879980),
-('Béziers', 43.344103, 3.215795),
-('Colmar', 48.079859, 7.358512),
-('Dunkerque', 51.035200, 2.376776),
-('Ajaccio', 41.926991, 8.736888),
-('Martigues', 43.405754, 5.048089),
-('Bourges', 47.081013, 2.398782),
-('Saint-Nazaire', 47.280602, -2.208395),
-('Tarbes', 43.232820, 0.078083),
-('Niort', 46.323706, -0.464241),
-('Montauban', 44.017440, 1.355652),
-('Narbonne', 43.183938, 3.003420),
-('Chambéry', 45.564601, 5.917781),
-('Nevers', 46.989002, 3.159000),
-('Cergy', 49.038430, 2.078728),
-('Saint-Quentin', 49.848889, 3.287190),
-('Chalon-sur-Saône', 46.786390, 4.854750),
-('Albi', 43.929798, 2.148641),
-('Brive-la-Gaillarde', 45.159348, 1.533225),
-('Sète', 43.407090, 3.692410),
-('Pantin', 48.896855, 2.401306),
-('Évreux', 49.024139, 1.150820)
-;
+('Bourges', 47.081013, 2.398782);
