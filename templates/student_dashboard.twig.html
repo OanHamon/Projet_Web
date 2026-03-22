@@ -35,8 +35,17 @@
                     <input type="text" name="email" placeholder="{{user.email}}">
                 </div>
                 <br>
-                <br>
 
+                {% if errors %}
+                <div class="alert-danger">
+                    <ul>
+                        {% for error in errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                <br>
                 <button class="btn-primary">Enregistrer</button>
             </form>
         </div>

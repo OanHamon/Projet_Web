@@ -663,3 +663,8 @@ header nav{
 
 
 /*#endregion Cards*/
+
+.alert-danger{
+  color: red;
+  font-weight: bold;
+}

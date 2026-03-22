@@ -22,11 +22,16 @@ class UserController extends Controller{
         $this->id=$_SESSION['userId'];
     }
 
-    function renderStudentDashboardPage(){
+    function renderStudentDashboardPage($errors = NULL){
         $wishliste = $this->userModel->getWishlist($this->id);
         $candidature = $this->userModel->getPostulations($this->id);
         $user= $this->userModel->getById($this->id);
-        echo $this->twig->render('student_dashboard.twig.html',['user'=>$user,'wishliste'=>$wishliste,'candidatures'=>$candidature]);
+        echo $this->twig->render('student_dashboard.twig.html',[
+            'user'=>$user,
+            'wishliste'=>$wishliste,
+            'candidatures'=>$candidature,
+            'errors' => $errors
+            ]);
     }
 
     function renderPiloteDashboardPage(){
@@ -39,14 +44,21 @@ class UserController extends Controller{
         if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email'])) {
             $prenom = $_POST['prenom'];
             $nom = $_POST['nom'];
-            $data = [];
             $email = $_POST['email'];
+            $emailResult = $this->punisher->isEmail($email);
+            if($emailResult !== true){
+                $errors[] = $emailResult;
+                $this->renderStudentDashboardPage($errors);
+                exit();
+            }
+
+            $data = [];
 
             if(!empty($_POST['nom'])){
-                $data['nom'] = $_POST['nom'];
+                $data['nom'] = $this->punisher->sanitize($_POST['nom']);
             }
             if(!empty($_POST['prenom'])){
-                $data['prenom'] = $_POST['prenom'];
+                $data['prenom'] = $this->punisher->sanitize($_POST['prenom']);
             }
             if(!empty($_POST['email'])){
                 $data['email'] = $_POST['email'];
@@ -66,14 +78,20 @@ class UserController extends Controller{
         if(isset($_POST['prenom']) && isset($_POST['nom'])&& isset($_POST['email'])){
             $prenom = $_POST['prenom'];
             $nom = $_POST['nom'];
-            $email =$_POST['email'];
+            $email = $_POST['email'];
+            $emailResult = $this->punisher->isEmail($email);
+            if($emailResult !== true){
+                $errors[] = $emailResult;
+                $this->renderStudentDashboardPage($errors);
+                exit();
+            }
             $data =[];
 
             if(!empty($_POST['nom'])){
-                $data['nom'] = $_POST['nom'];
+                $data['nom'] = $this->punisher->sanitize($_POST['nom']);
             }
             if(!empty($_POST['prenom'])){
-                $data['prenom'] = $_POST['prenom'];
+                $data['prenom'] = $this->punisher->sanitize($_POST['prenom']);
             }
             if(!empty($_POST['email'])){
                 $data['email'] = $_POST['email'];
@@ -143,16 +161,6 @@ class UserController extends Controller{
     function candidaterOffre($id)
     {
 
-        // verifier qu'il na pas deja postuler
-
-
-        // verifier les contrainte sur les fichers : pdf, doc (finfo), taille $_Files['size']
-
-        // les deplacer et les stocker dans les fichiers sur le server avec un uniq_id
-        // Enregister dans la bdd le chemin vers le fichier pdf sur le serveur
-
-        //rediriger vers le menu si y'a pas de pb ou vers la page error
-        //exit()
         $postuleModel = new PostuleModel();
 
         if($id){
@@ -161,7 +169,6 @@ class UserController extends Controller{
             if(!$postuleModel->find($data)){
 
                 if(isset($_POST['phone'])){
-                    //isset($_POST['prenom']) && isset($_POST['nom'])&& isset($_POST['email']) &&
                     if(isset($_FILES['cv']) && isset($_FILES['lm'])){
                         $cv = $_FILES['cv'];
                         $lm =$_FILES['lm'];

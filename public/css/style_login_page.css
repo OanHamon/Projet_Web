@@ -196,10 +196,6 @@ form {
   }
 }
 
-.alert-danger{
-  color: red;
-  font-weight: bold;
-}
 
 .switch_mobile {
   display: none;

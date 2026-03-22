@@ -40,7 +40,7 @@ class EntrepriseController extends Controller{
     }
     
 
-    function renderEntrepriseDashboardPage(){
+    function renderEntrepriseDashboardPage($errors = NULL){
         $this->requireEntrepriseAuth();
         $entreprise = $this->entrepriseModel->getById($this->entreprise_id);
         $offres = $this->entrepriseModel->getOffres($this->entreprise_id);
@@ -93,6 +93,7 @@ class EntrepriseController extends Controller{
             'candidat_data'=>$candidat_data,
             'cv_url'=>$cv_url,
             'lm_url'=>$lm_url,
+            'errors' => $errors 
 
             ]);
     }
@@ -138,15 +139,34 @@ class EntrepriseController extends Controller{
     function updateEntrepriseInfo(){
         $this->requireEntrepriseAuth();
         $data= [];
+        $errors = [];
+
         $fields = ['nom', 'phrase_intro', 'description_entreprise','description_cartes', 'email', 'telephone'];
         foreach($fields as $field){
             if(!empty($_POST[$field])){
-                $data[$field] = $_POST[$field];
+                $value = $_POST[$field];
+
+                if($field === 'email'){
+                    $result = $this->punisher->isEmail($value);
+                    if($result !== true){ $errors[] = $result; continue; }                    
+                }
+                if($field === 'telephone'){
+                    $result = $this->punisher->isPhoneNumber($value);
+                    if($result !== true){ $errors[] = $result; continue; }                    
+                }
+                if($field === 'description_entreprise'){
+                    $data[$field] = $value;
+                }
+                else{
+                    $data[$field] =$this->punisher->sanitize($value);
+                }
+
+
             }
         }
-        if(!empty($data)){$this->entrepriseModel->update($this->entreprise_id,$data);}
-        header('Location: /entreprise_dashboard');
-        exit();
+        if(empty($errors) && !empty($data)){$this->entrepriseModel->update($this->entreprise_id,$data);}
+        $this->renderEntrepriseDashboardPage($errors);
+        exit(); 
 
     }
 

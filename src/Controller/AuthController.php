@@ -21,6 +21,10 @@ class AuthController extends Controller{
     
         if (isset($_POST['mdp']) && isset($_POST['email'])) {
             $email = $_POST['email'];
+            $emailResult = $this->punisher->isEmail($email);
+            if($emailResult !== true){
+                $errors[] = $emailResult;
+            }
             $mdp   = $_POST['mdp'];
             $emailIsEntreprise = $this->entrepriseModel->entreprise_exist_email($email);
     
@@ -75,6 +79,15 @@ class AuthController extends Controller{
             $email = $_POST['email'];
             $nom = $_POST['nom'];
             $prenom = $_POST['prenom'];
+
+            $emailResult = $this->punisher->isEmail($email);
+            if($emailResult !== true){
+                $errors[] = $emailResult;
+            }
+
+            $nom = $this->punisher->sanitize($nom);
+            $prenom = $this->punisher->sanitize($prenom);
+
             $type_compte = $_POST['type_compte'];
             $password = $_POST['mdp'];
             $password_confirm = $_POST['mdp_confirm'];
