@@ -11,11 +11,15 @@ class BaseModel extends Model
 
     protected function executeQuery($query, $params = [])
     {
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute($params);
-        return $stmt;
+        try {
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute($params);
+            return $stmt;
+        } catch (\PDOException $e) {
+            error_log("DB Error: " . $e->getMessage());
+            throw new \RuntimeException("Erreur base de données");
+        }
     }
-
     public function getAll()
     {
         $query = "SELECT * FROM {$this->table}";
