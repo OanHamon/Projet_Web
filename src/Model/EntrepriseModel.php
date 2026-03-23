@@ -19,7 +19,10 @@ class EntrepriseModel extends BaseModel
 
         $stmt = $this->executeQuery($query, ['id' => $entrepriseId]);
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+
+        return $result;
     }
 
     public function getEvaluation($entrepriseId)
@@ -32,7 +35,10 @@ class EntrepriseModel extends BaseModel
 
         $stmt = $this->executeQuery($query, ['id' => $entrepriseId]);
 
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+
+        return $result;
     }
 
     public function getCompetences($entrepriseId)
@@ -47,7 +53,10 @@ class EntrepriseModel extends BaseModel
 
         $stmt = $this->executeQuery($query, ['id' => $entrepriseId]);
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+
+        return $result;
     }
 
     public function create_entreprise($nom, $email, $mdp){
@@ -75,6 +84,7 @@ class EntrepriseModel extends BaseModel
         ]);
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
 
         return $result ? true : false;
     }
@@ -92,6 +102,7 @@ class EntrepriseModel extends BaseModel
         ]);
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
 
         return $result ? $result['id_entreprise'] : null;
     }
@@ -110,6 +121,7 @@ class EntrepriseModel extends BaseModel
         ]);
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
 
         return $result ? $result['mdp'] : null;
     }

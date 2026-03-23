@@ -20,14 +20,18 @@ class BaseModel extends Model
     {
         $query = "SELECT * FROM {$this->table}";
         $stmt = $this->executeQuery($query);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $result;
     }
 
     public function getById($id)
     {
         $query = "SELECT * FROM {$this->table} WHERE {$this->primaryKey} = :id";
         $stmt = $this->executeQuery($query, ['id' => $id]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $result;
     }
 
     public function deleteById($id)
@@ -84,7 +88,10 @@ class BaseModel extends Model
 
         $stmt = $this->executeQuery($query, $params);
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+
+        return $result;
     }
 }
 

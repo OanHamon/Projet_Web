@@ -19,7 +19,10 @@ class CompetenceModel extends BaseModel
 
         $stmt = $this->executeQuery($query, ['id' => $competenceId]);
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+
+        return $result;
     }
 
 
