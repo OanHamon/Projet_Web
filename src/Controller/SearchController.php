@@ -45,6 +45,15 @@ class SearchController extends Controller {
         $key_words = is_array($key_wordsRaw) ? $key_wordsRaw : [$key_wordsRaw];
         $key_words = array_filter($key_words, fn($value) => !empty(trim((string)$value)));
 
+        // Séparer les mots-clés contenant des espaces en plusieurs mots pour la recherche GET
+        $all_keywords = [];
+        foreach ($key_words as $kw) {
+            foreach (preg_split('/\s+/u', trim((string)$kw)) as $word) {
+                if ($word !== '') $all_keywords[] = $word;
+            }
+        }
+        $key_words = $all_keywords;
+
         $offres = $this->searchModel->searchOffre($dist, $lat, $lng, array_values($key_words));
 
         echo $this->twig->render('recherche_offre.twig.html', [
