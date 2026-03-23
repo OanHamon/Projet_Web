@@ -67,7 +67,8 @@ class AuthController extends Controller{
     
         echo $this->twig->render('login.twig.html', [
             'login' => false,
-            'errors' => $errors
+            'errors' => $errors,
+            'post' => $_POST
         ]);
     }
 
@@ -78,24 +79,47 @@ class AuthController extends Controller{
 
             $email = $_POST['email'];
             $nom = $_POST['nom'];
+            $nom = $this->punisher->sanitize($nom);
             $prenom = $_POST['prenom'];
+            $prenom = $this->punisher->sanitize($prenom);
+            $type_compte = $_POST['type_compte'];
+            $password = $_POST['mdp'];
+            $password_confirm = $_POST['mdp_confirm'];
 
             $emailResult = $this->punisher->isEmail($email);
             if($emailResult !== true){
                 $errors[] = $emailResult;
             }
 
-            $nom = $this->punisher->sanitize($nom);
-            $prenom = $this->punisher->sanitize($prenom);
-
-            $type_compte = $_POST['type_compte'];
-            $password = $_POST['mdp'];
-            $password_confirm = $_POST['mdp_confirm'];
-
+            
             if ($this->userModel->user_exist_email($email) || $this->entrepriseModel->entreprise_exist_email($email)) {
                 $errors[] = "Un compte existe déjà avec cette adresse email, connectez vous.";
             }
 
+
+            if(strlen($nom) <= 0){
+                $errors[] = "Le nom ne peut pas être vide.";
+            }
+            if(strlen($nom) > 50){
+                $errors[] = "Le nom ne peut pas dépasser 50 caractères.";
+            }
+            if($type_compte != 'entreprise') {
+                if(strlen($prenom) <= 0){
+                    $errors[] = "Le prénom ne peut pas être vide.";
+                }
+                if(strlen($prenom) > 50){
+                    $errors[] = "Le prénom ne peut pas dépasser 50 caractères.";
+                }
+            }
+            if(strlen($email) <= 0){
+                $errors[] = "L'email ne peut pas être vide.";
+            }
+            if(strlen($email) > 50){
+                $errors[] = "L'email ne peut pas dépasser 50 caractères.";
+            }
+            if(strlen($password) > 50){
+                $errors[] = "Le mot de passe ne doit pas dépasser 50 caractères.";
+            }
             if(strlen($password) < 4){
                 $errors[] = "Le mot de passe doit avoir au moins 4 caractères.";
             }
@@ -141,7 +165,8 @@ class AuthController extends Controller{
     
         echo $this->twig->render('login.twig.html', [
             'login' => true,
-            'errors' => $errors
+            'errors' => $errors,
+            'post' => $_POST
         ]);
     }
 
@@ -152,9 +177,9 @@ class AuthController extends Controller{
     }
 
     function renderSignInPage(){
-        echo $this->twig->render('login.twig.html', ['login'=>false]);
+        echo $this->twig->render('login.twig.html', ['login'=>false, 'post'=>[]]);
     }
     function renderSignUpPage(){
-        echo $this->twig->render('login.twig.html', ['login'=>true]);
+        echo $this->twig->render('login.twig.html', ['login'=>true, 'post'=>[]]);
     }
 }

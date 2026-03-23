@@ -38,31 +38,36 @@
             <div class="field-group">
               <label for="signup-type">Type de Compte</label>
               <select id="signup-type" name="type_compte" required>
-                <option value="" disabled selected>Choisir un type</option>
-                <option value="etudiant">Étudiant</option>
-                <option value="pilote">Pilote</option>
-                <option value="entreprise">Entreprise</option>
+                <option value="" disabled {% if post.type_compte is not defined or post.type_compte == '' %}selected="selected"{% endif %}>Choisir un type</option>
+                <option value="etudiant" {% if post.type_compte is defined and post.type_compte == 'etudiant' %}selected="selected"{% endif %}>Étudiant</option>
+                <option value="pilote" {% if post.type_compte is defined and post.type_compte == 'pilote' %}selected="selected"{% endif %}>Pilote</option>
+                <option value="entreprise" {% if post.type_compte is defined and post.type_compte == 'entreprise' %}selected="selected"{% endif %}>Entreprise</option>
               </select>
             </div>
             <div class="field-group" id="nom-group">
               <label for="signup-nom">Nom</label>
-              <input type="text" id="signup-nom" name="nom" required />
+              <input type="text" id="signup-nom" name="nom" required
+                     value="{{ post.nom|default('')|e }}"/>
             </div>
             <div class="field-group" id="prenom-group">
               <label for="signup-prenom">Prénom</label>
-              <input type="text" id="signup-prenom" name="prenom" required />
+              <input type="text" id="signup-prenom" name="prenom" required
+                     value="{{ post.prenom|default('')|e }}"/>
             </div>
             <div class="field-group">
               <label for="signup-email">Email</label>
-              <input type="email" id="signup-email" name="email" required/>
+              <input type="email" id="signup-email" name="email" required
+                     value="{{ post.email|default('')|e }}"/>
             </div>
             <div class="field-group">
               <label for="signup-mdp">Mot de passe</label>
-              <input type="password" id="signup-mdp" name="mdp" required/>
+              <input type="password" id="signup-mdp" name="mdp" required
+                     value="{{ post.mdp|default('')|e }}"/>
             </div>
             <div class="field-group">
               <label for="signup-confirm">Confirmation mot de passe</label>
-              <input type="password" id="signup-confirm" name="mdp_confirm" required/>
+              <input type="password" id="signup-confirm" name="mdp_confirm" required
+                     value="{{ post.mdp_confirm|default('')|e }}"/>
             </div>
             <button type="submit" class="btn-main">S'inscrire</button>
           </form>
@@ -74,11 +79,13 @@
             <h1>Se connecter</h1>
             <div class="field-group">
               <label for="signin-nom">Email</label>
-              <input type="email" id="signin-nom" name="email" required/>
+              <input type="email" id="signin-nom" name="email" required
+                     value="{{ post.email|default('')|e }}"/>
             </div>
             <div class="field-group">
               <label for="signin-mdp">Mots de passe</label>
-              <input type="password" id="signin-mdp" name="mdp" required/>
+              <input type="password" id="signin-mdp" name="mdp" required
+                     value="{{ post.mdp|default('')|e }}"/>
             </div>
             <button type="submit" class="btn-main">Se connecter</button>
           </form>
