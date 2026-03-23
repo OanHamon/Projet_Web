@@ -14,8 +14,6 @@ class SearchController extends Controller {
     }
 
     public function renderSearchPage() {
-        // PRG (Post-Redirect-Get) : éviter le "Renvoyer le formulaire ?" après un refresh navigateur.
-        // Même si certains formulaires envoient en POST, on redirige vers une requête GET.
         if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
             $key_wordsRaw = $_POST['key_words'] ?? [];
             $key_words = is_array($key_wordsRaw) ? $key_wordsRaw : [$key_wordsRaw];
