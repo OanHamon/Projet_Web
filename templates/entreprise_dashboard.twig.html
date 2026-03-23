@@ -19,6 +19,16 @@
     </section>
 
     <div class="content-dashboard">
+        {% if errors %}
+            <div class="alert-danger">
+                <ul>
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                        <br>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
         <section class="entreprise-info">
 
             <div class="entreprise-block-content entreprise-card">
@@ -72,16 +82,6 @@
 
                     </div>
 
-                    {% if errors %}
-                        <div class="alert-danger">
-                            <ul>
-                                {% for error in errors %}
-                                    <li>{{ error }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    {% endif %}
-
                     <button class="save-btn">Enregistrer</button>
                 </form>
             </div>
@@ -94,7 +94,7 @@
 
                 <aside class="offres-list">
 
-                    <div class="offres-header" id="ModifOffre">
+                    <div class="offres-header" id="modif-offre">
                         <h3>Vos Offres</h3>
                         <a href="/entreprise_dashboard?create=true"><button class="add-offre">+</button></a>
                     </div>

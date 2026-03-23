@@ -3,55 +3,58 @@
                 <form class="offre-form" method="POST" action="/entreprise_dashboard/update_offre_info">
                     <input type="hidden" name="id_offre" value="{{offre_to_display.id_offre}}">
                     {% if offre_to_display %}
-                    <div class="form-group">
-                        <label>Titre</label>
-                        <input type="text" name="titre" placeholder="{{offre_to_display.titre}}">
-                    </div>
+                        <div class="form-group">
+                            <label>Titre</label>
+                            <input type="text" name="titre" placeholder="{{offre_to_display.titre}}">
+                        </div>
 
-                    <div class="form-group">
-                        <label>Description des cartes</label>
-                        <textarea name="description_carte" placeholder="{{offre_to_display.description_carte}}"></textarea>
-                    </div>
+                        <div class="form-group">
+                            <label>Description des cartes</label>
+                            <textarea name="description_carte" placeholder="{{offre_to_display.description_carte}}"></textarea>
+                        </div>
 
-                    <div class="form-group">
-                        <label>Description du stage</label>
-                        <textarea name="description_offre_de_stage" placeholder="Ecrivez votre text ici ..."></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Compétences :</label>
+                        <div class="form-group">
+                            <label>Description du stage</label>
+                            <textarea name="description_offre_de_stage" placeholder="Ecrivez votre text ici ..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Compétences :</label>
 
-                        <div class="competences-grid">
+                            <div class="competences-grid">
 
-                        {% for competence in all_competences%}
-                            {% if competence.id_competence in offre_competences|column('id_competence') %}
-                                <label><input type="checkbox" name="competences[]" value="{{competence.id_competence}}"checked>{{competence.nom}}</label>
+                            {% for competence in all_competences%}
+                                {% if competence.id_competence in offre_competences|column('id_competence') %}
+                                    <label><input type="checkbox" name="competences[]" value="{{competence.id_competence}}"checked>{{competence.nom}}</label>
+                                {% else %}
+                                    <label><input type="checkbox" name="competences[]" value="{{competence.id_competence}}">{{competence.nom}}</label>   
+                                {% endif %}
                             {% else %}
-                                <label><input type="checkbox" name="competences[]" value="{{competence.id_competence}}">{{competence.nom}}</label>   
-                            {% endif %}
-                        {% else %}
-                        <p>NO DATA FOUND</p>
-                        {% endfor %}
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Rémunération</label>
-                        <input type="number"  min="0" max="9999"  name="remuneration_par_mois" placeholder="{{offre_to_display.remuneration_par_mois}} €">
-                    </div>
-
-                    <div class="dates-row">
-                        <div class="form-group">
-                            <label>Date début</label>
-                            <input type="date" name="date_debut" value="{{offre_to_display.date_debut}}">
+                            <p>NO DATA FOUND</p>
+                            {% endfor %}
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <label>Date fin</label>
-                            <input type="date" name="date_fin" value="{{offre_to_display.date_fin}}">
+                            <label>Rémunération</label>
+                            <input type="number"  min="0" max="9999"  name="remuneration_par_mois" placeholder="{{offre_to_display.remuneration_par_mois}} €">
                         </div>
-                    </div>
 
-                    <button class="save-btn">Enregistrer</button>
+                        <div class="dates-row">
+                            <div class="form-group">
+                                <label>Date début</label>
+                                <input type="date" name="date_debut" value="{{offre_to_display.date_debut}}">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Date fin</label>
+                                <input type="date" name="date_fin" value="{{offre_to_display.date_fin}}">
+                            </div>
+                        </div>
+
+
+
+                        <button class="save-btn">Enregistrer</button>
 
                     {% endif %}
+
                 </form>

@@ -74,7 +74,7 @@
                             <li><span class="dot"></span>{{competence.nom}}</li>
                             {% endif %}
                         {% else %}
-                        <p>NO DATA FOUND</p>
+                            <p>Nous ne cherchons pas de compétences techniques particulières</p>
                         {% endfor %}
                     </ul>
                     
@@ -84,10 +84,10 @@
                     <ul>
                         {% for competence in competences%}
                             {% if competence.categorie == 'Social' %}
-                            <li><span class="dot"></span>{{competence.nom}}</li>
+                            <li><span class="dot"></span>{{competence.nom}}</li>                   
                             {% endif %}
                         {% else %}
-                        <p>NO DATA FOUND</p>
+                        <p>Nous ne cherchons pas de compétences social particulières</p>
                         {% endfor %}
                     </ul>
                 </article>
