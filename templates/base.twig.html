@@ -84,8 +84,12 @@
                     <span class="copyright-txt">©2026 BOLT (Bastien, Oan, Louis, Tychique)</span>
 
                     <div class="log-div">
+                        {% if session.role is defined %}
+                        <span><a href="/logout">Log out</a></span>
+                        {% else %}
                         <span><a href="/signin">Log in</a></span>
                         <span><a href="/signup">Sign up</a></span>
+                        {% endif %}
                     </div>
 
                     <hr>
@@ -93,7 +97,6 @@
                 <div class="footer-bottom-div">
                     <span class="legal-link">
                         <a href="/mentionslegales">Mentions Legales</a>
-                        <a href="#ploitiqueDeConfidentialité">Politique de confidentialté</a>
                     </span>
                     <span class="footer-logo">
                         <img src="/image/logo_projet_web.png" alt="Logo">
@@ -102,12 +105,12 @@
                         <div class="quick-links">
                             <span class="title">Liens rapides :</span>
                             <ul>
-                                <li><a href="#">Bullet point 1</a></li>
-                                <li><a href="#">Bullet point 2</a></li>
+                                <li><a href="/#Entreprises">Entreprises</a></li>
+                                <li><a href="/#Stages">Stages</a></li>
                             </ul>
                             <ul>
-                                <li><a href="#">Bullet point 1</a></li>
-                                <li><a href="#">Bullet point 2</a></li>
+                                <li><a href="/search">Rechercher</a></li>
+                                <li><a href="/">Accueil</a></li>
                             </ul>
                         </div>
                     </div>
