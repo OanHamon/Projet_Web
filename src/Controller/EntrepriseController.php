@@ -97,7 +97,7 @@ class EntrepriseController extends Controller{
             'candidat_data'=>$candidat_data,
             'cv_url'=>$cv_url,
             'lm_url'=>$lm_url,
-            'errors' => $errors 
+            'errors' => $errors,
 
             ]);
     }
@@ -178,12 +178,54 @@ class EntrepriseController extends Controller{
         if(isset($_POST['id_offre'])){
             $id_offre = $_POST['id_offre'];
             $data = [];
+            $errors = [];
             $fields = ['titre', 'description_carte', 'description_offre_de_stage','remuneration_par_mois', 'date_debut', 'date_fin', 'lat', 'lng'];
+
             foreach($fields as $field){
                 if(isset($_POST[$field]) && $_POST[$field] !== ''){
-                    $data[$field] = $_POST[$field];
+                    $value = $_POST[$field];
+
+                    if($field === 'email'){
+                        $result = $this->punisher->isEmail($value);
+                        if($result !== true){ $errors[] = $result; continue; }                    
+                    }
+
+                    if($field === 'telephone'){
+                        $result = $this->punisher->isPhoneNumber($value);
+                        if($result !== true){ $errors[] = $result; continue; }                    
+                    }
+
+                    if($field === 'remuneration_par_mois'){
+                        $result = $this->punisher->isInt($value);
+                        if($result !== true){ $errors[] = $result; continue; }   
+                        $result = $this->punisher->isPositive($value);
+                        if($result !== true){ $errors[] = $result; continue; }   
+                    }
+
+                    if($field === 'date_debut' || $field === 'date_fin'){
+                        $result = $this->punisher->isDateAfterToday($value);
+                        if($result !== true){ $errors[] = $result; continue; }  
+                    }
+
+
+
+                    if($field === 'description_offre_de_stage' || $field === 'date_debut' || $field === 'date_fin' ){
+
+                        $data[$field] = $value;
+
+                    }
+                    else{
+                        $data[$field] =$this->punisher->sanitize($value);
+                    }
                 }
             }
+
+
+            if(isset($_POST['date_debut']) && isset($_POST['date_fin'])){
+                $result = $this->punisher->isDateRangeValid($_POST['date_debut'], $_POST['date_fin']);
+                if($result !== true){ $errors[] = $result; }
+            }
+
             $this->compModel->deleteOffreCompetences($id_offre);
             if(isset($_POST['competences'])){
                 foreach($_POST['competences'] as $id_competence){
@@ -191,9 +233,13 @@ class EntrepriseController extends Controller{
                 }
             }
 
-            $this->offreModel->update($id_offre, $data);
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
-            exit();
+            if(empty($errors) && !empty($data)){
+                $this->offreModel->update($id_offre,$data);
+
+                }
+            $this->renderEntrepriseDashboardPage( $errors);
+            exit(); 
+
         }
         else{header('location: /error?error=no_data_available'); exit();}
     }
@@ -211,22 +257,55 @@ class EntrepriseController extends Controller{
         $this->requireEntrepriseAuth();
         $fields = ['titre', 'description_carte', 'description_offre_de_stage','remuneration_par_mois', 'date_debut', 'date_fin', 'lat', 'lng'];
         $data = [];
+        $errors = [];
+
         foreach($fields as $field){
             if(isset($_POST[$field]) && $_POST[$field] !== ''){
-                $data[$field] = $_POST[$field];
+                $value = $_POST[$field];
 
-            }
-            else{ header('location: /error?error=no_data_available'); exit();}
-        }
-        $data['id_entreprise']=$this->entreprise_id;
-        $id_new_offre =$this->offreModel->insert($data);
-        if(isset($_POST['competences'])){
-            foreach($_POST['competences'] as $id_competence){
-                $this->compModel->insertOffreCompetence($id_new_offre, $id_competence);
+                if($field === 'remuneration_par_mois'){
+                    $result = $this->punisher->isInt($value);
+                    if($result !== true){ $errors[] = $result; continue; }
+                    $result = $this->punisher->isPositive($value);
+                    if($result !== true){ $errors[] = $result; continue; }
+                }
+
+                if($field === 'date_debut' || $field === 'date_fin'){
+                    $result = $this->punisher->isDateAfterToday($value);
+                    if($result !== true){ $errors[] = $result; continue; }
+                }
+
+                if($field === 'description_offre_de_stage' || $field === 'date_debut' || $field === 'date_fin'){
+                    $data[$field] = $value;
+                } else {
+                    $data[$field] = $this->punisher->sanitize($value);
+                }
+
+            } else {
+                $errors[] = "Le champ $field est obligatoire.";
             }
         }
 
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        if(isset($_POST['date_debut']) && isset($_POST['date_fin'])){
+            $result = $this->punisher->isDateRangeValid($_POST['date_debut'], $_POST['date_fin']);
+            if($result !== true){ $errors[] = $result; }
+        }
+
+        if(empty($errors)){
+            $data['id_entreprise'] = $this->entreprise_id;
+            $id_new_offre = $this->offreModel->insert($data);
+
+            if(isset($_POST['competences'])){
+                foreach($_POST['competences'] as $id_competence){
+                    $this->compModel->insertOffreCompetence($id_new_offre, $id_competence);
+                }
+            }
+
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+            exit();
+        }
+
+        $this->renderEntrepriseDashboardPage($errors);
         exit();
     }
 

@@ -169,6 +169,12 @@ class UserController extends Controller{
             if(!$postuleModel->find($data)){
 
                 if(isset($_POST['phone'])){
+                    $phoneResult = $this->punisher->isPhoneNumber($_POST['phone']);
+                    if($phoneResult !== true){
+                        $errors[] = $phoneResult;
+                        $this->renderStudentDashboardPage($errors);
+                        exit();
+                    }
                     if(isset($_FILES['cv']) && isset($_FILES['lm'])){
                         $cv = $_FILES['cv'];
                         $lm =$_FILES['lm'];

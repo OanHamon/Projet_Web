@@ -172,13 +172,10 @@
 }
 
 .ml-card .ml-val {
-    font-size: 0.95rem;
-    color: var(--ml-text-primary);
-    font-weight: 500;
-    line-height: 1.4;
-    /* Sécurité Responsive : évite que les emails cassent le design */
-    word-break: break-all;
-    overflow-wrap: anywhere;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+
 }
 
 .ml-card .ml-val a {
@@ -211,9 +208,7 @@
 }
 
 .ml-content-text p {
-    font-size: 0.95rem;
-    color: var(--ml-text-secondary);
-    line-height: 1.7;
+    font-size: var(--fs-body);
 }
 
 .ml-sep {
@@ -260,7 +255,10 @@
 
     /* On force la grille à prendre toute la largeur sur mobile */
     .ml-grid {
-        grid-template-columns: 1fr;
+        display: grid;
+        /* On descend le seuil de bascule à 200px pour laisser respirer les petits mobiles */
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+        gap: 1rem;
     }
 
     /* On masque la barre décorative pour gagner de l'espace sur petit écran */

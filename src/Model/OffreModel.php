@@ -19,7 +19,10 @@ class OffreModel extends BaseModel
 
         $stmt = $this->executeQuery($query, ['id' => $idOffre]);
 
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+
+        return $result;
     }
 
     public function getAllWithEntreprise()
@@ -32,22 +35,28 @@ class OffreModel extends BaseModel
 
         $stmt = $this->executeQuery($query, []);
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+
+        return $result;
     }
 
-        public function getCompetences($idOffre)
-        {
-            $query = "
-            SELECT c.*
-            FROM Competence c
-            JOIN Competence_Offre r ON r.id_competence = c.id_competence
-            WHERE r.id_offre = :id
-            ;";
+    public function getCompetences($idOffre)
+    {
+        $query = "
+        SELECT c.*
+        FROM Competence c
+        JOIN Competence_Offre r ON r.id_competence = c.id_competence
+        WHERE r.id_offre = :id
+        ;";
 
-            $stmt = $this->executeQuery($query, ['id' => $idOffre]);
+        $stmt = $this->executeQuery($query, ['id' => $idOffre]);
 
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        }
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+
+        return $result;
+    }
 
     public function getCandidats($idOffre)
     {
@@ -60,6 +69,9 @@ class OffreModel extends BaseModel
 
         $stmt = $this->executeQuery($query, ['id' => $idOffre]);
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+
+        return $result;
     }
 }

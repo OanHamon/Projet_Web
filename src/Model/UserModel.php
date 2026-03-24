@@ -20,7 +20,10 @@ class UserModel extends BaseModel
 
         $stmt = $this->executeQuery($query, ['id' => $userId]);
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+
+        return $result;
     }
 
     public function getPostulations($userId)
@@ -34,7 +37,10 @@ class UserModel extends BaseModel
 
         $stmt = $this->executeQuery($query, ['id' => $userId]);
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+
+        return $result;
     }
 
     public function user_exist_email($email)
@@ -51,6 +57,7 @@ class UserModel extends BaseModel
         ]);
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
 
         return $result ? true : false;
     }
@@ -102,6 +109,7 @@ class UserModel extends BaseModel
         ]);
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
 
         return $result ? $result['mdp'] : null;
     }
@@ -120,6 +128,7 @@ class UserModel extends BaseModel
         ]);
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
 
         return $result ? $result['id_utilisateur'] : null;
     }
@@ -128,15 +137,21 @@ class UserModel extends BaseModel
 
         $queryEtudiant = "SELECT 1 FROM Etudiant WHERE id_etudiant = :id LIMIT 1;";
         $stmtEtudiant = $this->executeQuery($queryEtudiant, ['id' => $id_user]);
-        if ($stmtEtudiant->fetch()) {return "etudiant";}
+        $isEtudiant = $stmtEtudiant->fetch();
+        $stmtEtudiant->closeCursor();
+        if ($isEtudiant) {return "etudiant";}
 
         $queryAdmin = "SELECT 1 FROM Admin WHERE id_admin = :id LIMIT 1;";
         $stmtAdmin = $this->executeQuery($queryAdmin, ['id' => $id_user]);
-        if ($stmtAdmin->fetch()) {return "admin";}
+        $isAdmin = $stmtAdmin->fetch();
+        $stmtAdmin->closeCursor();
+        if ($isAdmin) {return "admin";}
 
         $queryPilote = "SELECT 1 FROM Pilote WHERE id_pilote = :id LIMIT 1;";
         $stmtPilote = $this->executeQuery($queryPilote, ['id' => $id_user]);
-        if ($stmtPilote->fetch()) {return "pilote";}
+        $isPilote = $stmtPilote->fetch();
+        $stmtPilote->closeCursor();
+        if ($isPilote) {return "pilote";}
 
         return null;
     }
@@ -153,7 +168,9 @@ class UserModel extends BaseModel
             'id_etudiant' => $id_etudiant,
             'id_offre' => $id_offre
         ]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $result;
     }
 
     function getEtudiant_pilote($id_pilote){
@@ -162,6 +179,8 @@ class UserModel extends BaseModel
         $stmt =$this->executeQuery($query, [
             'id_pilote' => $id_pilote
         ]);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $result;
     }
 }

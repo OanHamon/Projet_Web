@@ -92,6 +92,7 @@ CREATE TABLE Postule(
    id_offre INT,
    cv_url VARCHAR(50) NOT NULL,
    lm_url VARCHAR(50) NOT NULL,
+   date_postulation DATE,
    PRIMARY KEY(id_etudiant, id_offre),
    FOREIGN KEY(id_etudiant) REFERENCES Etudiant(id_etudiant) ON DELETE CASCADE,
    FOREIGN KEY(id_offre) REFERENCES Offre(id_offre) ON DELETE CASCADE

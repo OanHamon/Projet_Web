@@ -58,6 +58,10 @@ class SearchModel extends BaseModel
         }
 
         $query .= " LIMIT 100";
-        return $this->executeQuery($query, $params)->fetchAll(PDO::FETCH_ASSOC);
+        $stmt = $this->executeQuery($query, $params);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+
+        return $result;
     }
 }
