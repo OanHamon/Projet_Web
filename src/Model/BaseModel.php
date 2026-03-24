@@ -9,11 +9,15 @@ class BaseModel extends Model
     protected $table;
     protected $primaryKey = 'id';
 
-    protected function executeQuery($query, $params = [])
+protected function executeQuery($query, $params = [])
     {
         try {
             $stmt = $this->conn->prepare($query);
-            $stmt->execute($params);
+            foreach ($params as $key => $value) {
+                $type = is_int($value) ? \PDO::PARAM_INT : \PDO::PARAM_STR;
+                $stmt->bindValue(":$key", $value, $type);
+            }
+            $stmt->execute();
             return $stmt;
         } catch (\PDOException $e) {
             error_log("DB Error: " . $e->getMessage());
