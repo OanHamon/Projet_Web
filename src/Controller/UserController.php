@@ -243,7 +243,6 @@ class UserController extends Controller{
         $finale_path = $path . $file['name'];
         
         move_uploaded_file($file['tmp_name'], $finale_path);
-        var_dump( $finale_path);
         return $file['name'];   
     }
 

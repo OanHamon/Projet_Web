@@ -23,7 +23,6 @@ class HomeController extends Controller{
         $stats = $this->statsModel->getAllStats();
 
         $candidatures7days = $stats['candidatures_7days'];
-        var_dump($candidatures7days);
         $max = 1;
         foreach($candidatures7days as $jour){
             if($jour['count'] > $max) $max = $jour['count'];
