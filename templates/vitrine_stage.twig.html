@@ -48,26 +48,32 @@
         <div class="comp-section">
           <p class="comp-label">Techniques :</p>
           <ul class="comp-grid">
+            {% set has_technique = false %}
             {% for competence in competences %}
-            {% if competence.categorie == 'Technique' %}
-            <li><span class="dot blue"></span>{{competence.nom}}</li>
-            {% endif %}
-            {% else %}
-            <p>NO DATA FOUND</p>
+              {% if competence.categorie == 'Technique' %}
+                {% set has_technique = true %}
+                <li><span class="dot blue"></span>{{competence.nom}}</li>
+              {% endif %}
             {% endfor %}
+            {% if not has_technique %}
+              <p class="comp-intro">Aucune compétence technique requise spécifiée pour ce stage.</p>
+            {% endif %}
           </ul>
         </div>
 
         <div class="comp-section">
           <p class="comp-label">Social :</p>
           <ul class="comp-grid">
+            {% set has_social = false %}
             {% for competence in competences %}
-            {% if competence.categorie == 'Social' %}
-            <li><span class="dot blue"></span>{{competence.nom}}</li>
-            {% endif %}
-            {% else %}
-            <p>NO DATA FOUND</p>
+              {% if competence.categorie == 'Social' %}
+                {% set has_social = true %}
+                <li><span class="dot blue"></span>{{competence.nom}}</li>
+              {% endif %}
             {% endfor %}
+            {% if not has_social %}
+              <p class="comp-intro">Aucune compétence sociale requise spécifiée pour ce stage.</p>
+            {% endif %}
           </ul>
         </div>
       </div>
