@@ -15,6 +15,9 @@
     --ml-radius: 12px;
     --ml-radius-sm: 8px;
     --ml-strip: 3px;
+    --fs-h1: clamp(1.8rem, 8vw, 2.75rem);
+    --fs-h2: clamp(1.2rem, 5vw, 1.5rem);
+    --fs-body: clamp(0.9rem, 2vw, 1rem);
 }
 
 /* ── Animation d'entrée ──────────────────────────────────── */
