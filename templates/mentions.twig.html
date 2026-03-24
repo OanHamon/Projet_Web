@@ -1,54 +1,38 @@
 {% extends 'base.twig.html' %}
 
-{# Définition d'une variable pour l'email pour éviter les répétitions #}
 {% set contact_email = "contact@projet-web.fr" %}
 
 {% block styles %}
-{# Polices en premier pour le pré-rendu #}
-<link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap"
-    rel="stylesheet">
-
-<link rel="stylesheet" href="/css/token.css">
-<link rel="stylesheet" href="/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style_mentions_page.css">
+<link rel="stylesheet" href="/css/token.css">
 {% endblock %}
 
 {% block content %}
 <main class="container">
 
-    <header class="ml-intro">
-        <nav aria-label="Fil d'ariane">
-            <p class="ml-breadcrumb">Projet Web &rsaquo; Mentions légales</p>
-        </nav>
-        <h1>Mentions légales</h1>
-        <p class="ml-subtitle">Informations relatives à l'éditeur, à l'hébergement ainsi qu'à la politique de
-            confidentialité de ce site.</p>
-    </header>
+    <h1 class="ml-title-simple">Mentions légales</h1>
 
     {# Section Éditeur #}
-    <section class="bloc" aria-labelledby="titre-editeur"> {# L'attribut aria-labelledby permet de lier la section à son
-        titre pour une meilleure accessibilité #}
+    <section class="bloc" aria-labelledby="titre-editeur">
         <h2 id="titre-editeur">
             <span class="ml-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                     <circle cx="12" cy="7" r="4" />
                 </svg>
             </span>
             Éditeur
-            <span class="barre"></span>
         </h2>
 
         <div class="ml-grid">
             <article class="ml-card">
                 <span class="ml-lbl">Nom</span>
-                <strong class="ml-val">Votre Nom</strong>
+                <div class="ml-val">Votre Nom</div>
             </article>
             <article class="ml-card">
                 <span class="ml-lbl">Statut</span>
-                <span class="ml-val">Étudiant</span>
+                <div class="ml-val">Étudiant</div>
             </article>
             <article class="ml-card">
                 <span class="ml-lbl">Email</span>
@@ -65,8 +49,7 @@
     <section class="bloc" aria-labelledby="titre-hebergeur">
         <h2 id="titre-hebergeur">
             <span class="ml-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <rect x="2" y="2" width="20" height="8" rx="2" />
                     <rect x="2" y="14" width="20" height="8" rx="2" />
                     <line x1="6" y1="6" x2="6.01" y2="6" />
@@ -74,7 +57,6 @@
                 </svg>
             </span>
             Hébergeur
-            <span class="barre"></span>
         </h2>
 
         <div class="ml-grid">
@@ -94,16 +76,14 @@
     </section>
 
     {# Section Confidentialité #}
-    <section class="bloc-content" aria-labelledby="titre-privacy">
+    <section class="bloc-content" id="politique-confidentialite" aria-labelledby="titre-privacy">
         <h2 id="titre-privacy">
             <span class="ml-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
             </span>
             Politique de confidentialité
-            <span class="barre"></span>
         </h2>
 
         <div class="ml-content-text">
@@ -119,7 +99,7 @@
             <hr class="ml-sep">
 
             <h3>Vos Droits (RGPD)</h3>
-            <p>Vous dispose? d'un droit d'accès, de rectification et de suppression. Contactez-nous : <a
+            <p>Vous disposez d'un droit d'accès, de rectification et de suppression. Contactez-nous : <a
                     href="mailto:{{ contact_email }}" class="ml-link-accent">{{ contact_email }}</a></p>
         </div>
 
@@ -129,6 +109,4 @@
     </section>
 
 </main>
-
-<div class="barre-droite" aria-hidden="true"></div>
 {% endblock %}

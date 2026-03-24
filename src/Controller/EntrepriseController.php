@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Model\{EntrepriseModel,EvaluationModel,OffreModel,CompetenceModel, UserModel};
+use App\Model\{EntrepriseModel,EvaluationModel,OffreModel,CompetenceModel, UserModel, VilleModel};
 
 class EntrepriseController extends Controller{
 
@@ -11,6 +11,7 @@ class EntrepriseController extends Controller{
     private $offreModel;
     private $entreprise_id; //id fix temporaire
     private $compModel;
+    private $villeModel;
     private $userModel;
 
     function __construct(){
@@ -19,6 +20,7 @@ class EntrepriseController extends Controller{
         $this->evalModel = new EvaluationModel();
         $this->offreModel = new OffreModel( );
         $this->compModel = new CompetenceModel();
+        $this->villeModel = new VilleModel();
         $this->userModel = new UserModel();
     } 
 
@@ -45,6 +47,7 @@ class EntrepriseController extends Controller{
         $entreprise = $this->entrepriseModel->getById($this->entreprise_id);
         $offres = $this->entrepriseModel->getOffres($this->entreprise_id);
         $all_competences = $this->compModel->getAll();
+        $all_villes = $this->villeModel->getAll();
         
         $offre_to_display = NULL;
         $showdata = NULL;
@@ -87,6 +90,7 @@ class EntrepriseController extends Controller{
             'offre_to_display'=>$offre_to_display,
             'showdata'=>$showdata ,
             'all_competences'=>$all_competences , 
+            'all_villes'=>$all_villes,
             'offre_competences'=>$offre_competences, 
             'createNew'=>$createNew,
             'candidats'=>$candidats,
@@ -175,10 +179,10 @@ class EntrepriseController extends Controller{
             $id_offre = $_POST['id_offre'];
             $data = [];
             $errors = [];
-            $fields = ['titre', 'description_carte', 'description_offre_de_stage','remuneration_par_mois', 'date_debut', 'date_fin'];
+            $fields = ['titre', 'description_carte', 'description_offre_de_stage','remuneration_par_mois', 'date_debut', 'date_fin', 'lat', 'lng'];
 
             foreach($fields as $field){
-                if(!empty($_POST[$field])){
+                if(isset($_POST[$field]) && $_POST[$field] !== ''){
                     $value = $_POST[$field];
 
                     if($field === 'email'){
@@ -251,12 +255,12 @@ class EntrepriseController extends Controller{
 
     function createOffre(){
         $this->requireEntrepriseAuth();
-        $fields = ['titre', 'description_carte', 'description_offre_de_stage', 'remuneration_par_mois', 'date_debut', 'date_fin'];
+        $fields = ['titre', 'description_carte', 'description_offre_de_stage','remuneration_par_mois', 'date_debut', 'date_fin', 'lat', 'lng'];
         $data = [];
         $errors = [];
 
         foreach($fields as $field){
-            if(isset($_POST[$field]) && !empty($_POST[$field])){
+            if(isset($_POST[$field]) && $_POST[$field] !== ''){
                 $value = $_POST[$field];
 
                 if($field === 'remuneration_par_mois'){
@@ -309,10 +313,7 @@ class EntrepriseController extends Controller{
     function deleteAccount(){
         $this->requireEntrepriseAuth();
         $this->entrepriseModel->deleteById($this->entreprise_id);
-        if ( !$_SESSION['role'] == 'admin'){
-            $_SESSION = array();
-        }
-
+        $_SESSION = array();
         header('Location: /'); 
         exit(); 
     }

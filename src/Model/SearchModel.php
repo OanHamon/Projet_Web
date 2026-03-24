@@ -21,11 +21,17 @@ class SearchModel extends BaseModel
             $kwKey = "kw{$i}";
             $descKey = "desc{$i}";
             $entKey = "ent{$i}";
-            // On cherche dans le titre OU la description OU le nom de l'entreprise
-            $conditions[] = "(LOWER(o.titre) LIKE :$kwKey OR LOWER(o.description_carte) LIKE :$descKey OR LOWER(e.nom) LIKE :$entKey)";
+            $descEntKey = "descEnt{$i}";
+            $conditions[] = "(
+                LOWER(o.titre) LIKE :$kwKey OR 
+                LOWER(o.description_carte) LIKE :$descKey OR 
+                LOWER(e.nom) LIKE :$entKey OR 
+                LOWER(o.description_offre_de_stage) LIKE :$descEntKey
+            )";
             $params[$kwKey] = '%' . mb_strtolower(trim($kw)) . '%';
             $params[$descKey] = '%' . mb_strtolower(trim($kw)) . '%';
             $params[$entKey] = '%' . mb_strtolower(trim($kw)) . '%';
+            $params[$descEntKey] = '%' . mb_strtolower(trim($kw)) . '%';
         }
     
         $whereSql = !empty($conditions) ? 'WHERE ' . implode(' OR ', $conditions) : '';
