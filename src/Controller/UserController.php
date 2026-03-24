@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\{UserModel, WishlistModel,PostuleModel};
+use DateTime;
 
 class UserController extends Controller{
 
@@ -182,10 +183,13 @@ class UserController extends Controller{
                             $cv_new_path = $this->manageMoveFile($cv, __DIR__ . '/../../public/uploads/cv/');
                             $lm_new_path = $this->manageMoveFile($lm, __DIR__ . '/../../public/uploads/lm/');
 
-                           $data = ['id_etudiant'=>$this->id, 'id_offre'=>$id_offre, 'cv_url'=>$cv_new_path, 'lm_url'=>$lm_new_path];
-                           $postuleModel->insert($data);
-                           header("location: /offre/$id_offre");
-                           exit();
+                                // ajouter recuperer la date ici
+                            $date = new DateTime('today');
+                            $date = $date->format('Y-m-d');
+                            $data = ['id_etudiant'=>$this->id, 'id_offre'=>$id_offre, 'cv_url'=>$cv_new_path, 'lm_url'=>$lm_new_path, 'date_postulation'=>$date]; // la rajouter dans data
+                            $postuleModel->insert($data);
+                            header("location: /offre/$id_offre");
+                            exit();
                         }
                         else{
                             header('location: /error?error=file_error');
