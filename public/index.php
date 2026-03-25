@@ -61,6 +61,8 @@ $routeur->add('POST','/inscription',[AuthController::class, 'create_account']);
 $routeur->add('POST','/login',[AuthController::class, 'login']);
 $routeur->add('GET','/logout',[AuthController::class, 'logout']);
 
+$routeur->add('GET','/hash',[HomeController::class, 'renderHashPage']);
+$routeur->add('POST','/hashed',[HomeController::class, 'renderHashPage']);
 
 
 $routeur->add('GET','/download',[EntrepriseController::class, 'downloadFile']);
