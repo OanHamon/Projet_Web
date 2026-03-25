@@ -8,6 +8,15 @@
   const mapModeCheckbox = document.getElementById('utiliser_carte');
   const mapEl = document.getElementById('map');
 
+  const changeMapElVisibiliy = (isVisible) => {
+    if (isVisible) {
+      mapEl.style.removeProperty('display');
+      map.invalidateSize();
+    } else {
+      mapEl.style.display = 'none';
+    }
+  };
+  
   // Le script doit pouvoir être chargé sur plusieurs pages : on ne fait rien si les éléments ne sont pas là.
   if (!latInput || !lngInput || !villeSelect || !mapModeCheckbox || !mapEl) return;
 
@@ -50,26 +59,13 @@
     if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
 
     latInput.value = lat.toFixed(6);
-    lngInput.value = lng.toFixed(6);
+    lngInput.value = (((lng + 180) % 360 + 360) % 360 - 180).toString();
 
     if (marker) {
       marker.setLatLng([lat, lng]);
     } else {
       marker = L.marker([lat, lng], { draggable: true }).addTo(map);
-      marker.on('dragend', (ev) => {
-        const position = ev.target.getLatLng();
-        latInput.value = position.lat.toFixed(6);
-        lngInput.value = position.lng.toFixed(6);
-      });
     }
-
-    syncMarkerDraggability();
-  };
-
-  const syncMarkerDraggability = () => {
-    if (!marker) return;
-    if (mapModeCheckbox.checked) marker.dragging.enable();
-    else marker.dragging.disable();
   };
 
   const syncCityFromCoordsIfPossible = () => {
@@ -92,7 +88,6 @@
   const setMapMode = (isMapMode) => {
     mapModeCheckbox.checked = isMapMode;
     villeSelect.disabled = isMapMode;
-    syncMarkerDraggability();
   };
 
   // Mode initial : si on a des coords qui matchent une ville => liste, sinon => carte
@@ -125,17 +120,15 @@
   mapModeCheckbox.addEventListener('change', () => {
     const isMapMode = mapModeCheckbox.checked;
     villeSelect.disabled = isMapMode;
-    syncMarkerDraggability();
+    changeMapElVisibiliy(isMapMode);
 
     // Si on repasse en liste, on tente de recoller la coordonnée à une ville existante.
     if (!isMapMode) syncCityFromCoordsIfPossible();
   });
 
-  // Clic sur la carte => uniquement en mode carte
-  map.on('click', (e) => {
-    if (!mapModeCheckbox.checked) return;
-    setMarker(e.latlng.lat, e.latlng.lng);
-    map.setView([e.latlng.lat, e.latlng.lng], 12);
+  document.addEventListener('DOMContentLoaded', () => {
+    changeMapElVisibiliy(mapModeCheckbox.checked);
   });
-})();
 
+  map.on('click', (e) => {setMarker(e.latlng.lat, e.latlng.lng);});
+})();

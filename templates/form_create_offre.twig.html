@@ -1,4 +1,4 @@
- <h3>Crée une offre :</h3>
+ <h3>Créer une offre :</h3>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -12,34 +12,34 @@
 <form class="offre-form" method="POST" action="/entreprise_dashboard/create_offre">
     <div class="form-group">
         <label>Titre</label>
-        <input type="text" name="titre" placeholder="Entrez un titre ici" required>
+        <input type="text" name="titre" placeholder="Saisissez le titre de l'offre" required>
     </div>
 
     <div class="form-group">
-        <label>Description des cartes</label>
-        <textarea name="description_carte" placeholder="Entrez un petite description de l'offre" required></textarea>
+        <label>Description de la carte</label>
+        <textarea name="description_carte" placeholder="Saisissez une courte description de l'offre" required></textarea>
     </div>
 
     <div class="form-group">
         <label>Description du stage (markdown)</label>
-        <textarea name="description_offre_de_stage" placeholder="Ecrivez votre description ici ..." required></textarea>
+        <textarea name="description_offre_de_stage" placeholder="Écrivez la description du stage ici..." required></textarea>
     </div>
     <div class="form-group">
-        <label>Cochez les compétences de l'offre :</label>
+        <label>Cochez les compétences de l’offre :</label>
 
         <div class="competences-grid">
 
-        {% for competence in all_competences%}
+        {% for competence in all_competences %}
             <label><input type="checkbox" name="competences[]" value="{{competence.id_competence}}">{{competence.nom}}</label>
         {% else %}
-        <p>NO DATA FOUND</p>
+        <p>Aucune compétence disponible pour le moment.</p>
         {% endfor %}
         </div>
     </div>
 
     <div class="localisation-form-group">
         <div class="form-group">
-            <label>localisation :</label>
+            <label>Localisation :</label>
             <input type="hidden" id="lat" name="lat" value="" required>
             <input type="hidden" id="lng" name="lng" value="" required>
             <label for="ville">Ville</label>
@@ -65,23 +65,23 @@
                 </label>
             </div>
 
-            <div id="map" style="min-height: 200px;width: 100%;"></div>
+            <div id="map"></div>
         </div>
     </div>
 
     <div class="form-group">
-        <label>Rémunération</label>
-        <input type="number"  min="0" max="99999" name="remuneration_par_mois" placeholder="Entrez la rémuneration par mois ici" required>
+        <label>Rémunération par mois</label>
+        <input type="number"  min="0" max="99999" name="remuneration_par_mois" placeholder="Indiquez la rémunération mensuelle" required>
     </div>
 
     <div class="dates-row">
         <div class="form-group">
-            <label>Date début</label>
+            <label>Date de début</label>
             <input type="date" name="date_debut" required>
         </div>
 
         <div class="form-group">
-            <label>Date fin</label>
+            <label>Date de fin</label>
             <input type="date" name="date_fin" required>
         </div>
     </div>

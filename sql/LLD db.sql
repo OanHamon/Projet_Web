@@ -38,7 +38,7 @@ CREATE TABLE Offre(
    date_debut DATE,
    date_fin DATE,
    lat DECIMAL(8,6),
-   lng DECIMAL(8,6),
+   lng DECIMAL(9,6),
    titre VARCHAR(50),
    description_carte TEXT,
    remuneration_par_mois INT,

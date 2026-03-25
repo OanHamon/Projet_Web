@@ -5,6 +5,10 @@ use DateTime;
 
 class Punisher {
 
+    function punish($msg) {
+        return "PUNISHED : $msg";
+    }
+
     function isEmail($data){
         if(!filter_var($data, FILTER_VALIDATE_EMAIL)){
             return "PUNISHED : Email not valid";
