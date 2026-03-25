@@ -1,0 +1,94 @@
+.error-page {
+  position: relative;
+  z-index: 1;
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgb(255, 255, 255);
+
+  background: radial-gradient(circle at 50% 20%, #0a2540, #020b16 80%);
+  font-family: 'Arial', sans-serif;
+}
+
+.ocean-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 20, 40, 0.3),
+    rgba(0, 0, 0, 0.8)
+  );
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.error-code {
+  font-size: 120px;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.error-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.error-text {
+  font-size: 16px;
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+
+.home-button {
+  padding: 12px 25px;
+  border: 1px solid #4fd1ff;
+  color: #4fd1ff;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.home-button:hover {
+  background: #4fd1ff;
+  color: #02121f;
+}
+
+/* Bulles animées */
+.bubbles span {
+  position: absolute;
+  bottom: -50px;
+  width: 10px;
+  height: 10px;
+  background: rgb(231, 226, 226);
+  border-radius: 50%;
+  animation: rise 10s infinite ease-in;
+}
+
+.bubbles span:nth-child(1) { left: 20%; animation-duration: 8s; }
+.bubbles span:nth-child(2) { left: 40%; animation-duration: 12s; }
+.bubbles span:nth-child(3) { left: 60%; animation-duration: 10s; }
+.bubbles span:nth-child(4) { left: 80%; animation-duration: 14s; }
+.bubbles span:nth-child(5) { left: 50%; animation-duration: 9s; }
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.5);
+    opacity: 0;
+  }
+}

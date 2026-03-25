@@ -32,6 +32,7 @@ class Router
         }
 
         http_response_code(404);
-        echo "404 NOT FOUND";
+        header('Location: /error?error=404');
+        exit();
     }
 }

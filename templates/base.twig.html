@@ -15,6 +15,8 @@
 
 
 </head>
+
+<body>
 <header>
     <nav>
 
@@ -64,10 +66,11 @@
         </div>
     </nav>
 </header>
-<body>
+
 
     {% block content %}{% endblock %}
 
+{% block footer %}
 <footer class="footer">
     <div class="ocean">
         <div class="waves">
@@ -119,6 +122,7 @@
         </div>
     </div>
 </footer>
+{% endblock %}
 </body>
 
 </html>

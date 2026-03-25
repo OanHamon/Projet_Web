@@ -1,0 +1,59 @@
+{% extends 'base.twig.html' %}
+
+
+{% block styles %}
+    <link rel="stylesheet" href="/css/token.css">
+    <link rel="stylesheet" href="/css/style_error_page.css">
+{% endblock %}
+
+{% block content %}
+
+<main class="error-page">
+  <div class="ocean-overlay"></div>
+
+  <div class="content">
+    <h1 class="error-code">404</h1>
+
+    <h2 class="error-title">
+      Vous êtes perdu dans les profondeurs
+    </h2>
+
+    <p class="error-text">
+      Cette page semble avoir sombré dans les abysses.
+      Mais ne vous inquiétez pas, vous pouvez encore remonter à la surface.
+    </p>
+
+    <a href="/" class="home-button">
+      Retour à la surface
+    </a>
+  </div>
+
+  <div class="bubbles">
+  </div>
+</main>
+<script>
+const bubblesContainer = document.querySelector('.bubbles');
+
+for (let i = 0; i < 15; i++) {
+  const bubble = document.createElement('span');
+
+  const size = Math.random() * 10 + 5; // 5px à 20px
+  const position = Math.random() * 100; // %
+  const duration = Math.random() * 10 + 5; // 5s à 15s
+  const delay = Math.random() * 5; // décalage
+  const opacity = Math.random() * 0.5 + 0.2;
+
+  bubble.style.width = `${size}px`;
+  bubble.style.height = `${size}px`;
+  bubble.style.left = `${position}%`;
+  bubble.style.animationDuration = `${duration}s`;
+  bubble.style.animationDelay = `${delay}s`;
+  bubble.style.opacity = opacity;
+
+  bubblesContainer.appendChild(bubble);
+}
+</script>
+
+{% endblock%}
+
+{% block footer %}{% endblock %}

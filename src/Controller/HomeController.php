@@ -33,4 +33,8 @@ class HomeController extends Controller{
         echo $this->twig->render('mentions.twig.html');
     }
 
+    function renderErrorPage(){
+        echo $this->twig->render('error.twig.html');
+    }
+
 }
