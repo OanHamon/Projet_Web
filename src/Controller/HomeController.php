@@ -29,6 +29,7 @@ class HomeController extends Controller{
         }
         echo $this->twig->render('home.twig.html', ['offres'=>$offres, 'entreprises'=>$entreprises,'stats'=>$stats,'candidatures_max' => $max]);
     }
+
     function renderMentionsLegalesPage(){
         echo $this->twig->render('mentions.twig.html');
     }
@@ -37,4 +38,14 @@ class HomeController extends Controller{
         echo $this->twig->render('error.twig.html');
     }
 
+    function renderHashPage(){
+        echo '<form method="POST" action="/hashed">
+            <label for="mdp">Mot de passe :</label>
+            <input type="text" id="mdp" name="mdp">
+            <button type="submit">Submit</button>
+        </form>';
+        if (isset($_POST['mdp'])) {
+            echo password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+        }
+    }
 }

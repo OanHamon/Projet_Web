@@ -3084,7 +3084,7 @@ Vous accompagnerez des entreprises industrielles dans la transition vers l''éco
 -- UTILISATEURS
 -- ============================================================
 INSERT INTO Utilisateur (nom, prenom, email, mdp) VALUES
-('Dupont','Claire','claire.dupont@ecole.fr','$2y$10$hashedpwd1'),
+('admin','admin','admin@mail.fr','$2y$10$86f3lPX/noE3XXsXMWl.4egejB9QQHoMizYtA4EfksnTZ.3Gp.zN.'), -- mdp admin: "admin"
 ('Moreau','Antoine','antoine.moreau@ecole.fr','$2y$10$hashedpwd2'),
 ('Bernard','Julie','julie.bernard@ecole.fr','$2y$10$hashedpwd3'),
 ('Lefebvre','Maxime','maxime.lefebvre@ecole.fr','$2y$10$hashedpwd4'),
@@ -3101,12 +3101,14 @@ INSERT INTO Utilisateur (nom, prenom, email, mdp) VALUES
 ('Fournier','Marie','marie.fournier@etudiant.fr','$2y$10$hashedpwd15'),
 ('Morel','Théo','theo.morel@etudiant.fr','$2y$10$hashedpwd16');
 
-INSERT INTO Pilote (id_pilote) VALUES (1),(2),(3),(4);
+INSERT INTO Pilote (id_pilote) VALUES (2),(3),(4);
+
+INSERT INTO Admin (id_admin) VALUES (1);
 
 INSERT INTO Etudiant (id_etudiant, id_pilote) VALUES
-(5,1),(6,1),(7,1),(8,2),
-(9,2),(10,2),(11,3),(12,3),
-(13,3),(14,4),(15,4),(16,4);
+(8,2),(9,2),(10,2),
+(11,3),(12,3),(13,3),
+(14,4),(15,4),(16,4);
 
 -- ============================================================
 -- COMPETENCES DEMANDEES PAR OFFRE
