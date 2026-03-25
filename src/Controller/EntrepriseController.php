@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Model\{EntrepriseModel,EvaluationModel,OffreModel,CompetenceModel, UserModel, VilleModel};
+use App\Model\{EntrepriseModel,EvaluationModel,OffreModel,CompetenceModel, UserModel, VilleModel, PostuleModel};
 
 class EntrepriseController extends Controller{
 
@@ -40,6 +40,16 @@ class EntrepriseController extends Controller{
         }
         $this->entreprise_id = $_SESSION['companyId'];
     }
+
+    private function checkOffreOwnership($id_offre){
+        $offres = $this->entrepriseModel->getOffres($this->entreprise_id);
+        $id_offre = (int)$id_offre;
+        if(in_array($id_offre ,array_column($offres, 'id_offre'))){
+            return true;
+        }
+
+        return false;
+    }
     
 
     function renderEntrepriseDashboardPage($errors = NULL){
@@ -57,27 +67,43 @@ class EntrepriseController extends Controller{
         $lm_url = NULL;
         $offre_competences = [];
 
+
         if(isset($_GET['offre_id'])){
-            $id_to_display = $_GET['offre_id'];
 
-            if(isset($_GET['showdata']) && $_GET['showdata'] == 'true'){
-                $showdata = true;      
-                $candidats = $this->offreModel->getCandidats($id_to_display);    
-                if(isset($_GET['candidat_id'])){
-                    $candidat_data = $this->userModel->getById($_GET['candidat_id']);
-                    $candidature = $this->userModel->getCandidature($_GET['candidat_id'],$id_to_display);
+            $id_to_display = (int)$_GET['offre_id'];
 
-                    $cv_url =  $candidature['cv_url'];
-                    $lm_url = $candidature['lm_url'];
-                } 
+            if($this->checkOffreOwnership($id_to_display))
+            {
+                if(isset($_GET['showdata']) && $_GET['showdata'] == 'true')
+                {
+                    $showdata = true;      
+                    $candidats = $this->offreModel->getCandidats($id_to_display);   
+
+                    if(isset($_GET['candidat_id'])){
+                        $candidat_data = $this->userModel->getById((int)$_GET['candidat_id']);
+                        $candidature = $this->userModel->getCandidature((int)$_GET['candidat_id'],$id_to_display);
+                        if($candidature !== false){
+                            $cv_url =  $candidature['cv_url'];
+                            $lm_url = $candidature['lm_url'];
+                        }
+
+                    }
+
+                
+                    $offre_to_display = $this->offreModel->getById($id_to_display);
+                    $offre_competences = $this->offreModel->getCompetences($id_to_display);
+                }
+                else{
+                    $showdata = false; 
+                }
+
             }
-            else{
-                $showdata = false; 
+            else {
+                header('Location: /error?error=not_youre_offer');
+                exit();
             }
-            
-            $offre_to_display = $this->offreModel->getById($id_to_display);
-            $offre_competences = $this->offreModel->getCompetences($id_to_display);
         }
+
 
         $createNew = false;
         if(isset($_GET['create']) && $_GET['create'] ==true ){
@@ -101,17 +127,34 @@ class EntrepriseController extends Controller{
 
             ]);
     }
+
+     
     function downloadFile(){
-        $filename = $_GET['file'];
-        $type = $_GET['type']; // 'cv' ou 'lm'
-        $path = __DIR__ . '/../../public/uploads/' . $type . '/' . $filename;
-        if(file_exists($path)){
-            header('Content-Type: application/pdf');
-            header('Content-Disposition: attachment; filename="' . $filename . '"');
-            readfile($path);
-            echo 'finis';
-            exit();
+        $this->requireEntrepriseAuth();
+        $type_accepted = ['lm','cv'];
+
+        if(in_array($_GET['type'], $type_accepted)){// 'cv' ou 'lm'
+            $type = $_GET['type'];
+        }else{
+            header('Location: /error?error=url_not_available'); exit();
         }
+
+        $filename  = basename($_GET['file']); 
+        $postuleModel = new PostuleModel();
+        if($postuleModel->checkFile($type,$filename,$this->entreprise_id)){
+            
+            $path = __DIR__ . '/../../public/uploads/' . $type . '/' . $filename;
+            if(file_exists($path)){
+                header('Content-Type: application/pdf');
+                header('Content-Disposition: attachment; filename="' . $filename . '"');
+                readfile($path);
+                exit();
+            }
+        }
+        else{
+            header('Location: /error?error=filename_not_available'); exit();
+        }
+
     }
 
     function manageNotation($id){
@@ -174,8 +217,9 @@ class EntrepriseController extends Controller{
     }
 
     function updateOffreInfo(){
-        if(isset($_POST['id_offre'])){
-            $id_offre = $_POST['id_offre'];
+        $this->requireEntrepriseAuth();
+        if(isset($_POST['id_offre']) && $this->checkOffreOwnership($_POST['id_offre'])){
+            $id_offre = (int)$_POST['id_offre'];
             $data = [];
             $errors = [];
             $fields = ['titre', 'description_carte', 'description_offre_de_stage','remuneration_par_mois', 'date_debut', 'date_fin', 'lat', 'lng'];
@@ -244,8 +288,10 @@ class EntrepriseController extends Controller{
     }
 
     function deleteOffre(){
-        if(isset($_POST['id_offre'])){
-            $this->offreModel->deleteById($_POST['id_offre']);
+        $this->requireEntrepriseAuth();
+
+        if(isset($_POST['id_offre']) &&  $this->checkOffreOwnership($_POST['id_offre'])){
+            $this->offreModel->deleteById((int)$_POST['id_offre']);
             header('Location: ' . $_SERVER['HTTP_REFERER']);
             exit();
         }
