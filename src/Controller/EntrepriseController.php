@@ -44,6 +44,7 @@ class EntrepriseController extends Controller{
     private function checkOffreOwnership($id_offre){
         $offres = $this->entrepriseModel->getOffres($this->entreprise_id);
         $id_offre = (int)$id_offre;
+
         if(in_array($id_offre ,array_column($offres, 'id_offre'))){
             return true;
         }
@@ -87,13 +88,11 @@ class EntrepriseController extends Controller{
                             $lm_url = $candidature['lm_url'];
                         }
 
-                    }
-
-                
-                    $offre_to_display = $this->offreModel->getById($id_to_display);
-                    $offre_competences = $this->offreModel->getCompetences($id_to_display);
+                    }    
                 }
                 else{
+                    $offre_to_display = $this->offreModel->getById($id_to_display);
+                    $offre_competences = $this->offreModel->getCompetences($id_to_display);
                     $showdata = false; 
                 }
 
