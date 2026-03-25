@@ -73,10 +73,11 @@
                         <a href="/pilote_dashboard?create=true"><div class="add-student">+</div></a>
                     </div>
                     <ul>
+                        {% for etudiant in etudiants %}
                         <li class="student-item" style="position: relative">
-                            <a href="/pilote_dashboard?etudiant_id=X">
+                            <a href="/pilote_dashboard?etudiant_id={{etudiant.id_etudiant}}">
                                 <div class="student-content">
-                                    <h4>Socrate Hamon</h4>
+                                    <h4>{{etudiant.nom}} {{etudiant.prenom}}</h4>
                                 </div>
                             </a>
                             <form method="POST" action="/pilote_dashboard/delete_student" style="position: absolute; top: 10px; right: 10px;">
@@ -97,80 +98,29 @@
                                 </button>
                             </form>
                         </li>
-                        <li class="student-item" style="position: relative">
-                            <a href="/pilote_dashboard?etudiant_id=X">
-                                <div class="student-content">
-                                    <h4>Jadina Hamon</h4>
-                                </div>
-                            </a>
-                            <form method="POST" action="/pilote_dashboard/delete_student" style="position: absolute; top: 10px; right: 10px;">
-                                <input type="hidden" name="id_etudiant" value="X">
-                                <button type="submit">
-                                    <svg id="Trash--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16" width="16">
-                                        <desc>
-                                        Trash Streamline Icon: https://streamlinehq.com
-                                        </desc>
-                                        <defs></defs>
-                                        <path d="M10.549999999999999 14.0625H4.45a1.1875 1.1875 0 0 1 -1.1875 -1.125L2.725 3.325h9.549999999999999l-0.5375 9.6125a1.1875 1.1875 0 0 1 -1.1875 1.125Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                        <path d="m1.53125 3.325 11.9375 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                        <path d="M6.30625 0.9375h2.3874999999999997a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 1.1937499999999999v1.1937499999999999H5.1125V2.13125a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 -1.1937499999999999Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                        <path d="m7.5 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                        <path d="m9.8875 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                        <path d="m5.1125 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                    </svg>
-                                </button>
-                            </form>
-                        </li>
-                                                <li class="student-item" style="position: relative">
-                            <a href="/pilote_dashboard?etudiant_id=X">
-                                <div class="student-content">
-                                    <h4>Jadina Hamon</h4>
-                                </div>
-                            </a>
-                            <form method="POST" action="/pilote_dashboard/delete_student" style="position: absolute; top: 10px; right: 10px;">
-                                <input type="hidden" name="id_etudiant" value="X">
-                                <button type="submit">
-                                    <svg id="Trash--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16" width="16">
-                                        <desc>
-                                        Trash Streamline Icon: https://streamlinehq.com
-                                        </desc>
-                                        <defs></defs>
-                                        <path d="M10.549999999999999 14.0625H4.45a1.1875 1.1875 0 0 1 -1.1875 -1.125L2.725 3.325h9.549999999999999l-0.5375 9.6125a1.1875 1.1875 0 0 1 -1.1875 1.125Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                        <path d="m1.53125 3.325 11.9375 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                        <path d="M6.30625 0.9375h2.3874999999999997a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 1.1937499999999999v1.1937499999999999H5.1125V2.13125a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 -1.1937499999999999Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                        <path d="m7.5 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                        <path d="m9.8875 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                        <path d="m5.1125 5.1125 0 7.1625000000000005" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
-                                    </svg>
-                                </button>
-                            </form>
-                        </li>
+                         {% endfor %}
+                                                 
                     </ul>
                 </aside>
 
                 <div class="student-block-content">
-                    <h3>Votre Eleve</h3>
-                    <p>Socrate Hamon</p>
-                    <p>Nombre d'offre postuler : 3</p>
-                    <a>
-                        <div>
-                            <h3>Stage 1</h3>
-                        </div>
+                    {%if create == true %}
+                        <h4>Recherchez un eleve</h4>
+                    {% elseif etudiantToDisplay %}
+                        <h3>Votre Eleve</h3>
+                        <p>{{etudiantToDisplay.nom}} {{etudiantToDisplay.prenom}}</p>
+                        <p>Nombre d'offre postuler : {{postulations|length }}</p>
+                        {% for postulation in postulations %}
+                            <a href="/offre/{{postulation.id_offre}}">
+                                <div>
+                                    <h3>{{postulation.titre}}</h3>
+                                </div>
 
-                    </a>
-                    <a>
-                        <div>
-                            <h3>Stage 2</h3>
-                        </div>
+                            </a>
+                        {% endfor %}
+                    {% endif %}
 
-                    </a>
-                    <a>
-                        <div>
-                            <h3>Stage 3</h3>
-                        </div>
-
-                    </a>
-
+                    
 
                 </div>
             </div>

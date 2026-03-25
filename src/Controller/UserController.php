@@ -38,7 +38,19 @@ class UserController extends Controller{
     function renderPiloteDashboardPage(){
         $etudiants = $this->userModel->getEtudiant_pilote($this->id);
         $user = $this->userModel->getById($this->id);
-        echo $this->twig->render('pilote_dashboard.twig.html', ['user'=>$user, 'etudiants'=>$etudiants]);
+        $id_etudiant = NULL;
+        $postulations = [];
+        $etudiantToDisplay = [];
+
+        if(isset($_GET['etudiant_id']) ) {
+            $id_etudiant=$_GET['etudiant_id'];
+            $postulations = $this->userModel->getPostulations($id_etudiant);
+            $etudiantToDisplay = $this->userModel->getById($id_etudiant);
+        }
+
+        
+        echo $this->twig->render('pilote_dashboard.twig.html', ['user'=>$user, 'etudiants'=>$etudiants, 'postulations'=>$postulations, 'etudiantToDisplay'=>$etudiantToDisplay]);
+
     }
 
     function updatePiloteInfo(){
@@ -126,13 +138,13 @@ class UserController extends Controller{
                 exit();
             }
             else{
-                header('Location: ' . $_SERVER['HTTP_REFERER'] . '?error=already_in_wishlist');
+                header('Location: /error/?error=already_in_wishlist');
                 exit();
             }
 
         }
         else{
-            header('Location: /error'); //on fera un route qui gère les erreurs plus tards
+            header('Location: /error?error=no_data_available'); //on fera un route qui gère les erreurs plus tards
             exit(); 
         }
     }
@@ -147,7 +159,7 @@ class UserController extends Controller{
                 exit();
             }
             else{
-                header('Location: ' . $_SERVER['HTTP_REFERER'] . '?error=not_in_wishlist');
+                header('Location: /error?error=not_in_wishlist');
                 exit();
             }
 
@@ -208,12 +220,12 @@ class UserController extends Controller{
                 }
             }
             else{
-                header('Location: ' . $_SERVER['HTTP_REFERER'] . '?error=already_applied');
+                header('Location: /error?error=already_applied');
                 exit();
             }
         }
         else{
-            header('location: /error?error=no_id');
+            header('location: /error?error=no_data_available');
             exit();
         }
 
