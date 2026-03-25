@@ -17,55 +17,57 @@
 </head>
 
 <body>
-<header>
-    <nav>
+    {% block header%}
+    <header>
+        <nav>
 
-        <input class="header-burger-input" type="checkbox" id="id_header_burger" tabindex="0">
-        <label for="id_header_burger" class="burger"><span></span><span></span><span></span></label>
+            <input class="header-burger-input" type="checkbox" id="id_header_burger" tabindex="0">
+            <label for="id_header_burger" class="burger"><span></span><span></span><span></span></label>
 
-        <a href="/" class="logo-link" style="display:inline-block;">
-            <img src="/image/logo_projet_web.png" alt="Logo" class="header-logo">
-        </a>
+            <a href="/" class="logo-link" style="display:inline-block;">
+                <img src="/image/logo_projet_web.png" alt="Logo" class="header-logo">
+            </a>
 
-        <ul class="header-links">
+            <ul class="header-links">
 
-            <li><a href="/">Accueil</a></li>
-            <li><a href="/#Stages">Nos Stages</a></li>
-            <li><a href="/#Entreprises">Nos Entreprises</a></li>
-            <li><a href="/search">Rechercher</a></li>
-            
-        {% if session.role is defined %}
-            {% if session.role == 'admin' %}
-            <li><a href="/student_dashboard">Student Dashboard</a></li>
-            <li><a href="/pilote_dashboard">Pilote Dashboard</a></li>
-            <li><a href="/entreprise_dashboard">Entreprise Dashboard</a></li>
-            {% elseif session.role == 'etudiant' %}
-            <li><a href="/student_dashboard">Student Dashboard</a></li>
-            {% elseif session.role == 'pilote' %}
-            <li><a href="/pilote_dashboard">Pilote Dashboard</a></li>
-            {% elseif session.role == 'entreprise' %}
-            <li><a href="/entreprise_dashboard">Entreprise Dashboard</a></li>
-            {% endif %}
-        {% endif %}
-
-        </ul>
-
-        <div class="account-div">
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/#Stages">Nos Stages</a></li>
+                <li><a href="/#Entreprises">Nos Entreprises</a></li>
+                <li><a href="/search">Rechercher</a></li>
+                
             {% if session.role is defined %}
-            <a href="/logout" class="signup">
-                Se déconnecter
-            </a>
-            {% else %}
-            <a href="/signup" class="signup">
-                S'inscrire
-            </a>
-            <a href="/signin" class="login">
-                Se connecter
-            </a>
+                {% if session.role == 'admin' %}
+                <li><a href="/student_dashboard">Student Dashboard</a></li>
+                <li><a href="/pilote_dashboard">Pilote Dashboard</a></li>
+                <li><a href="/entreprise_dashboard">Entreprise Dashboard</a></li>
+                {% elseif session.role == 'etudiant' %}
+                <li><a href="/student_dashboard">Student Dashboard</a></li>
+                {% elseif session.role == 'pilote' %}
+                <li><a href="/pilote_dashboard">Pilote Dashboard</a></li>
+                {% elseif session.role == 'entreprise' %}
+                <li><a href="/entreprise_dashboard">Entreprise Dashboard</a></li>
+                {% endif %}
             {% endif %}
-        </div>
-    </nav>
-</header>
+
+            </ul>
+
+            <div class="account-div">
+                {% if session.role is defined %}
+                <a href="/logout" class="signup">
+                    Se déconnecter
+                </a>
+                {% else %}
+                <a href="/signup" class="signup">
+                    S'inscrire
+                </a>
+                <a href="/signin" class="login">
+                    Se connecter
+                </a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+{% endblock %}
 
 
     {% block content %}{% endblock %}

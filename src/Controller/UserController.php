@@ -138,7 +138,7 @@ class UserController extends Controller{
                 exit();
             }
             else{
-                header('Location: /error/?error=already_in_wishlist');
+                header('Location: /error?error=already_in_wishlist');
                 exit();
             }
 
