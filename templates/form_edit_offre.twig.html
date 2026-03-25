@@ -1,106 +1,102 @@
- <h3>Modifier l’offre :</h3>
+<h3>Modifier l’offre :</h3>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-        crossorigin=""
-/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin="">
-</script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin=""
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin="">
+    </script>
 
-                <form class="offre-form" method="POST" action="/entreprise_dashboard/update_offre_info">
-                    <input type="hidden" name="id_offre" value="{{offre_to_display.id_offre}}">
-                    {% if offre_to_display %}
-                        <div class="form-group">
-                            <label>Titre</label>
-                            <input type="text" name="titre" placeholder="{{offre_to_display.titre}}">
-                        </div>
+        <form class="offre-form" method="POST" action="/entreprise_dashboard/update_offre_info">
+            <input type="hidden" name="id_offre" value="{{offre_to_display.id_offre}}">
+            {% if offre_to_display %}
+                <div class="form-group">
+                    <label>Titre</label>
+                    <input type="text" name="titre" placeholder="{{offre_to_display.titre}}">
+                </div>
 
-                        <div class="form-group">
-                            <label>Description des cartes</label>
-                            <textarea name="description_carte" placeholder="{{offre_to_display.description_carte}}"></textarea>
-                        </div>
+                <div class="form-group">
+                    <label>Description de la carte</label>
+                    <textarea name="description_carte" placeholder="{{offre_to_display.description_carte}}"></textarea>
+                </div>
 
-                    <div class="form-group">
-                        <label>Description du stage (markdown)</label>
-                        <textarea name="description_offre_de_stage" placeholder="Ecrivez votre text ici ..."></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Compétences :</label>
+            <div class="form-group">
+                <label>Description du stage (markdown)</label>
+                <textarea name="description_offre_de_stage" placeholder="Écrivez votre texte ici..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>Cochez les compétences de l’offre :</label>
 
-                            <div class="competences-grid">
+                    <div class="competences-grid">
 
-                        {% for competence in all_competences%}
-                            {% if competence.id_competence in offre_competences|column('id_competence') %}
-                                <label><input type="checkbox" name="competences[]" value="{{competence.id_competence}}"checked>{{competence.nom}}</label>
-                            {% else %}
-                                <label><input type="checkbox" name="competences[]" value="{{competence.id_competence}}">{{competence.nom}}</label>   
-                            {% endif %}
-                        {% else %}
-                        <p>NO DATA FOUND</p>
-                        {% endfor %}
-                        </div>
-                    </div>
-
-                    <div class="localisation-form-group">
-                        <div class="form-group">
-                            <label>localisation :</label>
-                            <input type="hidden" id="lat" name="lat" value="{{offre_to_display.lat|default('')}}" required>
-                            <input type="hidden" id="lng" name="lng" value="{{offre_to_display.lng|default('')}}" required>
-
-                            <label for="ville">Ville</label>
-                            <select name="ville" id="ville" required>
-                                <option value="">Sélectionnez une ville</option>
-                                {% for ville in all_villes %}
-                                    <option
-                                        value="{{ ville.id_ville }}"
-                                        data-lat="{{ ville.lat }}"
-                                        data-lng="{{ ville.lng }}"
-                                    >
-                                        {{ ville.nom }}
-                                    </option>
-                                {% else %}
-                                    <option disabled>Aucune ville disponible</option>
-                                {% endfor %}
-                            </select>
-
-                            <div class="localisation-mode">
-                                <label>
-                                    <input type="checkbox" id="utiliser_carte" name="utiliser_carte" value="1">
-                                    Sélectionner sur la carte
-                                </label>
-                            </div>
-
-                            <div id="map" style="min-height: 200px;width: 100%;"></div>
-                        </div>
-                    </div>
-
-                        <div class="form-group">
-                            <label>Rémunération</label>
-                            <input type="number"  min="0" max="9999"  name="remuneration_par_mois" placeholder="{{offre_to_display.remuneration_par_mois}} €">
-                        </div>
-
-                        <div class="dates-row">
-                            <div class="form-group">
-                                <label>Date début</label>
-                                <input type="date" name="date_debut" value="{{offre_to_display.date_debut}}">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Date fin</label>
-                                <input type="date" name="date_fin" value="{{offre_to_display.date_fin}}">
-                            </div>
-                        </div>
-
-                        
-
-
-
-                    <button class="save-btn">Enregistrer</button>
-
-                    <script src="/scripts/offre_localisation_offre_form.js"></script>
-
+                {% for competence in all_competences%}
+                    {% if competence.id_competence in offre_competences|column('id_competence') %}
+                        <label><input type="checkbox" name="competences[]" value="{{competence.id_competence}}"checked>{{competence.nom}}</label>
+                    {% else %}
+                        <label><input type="checkbox" name="competences[]" value="{{competence.id_competence}}">{{competence.nom}}</label>   
                     {% endif %}
+                {% else %}
+                <p>Aucune compétence disponible pour le moment.</p>
+                {% endfor %}
+                </div>
+            </div>
 
-                </form>
+            <div class="localisation-form-group">
+                <div class="form-group">
+                    <label>Localisation :</label>
+                    <input type="hidden" id="lat" name="lat" value="{{offre_to_display.lat|default('')}}" required>
+                    <input type="hidden" id="lng" name="lng" value="{{offre_to_display.lng|default('')}}" required>
+
+                    <label for="ville">Ville</label>
+                    <select name="ville" id="ville" required>
+                        <option value="">Sélectionnez une ville</option>
+                        {% for ville in all_villes %}
+                            <option
+                                value="{{ ville.id_ville }}"
+                                data-lat="{{ ville.lat }}"
+                                data-lng="{{ ville.lng }}"
+                            >
+                                {{ ville.nom }}
+                            </option>
+                        {% else %}
+                            <option disabled>Aucune ville disponible</option>
+                        {% endfor %}
+                    </select>
+
+                    <div class="localisation-mode">
+                        <label>
+                            <input type="checkbox" id="utiliser_carte" name="utiliser_carte" value="1">
+                            Sélectionner sur la carte
+                        </label>
+                    </div>
+
+                    <div id="map"></div>
+                </div>
+            </div>
+
+                <div class="form-group">
+                    <label>Rémunération par mois</label>
+                    <input type="number"  min="0" max="9999"  name="remuneration_par_mois" placeholder="{{offre_to_display.remuneration_par_mois}} €">
+                </div>
+
+                <div class="dates-row">
+                    <div class="form-group">
+                        <label>Date de début</label>
+                        <input type="date" name="date_debut" value="{{offre_to_display.date_debut}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date de fin</label>
+                        <input type="date" name="date_fin" value="{{offre_to_display.date_fin}}">
+                    </div>
+                </div>
+
+            <button class="save-btn">Enregistrer</button>
+
+            {% endif %}
+
+            <script src="/scripts/offre_localisation_offre_form.js"></script>
+
+        </form>

@@ -614,3 +614,15 @@ input[type="file"]::file-selector-button:hover {
         font-size: 13px;
     }
 }
+
+#map {
+    height: 60vh;
+    width: 100%;
+    max-width: 768px;
+}
+
+@media (max-width: 768px) {
+    #map {
+        height: 50vh;
+    }
+}

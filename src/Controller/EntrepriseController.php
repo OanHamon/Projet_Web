@@ -197,9 +197,12 @@ class EntrepriseController extends Controller{
 
                     if($field === 'remuneration_par_mois'){
                         $result = $this->punisher->isInt($value);
-                        if($result !== true){ $errors[] = $result; continue; }   
-                        $result = $this->punisher->isPositive($value);
-                        if($result !== true){ $errors[] = $result; continue; }   
+                        if($result !== true){ $errors[] = $result; continue; }
+                        if($value < 0) {
+                            $result = $this->punisher->punish("rémunération ne peut pas etre négatif");
+                            $errors[] = $result;
+                            continue;
+                        }
                     }
 
                     if($field === 'date_debut' || $field === 'date_fin'){
@@ -207,15 +210,13 @@ class EntrepriseController extends Controller{
                         if($result !== true){ $errors[] = $result; continue; }  
                     }
 
-
-
                     if($field === 'description_offre_de_stage' || $field === 'date_debut' || $field === 'date_fin' ){
 
                         $data[$field] = $value;
 
                     }
                     else{
-                        $data[$field] =$this->punisher->sanitize($value);
+                        $data[$field] = $this->punisher->sanitize($value);
                     }
                 }
             }
@@ -235,9 +236,9 @@ class EntrepriseController extends Controller{
 
             if(empty($errors) && !empty($data)){
                 $this->offreModel->update($id_offre,$data);
+            }
 
-                }
-            $this->renderEntrepriseDashboardPage( $errors);
+            $this->renderEntrepriseDashboardPage( $errors );
             exit(); 
 
         }
@@ -266,8 +267,11 @@ class EntrepriseController extends Controller{
                 if($field === 'remuneration_par_mois'){
                     $result = $this->punisher->isInt($value);
                     if($result !== true){ $errors[] = $result; continue; }
-                    $result = $this->punisher->isPositive($value);
-                    if($result !== true){ $errors[] = $result; continue; }
+                    if($value < 0) {
+                        $result = $this->punisher->punish("rémunération ne peut pas etre négatif");
+                        $errors[] = $result;
+                        continue;
+                    }
                 }
 
                 if($field === 'date_debut' || $field === 'date_fin'){
