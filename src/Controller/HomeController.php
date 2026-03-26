@@ -38,7 +38,7 @@ class HomeController extends Controller{
         echo $this->twig->render('error.twig.html');
     }
 
-    function renderHashPage(){
+    public function renderHashPage(){
         echo '<form method="POST" action="/hashed">
             <label for="mdp">Mot de passe :</label>
             <input type="text" id="mdp" name="mdp">
@@ -47,5 +47,9 @@ class HomeController extends Controller{
         if (isset($_POST['mdp'])) {
             echo password_hash($_POST['mdp'], PASSWORD_DEFAULT);
         }
+    }
+
+    public function renderValidationPage(){
+        echo $this->twig->render('validation.html.twig');
     }
 }

@@ -140,7 +140,7 @@ class EntrepriseController extends Controller{
 
         $filename  = basename($_GET['file']); 
         $postuleModel = new PostuleModel();
-        if($postuleModel->checkFile($type,$filename,$this->entreprise_id)){
+        if($postuleModel->checkFileExist($type,$filename,$this->entreprise_id)){
             
             $path = __DIR__ . '/../../public/uploads/' . $type . '/' . $filename;
             if(file_exists($path)){
