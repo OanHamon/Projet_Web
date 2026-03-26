@@ -8,7 +8,7 @@ class EntrepriseControllerTest extends TestCase
 {
 
 
-    public function downloadfiletest()
+    public function downloadfileTest()
     {
         $controller = new EntrepriseController();
         $response = $controller->downloadfile(1);
