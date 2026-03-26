@@ -32,7 +32,7 @@ class UserController extends Controller{
             $errors = $_SESSION['flash_error'];
             unset($_SESSION['flash_error']);
         }
-        echo $this->twig->render('student_dashboard.twig.html',[
+        echo $this->twig->render('student_dashboard.twig',[
             'user'=>$user,
             'wishliste'=>$wishliste,
             'candidatures'=>$candidature,
@@ -54,7 +54,7 @@ class UserController extends Controller{
         }
 
         
-        echo $this->twig->render('pilote_dashboard.twig.html', ['user'=>$user, 'etudiants'=>$etudiants, 'postulations'=>$postulations, 'etudiantToDisplay'=>$etudiantToDisplay]);
+        echo $this->twig->render('pilote_dashboard.twig', ['user'=>$user, 'etudiants'=>$etudiants, 'postulations'=>$postulations, 'etudiantToDisplay'=>$etudiantToDisplay]);
 
     }
 

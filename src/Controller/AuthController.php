@@ -65,7 +65,7 @@ class AuthController extends Controller{
             }
         }
     
-        echo $this->twig->render('login.twig.html', [
+        echo $this->twig->render('login.twig', [
             'login' => false,
             'errors' => $errors,
             'post' => $_POST
@@ -163,7 +163,7 @@ class AuthController extends Controller{
             }
         }
     
-        echo $this->twig->render('login.twig.html', [
+        echo $this->twig->render('login.twig', [
             'login' => true,
             'errors' => $errors,
             'post' => $_POST
@@ -177,9 +177,9 @@ class AuthController extends Controller{
     }
 
     function renderSignInPage(){
-        echo $this->twig->render('login.twig.html', ['login'=>false, 'post'=>[]]);
+        echo $this->twig->render('login.twig', ['login'=>false, 'post'=>[]]);
     }
     function renderSignUpPage(){
-        echo $this->twig->render('login.twig.html', ['login'=>true, 'post'=>[]]);
+        echo $this->twig->render('login.twig', ['login'=>true, 'post'=>[]]);
     }
 }

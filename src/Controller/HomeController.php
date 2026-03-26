@@ -27,15 +27,15 @@ class HomeController extends Controller{
         foreach($candidatures7days as $jour){
             if($jour['count'] > $max) $max = $jour['count'];
         }
-        echo $this->twig->render('home.twig.html', ['offres'=>$offres, 'entreprises'=>$entreprises,'stats'=>$stats,'candidatures_max' => $max]);
+        echo $this->twig->render('home.twig', ['offres'=>$offres, 'entreprises'=>$entreprises,'stats'=>$stats,'candidatures_max' => $max]);
     }
 
     function renderMentionsLegalesPage(){
-        echo $this->twig->render('mentions.twig.html');
+        echo $this->twig->render('mentions.twig');
     }
 
     function renderErrorPage(){
-        echo $this->twig->render('error.twig.html');
+        echo $this->twig->render('error.twig');
     }
 
     public function renderHashPage(){
@@ -50,6 +50,6 @@ class HomeController extends Controller{
     }
 
     public function renderValidationPage(){
-        echo $this->twig->render('validation.html.twig');
+        echo $this->twig->render('validation.twig');
     }
 }

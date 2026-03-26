@@ -1,4 +1,4 @@
-{% extends 'base.twig.html' %}
+{% extends 'base.twig' %}
 
 
 {% block styles %}
@@ -150,12 +150,12 @@
                 <div class="offre-editor entreprise-block-content">
 
                     {% if createNew %}
-                        {% include 'form_create_offre.twig.html' %}
+                        {% include 'form_create_offre.twig' %}
                     {% elseif offre_to_display %}
                         {% if showdata == false %}
-                            {% include 'form_edit_offre.twig.html' %}
+                            {% include 'form_edit_offre.twig' %}
                         {% elseif showdata == true %}
-                            {% include 'data_offre.twig.html' %}
+                            {% include 'data_offre.twig' %}
                         {% endif %}
                     {% endif %}
                 
