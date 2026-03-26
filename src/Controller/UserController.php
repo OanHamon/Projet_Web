@@ -27,7 +27,7 @@ class UserController extends Controller{
         $wishliste = $this->userModel->getWishlist($this->id);
         $candidature = $this->userModel->getPostulations($this->id);
         $user= $this->userModel->getById($this->id);
-        echo $this->twig->render('student_dashboard.twig.html',[
+        echo $this->twig->render('student_dashboard.twig',[
             'user'=>$user,
             'wishliste'=>$wishliste,
             'candidatures'=>$candidature,
@@ -49,7 +49,7 @@ class UserController extends Controller{
         }
 
         
-        echo $this->twig->render('pilote_dashboard.twig.html', ['user'=>$user, 'etudiants'=>$etudiants, 'postulations'=>$postulations, 'etudiantToDisplay'=>$etudiantToDisplay]);
+        echo $this->twig->render('pilote_dashboard.twig', ['user'=>$user, 'etudiants'=>$etudiants, 'postulations'=>$postulations, 'etudiantToDisplay'=>$etudiantToDisplay]);
 
     }
 

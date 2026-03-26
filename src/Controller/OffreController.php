@@ -18,12 +18,12 @@ class OffreController extends Controller{
         $competences = $this->offreModel->getCompetences($id);
         $entreprise = $this->offreModel->getEntreprise($id);
 
-        echo $this->twig->render('vitrine_stage.twig.html', ['offre'=>$offre,'entreprise'=>$entreprise,'competences'=>$competences]);
+        echo $this->twig->render('vitrine_stage.twig', ['offre'=>$offre,'entreprise'=>$entreprise,'competences'=>$competences]);
     }
 
     function renderFormulaire($id){
         $offre = $this->offreModel->getById($id);
         $competences = $this->offreModel->getCompetences($id);
-        echo $this->twig->render('postuler_stage.twig.html',['offre'=>$offre,'competences'=>$competences]);
+        echo $this->twig->render('postuler_stage.twig',['offre'=>$offre,'competences'=>$competences]);
     }
 }
