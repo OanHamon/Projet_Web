@@ -210,8 +210,9 @@ class EntrepriseController extends Controller{
             }
         }
         if(empty($errors) && !empty($data)){$this->entrepriseModel->update($this->entreprise_id,$data);}
-        $this->renderEntrepriseDashboardPage($errors);
-        exit(); 
+        $_SESSION['flash_error'] = $errors;
+        header('Location: /entreprise_dashboard');
+        exit();
 
     }
 
@@ -280,8 +281,9 @@ class EntrepriseController extends Controller{
                 $this->offreModel->update($id_offre,$data);
             }
 
-            $this->renderEntrepriseDashboardPage( $errors );
-            exit(); 
+            $_SESSION['flash_error'] = $errors;
+            header('Location: /entreprise_dashboard');
+            exit();
 
         }
         else{header('location: /error?error=no_data_available'); exit();}
@@ -352,8 +354,8 @@ class EntrepriseController extends Controller{
             header('Location: ' . $_SERVER['HTTP_REFERER']);
             exit();
         }
-
-        $this->renderEntrepriseDashboardPage($errors);
+        $_SESSION['flash_error'] = $errors;
+        header('Location: /student_dashboard');
         exit();
     }
 
