@@ -15,4 +15,9 @@ class EntrepriseControllerTest extends TestCase
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertTrue($response->headers->contains('Content-Type', 'application/pdf'));
     }
-}
+
+    public function deleteOffreTest(){
+        $controller = new EntrepriseController();
+        $response = $controller->deleteOffre(1);
+        $this->assertEquals(200, $response->getStatusCode());
+    }
