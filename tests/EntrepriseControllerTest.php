@@ -6,13 +6,13 @@ use App\Controller\EntrepriseController;
 
 class EntrepriseControllerTest extends TestCase
 {
-    public function testGetEntreprise()
+
+
+    public function downloadfiletest()
     {
         $controller = new EntrepriseController();
-        $response = $controller->getEntreprise(1);
+        $response = $controller->downloadfile(1);
         $this->assertEquals(200, $response->getStatusCode());
-        $data = json_decode($response->getContent(), true);
-        $this->assertArrayHasKey('id', $data);
-        $this->assertArrayHasKey('name', $data);
+        $this->assertTrue($response->headers->contains('Content-Type', 'application/pdf'));
     }
 }
