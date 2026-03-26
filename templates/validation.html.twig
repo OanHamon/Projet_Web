@@ -1,0 +1,35 @@
+{% extends 'base.twig.html' %}
+{% block header %}{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/css/style_validation_page.css">
+    <link rel="stylesheet" href="/css/token.css">
+{% endblock %}
+
+{% block content %}
+<main class="success-page">
+  <div class="ocean-overlay"></div>
+
+  <div class="content">
+    <h1 class="success-icon">✔</h1>
+
+    <h2 class="success-title">
+      Candidature envoyée avec succès !
+    </h2>
+
+    <p class="success-text">
+      Votre message a bien traversé l’océan 🌊<br>
+      Il est maintenant entre de bonnes mains.
+    </p>
+
+    <div class="buttons">
+      <a href="/" class="btn primary">Retour à l’accueil</a>
+      <a href="javascript:history.back()" class="btn secondary">Revenir</a>
+    </div>
+  </div>
+
+  <div class="bubbles"></div>
+</main>
+{% endblock %}
+
+{% block footer %}{% endblock %}

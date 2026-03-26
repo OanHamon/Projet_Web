@@ -51,6 +51,7 @@ $routeur->add('POST', '/search', [SearchController::class, 'renderSearchPage']);
 // === Other Page ===
 $routeur->add('GET','/mentionslegales',[HomeController::class, 'renderMentionsLegalesPage']);
 $routeur->add('GET','/error',[ErrorController::class, 'renderErrorPage']);
+$routeur->add('GET','/validation',[HomeController::class, 'renderValidationPage']);
 
 
 // === Auth ===

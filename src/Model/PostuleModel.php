@@ -8,7 +8,7 @@ class PostuleModel extends BaseModel
     protected $table = "Postule";
 
 
-    public function checkFile($type,$filename, $id_entreprise) {
+    public function checkFileExist($type,$filename, $id_entreprise) {
         $column = $type . '_url';
         $query = "
             SELECT {$column} FROM Postule 

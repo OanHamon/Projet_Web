@@ -200,7 +200,7 @@ class UserController extends Controller{
                             $date = $date->format('Y-m-d');
                             $data = ['id_etudiant'=>$this->id, 'id_offre'=>$id_offre, 'cv_url'=>$cv_new_path, 'lm_url'=>$lm_new_path, 'date_postulation'=>$date]; // la rajouter dans data
                             $postuleModel->insert($data);
-                            header("location: /offre/$id_offre");
+                            header("location: /validation");
                             exit();
                         }
                         else{
