@@ -33,6 +33,7 @@ class EntrepriseController extends Controller{
 
         echo $this->twig->render('vitrine_entreprise.twig',['entreprise'=>$entreprise, 'offres'=>$offres, 'competences'=>$competences, 'note'=>$note]);
     }
+    
     private function requireEntrepriseAuth(){
         if(!isset($_SESSION['companyId'])){
             header('Location: /signin');
