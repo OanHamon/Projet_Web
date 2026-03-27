@@ -8,7 +8,7 @@ class EntrepriseControllerTest extends TestCase
 {
 
 
-    public function downloadfileTest()
+    public function testdownloadfile()
     {
         $controller = new EntrepriseController();
         $response = $controller->downloadfile(1);
@@ -16,8 +16,9 @@ class EntrepriseControllerTest extends TestCase
         $this->assertTrue($response->headers->contains('Content-Type', 'application/pdf'));
     }
 
-    public function deleteOffreTest(){
+    public function testdeleteOffre(){
         $controller = new EntrepriseController();
         $response = $controller->deleteOffre(1);
         $this->assertEquals(200, $response->getStatusCode());
     }
+}
