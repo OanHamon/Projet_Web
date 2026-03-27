@@ -27,8 +27,9 @@ class AdminController extends Controller{
         $this->requireAdminAuth();
         $users = $this->userModel->getAll();
         $entreprises = $this->entrepriseModel->getAll();
+        foreach ($users as $user) {$roles[$user['id_utilisateur']] = $this->userModel->get_user_role($user['id_utilisateur']);}
 
-        echo $this->twig->render('admin_dashboard.twig', [ 'users' => $users , 'entreprises' => $entreprises ]);
+        echo $this->twig->render('admin_dashboard.twig', [ 'users' => $users , 'entreprises' => $entreprises, 'roles' => $roles]);
     }
 
     function gotoEntreprise($id){
