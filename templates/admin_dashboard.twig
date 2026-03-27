@@ -1,0 +1,33 @@
+
+{% extends 'base.twig' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/css/token.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style_admin_dashboard.css">
+{% endblock %}
+
+{% block content %}
+    <main class="admin-page">
+        <div class="admin-users-category">
+            <h2>Utilisateurs</h2>
+            {% for user in users %}
+                <a href="/student_dashboard/{{ user.id }}" class="card">
+                    <h3>{{ user.nom }} {{ user.prenom }}</h3>
+                    <p>Email: {{ user.email }}</p>
+                </a>
+            {% endfor %}
+        </div>
+
+        <div class="admin-entreprises-category">
+            <h2>Entreprises</h2>
+            {% for entreprise in entreprises %}
+                <a href="/vitrine_entreprise/{{ entreprise.id_entreprise }}" class="card">
+                    <h3>{{ entreprise.nom }}</h3>
+                    <p>Email: {{ entreprise.email }}</p>
+                </a>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}
+{% block footer %}{% endblock %}

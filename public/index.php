@@ -64,6 +64,7 @@ $routeur->add('GET','/logout',[AuthController::class, 'logout']);
 $routeur->add('GET','/hash',[HomeController::class, 'renderHashPage']);
 $routeur->add('POST','/hashed',[HomeController::class, 'renderHashPage']);
 
+$routeur->add('GET','/admin_dashboard',[AdminController::class, 'renderAdminDashboard']);
 
 $routeur->add('GET','/download',[EntrepriseController::class, 'downloadFile']);
 
