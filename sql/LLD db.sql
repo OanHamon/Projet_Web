@@ -109,7 +109,7 @@ CREATE TABLE Wishlist(
 CREATE TABLE Ville(
    id_ville INT AUTO_INCREMENT,
    nom VARCHAR(50) NOT NULL,
-   lat DECIMAL(8,6) NOT NULL,
-   lng DECIMAL(8,6) NOT NULL,
+   lat DECIMAL(10,7) NOT NULL,
+   lng DECIMAL(9,6) NOT NULL,
    PRIMARY KEY(id_ville)
 );
