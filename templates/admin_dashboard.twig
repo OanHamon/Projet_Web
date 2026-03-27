@@ -17,7 +17,7 @@
                 <h2>Utilisateurs</h2>
                 <div id="admin-users-list">
                     {% for user in users %}
-                        <a href="/student_dashboard/{{ user.id }}" class="card admin-user-card" data-search="{{ user.nom }} {{ user.prenom }} {{ user.email }}">
+                        <a href="/goto_admin_user/{{ user.id_utilisateur }}" class="card admin-user-card" data-search="{{ user.nom }} {{ user.prenom }} {{ user.email }}">
                             <h3>{{ user.nom }} {{ user.prenom }}</h3>
                             <p>Email: {{ user.email }}</p>
                         </a>
@@ -29,7 +29,7 @@
                 <h2>Entreprises</h2>
                 <div id="admin-entreprises-list">
                     {% for entreprise in entreprises %}
-                        <a href="/vitrine_entreprise/{{ entreprise.id_entreprise }}" class="card admin-entreprise-card" data-search="{{ entreprise.nom }} {{ entreprise.email }}">
+                        <a href="/goto_admin_entreprise/{{ entreprise.id_entreprise }}" class="card admin-entreprise-card" data-search="{{ entreprise.nom }} {{ entreprise.email }}">
                             <h3>{{ entreprise.nom }}</h3>
                             <p>Email: {{ entreprise.email }}</p>
                         </a>

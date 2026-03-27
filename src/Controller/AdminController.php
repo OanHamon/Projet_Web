@@ -31,6 +31,18 @@ class AdminController extends Controller{
         echo $this->twig->render('admin_dashboard.twig', [ 'users' => $users , 'entreprises' => $entreprises ]);
     }
 
-   // function 
+    function gotoEntreprise($id){
+        $this->requireAdminAuth();
+        $_SESSION['companyId'] = $id;
+        header('Location: /entreprise_dashboard');
+        exit();
+    }
+
+    function gotoUser($id){
+        $this->requireAdminAuth();
+        $_SESSION['userId'] = $id;
+        header('Location: /student_dashboard');
+        exit();
+    }
     
 }
