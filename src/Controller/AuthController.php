@@ -63,6 +63,8 @@ class AuthController extends Controller{
                     exit;
                 }
             }
+        } else {
+            $errors = ['mdp ou email non envoyé'];
         }
     
         echo $this->twig->render('login.twig', [
