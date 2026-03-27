@@ -23,7 +23,16 @@ class UserController extends Controller{
         $this->id=$_SESSION['userId'];
     }
 
+    private function requireUserAuth(){
+        if(!isset($_SESSION['userId'])){
+            header('Location: /signin');
+            exit();
+        }
+        $this->id = $_SESSION['userId'];
+    }
+
     function renderStudentDashboardPage(){
+        $this->requireUserAuth();
         $wishliste = $this->userModel->getWishlist($this->id);
         $candidature = $this->userModel->getPostulations($this->id);
         $user= $this->userModel->getById($this->id);
@@ -38,6 +47,7 @@ class UserController extends Controller{
     }
 
     function renderPiloteDashboardPage(){
+        $this->requireUserAuth();
         $etudiants = $this->userModel->getEtudiant_pilote($this->id);
         $user = $this->userModel->getById($this->id);
         $id_etudiant = NULL;
@@ -56,13 +66,13 @@ class UserController extends Controller{
     }
 
     function updatePiloteInfo(){
+        $this->requireUserAuth();
         if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email'])) {
             $prenom = $_POST['prenom'];
             $nom = $_POST['nom'];
-            $email = $_POST['email'];
-            $emailResult = $this->punisher->isEmail($email);
-            if($emailResult !== true){
-                $errors[] = $emailResult;
+            $email = $this->punisher->isEmail($_POST['email']);
+            if($email !== true){
+                $errors[] = $email;
                 $_SESSION['flash_error'] = $errors;
                 header('Location: /student_dashboard');
                 exit();
@@ -71,13 +81,13 @@ class UserController extends Controller{
             $data = [];
 
             if(!empty($_POST['nom'])){
-                $data['nom'] = $this->punisher->sanitize($_POST['nom']);
+                $data['nom'] = $this->punisher->sanitize($nom);
             }
             if(!empty($_POST['prenom'])){
-                $data['prenom'] = $this->punisher->sanitize($_POST['prenom']);
+                $data['prenom'] = $this->punisher->sanitize($prenom);
             }
             if(!empty($_POST['email'])){
-                $data['email'] = $_POST['email'];
+                $data['email'] = $email;
             }
     
         $this->userModel->update($this->id, $data);
@@ -90,7 +100,7 @@ class UserController extends Controller{
 
 
     function updateUserInfo(){
-
+        $this->requireUserAuth();
         if(isset($_POST['prenom']) && isset($_POST['nom'])&& isset($_POST['email'])){
             $prenom = $_POST['prenom'];
             $nom = $_POST['nom'];
@@ -127,6 +137,7 @@ class UserController extends Controller{
     }
 
     function deleteAccount(){
+        $this->requireUserAuth();
         $this->userModel->deleteById($this->id);
         $_SESSION = array();
         header('Location: /'); 
@@ -134,6 +145,7 @@ class UserController extends Controller{
     }
 
     function addInWishlist(){
+        $this->requireUserAuth();
         if(isset($_POST['id_offre'])){
             $id_offre = $_POST['id_offre'];
             $data = [ 'id_etudiant'=>$this->id, 'id_offre'=>$id_offre];
@@ -155,6 +167,7 @@ class UserController extends Controller{
     }
 
     function deleteInWishlist(){
+        $this->requireUserAuth();
         if(isset($_POST['id_offre'])){
             $id_offre = $_POST['id_offre'];
             $data = [ 'id_etudiant'=>$this->id, 'id_offre'=>$id_offre];
@@ -178,7 +191,7 @@ class UserController extends Controller{
   
     function candidaterOffre($id)
     {
-
+        $this->requireUserAuth();
         $postuleModel = new PostuleModel();
 
         if($id){
@@ -265,6 +278,7 @@ class UserController extends Controller{
     }
 
     function deleteStudentPilote(){
+        $this->requireUserAuth();
         if(isset($_POST['id_etudiant'])){
             $data['id_pilote']=null;
             $sup=new EtudiantModel();

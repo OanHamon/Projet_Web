@@ -9,25 +9,62 @@
 
 {% block content %}
     <main class="admin-page">
-        <div class="admin-users-category">
-            <h2>Utilisateurs</h2>
-            {% for user in users %}
-                <a href="/student_dashboard/{{ user.id }}" class="card">
-                    <h3>{{ user.nom }} {{ user.prenom }}</h3>
-                    <p>Email: {{ user.email }}</p>
-                </a>
-            {% endfor %}
+        <div class="admin-search">
+            <input type="text" id="admin-search-input" placeholder="Rechercher un utilisateur ou une entreprise...">
         </div>
+        <div class="admin-dashboard-lists">
+            <div class="admin-users-category">
+                <h2>Utilisateurs</h2>
+                <div id="admin-users-list">
+                    {% for user in users %}
+                        <a href="/student_dashboard/{{ user.id }}" class="card admin-user-card" data-search="{{ user.nom }} {{ user.prenom }} {{ user.email }}">
+                            <h3>{{ user.nom }} {{ user.prenom }}</h3>
+                            <p>Email: {{ user.email }}</p>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
 
-        <div class="admin-entreprises-category">
-            <h2>Entreprises</h2>
-            {% for entreprise in entreprises %}
-                <a href="/vitrine_entreprise/{{ entreprise.id_entreprise }}" class="card">
-                    <h3>{{ entreprise.nom }}</h3>
-                    <p>Email: {{ entreprise.email }}</p>
-                </a>
-            {% endfor %}
+            <div class="admin-entreprises-category">
+                <h2>Entreprises</h2>
+                <div id="admin-entreprises-list">
+                    {% for entreprise in entreprises %}
+                        <a href="/vitrine_entreprise/{{ entreprise.id_entreprise }}" class="card admin-entreprise-card" data-search="{{ entreprise.nom }} {{ entreprise.email }}">
+                            <h3>{{ entreprise.nom }}</h3>
+                            <p>Email: {{ entreprise.email }}</p>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.getElementById("admin-search-input");
+            searchInput.addEventListener("keyup", function() {
+                const filter = this.value.toLowerCase();
+
+                // Filtrer les utilisateurs
+                document.querySelectorAll('.admin-user-card').forEach(function(card) {
+                    const text = card.getAttribute('data-search').toLowerCase();
+                    if (text.includes(filter)) {
+                        card.style.display = "";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+
+                // Filtrer les entreprises
+                document.querySelectorAll('.admin-entreprise-card').forEach(function(card) {
+                    const text = card.getAttribute('data-search').toLowerCase();
+                    if (text.includes(filter)) {
+                        card.style.display = "";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
 {% endblock %}
 {% block footer %}{% endblock %}

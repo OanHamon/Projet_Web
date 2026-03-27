@@ -16,12 +16,21 @@ class AdminController extends Controller{
         $this->entrepriseModel = new EntrepriseModel();
     }
 
+    private function requireAdminAuth(){
+        if(!isset($_SESSION['role']) || $_SESSION['role'] != 'admin'){
+            header('Location: /error?error=404');
+            exit();
+        }
+    }
+
     function renderAdminDashboard(){
+        $this->requireAdminAuth();
         $users = $this->userModel->getAll();
         $entreprises = $this->entrepriseModel->getAll();
 
         echo $this->twig->render('admin_dashboard.twig', [ 'users' => $users , 'entreprises' => $entreprises ]);
     }
 
+   // function 
     
 }
