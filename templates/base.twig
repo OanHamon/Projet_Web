@@ -38,9 +38,7 @@
                 
             {% if session.role is defined %}
                 {% if session.role == 'admin' %}
-                <li><a href="/student_dashboard">Student Dashboard</a></li>
-                <li><a href="/pilote_dashboard">Pilote Dashboard</a></li>
-                <li><a href="/entreprise_dashboard">Entreprise Dashboard</a></li>
+                <li><a href="/admin_dashboard">Admin Dashboard</a></li>
                 {% elseif session.role == 'etudiant' %}
                 <li><a href="/student_dashboard">Student Dashboard</a></li>
                 {% elseif session.role == 'pilote' %}

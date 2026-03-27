@@ -100,4 +100,12 @@ class EntrepriseControllerTest extends TestCase
 
         $this->assertSame('html-output', $output);
     }
-}   
+
+    public function testDeleteOffreWithInvalidId()
+    {
+        $_POST['id_offre'] = 'invalid'; // simulation d'une ID d'offre non numérique
+        $_SESSION['companyId'] = 1;
+
+        $this->assertFalse(is_numeric($_POST['id_offre']), "L'ID de l'offre doit être numérique.");
+    }
+}  
