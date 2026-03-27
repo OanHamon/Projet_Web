@@ -31,7 +31,7 @@ class EntrepriseController extends Controller{
         $note = ceil($this->entrepriseModel->getEvaluation($id)['moyenne']); // On affiche la note de l'entreprise et pas celle de l'utilisateur sur cette entreprise pour l'instant mais on le fera + tard
 
 
-        echo $this->twig->render('vitrine_entreprise.twig.html',['entreprise'=>$entreprise, 'offres'=>$offres, 'competences'=>$competences, 'note'=>$note]);
+        echo $this->twig->render('vitrine_entreprise.twig',['entreprise'=>$entreprise, 'offres'=>$offres, 'competences'=>$competences, 'note'=>$note]);
     }
     private function requireEntrepriseAuth(){
         if(!isset($_SESSION['companyId'])){
@@ -109,7 +109,7 @@ class EntrepriseController extends Controller{
             $createNew =true;
             
         }
-        echo $this->twig->render('entreprise_dashboard.twig.html',[
+        echo $this->twig->render('entreprise_dashboard.twig',[
             'entreprise'=>$entreprise,
             'offres'=>$offres, 
             'offre_to_display'=>$offre_to_display,
@@ -210,8 +210,9 @@ class EntrepriseController extends Controller{
             }
         }
         if(empty($errors) && !empty($data)){$this->entrepriseModel->update($this->entreprise_id,$data);}
-        $this->renderEntrepriseDashboardPage($errors);
-        exit(); 
+        $_SESSION['flash_error'] = $errors;
+        header('Location: /entreprise_dashboard');
+        exit();
 
     }
 
@@ -280,8 +281,9 @@ class EntrepriseController extends Controller{
                 $this->offreModel->update($id_offre,$data);
             }
 
-            $this->renderEntrepriseDashboardPage( $errors );
-            exit(); 
+            $_SESSION['flash_error'] = $errors;
+            header('Location: /entreprise_dashboard');
+            exit();
 
         }
         else{header('location: /error?error=no_data_available'); exit();}
@@ -352,8 +354,8 @@ class EntrepriseController extends Controller{
             header('Location: ' . $_SERVER['HTTP_REFERER']);
             exit();
         }
-
-        $this->renderEntrepriseDashboardPage($errors);
+        $_SESSION['flash_error'] = $errors;
+        header('Location: /student_dashboard');
         exit();
     }
 

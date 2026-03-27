@@ -54,7 +54,7 @@ class SearchController extends Controller {
 
         $offres = $this->searchModel->searchOffre($dist, $lat, $lng, array_values($key_words));
 
-        echo $this->twig->render('recherche_offre.twig.html', [
+        echo $this->twig->render('recherche_offre.twig', [
             'dist'              => $dist,
             'lat'               => $lat,
             'lng'               => $lng,

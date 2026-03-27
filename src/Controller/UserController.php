@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Model\{UserModel, WishlistModel,PostuleModel};
+use App\Model\{UserModel, WishlistModel,PostuleModel, EtudiantModel};
 use DateTime;
 
 class UserController extends Controller{
@@ -23,11 +23,16 @@ class UserController extends Controller{
         $this->id=$_SESSION['userId'];
     }
 
-    function renderStudentDashboardPage($errors = NULL){
+    function renderStudentDashboardPage(){
         $wishliste = $this->userModel->getWishlist($this->id);
         $candidature = $this->userModel->getPostulations($this->id);
         $user= $this->userModel->getById($this->id);
-        echo $this->twig->render('student_dashboard.twig.html',[
+        $errors = [];
+        if(isset($_SESSION['flash_error'])){
+            $errors = $_SESSION['flash_error'];
+            unset($_SESSION['flash_error']);
+        }
+        echo $this->twig->render('student_dashboard.twig',[
             'user'=>$user,
             'wishliste'=>$wishliste,
             'candidatures'=>$candidature,
@@ -49,7 +54,7 @@ class UserController extends Controller{
         }
 
         
-        echo $this->twig->render('pilote_dashboard.twig.html', ['user'=>$user, 'etudiants'=>$etudiants, 'postulations'=>$postulations, 'etudiantToDisplay'=>$etudiantToDisplay]);
+        echo $this->twig->render('pilote_dashboard.twig', ['user'=>$user, 'etudiants'=>$etudiants, 'postulations'=>$postulations, 'etudiantToDisplay'=>$etudiantToDisplay]);
 
     }
 
@@ -61,7 +66,8 @@ class UserController extends Controller{
             $emailResult = $this->punisher->isEmail($email);
             if($emailResult !== true){
                 $errors[] = $emailResult;
-                $this->renderStudentDashboardPage($errors);
+                $_SESSION['flash_error'] = $errors;
+                header('Location: /student_dashboard');
                 exit();
             }
 
@@ -95,7 +101,8 @@ class UserController extends Controller{
             $emailResult = $this->punisher->isEmail($email);
             if($emailResult !== true){
                 $errors[] = $emailResult;
-                $this->renderStudentDashboardPage($errors);
+                $_SESSION['flash_error'] = $errors;
+                header('Location: /student_dashboard');
                 exit();
             }
             $data =[];
@@ -185,7 +192,8 @@ class UserController extends Controller{
                     $phoneResult = $this->punisher->isPhoneNumber($_POST['phone']);
                     if($phoneResult !== true){
                         $errors[] = $phoneResult;
-                        $this->renderStudentDashboardPage($errors);
+                        $_SESSION['flash_error'] = $errors;
+                        header('Location : /student_dashboard');
                         exit();
                     }
                     if(isset($_FILES['cv']) && isset($_FILES['lm'])){
@@ -258,5 +266,27 @@ class UserController extends Controller{
         return $file['name'];   
     }
 
+    function deleteStudentPilote(){
+        if(isset($_POST['id_etudiant'])){
+            $data['id_pilote']=null;
+            $sup=new EtudiantModel();
+            $sup -> update($_POST['id_etudiant'], $data);
+            header('Location: ' . $_SERVER['HTTP_REFERER']); // redirige vers la derniere page
+            exit();
+        }
+    }
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

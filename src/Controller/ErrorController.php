@@ -17,7 +17,7 @@ class ErrorController extends Controller{
             $error=  $this->manageError($_GET['error']);
 
         }
-        echo $this->twig->render('error.twig.html',['error'=>$error]);
+        echo $this->twig->render('error.twig',['error'=>$error]);
     }
 
     private function manageError($error_msg){
