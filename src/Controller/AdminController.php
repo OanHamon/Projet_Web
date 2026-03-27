@@ -42,7 +42,8 @@ class AdminController extends Controller{
     function gotoUser($id){
         $this->requireAdminAuth();
         $_SESSION['userId'] = $id;
-        header('Location: /student_dashboard');
+        $role = $this->userModel->get_user_role($id);
+        ($role == 'pilote') ? header('Location: /pilote_dashboard') : header('Location: /student_dashboard') ;
         exit();
     }
     
