@@ -67,8 +67,8 @@
 
         <div class="search-stage-result-box">
             <h2>
-                {% if offres|length > 100 %}
-                    plus de 100 offres trouvées
+                {% if offres|length >= 100 %}
+                    100 offres ou plus trouvées
                 {% else %}
                     {{ offres|length }} offres trouvées
                 {% endif %}

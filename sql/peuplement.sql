@@ -5275,3 +5275,158 @@ INSERT INTO Competence_Offre (id_offre, id_competence) VALUES
 (116,25),(116,19),(116,22),(116,20),
 -- 117 Finance verte
 (117,6),(117,19),(117,22),(117,25);
+
+
+-- ============================================================
+-- MISE À JOUR DES COORDONNÉES DES OFFRES
+-- Répartition géographique sur toute la France (plus dispersé)
+-- ============================================================
+
+-- NEXATECH (offres 1-5 + 60-67)
+UPDATE Offre SET lat=50.950418, lng=1.844155   WHERE id_offre=1;   -- Calais
+UPDATE Offre SET lat=48.390394, lng=-4.486076  WHERE id_offre=2;   -- Brest
+UPDATE Offre SET lat=43.949317, lng=4.805528   WHERE id_offre=3;   -- Avignon
+UPDATE Offre SET lat=45.899247, lng=6.129384   WHERE id_offre=4;   -- Annecy
+UPDATE Offre SET lat=42.697283, lng=2.895397   WHERE id_offre=5;   -- Perpignan
+UPDATE Offre SET lat=48.683832, lng=6.200654   WHERE id_offre=60;  -- Nancy
+UPDATE Offre SET lat=44.104144, lng=1.084011   WHERE id_offre=61;  -- Montauban
+UPDATE Offre SET lat=46.554650, lng=3.334612   WHERE id_offre=62;  -- Moulins
+UPDATE Offre SET lat=48.583148, lng=7.747882   WHERE id_offre=63;  -- Strasbourg
+UPDATE Offre SET lat=42.697283, lng=2.895397   WHERE id_offre=64;  -- Perpignan
+UPDATE Offre SET lat=47.745457, lng=7.338664   WHERE id_offre=65;  -- Mulhouse
+UPDATE Offre SET lat=43.604652, lng=3.879946   WHERE id_offre=66;  -- Montpellier (autre coordonnée)
+UPDATE Offre SET lat=48.070686, lng=7.358513   WHERE id_offre=67;  -- Colmar
+
+-- DATASPHERE (offres 6-10 + 68-73)
+UPDATE Offre SET lat=46.204391, lng=5.225500   WHERE id_offre=6;   -- Oyonnax
+UPDATE Offre SET lat=47.322047, lng=5.041480   WHERE id_offre=7;   -- Dijon
+UPDATE Offre SET lat=49.894067, lng=2.295753   WHERE id_offre=8;   -- Amiens
+UPDATE Offre SET lat=43.611186, lng=1.439710   WHERE id_offre=9;   -- Ramonville
+UPDATE Offre SET lat=49.119308, lng=6.175715   WHERE id_offre=10;  -- Metz
+UPDATE Offre SET lat=44.837789, lng=-0.579180  WHERE id_offre=68;  -- Bordeaux
+UPDATE Offre SET lat=45.764043, lng=4.835659   WHERE id_offre=69;  -- Lyon
+UPDATE Offre SET lat=48.573405, lng=7.752111   WHERE id_offre=70;  -- Strasbourg
+UPDATE Offre SET lat=48.117266, lng=-1.677793  WHERE id_offre=71;  -- Rennes
+UPDATE Offre SET lat=44.010136, lng=1.355647   WHERE id_offre=72;  -- Montauban
+UPDATE Offre SET lat=47.748418, lng=7.339746   WHERE id_offre=73;  -- Mulhouse
+
+-- CYBERSHIELD (offres 11-15 + 74-78)
+UPDATE Offre SET lat=41.927227, lng=8.734064   WHERE id_offre=11;  -- Ajaccio
+UPDATE Offre SET lat=43.125828, lng=5.930150   WHERE id_offre=12;  -- Toulon
+UPDATE Offre SET lat=45.764043, lng=4.835659   WHERE id_offre=13;  -- Lyon
+UPDATE Offre SET lat=47.218371, lng=-1.553621  WHERE id_offre=14;  -- Nantes
+UPDATE Offre SET lat=44.808268, lng=1.215813   WHERE id_offre=15;  -- Cahors
+UPDATE Offre SET lat=44.563214, lng=6.079303   WHERE id_offre=74;  -- Gap
+UPDATE Offre SET lat=46.580224, lng=0.340375   WHERE id_offre=75;  -- Poitiers
+UPDATE Offre SET lat=43.295097, lng=-0.370797  WHERE id_offre=76;  -- Pau
+UPDATE Offre SET lat=49.443232, lng=1.099971   WHERE id_offre=77;  -- Rouen
+UPDATE Offre SET lat=48.573405, lng=7.752111   WHERE id_offre=78;  -- Strasbourg
+
+-- CLOUDNATIVE (offres 16-20 + 79-83)
+UPDATE Offre SET lat=43.710173, lng=7.261953   WHERE id_offre=16;  -- Nice
+UPDATE Offre SET lat=48.938178, lng=2.037685   WHERE id_offre=17;  -- Saint-Germain-en-Laye
+UPDATE Offre SET lat=43.649119, lng=4.006013   WHERE id_offre=18;  -- Lunel
+UPDATE Offre SET lat=46.603354, lng=1.888334   WHERE id_offre=19;  -- Châteauroux
+UPDATE Offre SET lat=48.866667, lng=2.333333   WHERE id_offre=20;  -- Paris (centre alterné)
+UPDATE Offre SET lat=45.166672, lng=5.716670   WHERE id_offre=79;  -- Grenoble
+UPDATE Offre SET lat=45.899247, lng=6.129384   WHERE id_offre=80;  -- Annecy
+UPDATE Offre SET lat=49.253933, lng=4.034254   WHERE id_offre=81;  -- Reims
+UPDATE Offre SET lat=43.561501, lng=1.448454   WHERE id_offre=82;  -- Blagnac
+UPDATE Offre SET lat=47.749648, lng=7.337930   WHERE id_offre=83;  -- Mulhouse
+
+-- CREDIT PARTENAIRES (offres 21-24 + 84-86)
+UPDATE Offre SET lat=43.529742, lng=5.447427   WHERE id_offre=21;  -- Aix-en-Provence
+UPDATE Offre SET lat=45.782384, lng=3.082646   WHERE id_offre=22;  -- Clermont-Ferrand
+UPDATE Offre SET lat=43.301205, lng=-0.368562  WHERE id_offre=23;  -- Pau (autre coordonnée)
+UPDATE Offre SET lat=47.390458, lng=0.688764   WHERE id_offre=24;  -- Tours
+UPDATE Offre SET lat=45.833619, lng=1.261105   WHERE id_offre=84;  -- Limoges
+UPDATE Offre SET lat=47.494340, lng=-0.554115  WHERE id_offre=85;  -- Angers
+UPDATE Offre SET lat=43.600000, lng=3.883333   WHERE id_offre=86;  -- Montpellier
+
+-- FINSTART CONSEIL (offres 25-27 + 87-89)
+UPDATE Offre SET lat=43.948339, lng=0.191691   WHERE id_offre=25;  -- Auch
+UPDATE Offre SET lat=45.185166, lng=0.721635   WHERE id_offre=26;  -- Périgueux
+UPDATE Offre SET lat=47.910492, lng=1.904204   WHERE id_offre=27;  -- Orléans
+UPDATE Offre SET lat=45.182245, lng=5.721940   WHERE id_offre=87;  -- Grenoble
+UPDATE Offre SET lat=46.603354, lng=1.888334   WHERE id_offre=88;  -- Châteauroux
+UPDATE Offre SET lat=48.805855, lng=2.120355   WHERE id_offre=89;  -- Versailles
+
+-- ASSURPRO (offres 28-30 + 90-92)
+UPDATE Offre SET lat=47.218637, lng=-1.553621  WHERE id_offre=28;  -- Nantes (autre coordonnée)
+UPDATE Offre SET lat=42.342950, lng=-0.416667  WHERE id_offre=29;  -- Foix
+UPDATE Offre SET lat=48.395335, lng=-4.484734  WHERE id_offre=30;  -- Brest (autre coordonnée)
+UPDATE Offre SET lat=43.949317, lng=4.805528   WHERE id_offre=90;  -- Avignon (autre)
+UPDATE Offre SET lat=42.697283, lng=2.895397   WHERE id_offre=91;  -- Perpignan
+UPDATE Offre SET lat=44.837789, lng=-0.579180  WHERE id_offre=92;  -- Bordeaux
+
+-- AGENCE HORIZON (offres 31-34 + 93-95)
+UPDATE Offre SET lat=45.184029, lng=0.721755   WHERE id_offre=31;  -- Périgueux (alterné)
+UPDATE Offre SET lat=43.295097, lng=-0.370797  WHERE id_offre=32;  -- Pau (autre coordination)
+UPDATE Offre SET lat=45.764043, lng=4.835659   WHERE id_offre=33;  -- Lyon
+UPDATE Offre SET lat=43.610769, lng=3.876716   WHERE id_offre=34;  -- Montpellier
+UPDATE Offre SET lat=43.710173, lng=7.261953   WHERE id_offre=93;  -- Nice
+UPDATE Offre SET lat=47.218371, lng=-1.553621  WHERE id_offre=94;  -- Nantes
+UPDATE Offre SET lat=48.117266, lng=-1.677793  WHERE id_offre=95;  -- Rennes
+
+-- INFLUENCEMEDIA (offres 35-37 + 96-97)
+UPDATE Offre SET lat=46.204391, lng=5.225500   WHERE id_offre=35;  -- Oyonnax (alterné)
+UPDATE Offre SET lat=43.529742, lng=5.447427   WHERE id_offre=36;  -- Aix-en-Provence
+UPDATE Offre SET lat=47.076668, lng=2.399602   WHERE id_offre=37;  -- Bourges
+UPDATE Offre SET lat=48.858093, lng=2.294694   WHERE id_offre=96;  -- Paris (Tour Eiffel)
+UPDATE Offre SET lat=45.764043, lng=4.835659   WHERE id_offre=97;  -- Lyon
+
+-- COM'EVENT (offres 38-40 + 98-99)
+UPDATE Offre SET lat=43.603811, lng=1.445060   WHERE id_offre=38;  -- Toulouse (autre)
+UPDATE Offre SET lat=43.529742, lng=5.447427   WHERE id_offre=39;  -- Aix-en-Provence (autre)
+UPDATE Offre SET lat=46.355348, lng=3.303125   WHERE id_offre=40;  -- Moulins
+UPDATE Offre SET lat=47.218371, lng=-1.553621  WHERE id_offre=98;  -- Nantes
+UPDATE Offre SET lat=43.610769, lng=3.876716   WHERE id_offre=99;  -- Montpellier
+
+-- INGENIA TECH (offres 41-44 + 100-103)
+UPDATE Offre SET lat=48.389235, lng=-4.486060   WHERE id_offre=41;  -- Brest
+UPDATE Offre SET lat=47.394144, lng=0.684840    WHERE id_offre=42;  -- Tours
+UPDATE Offre SET lat=45.772584, lng=4.827298    WHERE id_offre=43;  -- Villeurbanne
+UPDATE Offre SET lat=48.850753, lng=2.384985    WHERE id_offre=44;  -- Paris (Bastille)
+UPDATE Offre SET lat=49.119308, lng=6.175715    WHERE id_offre=100; -- Metz
+UPDATE Offre SET lat=46.603354, lng=1.888334    WHERE id_offre=101; -- Châteauroux
+UPDATE Offre SET lat=44.837789, lng=-0.579180   WHERE id_offre=102; -- Bordeaux
+UPDATE Offre SET lat=43.295097, lng=-0.370797   WHERE id_offre=103; -- Pau
+
+-- GREENBUILD (offres 45-47 + 104-106)
+UPDATE Offre SET lat=47.322047, lng=5.041480  WHERE id_offre=45;  -- Dijon
+UPDATE Offre SET lat=45.764043, lng=4.835659  WHERE id_offre=46;  -- Lyon
+UPDATE Offre SET lat=46.204391, lng=5.225500  WHERE id_offre=47;  -- Oyonnax
+UPDATE Offre SET lat=41.927227, lng=8.734064  WHERE id_offre=104; -- Ajaccio
+UPDATE Offre SET lat=45.899247, lng=6.129384  WHERE id_offre=105; -- Annecy
+UPDATE Offre SET lat=44.933393, lng=-0.173251 WHERE id_offre=106; -- Libourne
+
+-- ELECTRO INGENIERIE (offres 48-50 + 107-109)
+UPDATE Offre SET lat=45.782384, lng=3.082646   WHERE id_offre=48;  -- Clermont-Ferrand
+UPDATE Offre SET lat=47.902733, lng=1.909251   WHERE id_offre=49;  -- Orléans
+UPDATE Offre SET lat=44.104144, lng=1.084011   WHERE id_offre=50;  -- Montauban
+UPDATE Offre SET lat=49.894067, lng=2.295753   WHERE id_offre=107; -- Amiens
+UPDATE Offre SET lat=46.185372, lng=6.268434   WHERE id_offre=108; -- Annemasse
+UPDATE Offre SET lat=44.298142, lng=-0.845055  WHERE id_offre=109; -- Mont-de-Marsan
+
+-- AVENIR RH (offres 51-53 + 110-111)
+UPDATE Offre SET lat=41.927227, lng=8.734064   WHERE id_offre=51;  -- Ajaccio
+UPDATE Offre SET lat=45.184029, lng=0.721755   WHERE id_offre=52;  -- Périgueux
+UPDATE Offre SET lat=48.086399, lng=-1.680527  WHERE id_offre=53;  -- Rennes
+UPDATE Offre SET lat=47.748418, lng=7.339746   WHERE id_offre=110; -- Mulhouse
+UPDATE Offre SET lat=48.117266, lng=-1.677793  WHERE id_offre=111; -- Rennes
+
+-- CONSULTGROUP (offres 54-56 + 112-114)
+UPDATE Offre SET lat=43.610769, lng=3.876716   WHERE id_offre=54;  -- Montpellier
+UPDATE Offre SET lat=50.629250, lng=3.057256   WHERE id_offre=55;  -- Lille
+UPDATE Offre SET lat=44.933393, lng=-0.173251  WHERE id_offre=56;  -- Libourne
+UPDATE Offre SET lat=47.324888, lng=5.042244   WHERE id_offre=112; -- Dijon
+UPDATE Offre SET lat=44.556900, lng=6.079600   WHERE id_offre=113; -- Gap
+UPDATE Offre SET lat=49.298326, lng=4.032084   WHERE id_offre=114; -- Reims
+
+-- ECOSERVICES (offres 57-59 + 115-117)
+UPDATE Offre SET lat=46.353387, lng=3.303609   WHERE id_offre=57;  -- Moulins
+UPDATE Offre SET lat=43.529742, lng=5.447427   WHERE id_offre=58;  -- Aix-en-Provence
+UPDATE Offre SET lat=47.494340, lng=-0.554115  WHERE id_offre=59;  -- Angers
+UPDATE Offre SET lat=50.950418, lng=1.844155   WHERE id_offre=115; -- Calais
+UPDATE Offre SET lat=46.185372, lng=6.268434   WHERE id_offre=116; -- Annemasse
+UPDATE Offre SET lat=49.443232, lng=1.099971   WHERE id_offre=117; -- Rouen
