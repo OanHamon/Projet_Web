@@ -1,4 +1,4 @@
-{% extends 'base.twig.html' %}
+{% extends 'base.twig' %}
 
 
     {% block styles %}
@@ -126,26 +126,16 @@
             </div>
         </section>
 
-    <section class="danger-zone">
-
-        <h2>Supprimer le compte</h2>
-        <button class="delete-account-btn">Supprimer l’entreprise</button>
+     <section class="danger-zone">
+        <form method="POST" action="/pilote_dashboard/deleteaccount">
+            <label><h2>Supprimer le Pilote</h2></label>
+            <button class="delete-account-btn">Supprimer le compte Pilote</button>
+        </form>
 
     </section>
 
-    <div class="overlay hidden" id="modal-delete-profile">
-        <div class="modal-card">
-            <button class="modal-close" onclick="closeModal('delete-profile')">&times;</button>
-            <div id="content-delete-profile">
-                <h3>Supprimer le compte</h3>
-                <p>Confirmer la suppression de votre compte</p>
-                <div class="btn-group">
-                    <button class="btn-dark" onclick="confirmDelete('delete-profile', 'Votre compte a été supprimé.')">Oui</button>
-                    <button class="btn-dark" onclick="closeModal('delete-profile')">Non</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    
+ 
 
     
     <script>
