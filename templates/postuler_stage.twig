@@ -31,21 +31,30 @@
             </div>
             {% endif %}
 
-            <form class="application-form" id="application-form"  method="post" action="/candidater/{{offre.id_offre}}" enctype="multipart/form-data">
-                <h4>Informations personnelles</h4>
+                <form class="application-form" id="application-form"  method="post" action="/candidater/{{offre.id_offre}}" enctype="multipart/form-data">
+                    <h4>Informations personnelles</h4>
 
-                <label for="phone">Numéro de téléphone</label>
-                <input type="tel" id="phone" name="phone">
+                    <label for="nom-candidature">Nom</label>
+                    <input type="text" id="nom-candidature" name="nom" value="{{user.nom}}">
 
-                <h4>Ajoutez votre CV *</h4>
-                <input type="file" id="cv" name="cv" accept=".pdf,.doc" required>
+                    <label for="prenom-candidature">Prenom</label>
+                    <input type="text" id="prenom-candidature" name="prenom" value="{{user.prenom}}">
 
-                <h4>Lettre de motivation *</h4>
-                <input type="file" id="lm" name="lm"  accept=".pdf,.doc" required>
+                    <label for="email-candidature">Email</label>
+                    <input type="email" id="email-candidature" name="email" value="{{user.email}}">
 
-                <h4>Autres informations :</h4>
-                <textarea id="message" name="message" rows="6" placeholder="Entrez votre texte..."></textarea>
-            </form>
+                    <label for="phone">Numéro de téléphone</label>
+                    <input type="tel" id="phone" name="phone">
+
+                    <h4>Ajoutez votre CV *</h4>
+                    <input type="file" id="cv" name="cv" accept=".pdf,.doc.docx, .odt, .rtf, .jpg, .png" required>
+
+                    <h4>Lettre de motivation *</h4>
+                    <input type="file" id="lm" name="lm"  accept=".pdf,.doc.docx, .odt, .rtf, .jpg, .png" required>
+
+                    <h4>Autres informations :</h4>
+                    <textarea id="message" name="message" rows="6" placeholder="Entrez votre texte..."></textarea>
+                </form>
 
 
           </div>
@@ -107,4 +116,11 @@
 
 
 
+
+
+{% endblock %}
+
+{% block scripts %}
+
+    <script src="/scripts/form_validation.js"></script>
 {% endblock %}
