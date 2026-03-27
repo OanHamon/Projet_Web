@@ -9,7 +9,7 @@ class BaseModel extends Model
     protected $table;
     protected $primaryKey = 'id';
 
-protected function executeQuery($query, $params = [])
+    protected function executeQuery($query, $params = [])
     {
         try {
             $stmt = $this->conn->prepare($query);

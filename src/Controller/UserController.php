@@ -27,11 +27,8 @@ class UserController extends Controller{
         $wishliste = $this->userModel->getWishlist($this->id);
         $candidature = $this->userModel->getPostulations($this->id);
         $user= $this->userModel->getById($this->id);
-        $errors = [];
-        if(isset($_SESSION['flash_error'])){
-            $errors = $_SESSION['flash_error'];
-            unset($_SESSION['flash_error']);
-        }
+
+        $errors = $this->getErrors();
         echo $this->twig->render('student_dashboard.twig',[
             'user'=>$user,
             'wishliste'=>$wishliste,
@@ -46,7 +43,7 @@ class UserController extends Controller{
         $id_etudiant = NULL;
         $postulations = [];
         $etudiantToDisplay = [];
-
+        $errors = $this->getErrors();
         if(isset($_GET['etudiant_id']) ) {
             $id_etudiant=$_GET['etudiant_id'];
             $postulations = $this->userModel->getPostulations($id_etudiant);
@@ -54,7 +51,7 @@ class UserController extends Controller{
         }
 
         
-        echo $this->twig->render('pilote_dashboard.twig', ['user'=>$user, 'etudiants'=>$etudiants, 'postulations'=>$postulations, 'etudiantToDisplay'=>$etudiantToDisplay]);
+        echo $this->twig->render('pilote_dashboard.twig', ['user'=>$user, 'etudiants'=>$etudiants, 'postulations'=>$postulations, 'etudiantToDisplay'=>$etudiantToDisplay, 'errors'=>$errors]);
 
     }
 
@@ -98,13 +95,7 @@ class UserController extends Controller{
             $prenom = $_POST['prenom'];
             $nom = $_POST['nom'];
             $email = $_POST['email'];
-            $emailResult = $this->punisher->isEmail($email);
-            if($emailResult !== true){
-                $errors[] = $emailResult;
-                $_SESSION['flash_error'] = $errors;
-                header('Location: /student_dashboard');
-                exit();
-            }
+
             $data =[];
 
             if(!empty($_POST['nom'])){
@@ -115,6 +106,13 @@ class UserController extends Controller{
             }
             if(!empty($_POST['email'])){
                 $data['email'] = $_POST['email'];
+                $emailResult = $this->punisher->isEmail($email);
+                if($emailResult !== true){
+                    $errors[] = $emailResult;
+                    $_SESSION['flash_error'] = $errors;
+                    header('Location: /student_dashboard');
+                    exit();
+                }
             }
             
             $this->userModel->update($this->id,$data);
@@ -193,7 +191,7 @@ class UserController extends Controller{
                     if($phoneResult !== true){
                         $errors[] = $phoneResult;
                         $_SESSION['flash_error'] = $errors;
-                        header('Location : /student_dashboard');
+                        header('Location: ' . $_SERVER['HTTP_REFERER']);
                         exit();
                     }
                     if(isset($_FILES['cv']) && isset($_FILES['lm'])){

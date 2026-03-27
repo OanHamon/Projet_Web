@@ -17,6 +17,15 @@ abstract class Controller
         $this->twig->addGlobal('session', $_SESSION);
         $this->punisher = new Punisher();
     }
+
+    protected function getErrors(){
+        $errors = [];
+        if(isset($_SESSION['flash_error'])){
+            $errors = $_SESSION['flash_error'];
+            unset($_SESSION['flash_error']);
+        }
+        return $errors;
+    }
 }
 
 
