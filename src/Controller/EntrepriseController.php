@@ -26,13 +26,12 @@ class EntrepriseController extends Controller{
     } 
 
     function renderEntreprisePage($id){
-        $this->entreprise_id = $id;
         $entreprise = $this->entrepriseModel->getById($id);
         $offres = $this->entrepriseModel->getOffres($id);
         $competences = $this->entrepriseModel->getCompetences($id);
         $note = ceil($this->entrepriseModel->getEvaluation($id)['moyenne']);
         $note_user = 0;
-        if(isset($_SESSION['userId'])){$note_user = $this->entrepriseModel->getUserNoteEntreprise($this->entreprise_id, $_SESSION['userId']);}
+        if(isset($_SESSION['userId'])){$note_user = $this->entrepriseModel->getUserNoteEntreprise($id, $_SESSION['userId']);}
 
         echo $this->twig->render('vitrine_entreprise.twig',['entreprise'=>$entreprise, 'offres'=>$offres, 'competences'=>$competences, 'note'=>$note, 'note_user'=>$note_user]);
     }
