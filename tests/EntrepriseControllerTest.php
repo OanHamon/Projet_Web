@@ -14,7 +14,7 @@ class EntrepriseControllerTest extends TestCase
     }
         $this->controller = new EntrepriseController();
     }
-    public function testDownloadFileLogic()
+    public function testDownloadFile()
     {
         $controller = new EntrepriseController();
 
@@ -31,7 +31,7 @@ class EntrepriseControllerTest extends TestCase
     }
 
    
-    public function testDeleteOffreLogic()
+    public function testDeleteOffre()
     {
         
         $_POST['id_offre'] = 42; //simulation
