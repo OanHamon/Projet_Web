@@ -22,8 +22,9 @@ class OffreController extends Controller{
     }
 
     function renderFormulaire($id){
+        $errors = $this->getErrors();
         $offre = $this->offreModel->getById($id);
         $competences = $this->offreModel->getCompetences($id);
-        echo $this->twig->render('postuler_stage.twig',['offre'=>$offre,'competences'=>$competences]);
+        echo $this->twig->render('postuler_stage.twig',['offre'=>$offre,'competences'=>$competences, 'errors'=>$errors]);
     }
 }

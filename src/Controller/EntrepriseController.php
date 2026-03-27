@@ -33,6 +33,7 @@ class EntrepriseController extends Controller{
 
         echo $this->twig->render('vitrine_entreprise.twig',['entreprise'=>$entreprise, 'offres'=>$offres, 'competences'=>$competences, 'note'=>$note]);
     }
+    
     private function requireEntrepriseAuth(){
         if(!isset($_SESSION['companyId'])){
             header('Location: /signin');
@@ -53,7 +54,7 @@ class EntrepriseController extends Controller{
     }
     
 
-    function renderEntrepriseDashboardPage($errors = NULL){
+    function renderEntrepriseDashboardPage(){
         $this->requireEntrepriseAuth();
         $entreprise = $this->entrepriseModel->getById($this->entreprise_id);
         $offres = $this->entrepriseModel->getOffres($this->entreprise_id);
@@ -67,7 +68,7 @@ class EntrepriseController extends Controller{
         $cv_url = NULL;
         $lm_url = NULL;
         $offre_competences = [];
-
+        $errors = $this->getErrors();
 
         if(isset($_GET['offre_id'])){
 
@@ -75,6 +76,9 @@ class EntrepriseController extends Controller{
 
             if($this->checkOffreOwnership($id_to_display))
             {
+
+                $offre_to_display = $this->offreModel->getById($id_to_display);
+                $offre_competences = $this->offreModel->getCompetences($id_to_display);
                 if(isset($_GET['showdata']) && $_GET['showdata'] == 'true')
                 {
                     $showdata = true;      
@@ -91,8 +95,7 @@ class EntrepriseController extends Controller{
                     }    
                 }
                 else{
-                    $offre_to_display = $this->offreModel->getById($id_to_display);
-                    $offre_competences = $this->offreModel->getCompetences($id_to_display);
+
                     $showdata = false; 
                 }
 
@@ -109,6 +112,7 @@ class EntrepriseController extends Controller{
             $createNew =true;
             
         }
+
         echo $this->twig->render('entreprise_dashboard.twig',[
             'entreprise'=>$entreprise,
             'offres'=>$offres, 
@@ -210,8 +214,9 @@ class EntrepriseController extends Controller{
             }
         }
         if(empty($errors) && !empty($data)){$this->entrepriseModel->update($this->entreprise_id,$data);}
-        $this->renderEntrepriseDashboardPage($errors);
-        exit(); 
+        $_SESSION['flash_error'] = $errors;
+        header('Location: /entreprise_dashboard');
+        exit();
 
     }
 
@@ -280,8 +285,9 @@ class EntrepriseController extends Controller{
                 $this->offreModel->update($id_offre,$data);
             }
 
-            $this->renderEntrepriseDashboardPage( $errors );
-            exit(); 
+            $_SESSION['flash_error'] = $errors;
+            header('Location: /entreprise_dashboard');
+            exit();
 
         }
         else{header('location: /error?error=no_data_available'); exit();}
@@ -352,8 +358,8 @@ class EntrepriseController extends Controller{
             header('Location: ' . $_SERVER['HTTP_REFERER']);
             exit();
         }
-
-        $this->renderEntrepriseDashboardPage($errors);
+        $_SESSION['flash_error'] = $errors;
+        header('Location: /student_dashboard');
         exit();
     }
 
