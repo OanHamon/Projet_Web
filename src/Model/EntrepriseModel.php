@@ -39,6 +39,9 @@ class EntrepriseModel extends BaseModel
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
 
+        if (!$result) {
+            return null; // L'utilisateur n'a pas encore évalué cette entreprise
+        }
         return $result['note'];
     }
 
@@ -55,6 +58,9 @@ class EntrepriseModel extends BaseModel
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
 
+                if (!$result) {
+            return null; // L'utilisateur n'a pas encore évalué cette entreprise
+        }
         return $result;
     }
 
