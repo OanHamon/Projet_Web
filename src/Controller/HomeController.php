@@ -18,8 +18,8 @@ class HomeController extends Controller{
     }
 
     function renderHomePage(){
-        $offres = $this->offreModel->getAllWithEntreprise();
-        $entreprises = $this->entrepriseModel->getAll();
+        $offres = $this->offreModel->getAllWithEntreprise(20);
+        $entreprises = $this->entrepriseModel->getAll(10);
         $stats = $this->statsModel->getAllStats();
 
         $candidatures7days = $stats['candidatures_7days'];

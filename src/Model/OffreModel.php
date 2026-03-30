@@ -25,15 +25,21 @@ class OffreModel extends BaseModel
         return $result;
     }
 
-    public function getAllWithEntreprise()
+    public function getAllWithEntreprise($limit = null)
     {
+        
         $query = "
-        SELECT o.titre,o.description_carte,o.id_offre,e.nom,e.description_cartes
-        FROM Offre o
-        JOIN Entreprise e ON o.id_entreprise = e.id_entreprise
-        ;";
-
-        $stmt = $this->executeQuery($query, []);
+            SELECT o.titre,o.description_carte,o.id_offre,e.nom,e.description_cartes
+            FROM Offre o
+            JOIN Entreprise e ON o.id_entreprise = e.id_entreprise
+            ORDER BY RAND()
+            ";
+        if ($limit !== null) {
+            $query .= "LIMIT :limit";
+            $stmt = $this->executeQuery($query, ['limit' => $limit]);
+        } else {
+            $stmt = $this->executeQuery($query);
+        }
 
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
