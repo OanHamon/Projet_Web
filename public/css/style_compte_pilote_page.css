@@ -15,7 +15,6 @@
 .hero {
     margin-left: -60px;
     padding: 60px 60px;
-    width: calc(100% + 120px);
     min-height: 180px;
     background: linear-gradient(135deg, var(--light-blue), #ffffff);
     display: flex;
