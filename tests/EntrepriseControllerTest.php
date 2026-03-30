@@ -99,6 +99,7 @@ class EntrepriseControllerTest extends TestCase
         $output = ob_get_clean();
 
         $this->assertSame('html-output', $output);
+        
     }
 
     public function testDeleteOffreWithInvalidId()
