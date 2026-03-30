@@ -43,6 +43,7 @@ $routeur->add('GET','/pilote_dashboard',[UserController::class, 'renderPiloteDas
 $routeur->add('POST','/pilote_dashboard/updateinfo',[UserController::class, 'updatePiloteInfo']);
 $routeur->add('POST', '/pilote_dashboard/delete_student', [UserController::class,'deleteStudentPilote']);
 $routeur->add('POST', '/pilote_dashboard/deleteaccount', [UserController::class, 'deleteAccount']);
+$routeur->add('POST', '/pilote_dashboard/add_student', [UserController::class, 'addStudentPilote']);
 
 // === Search ===
 

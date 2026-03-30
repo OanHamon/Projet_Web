@@ -73,7 +73,7 @@
                         <a href="/pilote_dashboard?create=true"><div class="add-student">+</div></a>
                     </div>
                     <ul>
-                        {% for etudiant in etudiants %}
+                        {% for etudiant in myEtudiants %}
                         <li class="student-item" style="position: relative">
                             <a href="/pilote_dashboard?etudiant_id={{etudiant.id_etudiant}}">
                                 <div class="student-content">
@@ -104,8 +104,30 @@
                 </aside>
 
                 <div class="student-block-content">
-                    {%if create == true %}
+                    {%if createNew == true %}
                         <h4>Recherchez un eleve</h4>
+                        <div class="pilote-search">
+                            <input type="text" id="pilote-search-input" placeholder="Rechercher un eleve...">
+                            <br>
+                            <br>
+                            <!--
+                            <input type="checkbox" id="radio-student">
+                            <label>Etudiant sans Pilote</label>
+                            -->
+                        </div>
+                        <div class="student-list">
+                            {% for etu in allEtudiants %}   
+                                <div class="student-list-item" data-search="{{ etu.nom }} {{ etu.prenom }} {{ etu.email }}" data-has-pilote="{{ etu.id_pilote ? 'true' : 'false' }}">
+                                    <p>{{etu.prenom}} {{etu.nom}}</p>
+                                    <form method="POST" action="/pilote_dashboard/add_student"> 
+                                        <input type="hidden" name="id_etudiant" value="{{etu.id_etudiant}}">
+                                        <button class="btn-add-student">+</button>
+                                    </form>
+
+                                </div>
+                            {% endfor %}
+                        </div>
+
                     {% elseif etudiantToDisplay %}
                         <h3>Votre Eleve</h3>
                         <p>{{etudiantToDisplay.nom}} {{etudiantToDisplay.prenom}}</p>
@@ -118,6 +140,8 @@
 
                             </a>
                         {% endfor %}
+                    {% else %}
+                     <h4>Que vous êtes beau</h4>
                     {% endif %}
 
                     
@@ -134,62 +158,50 @@
 
     </section>
 
-    
- 
-
-    
+    <!--
     <script>
-        // --- Modals ---
-        function openModal(id) {
-            document.getElementById('modal-' + id).classList.add('active');
-        }
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.getElementById("pilote-search-input");
+            if(searchInput){
+                searchInput.addEventListener("keyup", function() {
+                const filter = this.value.toLowerCase();
 
-        function closeModal(id) {
-            const overlay = document.getElementById('modal-' + id);
-            overlay.classList.remove('active');
+                // Filtrer les utilisateurs
+                document.querySelectorAll('.student-list-item').forEach(function(card) {
+                    const text = card.getAttribute('data-search').toLowerCase();
+                    if (text.includes(filter)) {
+                        card.style.display = "";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
 
-            const content = document.getElementById('content-' + id);
-            if (content && content.dataset.confirmed === 'true') {
-                setTimeout(() => {
-                    content.dataset.confirmed = 'false';
-                    content.innerHTML = content.dataset.original;
-                }, 300);
+
+            });
             }
-        }
 
-        function confirmDelete(id, message) {
-            const content = document.getElementById('content-' + id);
-            if (!content.dataset.original) {
-                content.dataset.original = content.innerHTML;
-            }
-            content.dataset.confirmed = 'true';
-            content.innerHTML = `
-                <div class="success-message" style="text-align:center; padding:20px;">
-                    <span style="font-size:2rem; display:block; margin-bottom:10px;">✅</span>
-                    <strong>${message}</strong>
-                </div>
-                <div class="btn-group" style="margin-top:20px;">
-                    <button class="btn-dark" style="width:100%" onclick="closeModal('${id}')">Fermer</button>
-                </div>
-            `;
-        }
-
-        function selectClass(btn) {
-            btn.closest('.class-selector').querySelectorAll('button').forEach(b => b.classList.remove('selected'));
-            btn.classList.add('selected');
-        }
-
-        document.querySelectorAll('.overlay').forEach(overlay => {
-            overlay.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    const id = this.id.replace('modal-', '');
-                    closeModal(id);
+        });
+        document.getElementById('radio-student').addEventListener("change", function() {
+            const isChecked = this.checked;
+            document.querySelectorAll('.student-list-item').forEach(function(card) {
+                const pilote = card.getAttribute('data-has-pilote');
+                if(isChecked){
+                    if (pilote === 'false') {
+                        card.style.display = "";
+                    } else {
+                        card.style.display = "none";
+                    }
                 }
+                else{
+                    card.style.display = "";
+                }
+
+                // si pilote est pas vide, on cache la carte
+                // sinon on l'affiche
             });
         });
-
-  
     </script>
+-->
 
 {% endblock %}
 

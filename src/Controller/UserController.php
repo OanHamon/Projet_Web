@@ -10,11 +10,13 @@ class UserController extends Controller{
     private $userModel ;
     private $id;
     private $wlModel;
+    private $etuModel;
 
     function __construct(){
         parent::__construct();
         $this->userModel = new UserModel();
         $this->wlModel = new WishlistModel();
+        $this->etuModel=new EtudiantModel();
 
         if (!isset($_SESSION['userId'])) {
             header('Location: /signin');
@@ -31,8 +33,24 @@ class UserController extends Controller{
         $this->id = $_SESSION['userId'];
     }
 
-    function renderStudentDashboardPage(){
+    private function requirePiloteAuth(){
         $this->requireUserAuth();
+        if($_SESSION['role'] !== 'pilote'){
+            header('Location: /error?error=access_denied');
+            exit();
+        }
+    }
+
+    private function requireStudentAuth(){
+        $this->requireUserAuth();
+        if($_SESSION['role'] !== 'etudiant'){
+            header('Location: /error?error=access_denied');
+            exit();
+        }
+    }
+
+    function renderStudentDashboardPage(){
+        $this->requireStudentAuth();
         $wishliste = $this->userModel->getWishlist($this->id);
         $candidature = $this->userModel->getPostulations($this->id);
         $user= $this->userModel->getById($this->id);
@@ -47,21 +65,45 @@ class UserController extends Controller{
     }
 
     function renderPiloteDashboardPage(){
-        $this->requireUserAuth();
-        $etudiants = $this->userModel->getEtudiant_pilote($this->id);
+        $this->requirePiloteAuth();
+        $myEtudiants = $this->userModel->getEtudiant_pilote($this->id);
         $user = $this->userModel->getById($this->id);
         $id_etudiant = NULL;
         $postulations = [];
+        $createNew =NULL;
         $etudiantToDisplay = [];
         $errors = $this->getErrors();
+
+
         if(isset($_GET['etudiant_id']) ) {
-            $id_etudiant=$_GET['etudiant_id'];
-            $postulations = $this->userModel->getPostulations($id_etudiant);
-            $etudiantToDisplay = $this->userModel->getById($id_etudiant);
+            if(in_array($_GET['etudiant_id'], array_column($myEtudiants, 'id_etudiant'))){
+                $id_etudiant=$_GET['etudiant_id'];
+                $postulations = $this->userModel->getPostulations($id_etudiant);
+                $etudiantToDisplay = $this->userModel->getById($id_etudiant);
+            }
+            else{
+                header('Location: /error?error=access_denied');
+                exit();
+            }
+
         }
 
-        
-        echo $this->twig->render('pilote_dashboard.twig', ['user'=>$user, 'etudiants'=>$etudiants, 'postulations'=>$postulations, 'etudiantToDisplay'=>$etudiantToDisplay, 'errors'=>$errors]);
+        if(isset($_GET['create']) ) {
+            $createNew = $_GET['create'];
+        }
+
+        $allEtudiants = $this->etuModel->getAllStudentsNoPilote();
+        echo $this->twig->render('pilote_dashboard.twig', 
+        [
+            'user'=>$user,
+            'myEtudiants'=>$myEtudiants,
+            'postulations'=>$postulations,
+            'etudiantToDisplay'=>$etudiantToDisplay,
+            'errors'=>$errors,
+            'createNew'=>$createNew,
+            'allEtudiants'=>$allEtudiants
+        ]);
+
 
     }
 
@@ -278,14 +320,46 @@ class UserController extends Controller{
     }
 
     function deleteStudentPilote(){
-        $this->requireUserAuth();
-        if(isset($_POST['id_etudiant'])){
-            $data['id_pilote']=null;
-            $sup=new EtudiantModel();
-            $sup -> update($_POST['id_etudiant'], $data);
-            header('Location: ' . $_SERVER['HTTP_REFERER']); // redirige vers la derniere page
-            exit();
+        $this->requirePiloteAuth();
+        $myEtudiants = $this->userModel->getEtudiant_pilote($this->id);
+        if(isset($_POST['id_etudiant']) ){
+            if(in_array($_POST['id_etudiant'], array_column($myEtudiants, 'id_etudiant'))){
+                $data['id_pilote']=null;
+                $this->etuModel->update($_POST['id_etudiant'], $data);
+                header('Location: ' . $_SERVER['HTTP_REFERER']); // redirige vers la derniere page
+                exit();
+            }
+            else{
+                header('Location: /error?error=access_denied');
+                exit();
+            }
         }
+        else{
+            header('Location: /error?error=no_data_available'); //on fera un route qui gère les erreurs plus tards
+            exit(); 
+        }
+    }
+
+    function addStudentPilote(){
+        $this->requirePiloteAuth();
+        $noPiloteEtu = $this->etuModel->getAllStudentsNoPilote();
+        if(isset($_POST['id_etudiant'])){
+            if(in_array($_POST['id_etudiant'], array_column($noPiloteEtu, 'id_etudiant'))){
+                $data['id_pilote']=$this->id;
+                $this->etuModel->update($_POST['id_etudiant'], $data);
+                header('Location: /pilote_dashboard'); // redirige vers la derniere page
+                exit();
+            }
+            else{
+                header('Location: /error?error=access_denied');
+                exit();
+            }
+        }
+        else{
+            header('Location: /error?error=no_data_available'); //on fera un route qui gère les erreurs plus tards
+            exit(); 
+        }
+
     }
 
 

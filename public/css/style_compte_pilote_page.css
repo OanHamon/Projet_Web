@@ -359,3 +359,61 @@ input:focus {
         flex-direction: column;
     }
 }
+
+.student-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+}
+
+.student-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 1px solid #ececec;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.student-list-item:hover {
+    background-color: #eef4ff;
+    border-color: #a0bfff;
+    transform: translateX(4px);
+}
+
+.student-list-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.btn-add-student {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background-color: #4a7fff;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-add-student:hover {
+    background-color: #2558e8;
+    transform: scale(1.1);
+}
