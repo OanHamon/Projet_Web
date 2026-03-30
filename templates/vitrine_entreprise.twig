@@ -109,12 +109,13 @@
         </section>
 
         <section class="section-opinion">
-            <h2>Donner votre avis</h2>
+            
+            <h2>Notations</h2>
+            <h3>note de l'entreprise : <span>{{ note }}/5</span></h3>
             <form method="POST" action="/entreprise/{{entreprise.id_entreprise}}/rate">
-                <h3>Note Actuelle  : </h3>
+                <h3>Votre note: {{ note_user }}</h3>
                 <div class="star-rating">
 
-                    
                     <input type="radio" id="star5" name="rating" value="5">
                     <label for="star5">★</label>
 
@@ -137,7 +138,7 @@
     </main>
 <script>
 
-const entrepriseNote = {{note}};
+const entrepriseNote = {{ note_user }};
 if(entrepriseNote){
     document.getElementById('star' + entrepriseNote).checked = true;
 }

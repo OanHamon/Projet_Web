@@ -25,6 +25,23 @@ class EntrepriseModel extends BaseModel
         return $result;
     }
 
+    public function getUserNoteEntreprise($entrepriseId, $userId)
+    {
+        $query = "
+        SELECT note
+        FROM Evaluation_entreprise
+        WHERE id_entreprise = :idE
+        AND id_utilisateur = :idU
+        LIMIT 1
+        ";
+
+        $stmt = $this->executeQuery($query, ['idE' => $entrepriseId, 'idU' => $userId]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+
+        return $result['note'];
+    }
+
     public function getEvaluation($entrepriseId)
     {
         $query = "

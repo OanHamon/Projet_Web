@@ -204,12 +204,12 @@ header nav{
         position:absolute;
         background-color: var(--dark-blue);
         left: 0;
-        top: 0;
+        top: 100px;
         margin: 0;
         flex-direction: column;
         list-style: disc;
         width: 50%;
-        height: 400px;
+        height: 30vh;
         max-width: 200px;
         padding: 7px;
         padding-left: 50px;

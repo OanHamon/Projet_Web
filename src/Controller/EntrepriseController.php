@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+use App\Controller\Controller;
 
 use App\Model\{EntrepriseModel,EvaluationModel,OffreModel,CompetenceModel, UserModel, VilleModel, PostuleModel};
 
@@ -9,7 +10,7 @@ class EntrepriseController extends Controller{
     private $entrepriseModel;
     private $evalModel;
     private $offreModel;
-    private $entreprise_id; //id fix temporaire
+    private $entreprise_id;
     private $compModel;
     private $villeModel;
     private $userModel;
@@ -28,10 +29,11 @@ class EntrepriseController extends Controller{
         $entreprise = $this->entrepriseModel->getById($id);
         $offres = $this->entrepriseModel->getOffres($id);
         $competences = $this->entrepriseModel->getCompetences($id);
-        $note = ceil($this->entrepriseModel->getEvaluation($id)['moyenne']); // On affiche la note de l'entreprise et pas celle de l'utilisateur sur cette entreprise pour l'instant mais on le fera + tard
+        $note = ceil($this->entrepriseModel->getEvaluation($id)['moyenne']);
+        $note_user = 0;
+        if(isset($_SESSION['userId'])){$note_user = $this->entrepriseModel->getUserNoteEntreprise($id, $_SESSION['userId']);}
 
-
-        echo $this->twig->render('vitrine_entreprise.twig',['entreprise'=>$entreprise, 'offres'=>$offres, 'competences'=>$competences, 'note'=>$note]);
+        echo $this->twig->render('vitrine_entreprise.twig',['entreprise'=>$entreprise, 'offres'=>$offres, 'competences'=>$competences, 'note'=>$note, 'note_user'=>$note_user]);
     }
     
     private function requireEntrepriseAuth(){
@@ -40,6 +42,13 @@ class EntrepriseController extends Controller{
             exit();
         }
         $this->entreprise_id = $_SESSION['companyId'];
+    }
+
+    private function requireUserAuth(){
+        if(!isset($_SESSION['userId'])){
+            header('Location: /signin');
+            exit();
+        }
     }
 
     private function checkOffreOwnership($id_offre){
@@ -162,8 +171,9 @@ class EntrepriseController extends Controller{
 
     function manageNotation($id){
         if(isset($_POST['rating'])){
+            $this->requireUserAuth();
             $note=$_POST['rating'];
-            $id_utilisateur = 1; //id fix en attendant l'auth
+            $id_utilisateur = $_SESSION['userId'];
             $data = ['id_entreprise'=>$id, 'id_utilisateur'=>$id_utilisateur];
             if($this->evalModel->find($data)){
                 $data['note'] = $note;
@@ -371,16 +381,4 @@ class EntrepriseController extends Controller{
         header('Location: /'); 
         exit(); 
     }
-
-    // a faire quand on aura bien les sessions
-
-    /*
-    function showCandidatData(){
-        if(isset([$_POST['id_offre']]) && isset([$_POST['id_etudiant']])){
-
-
-        }
-    }
-
-    */
 }

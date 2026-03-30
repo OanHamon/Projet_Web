@@ -17,9 +17,21 @@
                 <h2>Utilisateurs</h2>
                 <div id="admin-users-list">
                     {% for user in users %}
-                        <a href="/goto_admin_user/{{ user.id_utilisateur }}" class="card admin-user-card" data-search="{{ user.nom }} {{ user.prenom }} {{ user.email }}">
+                        <a  href="/goto_admin_user/{{ user.id_utilisateur }}"
+                            class="card admin-user-card" 
+                            data-search="{{ user.nom }} {{ user.prenom }} {{ user.email }}" 
+                            style="background-color: {% if roles[user.id_utilisateur] == null %}
+                                    red
+                                {% elseif roles[user.id_utilisateur] == 'admin' %}
+                                    yellow
+                                {% elseif roles[user.id_utilisateur] == 'pilote' %}
+                                    green
+                                {% endif %}
+                                ;">
                             <h3>{{ user.nom }} {{ user.prenom }}</h3>
                             <p>Email: {{ user.email }}</p>
+                            <p>ID: {{ user.id_utilisateur }}</p>
+                            <p>Rôle: {{ roles[user.id_utilisateur] }}</p>
                         </a>
                     {% endfor %}
                 </div>
@@ -32,6 +44,7 @@
                         <a href="/goto_admin_entreprise/{{ entreprise.id_entreprise }}" class="card admin-entreprise-card" data-search="{{ entreprise.nom }} {{ entreprise.email }}">
                             <h3>{{ entreprise.nom }}</h3>
                             <p>Email: {{ entreprise.email }}</p>
+                            <p>ID: {{ entreprise.id_entreprise }}</p>
                         </a>
                     {% endfor %}
                 </div>
