@@ -38,6 +38,13 @@ class ErrorController extends Controller{
                 'bouton' => 'Faire demi-tour'
             ],
 
+            'access_denied' => [
+                'name' => 'Accès refusé',
+                'title' => 'Hé oh, ce n’est pas votre territoire',
+                'description' => 'Vous essayez d’entrer dans une zone gardée par un poulpe très susceptible.',
+                'bouton' => 'Faire demi-tour'
+            ],
+
             'url_not_available' => [
                 'name' => 'Lien perdu',
                 'title' => 'Ce courant ne mène nulle part',
