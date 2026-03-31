@@ -68,10 +68,6 @@
                                 <input type="hidden" name="id_etudiant" value="{{etudiant.id_etudiant}}">
                                 <button type="submit">
                                     <svg id="Trash--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16" width="16">
-                                        <desc>
-                                        Trash Streamline Icon: https://streamlinehq.com
-                                        </desc>
-                                        <defs></defs>
                                         <path d="M10.549999999999999 14.0625H4.45a1.1875 1.1875 0 0 1 -1.1875 -1.125L2.725 3.325h9.549999999999999l-0.5375 9.6125a1.1875 1.1875 0 0 1 -1.1875 1.125Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
                                         <path d="m1.53125 3.325 11.9375 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
                                         <path d="M6.30625 0.9375h2.3874999999999997a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 1.1937499999999999v1.1937499999999999H5.1125V2.13125a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 -1.1937499999999999Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
@@ -139,6 +135,29 @@
         </form>
 
     </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.getElementById("pilote-search-input");
+            if(searchInput){
+                searchInput.addEventListener("keyup", function() {
+                const filter = this.value.toLowerCase();
+
+                // Filtrer les utilisateurs
+                document.querySelectorAll('.student-list-item').forEach(function(card) {
+                    const text = card.getAttribute('data-search').toLowerCase();
+                    if (text.includes(filter)) {
+                        card.style.display = "";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+
+
+            });
+            }
+
+        });
+    </script>
 {% if createNew %}
     <script>
         window.onload = function() { document.getElementById('pilote-section').scrollIntoView(); }
