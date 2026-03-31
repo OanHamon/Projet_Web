@@ -181,7 +181,7 @@ class UserController extends Controller{
     function deleteAccount(){
         $this->requireUserAuth();
         $this->userModel->deleteById($this->id);
-        $_SESSION = array();
+        if ($_SESSION['role'] != 'admin') $_SESSION = array();
         header('Location: /'); 
         exit(); 
     }

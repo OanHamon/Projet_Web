@@ -380,7 +380,7 @@ class EntrepriseController extends Controller{
     function deleteAccount(){
         $this->requireEntrepriseAuth();
         $this->entrepriseModel->deleteById($this->entreprise_id);
-        $_SESSION = array();
+        if ($_SESSION['role'] != 'admin') $_SESSION = array();
         header('Location: /'); 
         exit(); 
     }
