@@ -11,6 +11,14 @@ document.getElementById('cv').addEventListener("change", function() {
 
 });
 
+document.getElementById("email").addEventListener("blur", function() {
+    const val = this.value;
+    if (val !== "" && (!val.includes("@") || !val.includes("."))) {
+        showAlert("Email invalide");
+        this.value = "";
+    }
+});
+
 
 function checkFile(inputId){
     let input = document.getElementById(inputId);
