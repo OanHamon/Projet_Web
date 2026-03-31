@@ -21,7 +21,7 @@ class EntrepriseControllerTest extends TestCase
         
         $_GET['type'] = 'cv';
         $_GET['file'] = 'mon_stage.pdf';
-        $_SESSION['companyId'] = 1; // simule 
+        $_SESSION['companyId'] = 1; // simulation d'une session d'entreprise connectée
 
         
         $type_accepted = ['lm', 'cv'];
@@ -34,7 +34,7 @@ class EntrepriseControllerTest extends TestCase
     public function testDeleteOffre()
     {
         
-        $_POST['id_offre'] = 42; //simulation
+        $_POST['id_offre'] = 42; //simulation d'une ID d'offre valide
         $_SESSION['companyId'] = 1;
 
         $this->assertEquals(42, (int)$_POST['id_offre']);
@@ -99,6 +99,7 @@ class EntrepriseControllerTest extends TestCase
         $output = ob_get_clean();
 
         $this->assertSame('html-output', $output);
+
     }
 
     public function testDeleteOffreWithInvalidId()
@@ -107,5 +108,7 @@ class EntrepriseControllerTest extends TestCase
         $_SESSION['companyId'] = 1;
 
         $this->assertFalse(is_numeric($_POST['id_offre']), "L'ID de l'offre doit être numérique.");
+
+
     }
 }  

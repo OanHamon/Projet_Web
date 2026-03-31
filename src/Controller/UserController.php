@@ -35,7 +35,7 @@ class UserController extends Controller{
 
     private function requirePiloteAuth(){
         $this->requireUserAuth();
-        if($_SESSION['role'] !== 'pilote'){
+        if(!($_SESSION['role'] == 'pilote' || $_SESSION['role'] == 'admin')){
             header('Location: /error?error=access_denied');
             exit();
         }
@@ -43,7 +43,7 @@ class UserController extends Controller{
 
     private function requireStudentAuth(){
         $this->requireUserAuth();
-        if($_SESSION['role'] !== 'etudiant'){
+        if(!($_SESSION['role'] == 'etudiant' || $_SESSION['role'] == 'admin')){
             header('Location: /error?error=access_denied');
             exit();
         }

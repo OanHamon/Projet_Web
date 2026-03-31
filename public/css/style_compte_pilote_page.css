@@ -13,9 +13,7 @@
 ========================= */
 
 .hero {
-    margin-left: -60px;
     padding: 60px 60px;
-    width: calc(100% + 120px);
     min-height: 180px;
     background: linear-gradient(135deg, var(--light-blue), #ffffff);
     display: flex;
@@ -428,14 +426,7 @@ input:focus {
     .pilote-dashboard {
         padding: 0 20px 80px;
     }
-
-    .hero {
-        margin-left: -20px;
-        width: calc(100% + 40px);
-        padding: 40px 20px;
-        min-height: auto;
-    }
-
+    
     .modif-block {
         padding: 0 10px;
     }

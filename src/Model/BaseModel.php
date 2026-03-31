@@ -24,10 +24,15 @@ class BaseModel extends Model
             throw new \RuntimeException("Erreur base de données");
         }
     }
-    public function getAll()
+    public function getAll($limit = null)
     {
-        $query = "SELECT * FROM {$this->table}";
-        $stmt = $this->executeQuery($query);
+        $query = "SELECT * FROM {$this->table} ORDER BY RAND()";
+        if ($limit !== null) {
+            $query .= " LIMIT :limit";
+            $stmt = $this->executeQuery($query, ["limit" => $limit]);
+        } else {
+            $stmt = $this->executeQuery($query);
+        }
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
         return $result;
