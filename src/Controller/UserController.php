@@ -88,7 +88,7 @@ class UserController extends Controller{
 
         }
 
-        if(isset($_GET['create']) ) {
+        if(isset($_GET['create'])) {
             $createNew = $_GET['create'];
         }
 

@@ -122,7 +122,6 @@ class EntrepriseController extends Controller{
         $createNew = false;
         if(isset($_GET['create']) && $_GET['create'] ==true ){
             $createNew =true;
-            
         }
 
         echo $this->twig->render('entreprise_dashboard.twig',[
