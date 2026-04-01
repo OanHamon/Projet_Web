@@ -30,7 +30,7 @@ class EntrepriseController extends Controller{
         $offres = $this->entrepriseModel->getOffres($id);
         $competences = $this->entrepriseModel->getCompetences($id);
         $note_tmp = $this->entrepriseModel->getEvaluation($id);
-        $note = $note_tmp ? ceil($note_tmp['moyenne']) : 0;
+        $note = ($note_tmp && $note_tmp['moyenne'] !== null) ? ceil($note_tmp['moyenne']) : 0;
         $note_user = 0;
         if(isset($_SESSION['userId'])){
             $note_tmp = $this->entrepriseModel->getUserNoteEntreprise($id, $_SESSION['userId']);
