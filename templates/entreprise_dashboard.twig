@@ -16,6 +16,7 @@
                 <h1>{{ entreprise.nom ?? "L'entreprise n'existe pas" }}</h1>
                 <p>{{entreprise.phrase_intro}}</p>
             </div>  
+        </div>
     </section>
 
     <div class="content-dashboard">
@@ -91,7 +92,7 @@
 
         <section class="offres-section">
 
-            <div class="offres-container">
+            <div class="offres-container" id="offres-container">
 
                 <aside class="offres-list">
 
@@ -177,6 +178,11 @@
         </section>
     </div>
 </main>
+{% if createNew or (offre_to_display is defined and offre_to_display) %}
+    <script>
+        window.onload = function() { document.getElementById('offres-container').scrollIntoView(); }
+    </script>
+{% endif %}
 <script>
     document.querySelectorAll('.offre-item').forEach(item => {
     item.addEventListener('click', function() {

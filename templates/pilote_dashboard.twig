@@ -38,22 +38,6 @@
                     <label>Email</label>
                     <input type="text" name="email" placeholder="{{user.email}}">
                 </div>
-                <br>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Mots de passe</label>
-                        <input type="text" name="mdp" placeholder="MDP">
-                    </div>
-                    <div class="form-group">
-                        <label>Confirmation</label>
-                        <input type="text" name="mdp" placeholder="MDP">
-                    </div>
-
-
-                </div>
-
-                <br>
-                <br>
 
                 <button class="btn-primary">Enregistrer</button>
             </form>
@@ -63,7 +47,7 @@
 
         </section>
 
-        <section class="pilote-section">
+        <section class="pilote-section" id="pilote-section">
             <div class="pere">
                 <h2 class="pilote-title"></h2>
 
@@ -84,10 +68,6 @@
                                 <input type="hidden" name="id_etudiant" value="{{etudiant.id_etudiant}}">
                                 <button type="submit">
                                     <svg id="Trash--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16" width="16">
-                                        <desc>
-                                        Trash Streamline Icon: https://streamlinehq.com
-                                        </desc>
-                                        <defs></defs>
                                         <path d="M10.549999999999999 14.0625H4.45a1.1875 1.1875 0 0 1 -1.1875 -1.125L2.725 3.325h9.549999999999999l-0.5375 9.6125a1.1875 1.1875 0 0 1 -1.1875 1.125Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
                                         <path d="m1.53125 3.325 11.9375 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
                                         <path d="M6.30625 0.9375h2.3874999999999997a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 1.1937499999999999v1.1937499999999999H5.1125V2.13125a1.1937499999999999 1.1937499999999999 0 0 1 1.1937499999999999 -1.1937499999999999Z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
@@ -108,8 +88,6 @@
                         <h4>Recherchez un eleve</h4>
                         <div class="pilote-search">
                             <input type="text" id="pilote-search-input" placeholder="Rechercher un eleve...">
-                            <br>
-                            <br>
                             <!--
                             <input type="checkbox" id="radio-student">
                             <label>Etudiant sans Pilote</label>
@@ -157,8 +135,6 @@
         </form>
 
     </section>
-
-    <!--
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const searchInput = document.getElementById("pilote-search-input");
@@ -181,28 +157,12 @@
             }
 
         });
-        document.getElementById('radio-student').addEventListener("change", function() {
-            const isChecked = this.checked;
-            document.querySelectorAll('.student-list-item').forEach(function(card) {
-                const pilote = card.getAttribute('data-has-pilote');
-                if(isChecked){
-                    if (pilote === 'false') {
-                        card.style.display = "";
-                    } else {
-                        card.style.display = "none";
-                    }
-                }
-                else{
-                    card.style.display = "";
-                }
-
-                // si pilote est pas vide, on cache la carte
-                // sinon on l'affiche
-            });
-        });
     </script>
--->
-
+{% if createNew %}
+    <script>
+        window.onload = function() { document.getElementById('pilote-section').scrollIntoView(); }
+    </script>
+{% endif %}
 {% endblock %}
 
 

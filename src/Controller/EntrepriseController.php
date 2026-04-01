@@ -122,7 +122,6 @@ class EntrepriseController extends Controller{
         $createNew = false;
         if(isset($_GET['create']) && $_GET['create'] ==true ){
             $createNew =true;
-            
         }
 
         echo $this->twig->render('entreprise_dashboard.twig',[
@@ -380,7 +379,7 @@ class EntrepriseController extends Controller{
     function deleteAccount(){
         $this->requireEntrepriseAuth();
         $this->entrepriseModel->deleteById($this->entreprise_id);
-        $_SESSION = array();
+        if ($_SESSION['role'] != 'admin') $_SESSION = array();
         header('Location: /'); 
         exit(); 
     }
