@@ -112,13 +112,7 @@ class UserController extends Controller{
         if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email'])) {
             $prenom = $_POST['prenom'];
             $nom = $_POST['nom'];
-            $email = $this->punisher->isEmail($_POST['email']);
-            if($email !== true){
-                $errors[] = $email;
-                $_SESSION['flash_error'] = $errors;
-                header('Location: /student_dashboard');
-                exit();
-            }
+            $email =$_POST['email'];
 
             $data = [];
 
@@ -129,7 +123,14 @@ class UserController extends Controller{
                 $data['prenom'] = $this->punisher->sanitize($prenom);
             }
             if(!empty($_POST['email'])){
-                $data['email'] = $email;
+                $data['email'] = $_POST['email'];
+                $emailResult = $this->punisher->isEmail($email);
+                if($emailResult !== true){
+                    $errors[] = $emailResult;
+                    $_SESSION['flash_error'] = $errors;
+                    header('Location: /pilote_dashboard');
+                    exit();
+                }
             }
     
         $this->userModel->update($this->id, $data);
