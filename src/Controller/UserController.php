@@ -108,7 +108,7 @@ class UserController extends Controller{
     }
 
     function updatePiloteInfo(){
-        $this->requireUserAuth();
+        $this->requirePiloteAuth();
         if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email'])) {
             $prenom = $_POST['prenom'];
             $nom = $_POST['nom'];
