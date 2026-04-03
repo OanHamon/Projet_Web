@@ -260,10 +260,9 @@ body {
   .col-right {
     position: static;
   }
-  body {
+  main{
     padding: 20px 14px;
   }
-
   .card {
     padding: 22px 18px;
   }
